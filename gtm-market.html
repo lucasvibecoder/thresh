@@ -10,7 +10,7 @@
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', '%%GTM_ID%%');</script>
+        })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,10 +140,47 @@
         }
 
         nav.scrolled {
-            background-color: rgba(10, 10, 10, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 0 #1E1E1E;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom-color: rgba(212, 98, 43, 0.15);
+            box-shadow: 0 4px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hero Glow */
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 60vh;
+            background: radial-gradient(circle at center, rgba(212, 98, 43, 0.08) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse-glow 10s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: translate(-50%, -55%) scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: translate(-48%, -50%) scale(1.1);
+            }
+        }
+
+        /* Card enhancement */
+        .bg-brand-surface {
+            background-color: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(36, 36, 36, 0.8);
         }
 
         .card-lift {
@@ -161,7 +198,8 @@
         }
 
         .btn-primary:hover {
-            box-shadow: 0 4px 20px rgba(212, 98, 43, 0.25);
+            box-shadow: 0 0 25px rgba(212, 98, 43, 0.4);
+            transform: translateY(-1px);
         }
 
         .divider {
@@ -251,7 +289,7 @@
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%%GTM_ID%%" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -312,8 +350,9 @@
     <main>
 
         <!-- ===================== HERO ===================== -->
-        <section class="pt-32 pb-20 sm:pt-40 sm:pb-28 px-6">
-            <div class="max-w-4xl mx-auto text-center">
+        <section class="pt-32 pb-20 sm:pt-40 sm:pb-28 px-6 relative overflow-hidden">
+            <div class="hero-glow"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
                 <div class="reveal">
                     <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">Market Intelligence
                     </p>
