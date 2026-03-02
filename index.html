@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','%%GTM_ID%%');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thresh — Signal-Based Outbound for Niche B2B</title>
@@ -263,16 +270,26 @@
 </head>
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%%GTM_ID%%"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="font-display font-bold text-sm tracking-[0.2em] text-brand-text hover:text-brand-accent transition-colors">
+            <a href="#" class="font-display font-bold text-sm tracking-[0.2em] text-brand-text hover:text-brand-accent transition-colors z-50 relative">
                 THRESH
             </a>
-            <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-white px-5 py-2.5 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all">
-                Show Me the Signal
-            </a>
+            
+            <div class="flex items-center gap-4 z-50 relative">
+                <a href="#contact" class="hidden sm:inline-block text-sm font-body font-semibold bg-brand-accent text-white px-5 py-2.5 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all">
+                    Show Me the Signal
+                </a>
+                <a href="#contact" class="sm:hidden text-xs font-body font-semibold bg-brand-accent text-white px-4 py-2 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all">
+                    Get Signal
+                </a>
+            </div>
         </div>
     </nav>
 

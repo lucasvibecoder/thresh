@@ -1,0 +1,8 @@
+{
+  "name": "thresh-static",
+  "version": "1.0.0",
+  "description": "Static site build for Thresh",
+  "scripts": {
+    "build": "node build.js"
+  }
+}

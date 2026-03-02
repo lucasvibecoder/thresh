@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '%%GTM_ID%%');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GTM Engineer Job Market Report — 2026 | Thresh</title>
+    <meta name="description"
+        content="93 job descriptions analyzed, 5 role archetypes identified. The definitive data on what companies want from GTM Engineers — tools, skills, salary bands, and how the role is splitting.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://runthresh.com/gtm-market">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The GTM Engineer Job Market Report — 2026">
+    <meta property="og:description"
+        content="93 job descriptions analyzed, 5 role archetypes identified. The definitive data on tools, skills, salary bands, and how the GTM Engineer role is splitting.">
+    <meta property="og:url" content="https://runthresh.com/gtm-market">
+    <meta property="og:site_name" content="Thresh">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The GTM Engineer Job Market Report — 2026">
+    <meta name="twitter:description"
+        content="93 job descriptions analyzed, 5 role archetypes identified. The definitive data on tools, skills, salary bands, and how the role is splitting.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The GTM Engineer Job Market Report — 2026",
+      "description": "93 job descriptions analyzed across the GTM Engineer job market. Identifies 5 role archetypes, tool frequency tiers, skills requirements, and salary bands.",
+      "author": {
+        "@type": "Person",
+        "name": "Lucas Linares",
+        "url": "https://www.linkedin.com/in/lucas-linares1/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Thresh",
+        "url": "https://runthresh.com"
+      },
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-03-01",
+      "mainEntityOfPage": "https://runthresh.com/gtm-market",
+      "about": [
+        "GTM Engineer",
+        "Go-to-Market Engineering",
+        "B2B Sales Technology",
+        "Revenue Operations",
+        "Outbound Sales"
+      ],
+      "keywords": "GTM Engineer, GTM Engineer salary, GTM Engineer tools, go-to-market engineer, GTM Engineer job description, Clay, outbound automation, RevOps, B2B sales engineering"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0A0A0A',
+                            surface: '#141414',
+                            'surface-alt': '#1A1A1A',
+                            border: '#242424',
+                            'border-hover': '#D4622B',
+                            accent: '#D4622B',
+                            'accent-hover': '#E87040',
+                            'accent-light': 'rgba(212, 98, 43, 0.10)',
+                            text: '#E8E6E1',
+                            muted: '#8A8880',
+                            faint: '#4A4A45',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger>.reveal:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .stagger>.reveal:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+
+        .stagger>.reveal:nth-child(3) {
+            transition-delay: 0.24s;
+        }
+
+        .stagger>.reveal:nth-child(4) {
+            transition-delay: 0.36s;
+        }
+
+        .stagger>.reveal:nth-child(5) {
+            transition-delay: 0.48s;
+        }
+
+        nav {
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            background-color: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 0 #1E1E1E;
+        }
+
+        .card-lift {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .card-lift:hover {
+            border-color: #D4622B;
+            box-shadow: 0 4px 24px rgba(212, 98, 43, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 20px rgba(212, 98, 43, 0.25);
+        }
+
+        .divider {
+            height: 1px;
+            background: #1E1E1E;
+        }
+
+        .headline-accent {
+            color: #D4622B;
+        }
+
+        /* Tier bar charts */
+        .tier-bar {
+            height: 28px;
+            border-radius: 4px;
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Archetype tag */
+        .archetype-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Table styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8A8880;
+            border-bottom: 1px solid #242424;
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            color: #E8E6E1;
+            border-bottom: 1px solid #1A1A1A;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(212, 98, 43, 0.04);
+        }
+
+        /* Stat card */
+        .stat-value {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #D4622B;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8A8880;
+        }
+
+        /* Graph glow */
+        .graph-glow {
+            box-shadow: 0 0 80px rgba(212, 98, 43, 0.08), 0 0 160px rgba(212, 98, 43, 0.04);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%%GTM_ID%%" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ===================== NAV ===================== -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/"
+                class="font-display font-bold text-lg tracking-tight text-brand-text hover:text-brand-accent transition-colors z-50 relative">Thresh</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#archetypes"
+                    class="text-sm text-brand-muted hover:text-brand-text transition-colors">Archetypes</a>
+                <a href="#tools" class="text-sm text-brand-muted hover:text-brand-text transition-colors">Tools</a>
+                <a href="#salaries"
+                    class="text-sm text-brand-muted hover:text-brand-text transition-colors">Salaries</a>
+                <a href="#skills" class="text-sm text-brand-muted hover:text-brand-text transition-colors">Skills</a>
+                <a href="/"
+                    class="text-sm font-body font-semibold bg-brand-accent text-white px-5 py-2.5 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all">
+                    Back to Thresh
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggles -->
+            <div class="md:hidden flex items-center gap-4 z-50 relative">
+                <a href="/"
+                    class="text-xs font-body font-semibold bg-brand-accent text-white px-3 py-1.5 rounded-lg hover:bg-brand-accent-hover transition-all">
+                    Back
+                </a>
+                <button id="mobile-menu-btn"
+                    class="text-brand-text hover:text-brand-accent transition-colors focus:outline-none"
+                    aria-label="Toggle Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-[#242424] shadow-2xl overflow-hidden transition-all duration-300">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="#archetypes"
+                    class="mobile-link text-lg font-display font-medium text-brand-text hover:text-brand-accent transition-colors">Archetypes</a>
+                <a href="#tools"
+                    class="mobile-link text-lg font-display font-medium text-brand-text hover:text-brand-accent transition-colors">Tools</a>
+                <a href="#salaries"
+                    class="mobile-link text-lg font-display font-medium text-brand-text hover:text-brand-accent transition-colors">Salaries</a>
+                <a href="#skills"
+                    class="mobile-link text-lg font-display font-medium text-brand-text hover:text-brand-accent transition-colors">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== HERO ===================== -->
+        <section class="pt-32 pb-20 sm:pt-40 sm:pb-28 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">Market Intelligence
+                    </p>
+                    <h1
+                        class="font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] mb-6">
+                        The GTM Engineer<br>
+                        <span class="headline-accent">Job Market Report</span>
+                    </h1>
+                    <p class="text-brand-muted text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                        "GTM Engineer" barely existed two years ago. There's no standard job description, no agreed-upon
+                        tool stack, and companies define the role differently depending on their stage and motion. This
+                        report fixes that.
+                    </p>
+                </div>
+
+                <!-- Stats row -->
+                <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="stat-value">93</p>
+                        <p class="stat-label mt-2">JDs Analyzed</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="stat-value">5</p>
+                        <p class="stat-label mt-2">Archetypes</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="stat-value">$152k</p>
+                        <p class="stat-label mt-2">Median Salary</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="stat-value">141</p>
+                        <p class="stat-label mt-2">Tools Tracked</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== METHODOLOGY ===================== -->
+        <section class="py-20 sm:py-28 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Methodology</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-6">
+                        How this was built.
+                    </h2>
+                    <p class="text-brand-muted text-base leading-relaxed mb-8">
+                        Every job description was forced into the same structured schema — 40+ fields per JD, normalized
+                        against a canonical tool list, classified into role archetypes, and cross-referenced for
+                        patterns. This isn't a ChatGPT summary. It's a structured data pipeline with a processing
+                        harness that gets smarter with every JD it ingests.
+                    </p>
+                </div>
+                <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="font-mono text-brand-accent text-sm font-semibold mb-2">01 — Ingest</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">JDs sourced from job boards, Clay
+                            enrichment, and direct company pages. Raw text preserved, never modified.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="font-mono text-brand-accent text-sm font-semibold mb-2">02 — Parse</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Each JD parsed into YAML frontmatter —
+                            company, title, tools, skills, archetype, salary, stage, and more. Tool names normalized to
+                            canonical list.</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+                        <p class="font-mono text-brand-accent text-sm font-semibold mb-2">03 — Analyze</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Analysis regenerated from structured data.
+                            Tool frequency, skill tiers, salary bands, archetype clusters — all computed, not
+                            hand-written.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== KNOWLEDGE GRAPH ===================== -->
+        <section class="py-20 sm:py-28 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal text-center mb-12">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Knowledge Graph</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        Every JD, tool, and archetype.<br>
+                        <span class="headline-accent">Connected.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-2xl mx-auto">
+                        93 job descriptions linked by shared tools, archetypes, and skill requirements. Larger nodes =
+                        more connections. Clusters reveal which tools co-occur and where the market is fragmenting.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div class="bg-brand-surface border border-brand-border rounded-2xl overflow-hidden graph-glow">
+                        <img src="assets/graph-view.png"
+                            alt="GTM Engineer Job Market Knowledge Graph — 93 JDs, 141 tools, 5 archetypes interlinked"
+                            class="w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== ARCHETYPES ===================== -->
+        <section id="archetypes" class="py-20 sm:py-28 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Role Archetypes</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        Five roles hiding behind<br>
+                        <span class="headline-accent">one title.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-3xl mb-12">
+                        "GTM Engineer" means five different things depending on who's hiring. Every JD in this dataset
+                        maps to one of these archetypes. The distribution reveals where the market is heading.
+                    </p>
+                </div>
+
+                <!-- Distribution bar -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-10">
+                    <p class="font-mono text-xs text-brand-muted uppercase tracking-wider mb-4">Market Distribution</p>
+                    <div class="flex rounded-lg overflow-hidden h-10 mb-6">
+                        <div class="bg-brand-accent flex items-center justify-center text-white text-xs font-mono font-bold"
+                            style="width: 32.8%">33%</div>
+                        <div class="flex items-center justify-center text-white text-xs font-mono font-bold"
+                            style="width: 29.5%; background: #B8521F">30%</div>
+                        <div class="flex items-center justify-center text-white text-xs font-mono font-bold"
+                            style="width: 18%; background: #8A4420">18%</div>
+                        <div class="flex items-center justify-center text-white text-xs font-mono font-bold"
+                            style="width: 11.5%; background: #5C3018">11%</div>
+                        <div class="flex items-center justify-center text-white text-xs font-mono font-bold"
+                            style="width: 8.2%; background: #3A1E10">8%</div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 text-xs font-mono">
+                        <span class="flex items-center gap-2"><span
+                                class="w-3 h-3 rounded-sm bg-brand-accent"></span>Systems Architect</span>
+                        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm"
+                                style="background: #B8521F"></span>Outbound Builder</span>
+                        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm"
+                                style="background: #8A4420"></span>Growth Engineer</span>
+                        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm"
+                                style="background: #5C3018"></span>RevOps</span>
+                        <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm"
+                                style="background: #3A1E10"></span>AI Strategist</span>
+                    </div>
+                </div>
+
+                <!-- Archetype cards -->
+                <div class="space-y-6 stagger">
+
+                    <!-- Systems Architect -->
+                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                            <div>
+                                <span class="archetype-tag bg-brand-accent-light text-brand-accent mb-3">33% of
+                                    market</span>
+                                <h3 class="font-display font-bold text-xl mt-3">GTM Systems Architect</h3>
+                                <p class="text-brand-muted text-sm mt-1">20 JDs &middot; Largest cluster</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="stat-value text-2xl">$163k</p>
+                                <p class="stat-label">Median Base</p>
+                            </div>
+                        </div>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Designs and owns the full GTM tech stack. Builds AI agents, automation workflows, and data
+                            pipelines across the revenue org. Architect + operator — they design systems AND build them.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Clay</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Salesforce</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">HubSpot</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">n8n</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Gong</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">AI/LLM
+                                APIs</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-brand-faint font-mono text-xs">YOE</span><br><span
+                                    class="text-brand-text">3–7+</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Salary Range</span><br><span
+                                    class="text-brand-text">$109k–$250k</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Coding</span><br><span
+                                    class="text-brand-accent">Required</span></div>
+                        </div>
+                        <p class="text-brand-faint text-xs font-mono mt-4">Companies: Decagon, Traversal, Arda,
+                            Snowflake, Gong, Twelve Labs, Zip, Klarity, Instawork, Ambient, SentiLink, Bland, Built,
+                            ShipBob, and more</p>
+                    </div>
+
+                    <!-- Outbound Builder -->
+                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                            <div>
+                                <span class="archetype-tag bg-brand-accent-light text-brand-accent mb-3">30% of
+                                    market</span>
+                                <h3 class="font-display font-bold text-xl mt-3">Outbound Infrastructure Builder</h3>
+                                <p class="text-brand-muted text-sm mt-1">18 JDs &middot; Most accessible entry point</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="stat-value text-2xl">$145k</p>
+                                <p class="stat-label">Median Base</p>
+                            </div>
+                        </div>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Owns the signal-to-meeting pipeline. Detects buying signals, enriches data, personalizes
+                            outreach, and routes leads. No-code/low-code dominant — campaigns over experiments.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Clay</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Apollo</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">LinkedIn
+                                Sales Nav</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Smartlead</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">HubSpot</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">n8n</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-brand-faint font-mono text-xs">YOE</span><br><span
+                                    class="text-brand-text">0–5</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Salary Range</span><br><span
+                                    class="text-brand-text">$100k–$200k</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Coding</span><br><span
+                                    class="text-brand-text">Nice-to-have</span></div>
+                        </div>
+                        <p class="text-brand-faint text-xs font-mono mt-4">Companies: Dust, AirOps, Scrunch, Lightfield,
+                            Paraform, DualEntry, Apollo, Radar, Proof, Listen Labs, Nooks, and more</p>
+                    </div>
+
+                    <!-- Growth Engineer -->
+                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                            <div>
+                                <span class="archetype-tag bg-brand-accent-light text-brand-accent mb-3">18% of
+                                    market</span>
+                                <h3 class="font-display font-bold text-xl mt-3">Growth / Technical GTM Engineer</h3>
+                                <p class="text-brand-muted text-sm mt-1">11 JDs</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="stat-value text-2xl">$168k</p>
+                                <p class="stat-label">Median Base</p>
+                            </div>
+                        </div>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Writes code for internal tools, experiments, and automation. Full-stack capable.
+                            Hypothesis-driven — they build GTM infrastructure and measure everything.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Python</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">SQL</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">JavaScript</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Salesforce</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">n8n
+                                / Make</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Clay</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-brand-faint font-mono text-xs">YOE</span><br><span
+                                    class="text-brand-text">2–5</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Salary Range</span><br><span
+                                    class="text-brand-text">$120k–$226k</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Coding</span><br><span
+                                    class="text-brand-accent">Required</span></div>
+                        </div>
+                        <p class="text-brand-faint text-xs font-mono mt-4">Companies: Rippling, Crux, Vibe, Engine,
+                            Suger, xpander.ai, Jungle Scout, and more</p>
+                    </div>
+
+                    <!-- RevOps -->
+                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                            <div>
+                                <span class="archetype-tag bg-brand-accent-light text-brand-accent mb-3">11% of
+                                    market</span>
+                                <h3 class="font-display font-bold text-xl mt-3">RevOps / Marketing Operations</h3>
+                                <p class="text-brand-muted text-sm mt-1">7 JDs</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="stat-value text-2xl">$134k</p>
+                                <p class="stat-label">Median Base</p>
+                            </div>
+                        </div>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Owns CRM and marketing automation. Builds lead routing, scoring, attribution, and pipeline
+                            reporting. System-of-record health is the priority — data integrity over outreach volume.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Salesforce</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">HubSpot</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Clay</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Gong</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Workato</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Outreach</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-brand-faint font-mono text-xs">YOE</span><br><span
+                                    class="text-brand-text">3–6</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Salary Range</span><br><span
+                                    class="text-brand-text">$115k–$205k</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Coding</span><br><span
+                                    class="text-brand-text">SQL expected</span></div>
+                        </div>
+                        <p class="text-brand-faint text-xs font-mono mt-4">Companies: Ceros, Chainguard, Luxury
+                            Presence, Monograph, Parabola, Clay (GTM Ops), Connery Consulting</p>
+                    </div>
+
+                    <!-- AI Strategist -->
+                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                            <div>
+                                <span class="archetype-tag bg-brand-accent-light text-brand-accent mb-3">8% of
+                                    market</span>
+                                <h3 class="font-display font-bold text-xl mt-3">AI / Automation Strategist</h3>
+                                <p class="text-brand-muted text-sm mt-1">5 JDs &middot; Emerging archetype</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="stat-value text-2xl">—</p>
+                                <p class="stat-label">Limited Data</p>
+                            </div>
+                        </div>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Consulting-flavored. Runs strategy audits, builds automation for clients, manages change.
+                            Bridges business strategy and technical execution. Often external-facing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Salesforce</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Claude</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">OpenAI
+                                API</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Zapier</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">Make</span>
+                            <span
+                                class="font-mono text-xs px-3 py-1 rounded-md bg-brand-surface-alt text-brand-muted border border-brand-border">n8n</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm">
+                            <div><span class="text-brand-faint font-mono text-xs">YOE</span><br><span
+                                    class="text-brand-text">3–7+</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Salary Range</span><br><span
+                                    class="text-brand-text">$110k–$175k</span></div>
+                            <div><span class="text-brand-faint font-mono text-xs">Coding</span><br><span
+                                    class="text-brand-text">Broad literacy</span></div>
+                        </div>
+                        <p class="text-brand-faint text-xs font-mono mt-4">Companies: Domestique, G2, Redwood Software,
+                            Apollo (Success Architect), Aion</p>
+                    </div>
+
+                </div>
+
+                <!-- Key insight -->
+                <div class="reveal bg-brand-surface-alt border border-brand-border rounded-xl p-8 mt-10">
+                    <p class="font-mono text-brand-accent text-sm font-semibold mb-2">Key Finding</p>
+                    <p class="text-brand-text text-base leading-relaxed">
+                        The market is shifting toward <strong>GTM Systems Architect</strong> as the dominant archetype
+                        (33% of JDs). Companies want GTM Engineers who can own the full stack, not just one channel.
+                        <strong>Outbound Builder</strong> remains the most accessible entry point (30%), but the growth
+                        trajectory points toward systems architecture — and the $18k salary premium reflects it.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== TOOL FREQUENCY ===================== -->
+        <section id="tools" class="py-20 sm:py-28 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Tool Frequency</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        One tool is table-stakes.<br>
+                        <span class="headline-accent">Everything else is optional.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-3xl mb-12">
+                        141 distinct tools appeared across 93 JDs. We classified them into three tiers based on how
+                        often they show up.
+                    </p>
+                </div>
+
+                <!-- Table-stakes -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-6">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Table-Stakes (60%+ of
+                        JDs)</p>
+                    <div class="flex items-center gap-4 mb-2">
+                        <span class="font-mono text-brand-text font-bold text-sm w-32">Clay</span>
+                        <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                            <div class="tier-bar bg-brand-accent flex items-center justify-end pr-3"
+                                style="width: 62.3%">
+                                <span class="font-mono text-white text-xs font-bold">62%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-3">The only tool that appears in more than 60% of
+                        JDs. If you're a GTM Engineer, you use Clay.</p>
+                </div>
+
+                <!-- Differentiators -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-6">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Differentiators (25–59%
+                        of JDs)</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-32">Salesforce</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 47.5%; background: #B8521F">
+                                    <span class="font-mono text-white text-xs font-bold">48%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-32">HubSpot</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 44.3%; background: #B8521F">
+                                    <span class="font-mono text-white text-xs font-bold">44%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-32">n8n</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 31.1%; background: #B8521F">
+                                    <span class="font-mono text-white text-xs font-bold">31%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-32">Zapier</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 26.2%; background: #B8521F">
+                                    <span class="font-mono text-white text-xs font-bold">26%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-4">CRM (Salesforce/HubSpot) + workflow automation
+                        (n8n/Zapier) form the differentiator tier. These tools separate candidates.</p>
+                </div>
+
+                <!-- Notable Rare -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Notable Rare Tools
+                        (&lt;25%)</p>
+                    <div class="overflow-x-auto">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>JDs</th>
+                                    <th>%</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SQL</td>
+                                    <td>15</td>
+                                    <td>24.6%</td>
+                                    <td class="text-brand-muted">Language</td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>13</td>
+                                    <td>21.3%</td>
+                                    <td class="text-brand-muted">Language</td>
+                                </tr>
+                                <tr>
+                                    <td>Gong</td>
+                                    <td>11</td>
+                                    <td>18.0%</td>
+                                    <td class="text-brand-muted">Revenue Intelligence</td>
+                                </tr>
+                                <tr>
+                                    <td>Apollo</td>
+                                    <td>10</td>
+                                    <td>16.4%</td>
+                                    <td class="text-brand-muted">Prospecting</td>
+                                </tr>
+                                <tr>
+                                    <td>Make</td>
+                                    <td>10</td>
+                                    <td>16.4%</td>
+                                    <td class="text-brand-muted">Automation</td>
+                                </tr>
+                                <tr>
+                                    <td>Outreach</td>
+                                    <td>9</td>
+                                    <td>14.8%</td>
+                                    <td class="text-brand-muted">Sales Engagement</td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript</td>
+                                    <td>8</td>
+                                    <td>13.1%</td>
+                                    <td class="text-brand-muted">Language</td>
+                                </tr>
+                                <tr>
+                                    <td>ZoomInfo</td>
+                                    <td>7</td>
+                                    <td>11.5%</td>
+                                    <td class="text-brand-muted">Data Provider</td>
+                                </tr>
+                                <tr>
+                                    <td>Looker</td>
+                                    <td>6</td>
+                                    <td>9.8%</td>
+                                    <td class="text-brand-muted">BI / Analytics</td>
+                                </tr>
+                                <tr>
+                                    <td>LinkedIn Sales Nav</td>
+                                    <td>5</td>
+                                    <td>8.2%</td>
+                                    <td class="text-brand-muted">Prospecting</td>
+                                </tr>
+                                <tr>
+                                    <td>Snowflake</td>
+                                    <td>5</td>
+                                    <td>8.2%</td>
+                                    <td class="text-brand-muted">Data Warehouse</td>
+                                </tr>
+                                <tr>
+                                    <td>Claude</td>
+                                    <td>4</td>
+                                    <td>6.6%</td>
+                                    <td class="text-brand-muted">AI / LLM</td>
+                                </tr>
+                                <tr>
+                                    <td>OpenAI API</td>
+                                    <td>4</td>
+                                    <td>6.6%</td>
+                                    <td class="text-brand-muted">AI / LLM</td>
+                                </tr>
+                                <tr>
+                                    <td>Smartlead</td>
+                                    <td>4</td>
+                                    <td>6.6%</td>
+                                    <td class="text-brand-muted">Email Automation</td>
+                                </tr>
+                                <tr>
+                                    <td>Instantly</td>
+                                    <td>4</td>
+                                    <td>6.6%</td>
+                                    <td class="text-brand-muted">Email Automation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-4">SQL and Python sit just below differentiator
+                        threshold — borderline skills in ~1 in 4 JDs. AI tools (Claude, OpenAI API) appearing in a
+                        growing number of listings.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== SALARY BANDS ===================== -->
+        <section id="salaries" class="py-20 sm:py-28 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Compensation</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        What GTM Engineers<br>
+                        <span class="headline-accent">actually make.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-3xl mb-12">
+                        37 of 93 JDs included base salary data. The overall market median sits at $151,500 — but the
+                        spread across archetypes tells a more interesting story.
+                    </p>
+                </div>
+
+                <!-- Overall stat -->
+                <div class="reveal grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6 text-center">
+                        <p class="stat-value">$100k</p>
+                        <p class="stat-label mt-2">Floor</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6 text-center">
+                        <p class="stat-value">$152k</p>
+                        <p class="stat-label mt-2">Median</p>
+                    </div>
+                    <div class="bg-brand-surface border border-brand-border rounded-xl p-6 text-center">
+                        <p class="stat-value">$250k</p>
+                        <p class="stat-label mt-2">Ceiling</p>
+                    </div>
+                </div>
+
+                <!-- By archetype -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-6">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Median Base Salary by
+                        Archetype</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-44">Growth Engineer</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar bg-brand-accent flex items-center justify-end pr-3"
+                                    style="width: 67%">
+                                    <span class="font-mono text-white text-xs font-bold">$168k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-44">Systems Architect</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 65%; background: #B8521F">
+                                    <span class="font-mono text-white text-xs font-bold">$163k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-44">Outbound Builder</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 58%; background: #8A4420">
+                                    <span class="font-mono text-white text-xs font-bold">$145k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono text-brand-text text-sm w-44">RevOps</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar flex items-center justify-end pr-3"
+                                    style="width: 54%; background: #5C3018">
+                                    <span class="font-mono text-white text-xs font-bold">$134k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-4">AI Strategist excluded — only 1 JD with salary
+                        data. Growth Engineer and Systems Architect command an $18–23k premium over Outbound Builder.
+                    </p>
+                </div>
+
+                <!-- By seniority -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Median Base by
+                        Seniority</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <p class="font-mono text-brand-faint text-xs uppercase mb-2">Junior (0–2 YOE)</p>
+                            <p class="font-display font-bold text-2xl text-brand-text">$145k</p>
+                            <p class="text-brand-muted text-xs mt-1">14 JDs with salary</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-mono text-brand-faint text-xs uppercase mb-2">Mid (3–4 YOE)</p>
+                            <p class="font-display font-bold text-2xl text-brand-text">$160k</p>
+                            <p class="text-brand-muted text-xs mt-1">13 JDs with salary</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-mono text-brand-faint text-xs uppercase mb-2">Senior (5+ YOE)</p>
+                            <p class="font-display font-bold text-2xl text-brand-text">$177k</p>
+                            <p class="text-brand-muted text-xs mt-1">10 JDs with salary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== SKILLS ===================== -->
+        <section id="skills" class="py-20 sm:py-28 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Skills</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        What the market<br>
+                        <span class="headline-accent">actually demands.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-3xl mb-12">
+                        Skills extracted from "Required" and "Preferred" sections across all 93 JDs, then ranked by
+                        frequency.
+                    </p>
+                </div>
+
+                <!-- Table-stakes skills -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-6">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Table-Stakes (60%+ of
+                        JDs) — The Non-Negotiables</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <span class="font-body text-brand-text text-sm w-56">Systems thinking / builder
+                                mindset</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar bg-brand-accent flex items-center justify-end pr-3"
+                                    style="width: 85%">
+                                    <span class="font-mono text-white text-xs font-bold">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="font-body text-brand-text text-sm w-56">Cross-functional collaboration</span>
+                            <div class="flex-1 bg-brand-surface-alt rounded-md overflow-hidden">
+                                <div class="tier-bar bg-brand-accent flex items-center justify-end pr-3"
+                                    style="width: 62%">
+                                    <span class="font-mono text-white text-xs font-bold">62%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-4">Every GTM Engineer job expects you to think in
+                        systems and work across teams. These aren't differentiators — they're baseline.</p>
+                </div>
+
+                <!-- Differentiator skills -->
+                <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 mb-6">
+                    <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-6">Differentiators
+                        (25–59%) — What Separates Candidates</p>
+                    <div class="overflow-x-auto">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Skill</th>
+                                    <th>Required</th>
+                                    <th>Preferred</th>
+                                    <th>Total %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Data-driven / analytical thinking</td>
+                                    <td>30</td>
+                                    <td>5</td>
+                                    <td class="text-brand-accent font-mono font-bold">57%</td>
+                                </tr>
+                                <tr>
+                                    <td>AI / LLM / automation fluency</td>
+                                    <td>28</td>
+                                    <td>6</td>
+                                    <td class="text-brand-accent font-mono font-bold">56%</td>
+                                </tr>
+                                <tr>
+                                    <td>API / webhook / integration skills</td>
+                                    <td>24</td>
+                                    <td>5</td>
+                                    <td class="text-brand-accent font-mono font-bold">48%</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM experience (HubSpot/Salesforce)</td>
+                                    <td>25</td>
+                                    <td>3</td>
+                                    <td class="text-brand-accent font-mono font-bold">46%</td>
+                                </tr>
+                                <tr>
+                                    <td>GTM operations experience</td>
+                                    <td>22</td>
+                                    <td>3</td>
+                                    <td class="text-brand-accent font-mono font-bold">41%</td>
+                                </tr>
+                                <tr>
+                                    <td>SQL proficiency</td>
+                                    <td>18</td>
+                                    <td>6</td>
+                                    <td class="text-brand-accent font-mono font-bold">39%</td>
+                                </tr>
+                                <tr>
+                                    <td>Python proficiency</td>
+                                    <td>13</td>
+                                    <td>7</td>
+                                    <td class="text-brand-accent font-mono font-bold">33%</td>
+                                </tr>
+                                <tr>
+                                    <td>Communication / exec presence</td>
+                                    <td>18</td>
+                                    <td>2</td>
+                                    <td class="text-brand-accent font-mono font-bold">33%</td>
+                                </tr>
+                                <tr>
+                                    <td>Fast-paced / startup experience</td>
+                                    <td>12</td>
+                                    <td>8</td>
+                                    <td class="text-brand-accent font-mono font-bold">33%</td>
+                                </tr>
+                                <tr>
+                                    <td>Outbound campaign design</td>
+                                    <td>12</td>
+                                    <td>4</td>
+                                    <td class="text-brand-accent font-mono font-bold">26%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-brand-faint text-xs font-mono mt-4">AI/LLM fluency has entered the differentiator
+                        tier at 56%. This wasn't a differentiator 12 months ago — it's the fastest-rising skill in the
+                        dataset.</p>
+                </div>
+
+                <!-- Key insight -->
+                <div class="reveal bg-brand-surface-alt border border-brand-border rounded-xl p-8">
+                    <p class="font-mono text-brand-accent text-sm font-semibold mb-2">Key Finding</p>
+                    <p class="text-brand-text text-base leading-relaxed">
+                        The skill that separates good GTM Engineers from great ones isn't a tool — it's <strong>AI/LLM
+                            fluency</strong> (56% of JDs). Companies don't just want you to use AI tools. They want you
+                        to build AI-native workflows, write prompts, and deploy agents. The second biggest
+                        differentiator is <strong>API/integration depth</strong> (48%) — connecting systems, not just
+                        configuring them.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== COMPANIES ===================== -->
+        <section id="companies" class="py-20 sm:py-28 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Dataset</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        Companies in this report.
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-3xl mb-12">
+                        93 job descriptions from companies actively hiring GTM Engineers — from seed-stage startups to
+                        public companies.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Aion</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">AirOps</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Ambient</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Apollo</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Arda</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Atmosphere</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">August</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Axial</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Beacon
+                            Biosignals</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Birdy</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Bland</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Bobyard</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Built</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Ceros</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Chainalysis</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Chainguard</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Clay</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Confluent</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Connery</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Crux</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Cube</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Decagon</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Divisions</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Domestique</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">DoorLoop</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">DualEntry</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Dust</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Engine</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Finout</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">G2</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Gather
+                            AI</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Glean</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Glimpse</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Gong</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Grafana
+                            Labs</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">HackerRank</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Hearth</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Instawork</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Jampack</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Jump</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Jungle
+                            Scout</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Klarity</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Lightfield</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Lighthouse</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Listen
+                            Labs</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">LiveFlow</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Luxury
+                            Presence</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Monograph</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">NetRise</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Nooks</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Ontra</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">PandaDoc</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Parabola</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Paraform</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Payabli</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">PitchBook</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Posh</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Profound</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Proof</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Quzara</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Radar</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Redis</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Redwood</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Retell
+                            AI</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Rippling</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Root
+                            Layer</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Rula</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Rutter</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Sapien</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Scrunch</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">SentiLink</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">ShipBob</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Snowflake</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Solv</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">SparrowBid</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Stealth
+                            AI</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Suger</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Sumble</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Super.AI</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">TalentPluto</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Tandem</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Tapcheck</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Tempo</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Traversal</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Twelve
+                            Labs</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Vanta</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Vibe</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Wrapbook</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Xbow</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">xpander.ai</span>
+                        <span
+                            class="font-mono text-xs px-3 py-1.5 rounded-md bg-brand-surface text-brand-muted border border-brand-border">Zip</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ===================== CTA ===================== -->
+        <section class="py-20 sm:py-28 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Built by Thresh</p>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4">
+                        This is what signal-based<br>
+                        <span class="headline-accent">research looks like.</span>
+                    </h2>
+                    <p class="text-brand-muted text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                        This report was built with the same structured data pipeline we use for outbound prospecting.
+                        Different dataset, same approach — find the signal in messy data, force it into structure, and
+                        let the patterns reveal themselves.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/"
+                            class="font-body font-semibold bg-brand-accent text-white px-8 py-4 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                            See How Thresh Works
+                        </a>
+                        <a href="https://github.com/lucasvibecoder/gtm-job-market"
+                            class="font-body font-semibold border border-brand-accent text-brand-accent px-8 py-4 rounded-lg hover:bg-brand-accent hover:text-white btn-primary transition-all text-base">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">Thresh</a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <a href="mailto:lucas.linares@runthresh.com"
+                    class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    lucas.linares@runthresh.com
+                </a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/"
+                    class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    LinkedIn
+                </a>
+            </div>
+            <p class="text-xs text-brand-faint">&copy; 2026 Thresh. Data current as of March 2026.</p>
+        </div>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconBars = document.getElementById('menu-icon-bars');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIconBars.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIconBars.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        // Nav scroll behavior
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) {
+                        nav.classList.add('scrolled');
+                    } else {
+                        nav.classList.remove('scrolled');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <!-- Vercel Analytics + Speed Insights -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+
+</html>
