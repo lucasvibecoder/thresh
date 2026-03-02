@@ -940,10 +940,10 @@
             const delay = isStaggered ? (Array.from(el.parentElement.children).indexOf(el) * 0.08) : 0;
 
             gsap.fromTo(el,
-                { y: 40, opacity: 0 },
+                { y: 40, autoAlpha: 0 },
                 {
                     y: 0,
-                    opacity: 1,
+                    autoAlpha: 1,
                     duration: 0.8,
                     delay: delay,
                     ease: "power3.out",
