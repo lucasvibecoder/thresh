@@ -405,6 +405,11 @@
             box-shadow: 0 0 0 2px rgba(0, 255, 65, 0.3);
         }
 
+        /* Mobile Safari 100vh fix — dvh accounts for browser chrome */
+        @supports (min-height: 100dvh) {
+            section.min-h-screen { min-height: 100dvh; }
+        }
+
         /* Scanline overlay — desktop only */
         @media (min-width: 768px) {
             body::after {
@@ -849,8 +854,8 @@
                 }
             });
         }, {
-            threshold: 0.08,
-            rootMargin: '0px 0px -40px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px -15px 0px'
         });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
@@ -966,7 +971,7 @@
                 entries.forEach(entry => {
                     feedVisible = entry.isIntersecting;
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0 });
             feedObserver.observe(signalFeed.parentElement);
 
             function addLine() {
