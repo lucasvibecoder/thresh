@@ -85,31 +85,45 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
+                borderRadius: {
+                    DEFAULT: '0px',
+                    none: '0px',
+                    sm: '0px',
+                    md: '0px',
+                    lg: '0px',
+                    xl: '0px',
+                    '2xl': '0px',
+                    '3xl': '0px',
+                    full: '0px',
+                },
                 extend: {
                     colors: {
                         brand: {
-                            bg: '#0A0A0A',
+                            bg: '#080808',
                             surface: '#141414',
                             'surface-alt': '#1A1A1A',
-                            border: '#242424',
-                            'border-hover': '#D4622B',
-                            accent: '#D4622B',
-                            'accent-hover': '#E87040',
-                            'accent-light': 'rgba(212, 98, 43, 0.10)',
-                            text: '#E8E6E1',
-                            muted: '#8A8880',
-                            faint: '#4A4A45',
+                            border: 'rgba(255,255,255, 0.10)',
+                            'border-hover': '#00FF41',
+                            accent: '#00FF41',
+                            'accent-hover': '#33FF66',
+                            'accent-light': 'rgba(0, 255, 65, 0.10)',
+                            secondary: '#D4622B',
+                            'secondary-hover': '#E87040',
+                            'secondary-light': 'rgba(212, 98, 43, 0.10)',
+                            text: '#E8EAF0',
+                            muted: '#8B919A',
+                            faint: '#4D5562',
                         }
                     },
                     fontFamily: {
-                        display: ['Syne', 'sans-serif'],
-                        body: ['Outfit', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['"Inter Tight"', 'sans-serif'],
+                        body: ['"Inter Tight"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                 }
             }
@@ -137,51 +151,91 @@
 
         /* Nav scroll state */
         nav {
-            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), border-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
         }
         nav.scrolled {
-            background-color: rgba(10, 10, 10, 0.92);
+            background-color: rgba(8, 8, 8, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 0 #1E1E1E;
+            box-shadow:
+                0 1px 0 0 rgba(255,255,255, 0.06),
+                0 4px 12px rgba(0,0,0, 0.3);
         }
 
-        /* Card hover */
+        /* Machined panel shadow — Blueprint inset bevel */
+        .panel {
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255, 0.10),
+                inset 0 0.5px 0 0 rgba(255,255,255, 0.06),
+                0 0 10px 0 rgba(0,0,0, 0.15);
+            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
+        }
+
+        /* Card hover — green inset glow */
         .card-lift {
-            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
         }
         .card-lift:hover {
-            border-color: #D4622B;
-            box-shadow: 0 4px 24px rgba(212, 98, 43, 0.08);
+            box-shadow:
+                inset 0 0 0 1px rgba(0, 255, 65, 0.25),
+                inset 0 0.5px 0 0 rgba(0, 255, 65, 0.15),
+                0 4px 24px rgba(0, 255, 65, 0.08);
             transform: translateY(-2px);
         }
 
-        /* CTA button */
+        /* CTA button — green shadow */
         .btn-primary {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
         }
         .btn-primary:hover {
+            box-shadow: 0 4px 20px rgba(0, 255, 65, 0.25);
+        }
+
+        /* Secondary CTA — orange shadow */
+        .btn-secondary {
+            transition: all 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
+        }
+        .btn-secondary:hover {
             box-shadow: 0 4px 20px rgba(212, 98, 43, 0.25);
         }
 
         /* Divider */
         .divider {
             height: 1px;
-            background: #1E1E1E;
+            background: rgba(255,255,255, 0.08);
         }
 
-        /* Headline accent */
+        /* Headline accent — green */
         .headline-accent {
-            color: #D4622B;
+            color: #00FF41;
         }
 
-        /* Email card */
+        /* Scoped uppercase for section headings */
+        .section-heading {
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* Section label — mono with // prefix */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .section-label::before {
+            content: '// ';
+            opacity: 0.5;
+        }
+
+        /* Email card — square corners, panel shadow */
         .email-card {
             font-family: 'JetBrains Mono', monospace;
             background: #111111;
-            border: 1px solid #242424;
-            border-radius: 12px;
+            border: none;
+            border-radius: 0;
             overflow: hidden;
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255, 0.10),
+                inset 0 0.5px 0 0 rgba(255,255,255, 0.06),
+                0 0 10px 0 rgba(0,0,0, 0.15);
         }
         .email-bar {
             display: flex;
@@ -189,27 +243,29 @@
             gap: 8px;
             padding: 12px 16px;
             background: #181818;
-            border-bottom: 1px solid #242424;
+            border-bottom: 1px solid rgba(255,255,255, 0.08);
         }
+        /* Signal strength squares (replaces traffic light dots) */
         .email-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 0;
         }
-        .email-dot:nth-child(1) { background: #E54D42; opacity: 0.8; }
-        .email-dot:nth-child(2) { background: #E8B44D; opacity: 0.8; }
-        .email-dot:nth-child(3) { background: #5CB85C; opacity: 0.8; }
+        .email-dot:nth-child(1) { background: #00FF41; opacity: 0.3; }
+        .email-dot:nth-child(2) { background: #00FF41; opacity: 0.6; }
+        .email-dot:nth-child(3) { background: #00FF41; opacity: 1; }
         .email-label {
             font-size: 11px;
-            color: #4A4A45;
+            color: #00FF41;
             letter-spacing: 0.05em;
             margin-left: 8px;
+            font-family: 'JetBrains Mono', monospace;
         }
         .email-body {
             padding: 24px 28px;
             font-size: 14px;
             line-height: 1.8;
-            color: #C8C6C0;
+            color: #C5CBD3;
         }
         @media (max-width: 640px) {
             .email-body {
@@ -219,25 +275,38 @@
             }
         }
 
-        /* Form inputs */
+        /* Provenance label for source attribution text */
+        .provenance-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+            color: #C5CBD3;
+        }
+
+        /* Form inputs — square, mono, inset shadow */
         .form-input {
             background: #111111;
-            border: 1px solid #242424;
-            border-radius: 8px;
+            border: 1px solid transparent;
+            border-radius: 0;
             padding: 14px 16px;
             min-height: 48px;
-            color: #E8E6E1;
-            font-family: 'Outfit', sans-serif;
+            color: #E8EAF0;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 15px;
             width: 100%;
-            transition: border-color 0.3s ease;
+            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255, 0.10),
+                inset 0 -1px 1px 0 rgba(255,255,255, 0.04);
         }
         .form-input:focus {
             outline: none;
-            border-color: #D4622B;
+            box-shadow:
+                inset 0 0 0 1px rgba(0, 255, 65, 0.4),
+                inset 0 -1px 1px 0 rgba(0, 255, 65, 0.1);
         }
         .form-input::placeholder {
-            color: #4A4A45;
+            color: #4D5562;
         }
 
         /* Scroll indicator bounce */
@@ -246,18 +315,115 @@
             50% { transform: translateY(6px); }
         }
 
-        /* Check / X list markers */
+        /* Check list markers — > in green */
         .list-check li::before {
-            content: '→';
-            color: #D4622B;
+            content: '>';
+            color: #00FF41;
             font-weight: 700;
             margin-right: 12px;
+            font-family: 'JetBrains Mono', monospace;
         }
+        /* X list markers — // in faint */
         .list-x li::before {
-            content: '✕';
-            color: #4A4A45;
+            content: '//';
+            color: #4D5562;
             font-weight: 700;
             margin-right: 12px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Typing cursor — blinking green block */
+        .typing-cursor::after {
+            content: '\2588';
+            color: #00FF41;
+            animation: blink-cursor 1s step-end infinite;
+        }
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Signal monitor — subtle green glow pulse with inset panel */
+        .signal-monitor {
+            animation: signal-glow 3s ease-in-out infinite;
+        }
+        @keyframes signal-glow {
+            0%, 100% {
+                box-shadow:
+                    inset 0 0 0 1px rgba(0, 255, 65, 0.08),
+                    inset 0 0.5px 0 0 rgba(0, 255, 65, 0.04),
+                    0 0 0 rgba(0, 255, 65, 0);
+            }
+            50% {
+                box-shadow:
+                    inset 0 0 0 1px rgba(0, 255, 65, 0.08),
+                    inset 0 0.5px 0 0 rgba(0, 255, 65, 0.04),
+                    0 0 20px rgba(0, 255, 65, 0.06);
+            }
+        }
+
+        /* Dossier card — diagonal watermark */
+        .dossier-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .dossier-card::before {
+            content: 'SIGNAL VERIFIED';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            color: rgba(0, 255, 65, 0.04);
+            letter-spacing: 0.15em;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Redacted items — desktop hover reveal, mobile normal text */
+        @media (hover: hover) {
+            .redacted-item {
+                background: #141414;
+                color: #141414;
+                padding: 2px 4px;
+                transition: color 0.3s ease, background 0.3s ease;
+                cursor: pointer;
+            }
+            .redacted-item:hover {
+                color: #00FF41;
+                background: transparent;
+            }
+        }
+
+        /* Focus-visible ring — keyboard navigation only */
+        .form-input:focus-visible,
+        .btn-primary:focus-visible,
+        .btn-secondary:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 255, 65, 0.3);
+        }
+
+        /* Scanline overlay — desktop only */
+        @media (min-width: 768px) {
+            body::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 255, 65, 0.008) 0px,
+                    rgba(0, 255, 65, 0.008) 1px,
+                    transparent 1px,
+                    transparent 3px
+                );
+                pointer-events: none;
+                z-index: 1;
+            }
         }
     </style>
 </head>
@@ -267,10 +433,10 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="font-display font-bold text-sm tracking-[0.2em] text-brand-text hover:text-brand-accent transition-colors">
-                THRESH
+            <a href="#" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
+                THRESH_
             </a>
-            <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-white px-5 py-2.5 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all">
+            <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
                 Show Me the Signal
             </a>
         </div>
@@ -282,21 +448,26 @@
         <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-20">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="reveal">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-8">Thresh</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Thresh</p>
                 </div>
-                <h1 class="reveal font-display font-800 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-8">
+                <div class="reveal">
+                    <div id="typing-container" class="font-mono text-xs tracking-[0.15em] text-brand-accent mb-8 h-5">
+                        <span id="typing-text"></span><span class="typing-cursor"></span>
+                    </div>
+                </div>
+                <h1 class="reveal font-display font-[900] section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
                     Your prospects have problems<br class="hidden sm:block">
                     <span class="headline-accent">they don't know are public.</span><br class="hidden sm:block">
                     I find them.
                 </h1>
-                <p class="reveal font-body text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-12 leading-relaxed font-light">
                     Signal-based outbound for B2B companies selling into regulated, licensed, or inspected industries — where public data creates an unfair advantage. I find the trigger, build the list, and write the messages.
                 </p>
                 <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#example" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-white px-8 py-4 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                    <a href="#example" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
                         See a Real Example
                     </a>
-                    <a href="#contact" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-accent text-brand-accent px-8 py-4 rounded-lg hover:bg-brand-accent hover:text-white btn-primary transition-all text-base">
+                    <a href="#contact" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">
                         Show Me the Signal
                     </a>
                 </div>
@@ -310,12 +481,27 @@
 
         <div class="divider max-w-6xl mx-auto"></div>
 
+        <!-- ===================== SIGNAL MONITOR ===================== -->
+        <section class="py-8 sm:py-12 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal signal-monitor bg-brand-surface panel p-6 overflow-hidden">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="inline-block w-2 h-2 bg-brand-accent" style="animation: blink-cursor 2s step-end infinite;"></span>
+                        <span class="font-mono text-xs text-brand-accent tracking-wider">SIGNAL_FEED // LIVE</span>
+                    </div>
+                    <div id="signal-monitor-feed" class="space-y-0"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
         <!-- ===================== THE EXAMPLE ===================== -->
         <section id="example" class="py-16 sm:py-32 px-6 scroll-mt-20">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">What This Looks Like</p>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-6 max-w-3xl">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">What This Looks Like</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">
                         What this looks like in practice.
                     </h2>
                     <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
@@ -326,13 +512,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
                     <!-- Before: Generic email -->
                     <div>
-                        <p class="font-display text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Without the data, you're stuck writing this.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Without the data, you're stuck writing this.</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
-                                <span class="email-label">outbound</span>
+                                <span class="email-label">OUTBOUND // GENERIC</span>
                             </div>
                             <div class="email-body">
                                 <p>Hi [First Name],</p>
@@ -348,13 +534,13 @@
 
                     <!-- After: Data-driven email -->
                     <div>
-                        <p class="font-display text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">With the data, your rep sends this.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">With the data, your rep sends this.</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
-                                <span class="email-label">outbound</span>
+                                <span class="email-label">OUTBOUND // SIGNAL-MATCHED</span>
                             </div>
                             <div class="email-body">
                                 <p>277 Park Avenue scored 14 on ENERGY STAR in its most recent benchmarking report — that's bottom 14% of comparable US office buildings. Under LL97, the building's reported emissions put the estimated annual penalty at $1.54 million today, nearly doubling when the 2030 limits take effect.</p>
@@ -368,7 +554,7 @@
                 </div>
 
                 <div class="reveal mt-4">
-                    <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+                    <p class="provenance-label text-brand-muted leading-relaxed">
                         Every number in that email traces to a public source — NYC benchmarking data, published penalty formulas, ENERGY STAR scoring. No guessing. No templates. The prospect can verify every claim in 5 minutes.
                     </p>
                 </div>
@@ -379,20 +565,20 @@
         <section class="py-16 sm:py-20 px-6">
             <div class="max-w-5xl mx-auto">
                 <div class="reveal">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-10 text-center">What Reps Say When They See It</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-10 text-center">What Reps Say When They See It</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-6">
+                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"I would absolutely send that to a customer."</p>
-                        <p class="text-brand-muted text-xs uppercase tracking-wider">Enterprise Rep · Samsara</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Samsara</p>
                     </div>
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-6">
+                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"All of that is insanely actionable. Can you run it for another company?"</p>
-                        <p class="text-brand-muted text-xs uppercase tracking-wider">Enterprise Rep · Trane</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Trane</p>
                     </div>
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-6">
+                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"Damn dude this is amazing. We need this a lot in my industry."</p>
-                        <p class="text-brand-muted text-xs uppercase tracking-wider">Enterprise Rep · Truckstop</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Truckstop</p>
                     </div>
                 </div>
                 <div class="reveal text-center mt-10">
@@ -409,28 +595,28 @@
         <section class="py-24 sm:py-32 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="reveal">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">How It Works</p>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-16 max-w-2xl">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">How It Works</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-16 max-w-2xl">
                         Three steps. All verifiable.
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger">
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
-                        <p class="text-brand-accent font-display font-bold text-sm mb-3">01</p>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
                         <p class="font-display font-bold text-lg mb-3 text-brand-text">I find the signal.</p>
                         <p class="text-brand-muted text-sm leading-relaxed">
                             I identify a specific public data trigger that proves your prospect has a problem right now. Federal safety records, building compliance scores, permit filings, regulatory deadlines. Not intent data. Not job postings. Undeniable, verifiable events.
                         </p>
                     </div>
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
-                        <p class="text-brand-accent font-display font-bold text-sm mb-3">02</p>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
                         <p class="font-display font-bold text-lg mb-3 text-brand-text">I build the list.</p>
                         <p class="text-brand-muted text-sm leading-relaxed">
                             I pull prospects experiencing that signal, enrich decision-maker contacts, and score them by severity. Every record has a source you can click through and verify.
                         </p>
                     </div>
-                    <div class="reveal bg-brand-surface border border-brand-border rounded-xl p-8 card-lift">
-                        <p class="text-brand-accent font-display font-bold text-sm mb-3">03</p>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
                         <p class="font-display font-bold text-lg mb-3 text-brand-text">I write the messages.</p>
                         <p class="text-brand-muted text-sm leading-relaxed">
                             Each prospect gets a 3-4 sentence message built from their specific data. No templates. No "I noticed your company is growing." One insight per message that makes them think "how did you know that?"
@@ -449,8 +635,8 @@
                     <!-- Who It's For -->
                     <div>
                         <div class="reveal">
-                            <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Who It's For</p>
-                            <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mb-8">
+                            <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Who It's For</p>
+                            <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl mb-8">
                                 Built for these companies.
                             </h2>
                         </div>
@@ -470,20 +656,20 @@
                     <!-- Who It's Not For -->
                     <div>
                         <div class="reveal">
-                            <p class="font-display text-xs tracking-[0.3em] text-brand-faint uppercase mb-4">Who It's Not For</p>
-                            <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mb-8 text-brand-muted">
+                            <p class="section-label text-xs tracking-[0.3em] text-brand-faint uppercase mb-4">Who It's Not For</p>
+                            <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl mb-8 text-brand-muted">
                                 Not the right fit for these.
                             </h2>
                         </div>
                         <ul class="reveal list-x space-y-5">
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                Horizontal SaaS selling to other tech companies — your buyers are too sophisticated and the data advantage is thin
+                                <span class="redacted-item">Horizontal SaaS selling to other tech companies — your buyers are too sophisticated and the data advantage is thin</span>
                             </li>
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                Companies that need someone to manage their CRM, inbox, or SDR team — I deliver intelligence and messages, not execution
+                                <span class="redacted-item">Companies that need someone to manage their CRM, inbox, or SDR team — I deliver intelligence and messages, not execution</span>
                             </li>
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                "Let's test some AI outbound" budgets — if the problem isn't obvious and the data doesn't exist, this isn't the right fit
+                                <span class="redacted-item">"Let's test some AI outbound" budgets — if the problem isn't obvious and the data doesn't exist, this isn't the right fit</span>
                             </li>
                         </ul>
                     </div>
@@ -496,9 +682,9 @@
         <!-- ===================== THE OFFER ===================== -->
         <section class="py-24 sm:py-32 px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <div class="reveal bg-brand-surface border border-brand-border rounded-2xl p-10 sm:p-16">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Offer</p>
-                    <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight mb-6">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Offer</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">
                         Your first 10 prospects are free.
                     </h2>
                     <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">
@@ -510,8 +696,8 @@
                     <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">
                         If it books meetings, we talk about a monthly engagement.
                     </p>
-                    <p class="text-brand-muted text-sm mb-8">Delivered in 48 hours.</p>
-                    <a href="#contact" class="inline-block font-body font-semibold bg-brand-accent text-white px-8 py-4 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
+                    <a href="#contact" class="inline-block font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">
                         Show Me the Signal
                     </a>
                 </div>
@@ -524,7 +710,7 @@
         <section class="py-24 sm:py-32 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="reveal mb-8">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Who Built This</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Who Built This</p>
                 </div>
                 <div class="reveal max-w-3xl">
                     <p class="text-brand-text text-lg leading-relaxed font-light mb-6">
@@ -543,7 +729,7 @@
         <section class="py-24 sm:py-32 px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <p class="font-display text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Questions</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Questions</p>
                     <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-12">
                         You're probably wondering.
                     </h2>
@@ -575,7 +761,7 @@
         <section id="contact" class="py-24 sm:py-32 px-6 scroll-mt-20">
             <div class="max-w-3xl mx-auto">
                 <div class="reveal text-center mb-12">
-                    <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight mb-4">
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-4">
                         Tell me your market and I'll tell you<br class="hidden sm:block">
                         <span class="headline-accent">what signal I'd pull.</span>
                     </h2>
@@ -605,7 +791,7 @@
                         <input type="text" id="who_you_sell_to" name="who_you_sell_to" placeholder="Facilities managers at commercial real estate" class="form-input">
                     </div>
                     <div class="pt-2">
-                        <button type="submit" class="w-full font-body font-semibold bg-brand-accent text-white px-8 py-4 rounded-lg hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                        <button type="submit" class="w-full font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
                             See What I'd Find
                         </button>
                     </div>
@@ -613,8 +799,8 @@
                 </form>
 
                 <div id="form-success" class="reveal text-center hidden">
-                    <div class="bg-brand-surface border border-brand-border rounded-xl p-10">
-                        <p class="text-brand-accent font-display font-bold text-lg mb-3">Got it.</p>
+                    <div class="bg-brand-surface panel p-10">
+                        <p class="text-brand-accent font-mono font-bold text-lg mb-3">Got it.</p>
                         <p class="text-brand-muted text-base">I'll look at your market and reply within 24 hours with what I'd pull.</p>
                     </div>
                 </div>
@@ -648,7 +834,7 @@
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <span class="text-sm text-brand-faint">NYC / LA</span>
             </div>
-            <p class="text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
         </div>
     </footer>
 
@@ -706,6 +892,105 @@
                 ticking = true;
             }
         });
+
+        // ===================== TYPING ANIMATION =====================
+        const typingPhrases = [
+            '> scanning public enforcement databases...',
+            '> cross-referencing compliance violations...',
+            '> matching signals to decision-makers...',
+            '> building scored prospect lists...',
+            '> generating signal-matched messages...',
+        ];
+        const typingEl = document.getElementById('typing-text');
+        if (typingEl) {
+            let phraseIdx = 0;
+            let charIdx = 0;
+            let deleting = false;
+            function typeLoop() {
+                const phrase = typingPhrases[phraseIdx];
+                if (!deleting) {
+                    typingEl.textContent = phrase.substring(0, charIdx + 1);
+                    charIdx++;
+                    if (charIdx === phrase.length) {
+                        deleting = true;
+                        setTimeout(typeLoop, 2000);
+                        return;
+                    }
+                    setTimeout(typeLoop, 45);
+                } else {
+                    typingEl.textContent = phrase.substring(0, charIdx - 1);
+                    charIdx--;
+                    if (charIdx === 0) {
+                        deleting = false;
+                        phraseIdx = (phraseIdx + 1) % typingPhrases.length;
+                        setTimeout(typeLoop, 500);
+                        return;
+                    }
+                    setTimeout(typeLoop, 25);
+                }
+            }
+            typeLoop();
+        }
+
+        // ===================== SIGNAL MONITOR =====================
+        const signalFeed = document.getElementById('signal-monitor-feed');
+        if (signalFeed) {
+            const dataPoints = [
+                'EPA_VIOLATION :: Acme Industries :: NOV-2026-0142 :: $245,000',
+                'OSHA_CITATION :: BuildCo LLC :: SER-2026-0891 :: Willful',
+                'LL97_PENALTY :: 277 Park Ave :: ENERGY_STAR: 14 :: $1.54M/yr',
+                'FDA_WARNING :: PharmaCo Inc :: 483-OBS-2026 :: cGMP Failure',
+                'DOT_AUDIT :: FastFreight :: CSA-BASICs: 4/7 :: Conditional',
+                'FIRE_INSP :: Metro Tower :: FDNY-2026-3301 :: Failed',
+                'ADA_COMP :: Retail Holdings :: DOJ-2026-0044 :: Non-Compliant',
+                'HIPAA_BREACH :: HealthNet :: HHS-2026-0217 :: 12,400 Records',
+                'SEC_FILING :: TechVentures :: 10-K Late :: Material Weakness',
+                'PERMIT_EXP :: GreenBuild :: NYC-DOB-2026 :: 14 Days Remain',
+                'NFPA_VIOL :: Harbor Logistics :: NFPA-72-2026 :: Sprinkler Fail',
+                'ENERGY_AUDIT :: Apex Tower :: ASHRAE-90.1 :: Non-Conformance',
+                'WASTE_MGMT :: ChemProcess :: RCRA-2026-0055 :: Manifest Error',
+                'ELEVATOR_CERT :: One Liberty :: DOB-ELEV-2026 :: Expired',
+                'LEAD_PAINT :: Harborview Apts :: EPA-RRP-2026 :: Disclosure Fail',
+            ];
+            let lineIdx = 0;
+            let feedPaused = false;
+            let feedVisible = false;
+
+            // Pause when tab hidden
+            document.addEventListener('visibilitychange', () => {
+                feedPaused = document.hidden;
+            });
+
+            // Only run when visible
+            const feedObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    feedVisible = entry.isIntersecting;
+                });
+            }, { threshold: 0.1 });
+            feedObserver.observe(signalFeed.parentElement);
+
+            function addLine() {
+                if (feedPaused || !feedVisible) {
+                    setTimeout(addLine, 1000);
+                    return;
+                }
+                const el = document.createElement('div');
+                el.className = 'font-mono text-xs leading-relaxed py-1 opacity-0';
+                el.style.transition = 'opacity 0.3s ease';
+                const isMatch = lineIdx % 3 === 2;
+                el.style.color = isMatch ? '#D4622B' : '#4D5562';
+                el.textContent = (isMatch ? '[MATCH] ' : '[SCAN]  ') + dataPoints[lineIdx % dataPoints.length];
+                signalFeed.appendChild(el);
+                requestAnimationFrame(() => { el.style.opacity = '1'; });
+                // Cap at 12 DOM nodes
+                while (signalFeed.children.length > 12) {
+                    signalFeed.removeChild(signalFeed.firstChild);
+                }
+                lineIdx++;
+                setTimeout(addLine, 2200);
+            }
+            addLine();
+        }
     </script>
 
     <!-- Vercel Analytics + Speed Insights -->
