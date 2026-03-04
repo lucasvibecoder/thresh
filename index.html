@@ -489,12 +489,16 @@
         <!-- ===================== SIGNAL MONITOR ===================== -->
         <section class="py-8 sm:py-12 px-6">
             <div class="max-w-4xl mx-auto">
-                <div class="reveal signal-monitor bg-brand-surface panel p-6 overflow-hidden">
+                <div class="reveal signal-monitor bg-brand-surface panel p-6">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="inline-block w-2 h-2 bg-brand-accent" style="animation: blink-cursor 2s step-end infinite;"></span>
                         <span class="font-mono text-xs text-brand-accent tracking-wider">SIGNAL_FEED // LIVE</span>
                     </div>
-                    <div id="signal-monitor-feed" class="space-y-0"></div>
+                    <div id="signal-monitor-feed" class="space-y-0">
+                        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.625;padding:4px 0;color:#4D5562;">[SCAN]  EPA_VIOLATION :: Acme Industries :: NOV-2026-0142 :: $245,000</div>
+                        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.625;padding:4px 0;color:#4D5562;">[SCAN]  OSHA_CITATION :: BuildCo LLC :: SER-2026-0891 :: Willful</div>
+                        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.625;padding:4px 0;color:#D4622B;">[MATCH] LL97_PENALTY :: 277 Park Ave :: ENERGY_STAR: 14 :: $1.54M/yr</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -950,48 +954,45 @@
             typeLoop();
         }
 
-        // ===================== SIGNAL MONITOR =====================
-        const signalFeed = document.getElementById('signal-monitor-feed');
-        if (signalFeed) {
-            const dataPoints = [
-                'EPA_VIOLATION :: Acme Industries :: NOV-2026-0142 :: $245,000',
-                'OSHA_CITATION :: BuildCo LLC :: SER-2026-0891 :: Willful',
-                'LL97_PENALTY :: 277 Park Ave :: ENERGY_STAR: 14 :: $1.54M/yr',
-                'FDA_WARNING :: PharmaCo Inc :: 483-OBS-2026 :: cGMP Failure',
-                'DOT_AUDIT :: FastFreight :: CSA-BASICs: 4/7 :: Conditional',
-                'FIRE_INSP :: Metro Tower :: FDNY-2026-3301 :: Failed',
-                'ADA_COMP :: Retail Holdings :: DOJ-2026-0044 :: Non-Compliant',
-                'HIPAA_BREACH :: HealthNet :: HHS-2026-0217 :: 12,400 Records',
-                'SEC_FILING :: TechVentures :: 10-K Late :: Material Weakness',
-                'PERMIT_EXP :: GreenBuild :: NYC-DOB-2026 :: 14 Days Remain',
-                'NFPA_VIOL :: Harbor Logistics :: NFPA-72-2026 :: Sprinkler Fail',
-                'ENERGY_AUDIT :: Apex Tower :: ASHRAE-90.1 :: Non-Conformance',
-                'WASTE_MGMT :: ChemProcess :: RCRA-2026-0055 :: Manifest Error',
-                'ELEVATOR_CERT :: One Liberty :: DOB-ELEV-2026 :: Expired',
-                'LEAD_PAINT :: Harborview Apts :: EPA-RRP-2026 :: Disclosure Fail',
-            ];
-            let lineIdx = 0;
+        // Signal monitor JS moved to isolated script below
+    </script>
 
-            function addLine() {
-                if (document.hidden) {
-                    setTimeout(addLine, 1000);
-                    return;
-                }
-                var el = document.createElement('div');
-                el.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.625;padding:4px 0;opacity:0;transition:opacity 0.3s ease;';
-                var isMatch = lineIdx % 3 === 2;
-                el.style.color = isMatch ? '#D4622B' : '#4D5562';
-                el.textContent = (isMatch ? '[MATCH] ' : '[SCAN]  ') + dataPoints[lineIdx % dataPoints.length];
-                signalFeed.appendChild(el);
-                setTimeout(function() { el.style.opacity = '1'; }, 50);
-                while (signalFeed.children.length > 12) {
-                    signalFeed.removeChild(signalFeed.firstChild);
-                }
-                lineIdx++;
-                setTimeout(addLine, 2200);
-            }
-            setTimeout(addLine, 500);
+    <!-- Signal Monitor Feed — isolated script -->
+    <script>
+    (function() {
+        var feed = document.getElementById('signal-monitor-feed');
+        if (!feed) return;
+        var data = [
+            'EPA_VIOLATION :: Acme Industries :: NOV-2026-0142 :: $245,000',
+            'OSHA_CITATION :: BuildCo LLC :: SER-2026-0891 :: Willful',
+            'LL97_PENALTY :: 277 Park Ave :: ENERGY_STAR: 14 :: $1.54M/yr',
+            'FDA_WARNING :: PharmaCo Inc :: 483-OBS-2026 :: cGMP Failure',
+            'DOT_AUDIT :: FastFreight :: CSA-BASICs: 4/7 :: Conditional',
+            'FIRE_INSP :: Metro Tower :: FDNY-2026-3301 :: Failed',
+            'ADA_COMP :: Retail Holdings :: DOJ-2026-0044 :: Non-Compliant',
+            'HIPAA_BREACH :: HealthNet :: HHS-2026-0217 :: 12,400 Records',
+            'SEC_FILING :: TechVentures :: 10-K Late :: Material Weakness',
+            'PERMIT_EXP :: GreenBuild :: NYC-DOB-2026 :: 14 Days Remain',
+            'NFPA_VIOL :: Harbor Logistics :: NFPA-72-2026 :: Sprinkler Fail',
+            'ENERGY_AUDIT :: Apex Tower :: ASHRAE-90.1 :: Non-Conformance',
+            'WASTE_MGMT :: ChemProcess :: RCRA-2026-0055 :: Manifest Error',
+            'ELEVATOR_CERT :: One Liberty :: DOB-ELEV-2026 :: Expired',
+            'LEAD_PAINT :: Harborview Apts :: EPA-RRP-2026 :: Disclosure Fail'
+        ];
+        var idx = 0;
+        function tick() {
+            if (document.hidden) { setTimeout(tick, 1000); return; }
+            var el = document.createElement('div');
+            var m = idx % 3 === 2;
+            el.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.625;padding:4px 0;color:' + (m ? '#D4622B' : '#4D5562') + ';';
+            el.textContent = (m ? '[MATCH] ' : '[SCAN]  ') + data[idx % data.length];
+            feed.appendChild(el);
+            while (feed.children.length > 12) feed.removeChild(feed.firstChild);
+            idx++;
+            setTimeout(tick, 2200);
         }
+        setTimeout(tick, 800);
+    })();
     </script>
 
     <!-- Vercel Analytics + Speed Insights -->
