@@ -6,7 +6,9 @@
     <title>Thresh — Signal-Based Outbound for Niche B2B</title>
     <meta name="description" content="Signal-based outbound for B2B companies selling into regulated industries. I find public compliance data your prospects don't know is exposed, build scored lists, and write the messages.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
     <meta name="google-site-verification" content="qUKtAo5uOe43PVS3e17HTVSnfXDc0atXlYjwzUjEEx4" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
     <link rel="canonical" href="https://runthresh.com/">
 
     <!-- Open Graph -->
@@ -14,12 +16,14 @@
     <meta property="og:title" content="Thresh — Signal-Based Outbound for Niche B2B">
     <meta property="og:description" content="I find public compliance data your prospects don't know is exposed, build scored lists, and write the messages. First 10 prospects free.">
     <meta property="og:url" content="https://runthresh.com/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
     <meta property="og:site_name" content="Thresh">
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Thresh — Signal-Based Outbound for Niche B2B">
     <meta name="twitter:description" content="I find public compliance data your prospects don't know is exposed, build scored lists, and write the messages. First 10 prospects free.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -30,7 +34,7 @@
           "@type": "ProfessionalService",
           "name": "Thresh",
           "url": "https://runthresh.com",
-          "description": "Signal-based outbound for B2B companies selling into regulated industries. We find public compliance data prospects don't know is exposed, build scored lists, and write the messages.",
+          "description": "Signal-based outbound for B2B companies selling into regulated industries. I find public compliance data prospects don't know is exposed, build scored lists, and write the messages.",
           "email": "lucas.linares@runthresh.com",
           "areaServed": "US",
           "serviceType": ["Signal-Based Outbound", "B2B Lead Generation", "Prospect Research"],
@@ -76,361 +80,27 @@
               }
             }
           ]
+        },
+        {
+          "@type": "Person",
+          "name": "Lucas Linares",
+          "jobTitle": "Founder",
+          "url": "https://runthresh.com",
+          "worksFor": { "@type": "Organization", "name": "Thresh" },
+          "sameAs": [
+            "https://www.linkedin.com/in/lucas-linares1/",
+            "https://github.com/lucasvibecoder"
+          ]
         }
       ]
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./output.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                borderRadius: {
-                    DEFAULT: '0px',
-                    none: '0px',
-                    sm: '0px',
-                    md: '0px',
-                    lg: '0px',
-                    xl: '0px',
-                    '2xl': '0px',
-                    '3xl': '0px',
-                    full: '0px',
-                },
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#080808',
-                            surface: '#141414',
-                            'surface-alt': '#1A1A1A',
-                            border: 'rgba(255,255,255, 0.10)',
-                            'border-hover': '#00FF41',
-                            accent: '#00FF41',
-                            'accent-hover': '#33FF66',
-                            'accent-light': 'rgba(0, 255, 65, 0.10)',
-                            secondary: '#D4622B',
-                            'secondary-hover': '#E87040',
-                            'secondary-light': 'rgba(212, 98, 43, 0.10)',
-                            text: '#E8EAF0',
-                            muted: '#8B919A',
-                            faint: '#4D5562',
-                        }
-                    },
-                    fontFamily: {
-                        display: ['"Inter Tight"', 'sans-serif'],
-                        body: ['"Inter Tight"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Scroll reveal animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Stagger children */
-        .stagger > .reveal:nth-child(1) { transition-delay: 0s; }
-        .stagger > .reveal:nth-child(2) { transition-delay: 0.12s; }
-        .stagger > .reveal:nth-child(3) { transition-delay: 0.24s; }
-        .stagger > .reveal:nth-child(4) { transition-delay: 0.36s; }
-
-        /* Nav scroll state */
-        nav {
-            transition: background-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), border-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-        }
-        nav.scrolled {
-            background-color: rgba(8, 8, 8, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow:
-                0 1px 0 0 rgba(255,255,255, 0.06),
-                0 4px 12px rgba(0,0,0, 0.3);
-        }
-
-        /* Machined panel shadow — Blueprint inset bevel */
-        .panel {
-            box-shadow:
-                inset 0 0 0 1px rgba(255,255,255, 0.10),
-                inset 0 0.5px 0 0 rgba(255,255,255, 0.06),
-                0 0 10px 0 rgba(0,0,0, 0.15);
-            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-        }
-
-        /* Card hover — green inset glow */
-        .card-lift {
-            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-        }
-        .card-lift:hover {
-            box-shadow:
-                inset 0 0 0 1px rgba(0, 255, 65, 0.25),
-                inset 0 0.5px 0 0 rgba(0, 255, 65, 0.15),
-                0 4px 24px rgba(0, 255, 65, 0.08);
-            transform: translateY(-2px);
-        }
-
-        /* CTA button — green shadow */
-        .btn-primary {
-            transition: all 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-        }
-        .btn-primary:hover {
-            box-shadow: 0 4px 20px rgba(0, 255, 65, 0.25);
-        }
-
-        /* Secondary CTA — orange shadow */
-        .btn-secondary {
-            transition: all 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-        }
-        .btn-secondary:hover {
-            box-shadow: 0 4px 20px rgba(212, 98, 43, 0.25);
-        }
-
-        /* Divider */
-        .divider {
-            height: 1px;
-            background: rgba(255,255,255, 0.08);
-        }
-
-        /* Headline accent — green */
-        .headline-accent {
-            color: #00FF41;
-        }
-
-        /* Scoped uppercase for section headings */
-        .section-heading {
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-
-        /* Section label — mono with // prefix */
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .section-label::before {
-            content: '// ';
-            opacity: 0.5;
-        }
-
-        /* Email card — square corners, panel shadow */
-        .email-card {
-            font-family: 'JetBrains Mono', monospace;
-            background: #111111;
-            border: none;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow:
-                inset 0 0 0 1px rgba(255,255,255, 0.10),
-                inset 0 0.5px 0 0 rgba(255,255,255, 0.06),
-                0 0 10px 0 rgba(0,0,0, 0.15);
-        }
-        .email-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 16px;
-            background: #181818;
-            border-bottom: 1px solid rgba(255,255,255, 0.08);
-        }
-        /* Signal strength squares (replaces traffic light dots) */
-        .email-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 0;
-        }
-        .email-dot:nth-child(1) { background: #00FF41; opacity: 0.3; }
-        .email-dot:nth-child(2) { background: #00FF41; opacity: 0.6; }
-        .email-dot:nth-child(3) { background: #00FF41; opacity: 1; }
-        .email-label {
-            font-size: 11px;
-            color: #00FF41;
-            letter-spacing: 0.05em;
-            margin-left: 8px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .email-body {
-            padding: 24px 28px;
-            font-size: 14px;
-            line-height: 1.8;
-            color: #C5CBD3;
-        }
-        @media (max-width: 640px) {
-            .email-body {
-                padding: 16px 18px;
-                font-size: 13px;
-                line-height: 1.7;
-            }
-        }
-
-        /* Provenance label for source attribution text */
-        .provenance-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            letter-spacing: 0.02em;
-            color: #C5CBD3;
-        }
-
-        /* Form inputs — square, mono, inset shadow */
-        .form-input {
-            background: #111111;
-            border: 1px solid transparent;
-            border-radius: 0;
-            padding: 14px 16px;
-            min-height: 48px;
-            color: #E8EAF0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 15px;
-            width: 100%;
-            transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-            box-shadow:
-                inset 0 0 0 1px rgba(255,255,255, 0.10),
-                inset 0 -1px 1px 0 rgba(255,255,255, 0.04);
-        }
-        .form-input:focus {
-            outline: none;
-            box-shadow:
-                inset 0 0 0 1px rgba(0, 255, 65, 0.4),
-                inset 0 -1px 1px 0 rgba(0, 255, 65, 0.1);
-        }
-        .form-input::placeholder {
-            color: #4D5562;
-        }
-
-        /* Scroll indicator bounce */
-        @keyframes gentle-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(6px); }
-        }
-
-        /* Check list markers — > in green */
-        .list-check li::before {
-            content: '>';
-            color: #00FF41;
-            font-weight: 700;
-            margin-right: 12px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        /* X list markers — // in faint */
-        .list-x li::before {
-            content: '//';
-            color: #4D5562;
-            font-weight: 700;
-            margin-right: 12px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Typing cursor — blinking green block */
-        .typing-cursor::after {
-            content: '\2588';
-            color: #00FF41;
-            animation: blink-cursor 1s step-end infinite;
-        }
-        @keyframes blink-cursor {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Signal monitor — subtle green glow pulse with inset panel */
-        .signal-monitor {
-            animation: signal-glow 3s ease-in-out infinite;
-        }
-        @keyframes signal-glow {
-            0%, 100% {
-                box-shadow:
-                    inset 0 0 0 1px rgba(0, 255, 65, 0.08),
-                    inset 0 0.5px 0 0 rgba(0, 255, 65, 0.04),
-                    0 0 0 rgba(0, 255, 65, 0);
-            }
-            50% {
-                box-shadow:
-                    inset 0 0 0 1px rgba(0, 255, 65, 0.08),
-                    inset 0 0.5px 0 0 rgba(0, 255, 65, 0.04),
-                    0 0 20px rgba(0, 255, 65, 0.06);
-            }
-        }
-
-        /* Dossier card — diagonal watermark */
-        .dossier-card {
-            position: relative;
-            overflow: hidden;
-        }
-        .dossier-card::before {
-            content: 'SIGNAL VERIFIED';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-35deg);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 28px;
-            font-weight: 700;
-            color: rgba(0, 255, 65, 0.04);
-            letter-spacing: 0.15em;
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        /* Redacted items — desktop hover reveal, mobile normal text */
-        @media (hover: hover) {
-            .redacted-item {
-                background: #141414;
-                color: #141414;
-                padding: 2px 4px;
-                transition: color 0.3s ease, background 0.3s ease;
-                cursor: pointer;
-            }
-            .redacted-item:hover {
-                color: #00FF41;
-                background: transparent;
-            }
-        }
-
-        /* Focus-visible ring — keyboard navigation only */
-        .form-input:focus-visible,
-        .btn-primary:focus-visible,
-        .btn-secondary:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 255, 65, 0.3);
-        }
-
-        /* Mobile Safari 100vh fix — dvh accounts for browser chrome */
-        @supports (min-height: 100dvh) {
-            section.min-h-screen { min-height: 100dvh; }
-        }
-
-        /* Scanline overlay — desktop only */
-        @media (min-width: 768px) {
-            body::after {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: repeating-linear-gradient(
-                    0deg,
-                    rgba(0, 255, 65, 0.008) 0px,
-                    rgba(0, 255, 65, 0.008) 1px,
-                    transparent 1px,
-                    transparent 3px
-                );
-                pointer-events: none;
-                z-index: 1;
-            }
-        }
-    </style>
 </head>
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
@@ -476,8 +146,8 @@
                         Show Me the Signal
                     </a>
                 </div>
-                <a href="#example" class="hidden sm:block mt-16 opacity-40 text-brand-muted transition-opacity hover:opacity-70" style="animation: gentle-bounce 2s ease-in-out infinite 1s;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <a href="#example" aria-label="Scroll to example" class="hidden sm:block mt-16 opacity-40 text-brand-muted transition-opacity hover:opacity-70" style="animation: gentle-bounce 2s ease-in-out infinite 1s;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </a>
@@ -505,7 +175,7 @@
         <section id="example" class="py-16 sm:py-32 px-6 scroll-mt-20">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
-                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">What This Looks Like</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Real Example</p>
                     <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">
                         What this looks like in practice.
                     </h2>
@@ -573,18 +243,18 @@
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-10 text-center">What Reps Say When They See It</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
-                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"I would absolutely send that to a customer."</p>
                         <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Samsara</p>
-                    </div>
-                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
+                    </blockquote>
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"All of that is insanely actionable. Can you run it for another company?"</p>
                         <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Trane</p>
-                    </div>
-                    <div class="reveal bg-brand-surface panel p-6 dossier-card">
+                    </blockquote>
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
                         <p class="text-brand-text text-base leading-relaxed mb-4">"Damn dude this is amazing. We need this a lot in my industry."</p>
                         <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Truckstop</p>
-                    </div>
+                    </blockquote>
                 </div>
                 <div class="reveal text-center mt-10">
                     <a href="#contact" class="text-brand-accent hover:text-brand-accent-hover font-medium text-base transition-colors">
@@ -668,13 +338,13 @@
                         </div>
                         <ul class="reveal list-x space-y-5">
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                <span class="redacted-item">Horizontal SaaS selling to other tech companies — your buyers are too sophisticated and the data advantage is thin</span>
+                                <span class="redacted-item" tabindex="0" role="button">Horizontal SaaS selling to other tech companies — your buyers are too sophisticated and the data advantage is thin</span>
                             </li>
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                <span class="redacted-item">Companies that need someone to manage their CRM, inbox, or SDR team — I deliver intelligence and messages, not execution</span>
+                                <span class="redacted-item" tabindex="0" role="button">Companies that need someone to manage their CRM, inbox, or SDR team — I deliver intelligence and messages, not execution</span>
                             </li>
                             <li class="flex text-brand-muted text-sm leading-relaxed">
-                                <span class="redacted-item">"Let's test some AI outbound" budgets — if the problem isn't obvious and the data doesn't exist, this isn't the right fit</span>
+                                <span class="redacted-item" tabindex="0" role="button">"Let's test some AI outbound" budgets — if the problem isn't obvious and the data doesn't exist, this isn't the right fit</span>
                             </li>
                         </ul>
                     </div>
@@ -806,13 +476,26 @@
                 <div id="form-success" class="reveal text-center hidden">
                     <div class="bg-brand-surface panel p-10">
                         <p class="text-brand-accent font-mono font-bold text-lg mb-3">Got it.</p>
-                        <p class="text-brand-muted text-base">I'll look at your market and reply within 24 hours with what I'd pull.</p>
+                        <p class="text-brand-muted text-base mb-6">I'll look at your market and reply within 24 hours with what I'd pull.</p>
+                        <a href="https://cal.com/lucas-gfxkfd/30min" rel="noopener noreferrer" class="inline-block text-brand-accent hover:text-brand-accent-hover font-medium text-sm transition-colors">
+                            Or book 30 minutes now →
+                        </a>
+                    </div>
+                </div>
+
+                <div id="form-error" class="reveal text-center hidden">
+                    <div class="bg-brand-surface panel p-10">
+                        <p class="text-brand-secondary font-mono font-bold text-lg mb-3">Something went wrong.</p>
+                        <p class="text-brand-muted text-base mb-6">Try again, or email me directly.</p>
+                        <a href="mailto:lucas.linares@runthresh.com" class="inline-block text-brand-accent hover:text-brand-accent-hover font-medium text-sm transition-colors">
+                            lucas.linares@runthresh.com →
+                        </a>
                     </div>
                 </div>
 
                 <div class="reveal text-center mt-8">
                     <p class="text-brand-muted text-sm mb-3">Or skip the form</p>
-                    <a href="https://cal.com/lucas-gfxkfd/30min" class="inline-block text-brand-accent hover:text-brand-accent-hover font-medium text-sm transition-colors">
+                    <a href="https://cal.com/lucas-gfxkfd/30min" rel="noopener noreferrer" class="inline-block text-brand-accent hover:text-brand-accent-hover font-medium text-sm transition-colors">
                         Book 30 minutes →
                     </a>
                 </div>
@@ -829,11 +512,11 @@
                     lucas.linares@runthresh.com
                 </a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="https://www.linkedin.com/in/lucas-linares1/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                <a href="https://www.linkedin.com/in/lucas-linares1/" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
                     LinkedIn
                 </a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="https://github.com/lucasvibecoder" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                <a href="https://github.com/lucasvibecoder" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
                     GitHub
                 </a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
@@ -876,6 +559,7 @@
         // Form submission with success state
         const form = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
         if (form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -889,7 +573,15 @@
                         form.classList.add('hidden');
                         formSuccess.classList.remove('hidden');
                         formSuccess.classList.add('active');
+                    } else {
+                        form.classList.add('hidden');
+                        formError.classList.remove('hidden');
+                        formError.classList.add('active');
                     }
+                }).catch(function() {
+                    form.classList.add('hidden');
+                    formError.classList.remove('hidden');
+                    formError.classList.add('active');
                 });
             });
         }

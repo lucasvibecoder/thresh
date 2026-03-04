@@ -2,26 +2,39 @@
 
 ## 1. What This Is
 - Landing page for Thresh — signal-based outbound for niche B2B companies.
-- Single-page site: `index.html`. No framework, no build step.
-- Stack: HTML + Tailwind CSS (CDN) + vanilla JS.
+- Single-page site: `index.html` with a Tailwind CSS build step.
+- Stack: HTML + Tailwind CSS v4 (built via `@tailwindcss/cli`) + vanilla JS.
 - Live at runthresh.com, deployed via Vercel from `main` branch.
+- **Build commands:**
+  - `npm run build` — generates `output.css` (run after any Tailwind class changes in `index.html`)
+  - `npm run dev` — watch mode, rebuilds on file changes
+- **CSS architecture:**
+  - `src/input.css` — Tailwind import, `@theme` config (colors, fonts, radius), and all custom CSS
+  - `output.css` — generated file, committed for local preview. Vercel rebuilds on deploy.
+  - No CDN — CSS is pre-built at build time.
 
-## 2. Design System
-- **Fonts**: Syne (display/headings), Outfit (body), JetBrains Mono (code/email cards)
-- **Color tokens** (defined in `tailwind.config`):
-  - `brand-bg`: `#0A0A0A` (page background)
+## 2. Design System (Sovereign Engineering reskin)
+- **Fonts**: Inter Tight (display + body), JetBrains Mono (code/email cards/labels)
+- **Aesthetic**: Terminal/hacker — square corners (all border-radius forced to 0), scanline overlay on desktop, monospace labels with `//` prefixes, green accent on near-black
+- **Color tokens** (defined in `src/input.css` `@theme` block):
+  - `brand-bg`: `#080808` (page background)
   - `brand-surface`: `#141414` (cards)
   - `brand-surface-alt`: `#1A1A1A` (card variants)
-  - `brand-border`: `#242424` (card/section borders)
-  - `brand-accent`: `#D4622B` (orange — CTAs, highlights, accent text)
-  - `brand-accent-hover`: `#E87040` (hover state)
-  - `brand-accent-light`: `rgba(212, 98, 43, 0.10)` (subtle accent bg)
-  - `brand-text`: `#E8E6E1` (primary text)
-  - `brand-muted`: `#8A8880` (secondary text)
-  - `brand-faint`: `#4A4A45` (tertiary/disabled text)
-- **Card pattern**: `bg-brand-surface border border-brand-border rounded-xl p-8 card-lift`
-- **CTA buttons**: `.btn-primary` class. Primary = solid accent bg. Secondary = border with hover fill.
-- Keep the dark, minimal, high-contrast aesthetic. No color additions outside the existing palette.
+  - `brand-border`: `rgba(255,255,255, 0.10)` (card/section borders)
+  - `brand-border-hover`: `#00FF41` (hover border)
+  - `brand-accent`: `#00FF41` (green — CTAs, highlights, accent text)
+  - `brand-accent-hover`: `#33FF66` (hover state)
+  - `brand-accent-light`: `rgba(0, 255, 65, 0.10)` (subtle accent bg)
+  - `brand-secondary`: `#D4622B` (orange — secondary CTAs)
+  - `brand-secondary-hover`: `#E87040` (secondary hover)
+  - `brand-secondary-light`: `rgba(212, 98, 43, 0.10)` (subtle secondary bg)
+  - `brand-text`: `#E8EAF0` (primary text)
+  - `brand-muted`: `#9CA1AA` (secondary text)
+  - `brand-faint`: `#4D5562` (tertiary/disabled text)
+- **Card pattern**: `bg-brand-surface panel p-8 card-lift` (panel = inset bevel shadow, no rounded corners)
+- **CTA buttons**: `.btn-primary` = solid green bg, black text. `.btn-secondary` = orange border with hover fill.
+- **Section labels**: `.section-label` — JetBrains Mono with auto `// ` prefix via CSS `::before`
+- Keep the dark, terminal-aesthetic, high-contrast look. No color additions outside the existing palette.
 
 ## 3. Core Behavior
 - Tone: Direct, concise. Match the site's existing copy voice — punchy, confident, no fluff.
@@ -33,9 +46,9 @@
 - These are reference material — read them for context but don't modify unless asked.
 
 ## 5. Editing Rules
-- All changes happen in `index.html` unless creating new pages.
-- Preserve inline Tailwind config and styles in `<head>` — don't extract to separate files unless asked.
-- Test changes by opening the file directly in browser (no server needed).
+- HTML changes go in `index.html`. CSS/theme changes go in `src/input.css`.
+- After changing Tailwind classes in HTML or custom CSS in `src/input.css`, run `npm run build` to regenerate `output.css`.
+- Test changes by opening `index.html` directly in browser (no server needed).
 - Keep the page fast — no additional JS libraries or frameworks without asking.
 
 ## 6. SEO

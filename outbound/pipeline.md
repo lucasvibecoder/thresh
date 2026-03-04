@@ -26,6 +26,7 @@
 | 8 | Trucksafe | DOT training + compliance consulting | trucksafe.com | Ready to pitch |
 | 9 | OpenEyes | Fleet insurtech | openeyes.com | Ready to pitch |
 | 10 | Koffie Financial | Trucking insurance MGA | koffie.com | Ready to pitch |
+| 11 | Usul | Defense tech — AI gov contracting | usul.com | Intro call March 6 |
 
 ---
 
@@ -134,6 +135,18 @@
 **OpenEyes (#9):** Lead with crash data and fatal incidents, not OOS rates. Insurance companies think in claims frequency and severity. "12 crashes including 1 fatal" hits harder than "52% driver OOS" for this audience.
 
 **Koffie (#10):** Do NOT position as "data they don't have." They pull FMCSA. Position as "prospecting intelligence they haven't thought to use this way" — carriers in acute distress who will be shopping for new insurance when their current carrier non-renews.
+
+---
+
+### 11. Usul (usul.com)
+- **Sub-niche:** Defense tech — AI platform for winning government contracts (displacing GovWin/Deltek)
+- **Angle:** Consulting/Thresh offer — build the signal-based outbound system that identifies defense contractors ready to switch from GovWin. Signals: SBIR Phase II with no Phase III transition, GovWin renewal timing, BD/capture manager hiring, companies losing bids, new defense funding rounds.
+- **Stage:** $3.3M seed (YC W24), 10 employees, founded 2024
+- **Founders:** Jarren Reid (CEO, 21yo, ex-Palantir intern, defense since 15), Joon (CTO), Parm (founding engineer)
+- **Traction:** 60+ customers, $20B+ in contracts analyzed, $400M in contract pipeline generated for users, moving upmarket into Fortune 500 defense primes
+- **Location:** San Francisco, CA
+- **Status:** Intro call booked Friday March 6, 10:45am PT. Jarren + Joon both on invite. They reached out via YC Work at a Startup. Reframed from AE role → GTME/consulting conversation.
+- **Notes:** Built on Palantir Foundry. Running displacement play against GovWin (legacy incumbent). Defense tech is a potential signature vertical for Thresh — signal-rich (public contract data, SAM.gov, SBIR.gov), no Clay/GTM competition in the space. First defense tech prospect.
 
 ---
 
