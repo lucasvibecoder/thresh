@@ -860,6 +860,17 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // Fallback: force-activate any reveals the observer missed (mobile Safari edge cases)
+        setTimeout(() => {
+            document.querySelectorAll('.reveal:not(.active)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight + 50 && rect.bottom > -50) {
+                    el.classList.add('active');
+                    observer.unobserve(el);
+                }
+            });
+        }, 1200);
+
         // Form submission with success state
         const form = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
@@ -959,23 +970,14 @@
             ];
             let lineIdx = 0;
             let feedPaused = false;
-            let feedVisible = false;
 
             // Pause when tab hidden
             document.addEventListener('visibilitychange', () => {
                 feedPaused = document.hidden;
             });
 
-            // Only run when visible
-            const feedObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    feedVisible = entry.isIntersecting;
-                });
-            }, { threshold: 0 });
-            feedObserver.observe(signalFeed.parentElement);
-
             function addLine() {
-                if (feedPaused || !feedVisible) {
+                if (feedPaused) {
                     setTimeout(addLine, 1000);
                     return;
                 }
