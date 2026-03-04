@@ -911,46 +911,38 @@
             }
         });
 
-        // ===================== TYPING ANIMATION =====================
-        const typingPhrases = [
+        // Typing + Signal monitor JS moved to isolated scripts below
+    </script>
+
+    <!-- Typing Animation — isolated script -->
+    <script>
+    (function() {
+        var el = document.getElementById('typing-text');
+        if (!el) return;
+        var phrases = [
             '> scanning public enforcement databases...',
             '> cross-referencing compliance violations...',
             '> matching signals to decision-makers...',
             '> building scored prospect lists...',
-            '> generating signal-matched messages...',
+            '> generating signal-matched messages...'
         ];
-        const typingEl = document.getElementById('typing-text');
-        if (typingEl) {
-            let phraseIdx = 0;
-            let charIdx = 0;
-            let deleting = false;
-            function typeLoop() {
-                const phrase = typingPhrases[phraseIdx];
-                if (!deleting) {
-                    typingEl.textContent = phrase.substring(0, charIdx + 1);
-                    charIdx++;
-                    if (charIdx === phrase.length) {
-                        deleting = true;
-                        setTimeout(typeLoop, 2000);
-                        return;
-                    }
-                    setTimeout(typeLoop, 45);
-                } else {
-                    typingEl.textContent = phrase.substring(0, charIdx - 1);
-                    charIdx--;
-                    if (charIdx === 0) {
-                        deleting = false;
-                        phraseIdx = (phraseIdx + 1) % typingPhrases.length;
-                        setTimeout(typeLoop, 500);
-                        return;
-                    }
-                    setTimeout(typeLoop, 25);
-                }
+        var pi = 0, ci = 0, del = false;
+        function loop() {
+            var p = phrases[pi];
+            if (!del) {
+                el.textContent = p.substring(0, ci + 1);
+                ci++;
+                if (ci === p.length) { del = true; setTimeout(loop, 2000); return; }
+                setTimeout(loop, 45);
+            } else {
+                el.textContent = p.substring(0, ci - 1);
+                ci--;
+                if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; setTimeout(loop, 500); return; }
+                setTimeout(loop, 25);
             }
-            typeLoop();
         }
-
-        // Signal monitor JS moved to isolated script below
+        loop();
+    })();
     </script>
 
     <!-- Signal Monitor Feed — isolated script -->
