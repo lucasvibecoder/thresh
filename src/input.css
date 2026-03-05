@@ -38,9 +38,10 @@
 /* Scroll reveal animations */
 .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 .reveal.active {
     opacity: 1;
@@ -58,12 +59,17 @@ nav {
     transition: background-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), border-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
 }
 nav.scrolled {
-    background-color: rgba(8, 8, 8, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(8, 8, 8, 0.95);
     box-shadow:
         0 1px 0 0 rgba(255,255,255, 0.06),
         0 4px 12px rgba(0,0,0, 0.3);
+}
+@media (min-width: 768px) {
+    nav.scrolled {
+        background-color: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
 }
 
 /* Machined panel shadow — Blueprint inset bevel */
@@ -75,16 +81,18 @@ nav.scrolled {
     transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
 }
 
-/* Card hover — green inset glow */
-.card-lift {
-    transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
-}
-.card-lift:hover {
-    box-shadow:
-        inset 0 0 0 1px rgba(0, 255, 65, 0.25),
-        inset 0 0.5px 0 0 rgba(0, 255, 65, 0.15),
-        0 4px 24px rgba(0, 255, 65, 0.08);
-    transform: translateY(-2px);
+/* Card hover — green inset glow (desktop only) */
+@media (min-width: 768px) {
+    .card-lift {
+        transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9), transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
+    }
+    .card-lift:hover {
+        box-shadow:
+            inset 0 0 0 1px rgba(0, 255, 65, 0.25),
+            inset 0 0.5px 0 0 rgba(0, 255, 65, 0.15),
+            0 4px 24px rgba(0, 255, 65, 0.08);
+        transform: translateY(-2px);
+    }
 }
 
 /* CTA button — green shadow */
@@ -247,9 +255,11 @@ nav.scrolled {
     50% { opacity: 0; }
 }
 
-/* Signal monitor — subtle green glow pulse with inset panel */
-.signal-monitor {
-    animation: signal-glow 3s ease-in-out infinite;
+/* Signal monitor — subtle green glow pulse (desktop only) */
+@media (min-width: 768px) {
+    .signal-monitor {
+        animation: signal-glow 3s ease-in-out infinite;
+    }
 }
 @keyframes signal-glow {
     0%, 100% {
