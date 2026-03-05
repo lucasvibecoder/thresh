@@ -1,7 +1,154 @@
 # Module 1: Competitive Landscape Research
 
-**Research Date:** February 2026  
-**Research Goal:** Understand the competitive landscape, positioning, pricing, and differentiation of fractional GTM engineers and Clay agencies.
+**Research Date:** February 2026 (original), March 2026 (updated)
+**Research Goal:** Understand the competitive landscape, positioning, pricing, and differentiation across signal-based outbound services, fractional GTM engineers, and Clay agencies.
+
+---
+
+## Part 0: Direct Competitors — Signal-Based Outbound Using Public Data (March 2026 Update)
+
+> **Key Finding:** After 30+ targeted searches, we found **one direct competitor** and **zero others** doing what Thresh does — using public government/regulatory data to build outbound campaigns. The market for "signal-based outbound" is large and growing, but nearly everyone defines "signals" as intent data (website visits, G2 research, job changes, funding rounds). The specific niche of using FMCSA violations, OSHA records, permit filings, and compliance data to identify prospects with provable problems is essentially unoccupied territory.
+
+### Slingshot GTM (slingshotgtm.com) — CLOSEST DIRECT COMPETITOR
+
+**Headline / One-Liner Positioning:**
+- "Find and engage prospects with a _reason to buy_ right now."
+- Vertical SaaS outbound using government filings, violations, and permits
+
+**Services Offered:**
+- Custom pain-signal targeting methodology
+- Multiple validated prospect lists based on verified pain
+- Outbound playbook with tested messaging frameworks
+- Multi-campaign iteration and refinement (Weeks 1-8, three phases)
+- Automation builds using tools like Clay (separate pricing)
+
+**Pricing:**
+- Managed Service: $8,000/month (2-month minimum = $16K to start)
+- Automation Setup: $5K–$40K+ depending on complexity
+
+**ICP:**
+- Vertical SaaS companies with outbound sales teams
+
+**Social Proof:**
+- Named logos: Procore, HeartFlow, Donesafe, Shopmonkey
+- Full case study: Shrlock (CRM for HR consultants)
+  - 5% meeting booked rate from cold outbound
+  - 14% response rate (vs. typical <2%)
+  - "One new customer every week"
+
+**Key Differentiator:**
+- Government data as signal source (same core thesis as Thresh)
+- Before/after email comparison on site
+- Three-phase engagement model with clear timeline
+
+**Where Slingshot Beats Thresh:**
+- Named client logos and a full case study with metrics
+- Transparent pricing on site
+- Specific conversion numbers (5% booked rate, 14% response rate)
+- Clear engagement timeline (Weeks 1-8)
+
+**Where Thresh Beats Slingshot:**
+- The 277 Park Ave / LL97 email example is more specific and more compelling than anything on Slingshot's site (specific building, specific score, specific penalty math)
+- Thresh names exact data sources (FMCSA, NYC benchmarking, ENERGY STAR, DOB permits, EPA filings) — Slingshot says "government filings" generically
+- Tighter ICP definition ("regulated, licensed, or inspected industries" vs. broad "vertical SaaS")
+- "Who it's NOT for" section builds trust through anti-sell
+- Terminal design aesthetic is unique and memorable vs. generic SaaS template
+- Free 10 prospects (zero risk) vs. $16K commitment to start
+- Named founder with personal story vs. no founder visibility
+
+**Weakness / Gap:**
+- Slingshot didn't surface in any search index (low SEO presence, likely very new)
+- Broader positioning ("vertical SaaS") is less differentiated
+- High price floor ($8K/mo) excludes founder-led sales companies
+
+---
+
+### Signal-Based Outbound Agencies (Intent Data, NOT Public/Government Data)
+
+These are the closest *operational models* to Thresh but use different signal sources — primarily intent data, job changes, funding, and website behavior rather than government/regulatory filings.
+
+#### Restartt (restartt.ai)
+- **Trademarked "Signal-Based Outbound™"** — owns the phrase
+- Full-stack GTM agency: paid media + signal-based outbound + founder-led content
+- ICP: B2B SaaS companies (150+ clients claimed)
+- Pricing: $7,500+/mo (Fundamentals), $15,000+/mo (Full-Stack)
+- Signals: Website behavior, engagement signals, intent data via Clay. **No public/regulatory data.**
+- Tools: Clay, Apollo, Instantly, AirOps
+- **Relevance to Thresh:** Medium-high in model, low in data sources. They're using standard intent signals, not government data. The trademark on "Signal-Based Outbound" is worth watching — may need different language.
+
+#### Azarian Growth Agency (azariangrowthagency.com)
+- Multi-channel signal-based cold outreach
+- One of the few agencies that explicitly names "regulatory changes" as a signal type
+- Pricing: Budgets start at $5,000, hourly rates $150-199
+- Signals: Role changes, LinkedIn activity, regulatory changes, economic shifts, website activity
+- **Relevance to Thresh:** They mention regulatory signals but treat them as one input among many, not the core. General-purpose agency.
+
+#### DemandZen (demandzen.com)
+- "Signal-to-Meeting Framework" — outbound using industry trigger events
+- Signals: VP hires, funding rounds, product launches
+- Founded 2014, one of the older players
+- **Relevance to Thresh:** Medium on methodology, low on data source.
+
+#### HyperGrowth Partners (playbooks.hypergrowthpartners.com)
+- GTM advisory and playbook creation for signal-based outbound
+- Notable clients: Ramp, Gorgias, Vercel
+- Results: $1.2M pipeline in 4 months
+- Advisory model, not managed execution
+- **Relevance to Thresh:** Low-medium. Standard intent signals.
+
+---
+
+### Vertical Data Providers (Data Only, No Outbound Service)
+
+These companies sell access to public/regulatory data but are data providers, not outbound agencies. They sell the raw material but don't build campaigns.
+
+#### ProsperFleet by Valgen (valgen.com)
+- Fleet/trucking database from FMCSA + state registrations
+- 1.2M U.S. companies, 30M+ vehicles, 2.2M contacts
+- SaaS subscription + custom data pulls
+- **Relevance to Thresh:** Low. Data provider only — no messaging, no signal interpretation, no campaign.
+
+#### CarrierOK (carrier-ok.com)
+- FMCSA carrier intelligence platform, 4M+ profiles updated 4x/day
+- Starts at $1/month self-serve, API access available
+- **Relevance to Thresh:** Low. Pure data platform. Could be a tool in a Thresh-like stack, not a competitor.
+
+#### Carrier Details / eCarrierCheck
+- Additional FMCSA data providers for trucking/carrier market
+- **Relevance to Thresh:** Very low. Niche data tools.
+
+---
+
+### The Reddit / "Make.com + Apollo + ChatGPT" Crowd
+
+A growing category of individuals and micro-agencies building automated cold email with Make.com/n8n + Apollo + ChatGPT. These are the posts flooding r/coldEmail and r/salesdevelopment.
+
+**What they do:**
+- Pull lists from Apollo → clean/verify → scrape LinkedIn posts + job postings + funding → ChatGPT icebreaker → send via Instantly/Smartlead
+- Their "signals" = LinkedIn posts, job changes, funding, company news (standard intent data)
+- Their personalization = "Saw your post about XYZ" style icebreakers
+
+**Why they're NOT competitors:**
+- Generic horizontal targeting (agencies, SaaS, consultants)
+- Surface-level personalization that references *activity*, not *problems*
+- No public/regulatory data, no verifiable claims, no specific domain expertise
+- This is exactly what Thresh positions *against*
+
+**Why they matter:**
+- They're flooding the market with "signal-based" messaging, which means prospects are getting desensitized to the phrase
+- Their definition of "signal" (LinkedIn post, job change) is what most buyers think the word means
+- Thresh needs to differentiate its definition: "signals" = government filings, compliance records, regulatory violations — fundamentally different
+
+---
+
+### Key Competitive Insights (March 2026)
+
+1. **The positioning is wide open.** Nobody else is building outbound campaigns from government/regulatory data signals at scale.
+2. **Slingshot is the only direct competitor** and appears very early-stage (no search index presence).
+3. **"Signal-based outbound" has been claimed** by Restartt (trademarked) and is becoming buzzy — but everyone means intent data. Thresh's version is fundamentally different.
+4. **The Clay agency market is a bloodbath** — 20+ agencies competing on the same tooling at similar price points ($3.5K-15K/mo). Differentiation on tooling alone is a race to the bottom.
+5. **The gap between data providers and campaign builders is Thresh's exact positioning.** CarrierOK sells FMCSA data for $1/mo. Clay agencies charge $10K/mo for workflows. Nobody turns public data into ready-to-send outbound campaigns.
+6. **Thresh's biggest gap is proof.** Every competitor (even mediocre ones) has some form of published results. Thresh needs ONE named case study with conversion metrics.
 
 ---
 
