@@ -30,7 +30,7 @@
   - `brand-secondary-light`: `rgba(212, 98, 43, 0.10)` (subtle secondary bg)
   - `brand-text`: `#E8EAF0` (primary text)
   - `brand-muted`: `#9CA1AA` (secondary text)
-  - `brand-faint`: `#4D5562` (tertiary/disabled text)
+  - `brand-faint`: `#717985` (tertiary/disabled text)
 - **Card pattern**: `bg-brand-surface panel p-8 card-lift` (panel = inset bevel shadow, no rounded corners)
 - **CTA buttons**: `.btn-primary` = solid green bg, black text. `.btn-secondary` = orange border with hover fill.
 - **Section labels**: `.section-label` — JetBrains Mono with auto `// ` prefix via CSS `::before`

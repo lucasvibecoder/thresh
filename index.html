@@ -702,7 +702,7 @@
         function makeLine(i) {
             var el = document.createElement('div');
             var m = i % 3 === 2;
-            el.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.625;padding:4px 0;color:' + (m ? '#D4622B' : '#4D5562') + ';';
+            el.style.cssText = 'font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.625;padding:4px 0;color:' + (m ? '#D4622B' : '#717985') + ';';
             el.textContent = (m ? '[MATCH] ' : '[SCAN]  ') + data[i % data.length];
             return el;
         }

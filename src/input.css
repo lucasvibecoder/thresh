@@ -25,7 +25,7 @@
     --color-brand-secondary-light: rgba(212, 98, 43, 0.10);
     --color-brand-text: #E8EAF0;
     --color-brand-muted: #9CA1AA;
-    --color-brand-faint: #4D5562;
+    --color-brand-faint: #717985;
 
     /* Font families */
     --font-display: "Inter Tight", sans-serif;
@@ -218,7 +218,7 @@ nav.scrolled {
         inset 0 -1px 1px 0 rgba(0, 255, 65, 0.1);
 }
 .form-input::placeholder {
-    color: #4D5562;
+    color: #717985;
 }
 
 /* Scroll indicator bounce */
@@ -238,7 +238,7 @@ nav.scrolled {
 /* X list markers — // in faint */
 .list-x li::before {
     content: '//';
-    color: #4D5562;
+    color: #717985;
     font-weight: 700;
     margin-right: 12px;
     font-family: 'JetBrains Mono', monospace;
@@ -525,7 +525,7 @@ nav.scrolled {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #4D5562;
+    color: #717985;
 }
 
 /* Back link */
