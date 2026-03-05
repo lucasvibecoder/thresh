@@ -335,3 +335,218 @@ nav.scrolled {
         z-index: 1;
     }
 }
+
+/* ===================== BLOG STYLES ===================== */
+
+/* Article prose wrapper */
+.prose {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #C5CBD3;
+}
+.prose > * + * {
+    margin-top: 1.5em;
+}
+.prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+.prose strong {
+    color: #E8EAF0;
+    font-weight: 600;
+}
+
+/* Prose headings */
+.prose h2 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #E8EAF0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255, 0.10);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+.prose h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #E8EAF0;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Prose lists — terminal style */
+.prose ul {
+    list-style: none;
+    padding-left: 0;
+}
+.prose ul li {
+    position: relative;
+    padding-left: 1.75em;
+    margin-bottom: 0.75em;
+}
+.prose ul li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #00FF41;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+}
+.prose ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: prose-counter;
+}
+.prose ol li {
+    position: relative;
+    padding-left: 2.5em;
+    margin-bottom: 0.75em;
+    counter-increment: prose-counter;
+}
+.prose ol li::before {
+    content: counter(prose-counter, decimal-leading-zero) '_';
+    position: absolute;
+    left: 0;
+    color: #00FF41;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* Prose blockquote — email example style */
+.prose blockquote {
+    border-left: 2px solid #00FF41;
+    background: #141414;
+    padding: 1.25em 1.5em;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #C5CBD3;
+    margin: 1.5em 0;
+}
+.prose blockquote p {
+    margin: 0.5em 0;
+}
+
+/* Prose inline code */
+.prose code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    color: #00FF41;
+    background: rgba(0, 255, 65, 0.08);
+    padding: 0.15em 0.4em;
+}
+.prose pre {
+    background: #111111;
+    padding: 1.25em 1.5em;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #C5CBD3;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255, 0.10),
+        inset 0 0.5px 0 0 rgba(255,255,255, 0.06);
+}
+.prose pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Principle card */
+.principle {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255, 0.06);
+}
+.principle:last-child {
+    border-bottom: none;
+}
+.principle-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #00FF41;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+}
+.principle-statement {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #E8EAF0;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+.principle-context {
+    font-size: 0.9rem;
+    color: #9CA1AA;
+    line-height: 1.7;
+}
+
+/* Blog listing card */
+.blog-card {
+    display: block;
+    background: #141414;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255, 0.10);
+    transition: box-shadow 0.3s cubic-bezier(0.4, 1, 0.75, 0.9),
+                transform 0.3s cubic-bezier(0.4, 1, 0.75, 0.9),
+                border-color 0.3s cubic-bezier(0.4, 1, 0.75, 0.9);
+    text-decoration: none;
+}
+.blog-card:hover {
+    border-color: rgba(0, 255, 65, 0.25);
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 255, 65, 0.15),
+        0 4px 24px rgba(0, 255, 65, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Article meta — date + read time */
+.article-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4D5562;
+}
+
+/* Back link */
+.back-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #9CA1AA;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.back-link:hover {
+    color: #00FF41;
+}
+
+/* Blog mobile overrides */
+@media (max-width: 640px) {
+    .prose {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+    .prose h2 {
+        font-size: 1.25rem;
+    }
+    .prose blockquote {
+        padding: 1em 1.25em;
+        font-size: 0.8rem;
+    }
+    .principle-statement {
+        font-size: 0.95rem;
+    }
+    .principle-context {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40 Outbound Principles That Actually Work — Thresh</title>
+    <meta name="description" content="The 40 principles behind signal-based outbound: survival metrics, pain segmentation, signal design, information asymmetry, value-first email quality, data sources, email craft, and system architecture.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
+    <link rel="canonical" href="https://runthresh.com/blog/40-outbound-principles/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="40 Outbound Principles That Actually Work">
+    <meta property="og:description" content="The 40 principles behind signal-based outbound: existential data points, pain segmentation, signal design, information asymmetry, and the craft of writing emails people actually respond to.">
+    <meta property="og:url" content="https://runthresh.com/blog/40-outbound-principles/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
+    <meta property="og:site_name" content="Thresh">
+    <meta property="article:published_time" content="2026-03-04T12:00:00Z">
+    <meta property="article:author" content="Lucas Linares">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="40 Outbound Principles That Actually Work">
+    <meta name="twitter:description" content="The 40 principles behind signal-based outbound: existential data points, pain segmentation, signal design, information asymmetry, and the craft of writing emails people actually respond to.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "40 Outbound Principles That Actually Work",
+      "description": "The 40 principles behind signal-based outbound: survival metrics, pain segmentation, signal design, information asymmetry, value-first email quality, data sources, email craft, and system architecture.",
+      "datePublished": "2026-03-04T12:00:00Z",
+      "author": {
+        "@type": "Person",
+        "name": "Lucas Linares",
+        "url": "https://runthresh.com",
+        "jobTitle": "Founder",
+        "worksFor": { "@type": "Organization", "name": "Thresh" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Thresh",
+        "url": "https://runthresh.com"
+      },
+      "mainEntityOfPage": "https://runthresh.com/blog/40-outbound-principles/",
+      "image": "https://runthresh.com/og-image.png"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+    <link rel="stylesheet" href="../../output.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
+                THRESH_
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors">Blog</a>
+                <a href="/#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
+                    Show Me the Signal
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+
+        <!-- Article Header -->
+        <section class="pt-32 pb-8 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal">
+                    <a href="/blog/" class="back-link">&larr; Back to Blog</a>
+                </div>
+                <div class="reveal mt-8">
+                    <p class="article-meta mb-4">March 2026 &middot; 15 min read</p>
+                    <h1 class="font-display font-[900] section-heading text-3xl sm:text-4xl md:text-5xl leading-[1.1] mb-6">
+                        40 Outbound Principles<br class="hidden sm:block">
+                        That Actually Work
+                    </h1>
+                    <p class="text-brand-muted text-lg leading-relaxed max-w-2xl font-light">
+                        Most outbound fails before you write a word. It's an architecture problem, not a messaging problem. These 40 principles are the methodology I use at Thresh to build signal-based outbound systems for B2B companies in niche, regulated markets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-3xl mx-auto"></div>
+
+        <!-- Article Body -->
+        <article class="py-12 sm:py-16 px-6">
+            <div class="prose">
+
+                <p>
+                    The average cold email reads like this: "Hi [First Name], I noticed your company is growing." The sender has no idea what the recipient's actual problems are. They're guessing. And the prospect can tell.
+                </p>
+                <p>
+                    The problem isn't the email. It's everything that came before it &mdash; the list, the signal, the research, the decision about what to say. 80% of outbound failures happen before anyone writes a single word.
+                </p>
+                <p>
+                    These 40 principles come from building outbound systems across trucking, commercial real estate, construction, healthcare, and other industries where public data creates an unfair advantage. They're organized into 8 categories, from foundational research to the mechanics of writing emails that earn replies.
+                </p>
+
+                <!-- ===== SECTION 1: SURVIVAL METRICS ===== -->
+                <h2>Survival Metrics</h2>
+
+                <p>
+                    Every market has one metric that separates the companies that survive from the ones that don't. In trucking, it's the CSA safety score &mdash; cross a threshold on enough BASICs and the DOT can shut you down. In commercial buildings in New York, it's your ENERGY STAR score relative to LL97 penalty thresholds. In construction, it's your Experience Modification Rate &mdash; too high and you can't bid on jobs.
+                </p>
+                <p>
+                    Finding this metric &mdash; what I call the survival metric &mdash; before you do anything else changes everything downstream. It organizes your signals, your list, and your messaging around the one thing that matters most to the buyer.
+                </p>
+                <p>
+                    A fleet with 4 out of 7 BASICs flagged above the intervention threshold isn't "a company you should reach out to." It's a company facing potential shutdown if the next audit goes badly. That's not an inconvenience. That's existential. And you can see it from public data before they ever hear from you.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P01_</p>
+                    <p class="principle-statement">Every market has one metric that determines competitive survival &mdash; find it before designing signals.</p>
+                    <p class="principle-context">If you skip this step, you'll build plays around signals that are interesting but not urgent. The survival metric is the anchor for everything downstream.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P02_</p>
+                    <p class="principle-statement">A survival metric must be measurable with public data, have existential consequences at a threshold, and create different buying urgency at different positions.</p>
+                    <p class="principle-context">A metric that matters but can't be observed is useless for outbound. A metric that's observable but doesn't create urgency is just trivia. You need both.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P03_</p>
+                    <p class="principle-statement">If a survival metric exists, it organizes all downstream signal design &mdash; plays map to positions relative to the threshold.</p>
+                    <p class="principle-context">Companies near the threshold need different messaging than companies already past it. Position determines whether you lead with prevention or recovery.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P04_</p>
+                    <p class="principle-statement">Not every market has a survival metric. If none found after research, note it and proceed with failure-mode-based play design.</p>
+                    <p class="principle-context">Forcing a survival metric where none exists creates bad plays. Intellectual honesty beats completeness theater. Some markets are organized around multiple distinct pain points instead.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P05_</p>
+                    <p class="principle-statement">The survival metric test: "If this number crosses the threshold, does the company face an existential threat &mdash; not just inconvenience?"</p>
+                    <p class="principle-context">Inconvenient ≠ existential. A low customer satisfaction score is inconvenient. A CSA score that triggers a DOT audit is existential. Calibrate accordingly.</p>
+                </div>
+
+                <!-- ===== SECTION 2: PAIN SEGMENTATION ===== -->
+                <h2>Pain Segmentation</h2>
+
+                <p>
+                    Most sales teams segment by firmographics: revenue range, headcount, industry. This is the wrong axis. Two companies at the same revenue in the same vertical can have completely different buying urgency. One has a clean compliance record. The other just failed an inspection. Same firmographic profile. Radically different readiness to buy.
+                </p>
+                <p>
+                    Signal-based outbound flips this. You segment by pain position &mdash; where the prospect sits relative to a failure mode. Pain intensity determines conversion probability more than company size, funding stage, or tech stack ever will.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P06_</p>
+                    <p class="principle-statement">Segment by pain position, not firmographics. Two companies at the same revenue can have completely different buying urgency.</p>
+                    <p class="principle-context">Your CRM probably has fields for employee count, industry, and revenue. None of those tell you whether a prospect needs to deal with something right now.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P07_</p>
+                    <p class="principle-statement">Each play should target a distinct failure mode or survival metric position &mdash; not a different persona at the same company.</p>
+                    <p class="principle-context">A "VP of Ops play" and a "Director of Safety play" at the same company aren't two plays. That's one play with two contacts. Plays are organized by what's broken, not who's in charge of it.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P08_</p>
+                    <p class="principle-statement">Signal stacking across plays only applies when plays target different failure modes that can co-occur on the same prospect.</p>
+                    <p class="principle-context">When a company triggers multiple signals from different plays, conviction goes up. But only if those signals are independent &mdash; the same event counted twice isn't stacking.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P09_</p>
+                    <p class="principle-statement">The number of plays follows the data &mdash; typically 2&ndash;4. Default 3 unless intelligence clearly supports more or fewer.</p>
+                    <p class="principle-context">Don't force 5 plays to look thorough. Don't squeeze into 1 because it's simpler. Let the research tell you how many distinct failure modes exist.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P10_</p>
+                    <p class="principle-statement">Pain intensity determines conversion probability more than company size, funding stage, or tech stack.</p>
+                    <p class="principle-context">A 15-person company with a regulatory deadline in 60 days will respond faster than a 5,000-person company that might have a problem eventually. Urgency beats authority.</p>
+                </div>
+
+                <!-- ===== SECTION 3: SIGNAL DESIGN ===== -->
+                <h2>Signal Design</h2>
+
+                <p>
+                    "They're hiring" is not a signal. Everyone monitors job postings. "They posted an estimator role 30+ days ago and still have it open" &mdash; that's a signal. It tells you they're struggling to fill a critical role, and that pain has been sitting for at least a month. The timing window matters as much as the event itself.
+                </p>
+                <p>
+                    Good signals need three things: they must be detectable from public data, they must have a timing window that tells you when to reach out, and they must connect causally to the specific pain your product solves. "They raised funding" fails all three &mdash; it's public, but there's no timing urgency and it doesn't connect to a specific problem.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P11_</p>
+                    <p class="principle-statement">A signal must make the prospect say "I need to deal with this NOW or I'm in real trouble." If merely inconvenient, it's not a signal.</p>
+                    <p class="principle-context">Apply the "Oh Sh*t Moment" test. Would this make someone cancel their afternoon to deal with it? If it's just annoying, cap your confidence and move on.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P12_</p>
+                    <p class="principle-statement">Signals have a send window &mdash; evergreen, event-triggered, or seasonal. The window determines campaign cadence.</p>
+                    <p class="principle-context">A funding announcement has a 2&ndash;4 week window. A job posting is live until it's filled, plus about a week. A website restructuring signals a shift over 2&ndash;3 months. Match your outreach timing to the signal's decay.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P13_</p>
+                    <p class="principle-statement">Signal stacking increases conviction. 3+ signals from different plays mean urgency. 1 signal only means standard cadence.</p>
+                    <p class="principle-context">When a fleet has multiple BASICs flagged AND is posting for a safety manager AND had a recent DOT audit &mdash; that's convergent evidence. Treat that prospect differently than one with a single indicator.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P14_</p>
+                    <p class="principle-statement">Second-layer research &mdash; understanding the ICP's customers' market dynamics &mdash; reveals signals invisible from the surface.</p>
+                    <p class="principle-context">If you sell to general contractors, understanding what's happening to the homebuilders they subcontract for tells you more than the contractor's own website. Follow the money one layer deeper.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P15_</p>
+                    <p class="principle-statement">Source discovery should be an independent research step &mdash; systematically search for structured data sources per signal before writing detection specs.</p>
+                    <p class="principle-context">Don't assume where the data lives. Federal databases, state licensing boards, municipal permit systems, industry trade publications &mdash; each signal may have multiple data sources with different reliability.</p>
+                </div>
+
+                <!-- ===== SECTION 4: INFORMATION ASYMMETRY ===== -->
+                <h2>Information Asymmetry</h2>
+
+                <p>
+                    Every play needs an email mode. The decision depends on one question: <strong>"Does our intelligence give us knowledge about their business they probably don't have?"</strong>
+                </p>
+                <p>
+                    If yes &mdash; you know something they'd have to research to find &mdash; lead with a deliverable. I call this a <strong>value-first email</strong>. The deliverable IS the value. An analysis, a benchmark comparison, a compliance projection they can verify in 5 minutes.
+                </p>
+                <p>
+                    If no &mdash; you see a signal but they know their situation better than you &mdash; don't pretend you have insights. Show you understand their condition and ask a smart question. I call this a <strong>diagnostic email</strong>. Three lines. Situation, insight, question.
+                </p>
+                <p>
+                    Here's what a diagnostic email looks like:
+                </p>
+
+                <blockquote>
+                    <p>Subject: compliance timeline</p>
+                    <p>&nbsp;</p>
+                    <p>Noticed your team is hiring operators in three new states this quarter.</p>
+                    <p>&nbsp;</p>
+                    <p>Most companies at your stage don't realize the workers' comp variance between those states can swing costs 30%+ until they're already enrolled.</p>
+                    <p>&nbsp;</p>
+                    <p>Already have someone running point on this, or is it landing on your desk?</p>
+                </blockquote>
+
+                <p>
+                    And here's a value-first email for the same company, if you had the data:
+                </p>
+
+                <blockquote>
+                    <p>Subject: workers' comp cost analysis &mdash; 3 new states</p>
+                    <p>&nbsp;</p>
+                    <p>Your team is hiring operators in Ohio, Texas, and Florida this quarter. Workers' comp rates across those three states range from $1.82 to $4.11 per $100 of payroll for your classification code &mdash; a 126% variance that will hit your P&L by Q3.</p>
+                    <p>&nbsp;</p>
+                    <p>I built a cost projection for each state based on your current headcount growth. Full breakdown attached.</p>
+                    <p>&nbsp;</p>
+                    <p>Does this match what your team is modeling?</p>
+                </blockquote>
+
+                <p>
+                    The diagnostic email earns credibility by asking the right question. The value-first email earns credibility by doing the work for them. Both are valid. Choosing wrong is worse than choosing either.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P16_</p>
+                    <p class="principle-statement">Information asymmetry is the gatekeeper: "Do we know something about their business they probably don't?" If yes, value-first email. If no, diagnostic email. If they know it better &mdash; don't send.</p>
+                    <p class="principle-context">This decision comes before writing a single word. Get it wrong and the email will feel tone-deaf &mdash; either pretending to have insights you don't or hiding insights you do.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P17_</p>
+                    <p class="principle-statement">Diagnostic emails: Situation, Insight, Inquisition. 3&ndash;4 lines max. Subject line 2&ndash;5 words. No value statement, no bridge.</p>
+                    <p class="principle-context">The most common mistake is a diagnostic email that's too long. If you're explaining, you're not diagnosing. The question IS the CTA. Don't add "want to chat?" after it.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P18_</p>
+                    <p class="principle-statement">Value-first emails lead with or attach the deliverable. The deliverable IS the message &mdash; the email just frames it.</p>
+                    <p class="principle-context">If your email would make sense without the attachment, you wrote a pitch, not a value-first email. The deliverable should be valuable even if they never buy.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P19_</p>
+                    <p class="principle-statement">Not every play needs a value-first email. Diagnostic-mode plays are cheaper and faster to deploy. Save value-first emails for plays where you genuinely have information asymmetry.</p>
+                    <p class="principle-context">Building a value-first email when you don't have real asymmetry produces marketing collateral disguised as value. The prospect can tell.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P20_</p>
+                    <p class="principle-statement">Diagnostic emails end with a diagnostic question, not a CTA. The question itself is the value.</p>
+                    <p class="principle-context">A good diagnostic question can't be answered with "we're fine" without some thought. It shows you've done homework and naturally leads to a conversation.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P21_</p>
+                    <p class="principle-statement">Diagnostic-to-value-first upgrade path: if the prospect engages with the diagnostic question, you now have signal data to build a value-first follow-up.</p>
+                    <p class="principle-context">The diagnostic email validates the pain. Their response gives you language and confirmation. Now you have permission and data to go deeper with a deliverable.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P22_</p>
+                    <p class="principle-statement">Inline value-first emails (300&ndash;500 words in the body) vs attached value-first emails (800&ndash;1,200 words as a PDF) &mdash; choose based on complexity and persona.</p>
+                    <p class="principle-context">Operators in email all day respond better to inline insights. Executives who read documents respond better to attached analyses. Match the format to how they consume information.</p>
+                </div>
+
+                <!-- ===== SECTION 5: VALUE-FIRST EMAIL QUALITY ===== -->
+                <h2>Value-First Email Quality</h2>
+
+                <p>
+                    A value-first email that restates information the prospect already knows isn't value-first &mdash; it's a report. The bar is higher than most people think. Ask yourself: <strong>"Would they frame this?"</strong> Would the prospect print it out, pin it to their wall, or forward it to their boss? If not, it's not good enough.
+                </p>
+                <p>
+                    The secret is the data blend. Single-source value-first emails feel thin. Combine an ENERGY STAR score with LL97 penalty math and building permit history, and suddenly you've created an insight that no single database contains. Three or more sources create the "how did they know this?" reaction. That's what makes someone respond to a cold email from a stranger.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P23_</p>
+                    <p class="principle-statement">Information asymmetry test: does the prospect already know this? If yes, it's a report, not a value-first email.</p>
+                    <p class="principle-context">A common failure: sending prospects a summary of information they generated in the first place. If they filed the report, they know the numbers.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P24_</p>
+                    <p class="principle-statement">Concrete specificity: names, numbers, dates, locations. Generic observations are worthless.</p>
+                    <p class="principle-context">"Companies in your industry face rising costs" is generic. "Your building's ENERGY STAR score of 14 puts you in the bottom 14% of comparable US office buildings" is specific. The specificity is the credibility.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P25_</p>
+                    <p class="principle-statement">Synthesis test: non-obvious insight from combined data beats organized facts from a single source.</p>
+                    <p class="principle-context">Anyone can pull a number from a database. Combining that number with two other data points to produce an insight neither contains alone &mdash; that's synthesis.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P26_</p>
+                    <p class="principle-statement">"So what?" test: can they act on this right now? If not, it's interesting but not actionable.</p>
+                    <p class="principle-context">Interesting findings don't get replies. Actionable findings do. "Your penalty will nearly double when the 2030 limits take effect" creates urgency. "Your industry is changing" does not.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P27_</p>
+                    <p class="principle-statement">"Would they frame it?" gut check: would they print this out, pin it to a wall, or forward it to their boss?</p>
+                    <p class="principle-context">This is the highest bar for value-first email quality. If the answer is yes, you've built something that earns a reply regardless of whether they need your product right now.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P28_</p>
+                    <p class="principle-statement">Data blend: how many distinct data sources were combined? Single-source value-first emails feel thin. 3+ sources create the "how did they know this?" reaction.</p>
+                    <p class="principle-context">ENERGY STAR score + LL97 penalty formula + building permit records = a compliance exposure projection no single database contains. That combination is the moat.</p>
+                </div>
+
+                <!-- ===== SECTION 6: DATA SOURCES ===== -->
+                <h2>Data Sources</h2>
+
+                <p>
+                    Not all data is created equal. First-order data &mdash; company-specific information you gathered yourself &mdash; is more differentiated than fifth-order data everyone has access to. Your competitors can buy the same firmographic databases you can. They can't easily replicate a data blend that combines a federal safety database with job posting analysis and census data.
+                </p>
+                <p>
+                    Temporal data &mdash; time-series and event-triggered information &mdash; is more valuable than snapshots. A company's safety score at a point in time is useful. The trend of that score over 18 months, combined with the timing of regulatory deadlines, creates a signal with urgency built in.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P29_</p>
+                    <p class="principle-statement">First-order data (company-specific, gathered by you) is more differentiated than fifth-order data (public, available to everyone).</p>
+                    <p class="principle-context">If you can buy it from a vendor, so can your competitor. Data you assembled from primary sources &mdash; scraping regulatory databases, combining municipal records &mdash; is your edge.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P30_</p>
+                    <p class="principle-statement">Cross-domain data combinations create insights no single source provides.</p>
+                    <p class="principle-context">DOL enforcement data + job postings + Census firm counts = market pressure analysis. Each source alone tells you one thing. Combined, they reveal competitive dynamics invisible to anyone looking at a single database.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P31_</p>
+                    <p class="principle-statement">Evaluate candidate sources on: differentiation tier, field richness, programmatic access, and a 10-sample validation test.</p>
+                    <p class="principle-context">Before committing to a data source, pull 10 records and check: does this source actually contain the fields you need? Can you access it reliably? Is the data fresh? Don't build plays on sources you haven't validated.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P32_</p>
+                    <p class="principle-statement">Temporal data (time-series, event-triggered) is more valuable than snapshot data for signal design.</p>
+                    <p class="principle-context">A snapshot tells you where a company is. A time-series tells you where it's heading. Combine direction with a regulatory deadline and you have a signal with built-in urgency.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P33_</p>
+                    <p class="principle-statement">Richness = field-level detail. A source returning company name + city + NAICS + penalty amount is richer than one returning just a count.</p>
+                    <p class="principle-context">Field richness determines what you can do downstream. A rich source lets you personalize at the prospect level. A sparse source only gives you segment-level targeting.</p>
+                </div>
+
+                <!-- ===== SECTION 7: EMAIL CRAFT ===== -->
+                <h2>Email Craft</h2>
+
+                <p>
+                    The email is the smallest part of the system, but it's the part everyone focuses on. The craft matters &mdash; but only after the architecture is right. First sentence is always the prospect's situation, never about you. Under 75 words. Hide the signal &mdash; never say "I noticed your safety score dropped." Instead, demonstrate that you know their situation by describing the consequences.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P34_</p>
+                    <p class="principle-statement">First sentence = prospect's situation, never about yourself or the vendor.</p>
+                    <p class="principle-context">Every email that starts with "I'm reaching out because we help companies like yours..." is already dead. Start with their reality. "277 Park Avenue scored 14 on ENERGY STAR" &mdash; now they're reading.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P35_</p>
+                    <p class="principle-statement">Personalization theater &mdash; "I saw you went to Michigan" &mdash; is not personalization. Targeting conditions that affect their business is personalization.</p>
+                    <p class="principle-context">The prospect has seen "Congrats on the promotion!" a hundred times. Pattern interrupt beats flattery every time. Reference something about their business they didn't expect you to know.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P36_</p>
+                    <p class="principle-statement">Templates with condition-based variables beat handcrafted prose. Intelligence is in variable selection, not the writing.</p>
+                    <p class="principle-context">The best outbound systems don't write custom emails for every prospect. They design templates where the variables carry the intelligence &mdash; the specific score, the specific deadline, the specific consequence.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P37_</p>
+                    <p class="principle-statement">Subject lines: 2&ndash;5 words for diagnostic emails. For value-first emails, name the deliverable. Never "Quick question" or "Thoughts?"</p>
+                    <p class="principle-context">"compliance timeline" &mdash; diagnostic. "[Company] penalty projection" &mdash; value-first. The subject line either names the condition or names the deliverable. That's it.</p>
+                </div>
+
+                <!-- ===== SECTION 8: SYSTEM ARCHITECTURE ===== -->
+                <h2>System Architecture</h2>
+
+                <p>
+                    The most counterintuitive principle in the entire system: start with the message, not the research. Imagine the perfect email your rep would send. Then work backward to figure out what data you'd need to write it. This prevents the most common failure mode &mdash; spending days on research that doesn't serve the output.
+                </p>
+
+                <div class="principle">
+                    <p class="principle-number">P38_</p>
+                    <p class="principle-statement">"Message first" inversion: imagine the perfect email, then work backward to the data requirements.</p>
+                    <p class="principle-context">Most teams start with "what data do we have?" and try to build a message from it. Invert this. Start with "what would make them respond?" and figure out where to get that data. Prevents research that doesn't serve the output.</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P39_</p>
+                    <p class="principle-statement">"Breathing" rhythm: expand research broadly, then contract to the sharpest insights. Alternate between divergent and convergent thinking.</p>
+                    <p class="principle-context">The first pass should be wide &mdash; explore the market, the buyer's world, adjacent industries. The second pass should be ruthlessly narrow &mdash; what 2&ndash;3 insights are sharp enough to earn a reply?</p>
+                </div>
+                <div class="principle">
+                    <p class="principle-number">P40_</p>
+                    <p class="principle-statement">Decomposed research: break monolithic research into focused steps &mdash; company deep-dive, buyer ecosystem, survival metric, second-layer, source discovery, signal design, synthesis.</p>
+                    <p class="principle-context">A single "do the research" step produces shallow, unfocused output. Breaking it into 7 distinct phases, each with a clear input and output, creates research that's both thorough and actionable.</p>
+                </div>
+
+                <!-- ===== CLOSING ===== -->
+                <div class="divider my-12"></div>
+
+                <p>
+                    These 40 principles aren't theory. They're the methodology behind every signal-based outbound system I build at Thresh. They come from running this process across trucking, commercial real estate, construction tech, healthcare, and other markets where public data creates an unfair advantage.
+                </p>
+                <p>
+                    The principles are the easy part. The hard part is executing them &mdash; finding the survival metric, validating the signals, building the data blends, and writing emails that earn replies from people who get 50 cold emails a day.
+                </p>
+                <p>
+                    That's what I do.
+                </p>
+
+            </div>
+        </article>
+
+        <!-- Bottom CTA -->
+        <section class="py-16 sm:py-24 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16 text-center">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Get Started</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl mb-6">
+                        Your first 10 prospects are free.
+                    </h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-8 font-light leading-relaxed max-w-xl mx-auto">
+                        I'll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.
+                    </p>
+                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                        Show Me the Signal
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    lucas.linares@runthresh.com
+                </a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    LinkedIn
+                </a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <a href="https://github.com/lucasvibecoder" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    GitHub
+                </a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    Blog
+                </a>
+                <span class="hidden sm:inline text-brand-faint">&middot;</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Nav scroll behavior
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    nav.classList.toggle('scrolled', window.scrollY > 60);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <!-- Vercel Analytics + Speed Insights -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>

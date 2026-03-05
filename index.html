@@ -96,11 +96,12 @@
     }
     </script>
 
-    <link rel="stylesheet" href="./output.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+
+    <link rel="stylesheet" href="./output.css">
 </head>
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
@@ -108,12 +109,15 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
+            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
                 THRESH_
             </a>
-            <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
-                Show Me the Signal
-            </a>
+            <div class="flex items-center gap-6">
+                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors">Blog</a>
+                <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
+                    Show Me the Signal
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -518,6 +522,10 @@
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <a href="https://github.com/lucasvibecoder" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
                     GitHub
+                </a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                    Blog
                 </a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <span class="text-sm text-brand-faint">NYC / LA</span>
