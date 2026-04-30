@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stratus Playbook — Signal-First Outbound | Thresh</title>
+    <meta name="description" content="A Signal-First Outbound playbook built for Stratus. Three plays for finding MEP fabricators inside PE integration mandates, hyperscaler scope wins, and new VDC Manager hires — with two real custom benchmarks downloadable.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
+    <link rel="canonical" href="https://runthresh.com/playbooks/stratus-build/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Stratus Playbook — Signal-First Outbound">
+    <meta property="og:description" content="Three plays for finding MEP fabricators inside PE integration mandates, hyperscaler scope wins, and new VDC Manager hires.">
+    <meta property="og:url" content="https://runthresh.com/playbooks/stratus-build/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
+    <meta property="og:site_name" content="Thresh">
+    <meta property="article:published_time" content="2026-04-29T12:00:00Z">
+    <meta property="article:author" content="Lucas Linares">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Stratus Playbook — Signal-First Outbound">
+    <meta name="twitter:description" content="Three plays for finding MEP fabricators inside PE mandates, hyperscaler scope wins, and new VDC hires.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Stratus Playbook — Signal-First Outbound",
+      "description": "Three plays for finding MEP fabricators inside PE integration mandates, hyperscaler scope wins, and new VDC Manager hires.",
+      "datePublished": "2026-04-29T12:00:00Z",
+      "dateModified": "2026-04-29T12:00:00Z",
+      "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
+      "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
+      "mainEntityOfPage": "https://runthresh.com/playbooks/stratus-build/",
+      "image": "https://runthresh.com/og-image.png"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <div class="flex items-center gap-6">
+                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="/#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="relative z-10">
+
+        <!-- HERO -->
+        <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">The Stratus Playbook</p>
+                </div>
+                <h1 class="reveal font-display font-[900] section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
+                    A Signal-First Outbound<br class="hidden sm:block">
+                    playbook built for<br class="hidden sm:block">
+                    <span class="headline-accent">Stratus.</span>
+                </h1>
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    Stratus sells BIM-to-fabrication software to MEP, HVAC, plumbing, and sheet metal contractors. Their three sharpest buyers are PE-acquired multi-trade rollups inside the integration window, MEP contractors who just won their first hyperscaler scope, and contractors hiring their first VDC Manager. This is the playbook to reach them.
+                </p>
+                <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="/#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                    <a href="#plays" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">How it's built</a>
+                </div>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: April 29, 2026</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THE SHIFT -->
+        <section class="py-16 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Most BIM-to-fab vendors send the same email. Stratus has a better hand.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
+                        Trimble eVolve, MSuite, Allied BIM all sound the same — generic claims about productivity and labor savings. Almost no software vendor in this category tracks PE deal flow as an outbound trigger. Inside the 60-180 day post-close window, the integration mandate is real, the alternatives are single-trade specialists, and Stratus runs all four trades on one architecture. Lead with that situation.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic BIM/fab rep sends today.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // GENERIC</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Hi [First Name],</p>
+                                <br>
+                                <p>I'm reaching out because we work with mechanical and plumbing contractors to improve fabrication productivity and BIM-to-shop workflows. Our platform helps you save time and reduce field rework.</p>
+                                <br>
+                                <p>I'd love to share how we've helped contractors like yours. Do you have 15 minutes this week?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">What Stratus sends with the data.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // SIGNAL-MATCHED</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Saw the Harrell-Fish / Comfort Systems close last week.</p>
+                                <br>
+                                <p>Most multi-trade rollups standardize on the largest portco's fab/BIM stack at month 4. By Newco-3, the platform is running three different fab systems and an ERP that doesn't reconcile — integration capital meant for the next tuck-in goes to patches.</p>
+                                <br>
+                                <p>Pulled together a 1-page benchmark on how Service Logic, Grizzly MEP, and Broadtree handled this in 2025 — what they consolidated, what they patched, where integration debt is showing up at month 12. Attached.</p>
+                                <br>
+                                <p>Want a 15-minute conversation about Newco-3 sequencing?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal mt-4">
+                    <p class="provenance-label text-brand-muted leading-relaxed">
+                        That second email isn't a template. The Service Logic / Grizzly MEP / Broadtree deal pattern is from public PE press releases (PR Newswire, Construction Dive). The "month 4 vs month 14" framing comes from observable integration debt patterns. The full benchmark sent to Harrell-Fish is downloadable below.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CORE PRINCIPLES -->
+        <section class="py-16 sm:py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Core Principles</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl">Three rules behind every play.</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger">
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Hard data over soft signals.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">PE press releases. Hyperscaler project announcements. ENR / Construction Dive coverage. LinkedIn job-change signals for VDC Managers. Specific deals on specific dates with specific counterparties. No "intent surge" or "buying signals."</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Time-boxed buying windows.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">PE integration mandate: 60-180 days post-close. Hyperscaler schedule lock: 0-90 days post-award. New VDC Manager: first 90 days. Outside those windows, Stratus is "nice to have." Inside them, the alternative is missing schedule on a $50M+ job. Reach out inside the window.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Verifiable in 5 minutes.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Every claim ties to a public deal announcement, project award, or contractor profile. The prospect can pull the same data and verify the framing themselves before they reply.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- TOC -->
+        <section class="py-12 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">In This Playbook</p>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li><a href="#play-1" class="text-brand-muted hover:text-brand-accent transition-colors">01_ The Multi-Trade Integration Mandate — PE-acquired platforms inside the 60-180 day window</a></li>
+                        <li><a href="#play-2" class="text-brand-muted hover:text-brand-accent transition-colors">02_ The Hyperscaler Stage 1 Transition — MEP contractors winning their first data-center scope</a></li>
+                        <li><a href="#play-3" class="text-brand-muted hover:text-brand-accent transition-colors">03_ The New VDC Manager Window — Contractors hiring their first VDC/BIM Manager</a></li>
+                        <li><a href="#doesnt-solve" class="text-brand-muted hover:text-brand-accent transition-colors">What this playbook doesn't solve</a></li>
+                        <li><a href="#data-sources" class="text-brand-muted hover:text-brand-accent transition-colors">Data sources</a></li>
+                        <li><a href="#week-1" class="text-brand-muted hover:text-brand-accent transition-colors">What I'd build for you in week 1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PLAYS -->
+        <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Intelligence Plays</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three triggers. Three messages.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Each play targets a distinct buyer moment in MEP fabrication. Two are time-boxed buying windows where the alternative to acting is missing schedule on a $50M+ job. The third is a continuous top-of-funnel.</p>
+                </div>
+
+                <!-- PLAY 1 -->
+                <article id="play-1" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Multi-Trade Integration Mandate</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For PE-acquired MEP/HVAC/plumbing/sheet metal platforms 60-180 days post-close. The PE-installed CEO has a 12-month integration mandate. Days 60-180 are the maximum-leverage window before integration capital is committed elsewhere.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">PE rolled up MEP/HVAC at unusual volume in 2025-2026 — Service Logic (Bain + Mubadala, Dec 2025), Grizzly MEP, Broadtree, Engineering Resource Group, others. The acquired companies always arrive with mismatched fab, BIM, and ERP stacks. Most multi-trade rollups try to standardize on the largest portco's existing stack. That works for one tuck-in. By Newco-3, the platform is running three different fab systems and an ERP that doesn't reconcile.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">Almost no software vendor tracks PE deal flow as an outbound trigger — the most exploitable gap in the competitor landscape. Stratus is one of the only BIM-to-fab platforms that runs all four trades (mechanical + electrical + plumbing + sheet metal) on one architecture. Trimble eVolve is electrical-first. MSuite is mechanical-leaning. Allied BIM is single-trade focus. The integration math actually only works on Stratus for a multi-trade rollup.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP — sent to Harrell-Fish (Comfort Systems portfolio company), April 2026</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: month 4 vs. month 14</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Saw the Harrell-Fish / Comfort Systems close.</p>
+                                <br>
+                                <p>Most multi-trade rollups standardize on the largest portco's fab/BIM stack at month 4. By Newco-3, the platform is running three different fab systems and an ERP that doesn't reconcile — integration capital that was supposed to fund the next tuck-in goes to patches instead.</p>
+                                <br>
+                                <p>Stratus is one of the few BIM-to-fab platforms that runs mechanical, electrical, plumbing, and sheet metal under one architecture. Pulled together a 1-page benchmark on how three multi-trade platforms in your peer set tackled this in 2025 — Service Logic, Grizzly MEP, Broadtree's plumbing platform — what they consolidated, what they patched, where the integration debt is showing up now.</p>
+                                <br>
+                                <p>Want me to send it?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifact: The full Multi-Trade Integration Benchmark</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">The complete 1-2 page custom analysis sent to Harrell-Fish — peer comparisons across three 2025-2026 PE-backed multi-trade rollups, integration debt signals at month 12-18, and prioritized consolidation sequence.</p>
+                        <a href="/playbooks/stratus-build/harrell-fish-multi-trade-integration-benchmark.md" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm">Download the benchmark →</a>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>→ <a href="https://privsource.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">PrivSource</a> — PE deal feed (free tier)</li>
+                            <li>→ <a href="https://www.prnewswire.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">PR Newswire / BusinessWire</a> — closed acquisitions in MEP / HVAC / sheet metal / plumbing</li>
+                            <li>→ <a href="https://www.constructiondive.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Construction Dive</a> — industry M&A coverage</li>
+                            <li>→ <a href="https://axial.net/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Axial</a> — middle-market deal database (free tier)</li>
+                            <li>→ Regional business journals — local platform announcements</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 2 -->
+                <article id="play-2" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Hyperscaler Stage 1 Transition</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For MEP contractors who just won their first hyperscaler / data-center scope (Meta, Google, AWS, Microsoft, Oracle, Apple) within 0-90 days of award. Schedule predictability is existential — preferred-sub-list loss is the LD trigger.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">A first hyperscaler award is a $30-100M scope with schedule penalties measured in days. The contractor's existing fab workflow — built for traditional commercial work — buckles under the schedule discipline hyperscalers demand. Miss schedule on the first project, lose the preferred-sub-list slot, and the next 5-10 projects evaporate. The 0-90 day window is when shop investment decisions get made. Hyperscaler capex is projected at $600B+ in 2026 (industry estimates from earnings + analyst projections), so the volume only grows.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">The Hyperscaler Readiness Snapshot maps the contractor against 5 LD-trigger conditions in the BIM-to-fab workflow, benchmarks their setup against peer contractors who've delivered hyperscaler scope (McKenney's, McCusker-Gill, JRT), and prioritizes workflow investments. It's a custom analysis the prospect would pay for — delivered free, under hyperscaler-NDA-friendly terms (public-data only).</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP — sent to Limbach, April 2026</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: hyperscaler readiness — 5 LD conditions</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Saw the announcement on the new data-center scope. Quick observation:</p>
+                                <br>
+                                <p>Hyperscalers run on schedule penalties measured in days. Five conditions in the BIM-to-fab workflow tend to drive LDs on first hyperscaler scope: BIM-to-shop handoff time, RFI cycle time, shop floor utilization, field-pull predictability, and as-built reconciliation. Miss any one of those and schedule slips by enough to trigger preferred-sub review.</p>
+                                <br>
+                                <p>Pulled together a 8-page hyperscaler readiness snapshot for Limbach — your contractor profile mapped against those 5 conditions, plus peer benchmarks from McKenney's, McCusker-Gill, and JRT (who've delivered hyperscaler scope). Recommends a prioritized investment order. Attached.</p>
+                                <br>
+                                <p>Useful as you size up shop investment for the next 12 months?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifact: The full Hyperscaler Readiness Snapshot</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">8-page custom PDF sent to Limbach — contractor profile, 5 LD-trigger conditions mapped to BIM-to-fab workflow, peer-contractor benchmarks (McKenney's, McCusker-Gill, JRT), prioritized workflow investments. Includes 17-row verification ledger.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="/playbooks/stratus-build/limbach-hyperscaler-readiness-snapshot.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Download PDF →</a>
+                            <a href="/playbooks/stratus-build/limbach-hyperscaler-readiness-snapshot.md" download class="inline-block font-body font-semibold border border-brand-secondary text-brand-secondary px-6 py-3 hover:bg-brand-secondary hover:text-white transition-all text-sm text-center">Download markdown →</a>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>→ <a href="https://www.constructiondive.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Construction Dive</a> — hyperscaler project award announcements</li>
+                            <li>→ <a href="https://www.enr.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">ENR (Engineering News-Record)</a> — major project tracking + contractor news</li>
+                            <li>→ <a href="https://www.datacenterknowledge.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Data Center Knowledge</a> — Meta / Google / AWS / Microsoft / Oracle / Apple builds</li>
+                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack API</a> — VDC Manager + data-center-experience hires at MEP contractors 50+ employees</li>
+                            <li>→ Hyperscaler earnings reports — capex projections (Meta, Google, Microsoft, Amazon, Oracle, Apple)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 3 -->
+                <article id="play-3" class="mb-12 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The New VDC Manager Window</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For MEP contractors hiring their first VDC/BIM Manager within the past 90 days, or with an open requisition. Highest-volume play, fills the gap between PE deals and hyperscaler awards.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">A new VDC Manager walks into a fab shop on day one with a mandate from leadership: "fix BIM-to-shop." They inherit whatever stack already exists — often spreadsheets, paper printouts, and Revit files. They have ~90 days to demonstrate progress. They're evaluating tools, talking to peers, and looking for the highest-leverage move. This is the blank-slate moment.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">No legacy vendor loyalty. Internal pressure to ship something visible. Continuous top-of-funnel — VDC Manager hires happen year-round across the MEP space. Note: this play uses PQS (peer-hire pattern reference) rather than PVP — no information asymmetry, just relevant peer context.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example PQS — sent within 30 days of the hire</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: your first 90 days as VDC Manager at {{company_name}}</span>
+                            </div>
+                            <div class="email-body">
+                                <p>{{first_name}}, congrats on the new role at {{company_name}}.</p>
+                                <br>
+                                <p>The VDC Managers I've watched hit their 90-day milestone tend to ship one visible workflow change fast — usually BIM-to-shop handoff because the feedback loop closes within weeks (RFI count, field-pull accuracy, shop floor utilization).</p>
+                                <br>
+                                <p>Three peer-hires from this past quarter at {{peer_contractor_1}}, {{peer_contractor_2}}, and {{peer_contractor_3}} all targeted the same workflow first. Happy to share what shipped and the metrics that moved if useful.</p>
+                                <br>
+                                <p>Worth a 15-minute conversation as you set the Q1 priority list?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack API</a> — VDC / BIM Manager job postings + filled requisitions</li>
+                            <li>→ <a href="https://www.linkedin.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">LinkedIn</a> — VDC Manager job-change signals</li>
+                            <li>→ MCAA / SMACNA member directories — qualified contractor universe</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- DOESN'T SOLVE -->
+        <section id="doesnt-solve" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-8">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-faint uppercase mb-4">What This Playbook Doesn't Solve</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl mb-6 text-brand-muted">Where this approach falls short.</h2>
+                </div>
+                <ul class="reveal space-y-5 list-x">
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Single-trade contractors — Stratus's multi-trade architecture is the wedge for Play 1. For pure HVAC-only or sheet-metal-only shops, the integration math for Trimble eVolve or MSuite may work fine, and Stratus's cross-trade advantage doesn't apply</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Contractors under 100 employees — ACV math + 18-month implementation timeline likely don't fit; better targets are 100-500 employee mid-market platforms</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">PE deals closed >12 months ago — integration capital is already committed. Better as a "next tuck-in" conversation when a PE-backed platform announces its next acquisition</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Service-only operations (no fabrication) — the fab workflow isn't the binding constraint, so the Stratus pitch loses its hook</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- SOCIAL PROOF -->
+        <section class="py-16 sm:py-20 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-10 text-center">What Reps Said When They Saw This Format</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
+                        <p class="text-brand-text text-base leading-relaxed mb-4">"I would absolutely send that to a customer."</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Samsara</p>
+                    </blockquote>
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
+                        <p class="text-brand-text text-base leading-relaxed mb-4">"All of that is insanely actionable. Can you run it for another company?"</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Trane</p>
+                    </blockquote>
+                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
+                        <p class="text-brand-text text-base leading-relaxed mb-4">"Damn dude this is amazing. We need this a lot in my industry."</p>
+                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Truckstop</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- DATA SOURCES -->
+        <section id="data-sources" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Data Sources</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">The full source stack.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every signal in this playbook traces to one of these. Most are public PE press releases, project award announcements, or job postings.</p>
+                </div>
+                <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-brand-border">
+                                    <th class="text-left py-3 pr-4 font-mono text-xs tracking-wider text-brand-accent uppercase">Source</th>
+                                    <th class="text-left py-3 pr-4 font-mono text-xs tracking-wider text-brand-accent uppercase">What It Tracks</th>
+                                    <th class="text-left py-3 font-mono text-xs tracking-wider text-brand-accent uppercase">Where to Find It</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-brand-muted">
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">PrivSource</td>
+                                    <td class="py-4 pr-4 align-top">PE deal feed by sector — MEP / HVAC / plumbing / sheet metal</td>
+                                    <td class="py-4 align-top"><a href="https://privsource.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">privsource.com</a> (free tier)</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">PR Newswire / BusinessWire</td>
+                                    <td class="py-4 pr-4 align-top">Closed acquisitions and platform investments — RSS-monitorable</td>
+                                    <td class="py-4 align-top"><a href="https://www.prnewswire.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">prnewswire.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Construction Dive</td>
+                                    <td class="py-4 pr-4 align-top">Hyperscaler project awards + industry M&A coverage</td>
+                                    <td class="py-4 align-top"><a href="https://www.constructiondive.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">constructiondive.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">ENR (Engineering News-Record)</td>
+                                    <td class="py-4 pr-4 align-top">Major project tracking, top contractors lists</td>
+                                    <td class="py-4 align-top"><a href="https://www.enr.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">enr.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Data Center Knowledge</td>
+                                    <td class="py-4 pr-4 align-top">Hyperscaler builds — Meta, Google, AWS, Microsoft, Oracle, Apple</td>
+                                    <td class="py-4 align-top"><a href="https://www.datacenterknowledge.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">datacenterknowledge.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">TheirStack API</td>
+                                    <td class="py-4 pr-4 align-top">VDC / BIM Manager hires + open requisitions at MEP contractors</td>
+                                    <td class="py-4 align-top"><a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">theirstack.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Axial</td>
+                                    <td class="py-4 pr-4 align-top">Middle-market deal database (free tier)</td>
+                                    <td class="py-4 align-top"><a href="https://axial.net/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">axial.net</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">MCAA / SMACNA</td>
+                                    <td class="py-4 pr-4 align-top">Mechanical / sheet metal contractor directories — qualified universe</td>
+                                    <td class="py-4 align-top">mcaa.org / smacna.org</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- WEEK 1 -->
+        <section id="week-1" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-8">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">If You Hire Me</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">What I'd build for Stratus in week 1.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Concrete deliverables. The first 10 prospects are free.</p>
+                </div>
+                <ul class="reveal list-check space-y-5 max-w-3xl">
+                    <li class="flex text-brand-muted text-sm leading-relaxed"><strong class="text-brand-text mr-2">Day 1–2:</strong> Pull every PE deal closed in MEP/HVAC/plumbing/sheet metal in the last 30-180 days from PrivSource + PR Newswire. Cross-reference against multi-trade qualifier (mechanical + electrical, mechanical + plumbing, or 3+ trades). Identify 10 platforms inside the integration window.</li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed"><strong class="text-brand-text mr-2">Day 3–4:</strong> Generate 10 multi-trade integration benchmarks using the same template as the Harrell-Fish example. Each tied to the platform's specific deal counterparty + peer rollup comparisons.</li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed"><strong class="text-brand-text mr-2">Day 5:</strong> Enrich PE-installed CEO/COO/VP Operations contacts. Verify new-in-seat tenure (LinkedIn). Write 10 personalized cover notes referencing the specific deal, integration timeline, and peer benchmark.</li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed"><strong class="text-brand-text mr-2">Week 2:</strong> Set up monitoring layer — daily PE deal feed + weekly hyperscaler project award scan + LinkedIn VDC Manager hire alerts. Each new trigger fires a same-day alert with prospect, signal, and pre-drafted message + benchmark template.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="py-24 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Offer</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">Want one of these built for your company?</h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">I'll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.</p>
+                    <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">First 10 prospects are free. If it books meetings, we talk about a monthly engagement.</p>
+                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
+                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Show me the signal →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANGELOG -->
+        <section class="py-12 px-6 border-t border-brand-border/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
+                    <ul class="space-y-2 font-mono text-xs text-brand-faint">
+                        <li>2026-04-29 — Playbook published. 3 plays, 2 executed PVPs (Harrell-Fish multi-trade benchmark, Limbach hyperscaler readiness snapshot), 8 data sources.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+
+        const heroSection = document.querySelector('main > section:first-child');
+        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => { el.classList.add('active'); }, i * 150);
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (!heroSection.contains(el)) { observer.observe(el); }
+        });
+
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+                    else { nav.classList.remove('scrolled'); }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
