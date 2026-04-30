@@ -1,0 +1,123 @@
+customer,title,full_content
+"Primary care provider (unnamed)","Automated revenue discovery for primary care","Specialty: Primary care | Type: Provider | EHR: athenahealth
+
+SECTION: Undercoded notes were causing revenue leaks
+Stat: 12% — Charta found that 12% of the provider's encounter notes contained underleveled E/M codes.
+
+This primary care provider already had a system for attempting to close revenue leaks: an offshore team of medical coders reviewed provider documentation to code all their notes for them. A medical coder focused on QA audited a portion of the charts to ensure the team was capturing charge accurately and fully.
+
+But the system clearly wasn't working: the provider suspected revenue leaks were still making it through this time-consuming and expensive process, which relied heavily on manual charge capture and added seven days to the billing cycle. A suspected culprit for the leak was E/M leveling, which the offshore team had no structured process for reviewing and validating.
+
+Charta analyzed a sample of the provider's charts and found that at least 12% contained underleveled E/M codes.
+
+SECTION: Fully autonomous coding and revenue discovery
+Stat: 100% — Manual audits of a small sample of charts were replaced with autonomous review of 100% of encounter notes.
+
+By replacing a human coder who could only review a small portion of charts with autonomous coding and targeted chart review for revenue discovery across all patient encounters, the provider was able to refocus its offshore team on documentation quality, shifting E/M leveling and CPT coding decisions to Charta for 100% pre-billing compliance and revenue integrity.
+
+SECTION: Revenue uplift and faster times to resolution
+Stat: 5x — The practice achieved a 5x ROI by implementing Charta.
+
+Charta for autonomous coding and revenue discovery delivered a 5x return on investment by eliminating the revenue leak associated with missing and undercoded notes. In addition to the financial return on investment, the practice gained access to comprehensive data insights into provider performance on coding and clinical compliance, delivered through data dashboards custom designed for their clinical leadership."
+"Neighborhood FQHC — multispecialty (primary care, urgent care, behavioral health, dental) serving one of the country's largest metros","Audit-proof compliance for a neighborhood FQHC","Specialty: Multispecialty (primary care, urgent care, behavioral health, dental) | Type: FQHC | EHR: eClinicalWorks
+
+SECTION: Documentation compliance gap
+Stat: 57% — 57% of notes contained noncompliant documentation.
+
+SECTION: E/M coding issues
+Stat: 46% — 46% of notes showed underleveled or underdocumented E/M coding. 38% of E/M codes were underleveled. 16% were accurately leveled but lacked sufficient documentation for payer standards.
+
+SECTION: Revenue discovery
+Stat: 25% — 25% of notes contained newly uncovered revenue opportunities. A quarter of encounters had add-on codes supported by documentation but not yet coded.
+
+CORE CHALLENGE: The facility's administrator recognized a potential clawback could threaten the clinic's viability. With only two coding staff members, manual chart review processes were insufficient to achieve audit-proof operations.
+
+SOLUTION: Charta deployed automated workflows for documentation compliance gaps, autonomous coding analyses for pre-billing compliance verification, additional checks flagging undercoded revenue opportunities, and 100% encounter note review coverage."
+"Nationwide behavioral health organization — in-person and virtual psychotherapy and psychiatry","Documentation compliance built for nationwide scale","Specialty: Behavioral health | Type: Provider | EHR: Homegrown EMR
+
+SECTION: Manual review inhibited compliance oversight
+Stat: 0.1% — Percentage of encounter notes that could be reviewed under manual chart-review capacity constraints.
+
+As a national organization generating more than 120,000 charts per month across 12,000 individual providers, this behavioral health group knew that the manual chart review process it set up in the early days of company development no longer suited the company's size and risk profile. The process required reviewers to pull up notes manually in the EMR to analyze them for payer compliance across documentation integrity and clinical quality measures, using generic commercial AI tools like Gemini to assess audit defensibility.
+
+Time-consuming processes meant the team only had capacity to audit 0.1% of total encounters each month; they were also running an average of seven weeks behind schedule on audits of charts submitted by new providers. The company turned to Charta to increase chart review coverage so they could shift from retrospective audits to proactive monitoring. In addition, they sought automation solutions that could streamline the delivery of provider performance feedback.
+
+SECTION: Automated compliance and provider feedback
+Stat: 99.9 — Percentage point increase in charts reviewed for payer compliance.
+
+Charta's engineers built an integration with the practice's homegrown EMR, then custom-designed a dozen chart analyses targeting the practice's known drivers of compliance risk. After implementation, Charta automatically ran the 12 bespoke analyses every time a provider closed a note. To streamline provider education, Charta implemented automated messages with specific feedback for documentation improvement. Providers now receive messages with actionable steps for remediating documentation directly in the EMR.
+
+SECTION: Compliance risk avoided with AI
+Stat: 64% — Reduction in compliance risk for psychotherapy add-on codes.
+
+After implementation, Charta found that 64% of psychiatry notes used psychotherapy add-on codes without sufficient documentation support — a critical compliance risk. By identifying and flagging the notes for provider intervention at the pre-billing stage, Charta reduced this driver of audit risk by 64%."
+"Urgent and primary care practice in the Pacific Northwest","Audit-proof compliance for an urgent and primary care practice","Specialty: Urgent care, Primary care, Multispecialty | Type: Provider | EHR: Experity
+
+SECTION: The problem
+Stat: $90,000 — Annual spending on overseas coding team.
+
+The practice was spending $90k per year on an overseas coding team with limited capabilities. The clinic expanded to include primary care and specialties, increasing payer audit risk. The existing overseas team required heavy oversight from clinical directors but still had errors slip through.
+
+SECTION: Solution
+Stat: 7 hours — Weekly time savings for clinical directors on chart review oversight.
+
+Charta deployed autonomous pre-billing chart review including E/M leveling accuracy, correct modifier use, Golden Thread documentation integrity, CPT code documentation verification, and medical necessity assessments.
+
+SECTION: Results
+Stat: 1.25x ROI — from switching away from offshore vendor.
+100% pre-billing revenue integrity achieved. 100% patient encounters covered by compliance review.
+
+The practice eliminated its $90,000 annual offshore engagement while expanding chart review scope to achieve full pre-billing compliance across all encounters at a lower cost."
+"Growing behavioral health provider — 50+ clinics across 5 states","Complete compliance assurance for a growing behavioral health org","Specialty: Behavioral health | Type: Provider | EHR: inSync by Qualifacts
+
+BEFORE CHARTA: 10% of charts audited through manual review. 5 full-time coders on RCM team. Growth: 5 clinics to 50+ clinics in 5 years. Providers: 60 to 750 across five states.
+
+SECTION: The problem
+In the span of just five years, a behavioral health provider grew from five clinics and 60 providers to more than 50 clinics employing 750 providers across five states. The VP of Revenue Operations knew that rapid growth comes with increased payer scrutiny: Payers notice when providers are growing, making compliance coverage more important as a business scales.
+
+Even with five full-time coders, the RCM team was only able to get to 10% coverage on manual chart review for payer compliance. The team knew that compliance risks were hiding in the other 90%: Providers sometimes get lax with their documentation after they've been with an organization for a while, and newer providers sometimes take time to learn how to fully comply with new standards.
+
+SECTION: Autonomous review for always-on audit readiness
+Stat: +90 percentage point increase in chart review coverage (10% to 100%).
+Stat: 60% reduction in chart audit overhead costs.
+Stat: 100% of all charts reviewed for compliance.
+
+At the same time that compliance coverage leveled up to 100%, the practice saved on chart review overhead costs and focusing existing staff on exceptions and provider education."
+"Post-acute home healthcare and hospice provider (unnamed)","Optimizing clinical compliance for home health","Specialty: Home health, Hospice | Type: Provider
+
+SECTION: The problem — Low-capacity manual review is insufficient in a tightly regulated sector
+Stat: 2 hours — time spent manually auditing one chart.
+Stat: 10 charts — per agency could be reviewed out of total patient population.
+Stat: 90% — of charts left unreviewed.
+
+Operating under intense regulatory scrutiny, this home health organization knew its manual chart audit process wasn't working. But the scale of the problem was difficult to quantify. The COO suspected systemic issues were accumulating in unreviewed charts.
+
+SECTION: The solution — Automated clinical review with AI
+Charta replaced manual audits with an AI engine trained on Medicare Benefit Policy Manual, catching issues like conflicting medication frequencies and mismatched skill needs.
+
+SECTION: Results — Improved quality scores via comprehensive compliance
+Stat: 100% coverage — for every Start of Care (SOC), Resumption of Care (ROC), Recertification, and Discharge charts.
+Stat: 5 minutes — for chart review completion after submission.
+Stat: 7-10 day OASIS window — for corrections.
+
+What was once a manual sample of 10 charts per agency is now a 100% automated review of every clinical document, with results returned in minutes rather than hours. Real-time corrections strengthened audit performance and protected revenue."
+"Major payer (unnamed)","Maximizing HCC capture and audit readiness for a top payer","Specialty: Value-based care | Type: Payer
+
+SECTION: Payer saw a decline in HCC persistency rates
+Stat: 2-5% — Drop in diagnosis recapture due to the new V28 mapping, per practice.
+
+This major payer had a mature risk adjustment program: multiple vendors, established first-pass coding logic, and over a million charts processed annually. But under the surface, the organization was finding diminishing returns and potential gaps in their risk adjustment submissions.
+
+As the industry transitioned into CMS-HCC V28, the payer discovered that their existing workflows exposed a second-pass gap. Valid HCC opportunities were slipping through the cracks between first-pass logic and manual review, creating downstream reimbursement leakage. At the same time, the existing second pass vendors were struggling to identify unsupported codes, also known as deletes, to ensure compliance with CMS standards and OIG scrutiny.
+
+The most urgent signal was a 2% drop in code recapture tied directly to V28 mapping changes, a gap that was quietly eroding the accuracy of their financial forecasts and putting revenue projections at risk.
+
+SECTION: AI-enhanced HCC coding
+Stat: 12.5% — Percentage of charts Charta identified for incremental codes during second-pass review.
+
+Charta's AI-enhanced approach to retrospective chart review combines LLM-enabled claims matching with deep AI analysis of chart documentation. Charta AI surfaces incremental and unsupported codes to a team of human reviewers, who vet each code against the AI citations and to deliver best-in-class accuracy at unparalleled speed, guaranteeing higher ROI than other coding teams.
+
+SECTION: Low cost generated high ROI
+Stat: 26x — Total projected ROI of Charta's second-pass review.
+
+In addition to a 26x ROI, Charta delivered clinician- and site-specific data on validated add and delete codes, so the payer could arm its persistence team with specific, actionable data for improving provider coding."

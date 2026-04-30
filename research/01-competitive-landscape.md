@@ -141,14 +141,82 @@ A growing category of individuals and micro-agencies building automated cold ema
 
 ---
 
-### Key Competitive Insights (March 2026)
+### Cannonball GTM — CLOSEST ARCHITECTURAL ANALOG (Different Vertical)
+
+**What they do:** Generated 1,800 PVPs in one hour using the Shovels MCP server (170M+ government building permit records) + Claude + Clay at $0.07/prospect. Construction vertical.
+
+**Architecture:** Government data → AI filtering → prospect-specific PVPs at scale. Same three-layer stack as Thresh.
+
+**Key content:**
+- "How We Generated 1,800 PVPs Using Shovels MCP Server" (Substack)
+- "Deploy or Die: Turning PVP Theory into Outbound Campaigns" — PEA framework (Preview, Engage, Ask)
+
+**Where Cannonball validates Thresh:** Proves the architecture works. Government permit data → AI → PVPs at scale, in construction. Same thesis, different vertical.
+
+**Where Thresh differs:** Multi-vertical (not just construction). Different government data sources per vertical (FMCSA, OIG, OSHA, CMS vs. building permits). Deeper per-prospect deliverable (full analysis vs. templated PVP).
+
+---
+
+### Salesmotion — HEALTHCARE SIGNAL MONITORING (Partial Overlap)
+
+**What they do:** Monitor 1,000+ public sources for healthcare buying signals. Generate "account briefs." Explicitly call out CMS policy changes, state health department filings, leadership changes, and capital projects.
+
+**Key gap:** OIG enforcement actions, DOJ settlements, and MIPS penalty scores are notably absent from their signal list. They cover macro-level regulatory signals (CMS reimbursement rules) but NOT facility-level enforcement events.
+
+**Relevance to Thresh:** Medium. They're the closest existing platform to doing what Thresh does for healthcare, but they skip the highest-conviction signals (enforcement actions). Their output is generic "account briefs," not prospect-specific deliverables.
+
+---
+
+### Definitive Healthcare — HEALTHCARE DATA PLATFORM (Data Only)
+
+**What they do:** $200M+ revenue, public company. Deepest healthcare government data: CMS Medicare Standard Analytical Files, NPI registry, cost reports, quality metrics across 9,000+ hospitals and 3M+ physicians.
+
+**Key gap:** It's a database you query, not a signal engine. No real-time monitoring, no outbound delivery, no PVPs. You search for hospitals matching criteria; it doesn't push signals to you.
+
+**Subsidiary Carevoyance:** MedTech-specific sales enablement using all-payor claims data. Closest to "prospect-specific deliverables from government data" in healthcare — but purpose-built for medical device sales, not general healthcare SaaS.
+
+**Relevance to Thresh:** Low as competitor, high as validation. A $200M+ company built on healthcare government data proves the data is valuable. They just don't do outbound with it.
+
+---
+
+### Healthcare Compliance Tools — MONITOR FOR COMPLIANCE, NOT SALES
+
+ProviderTrust, MedTrainer, Streamline Verify, Ethico/SanctionCheck — all monitor OIG exclusion lists, SAM databases, and state licensing boards. But they serve compliance officers, not sales teams. They scan for exclusions on an hourly/daily basis to keep healthcare organizations compliant.
+
+**The gap nobody's filled:** Compliance tools watch government data to protect organizations. Sales intelligence tools track intent data to find buyers. Nobody has crossed those two worlds — using compliance/enforcement data as outbound sales triggers.
+
+---
+
+### Signal-Based Outbound Platforms (All Use Intent Data, None Use Government Data)
+
+| Platform | Signal Type | Government Data | Prospect Deliverables |
+|----------|-----------|-----------------|----------------------|
+| Keyplay | ICP scoring, custom account fit | No | No |
+| Common Room | Community engagement, product usage | No | No |
+| Pocus | Product-led sales signals | No | No |
+| UserGems | Job changes, champion tracking | No | No |
+| Koala | Website visitor identification | No | No |
+| Unify | Intent signals, multi-source | No | No |
+| Clay | Custom signals via HTTP API | Possible (you build it) | No (you build it) |
+| PredictLeads | Job openings, tech detection, news | No | No |
+| Autumn AI (YC W26) | Real-time posts, commits, blogs | No | No |
+
+**Key finding:** Every platform defines "signals" as intent data. None ingest government enforcement/regulatory data. Clay is the only platform where you could wire in government APIs — but it's the workflow layer, not the intelligence layer.
+
+---
+
+### Key Competitive Insights (March 2026 — Updated)
 
 1. **The positioning is wide open.** Nobody else is building outbound campaigns from government/regulatory data signals at scale.
 2. **Slingshot is the only direct competitor** and appears very early-stage (no search index presence).
-3. **"Signal-based outbound" has been claimed** by Restartt (trademarked) and is becoming buzzy — but everyone means intent data. Thresh's version is fundamentally different.
-4. **The Clay agency market is a bloodbath** — 20+ agencies competing on the same tooling at similar price points ($3.5K-15K/mo). Differentiation on tooling alone is a race to the bottom.
-5. **The gap between data providers and campaign builders is Thresh's exact positioning.** CarrierOK sells FMCSA data for $1/mo. Clay agencies charge $10K/mo for workflows. Nobody turns public data into ready-to-send outbound campaigns.
-6. **Thresh's biggest gap is proof.** Every competitor (even mediocre ones) has some form of published results. Thresh needs ONE named case study with conversion metrics.
+3. **Cannonball GTM validated the architecture** in construction (building permits → PVPs at $0.07/prospect). Nobody has gone multi-vertical with it.
+4. **"Signal-based outbound" has been claimed** by Restartt (trademarked) and is becoming buzzy — but everyone means intent data. Thresh's version is fundamentally different.
+5. **The Clay agency market is a bloodbath** — 20+ agencies competing on the same tooling at similar price points ($3.5K-15K/mo). Differentiation on tooling alone is a race to the bottom.
+6. **The gap between data providers and campaign builders is Thresh's exact positioning.** CarrierOK sells FMCSA data for $1/mo. Definitive Healthcare sells CMS data for enterprise prices. Clay agencies charge $10K/mo for workflows. Nobody turns public data into ready-to-send outbound campaigns.
+7. **Thresh's biggest gap is proof.** Every competitor (even mediocre ones) has some form of published results. Thresh needs ONE named case study with conversion metrics.
+8. **The compliance-to-sales crossover is unoccupied.** Compliance tools (ProviderTrust, MedTrainer) monitor government data for compliance officers. Sales tools (Clay, Keyplay, UserGems) track intent data for salespeople. Nobody uses compliance/enforcement data as sales triggers.
+9. **The "noise is the moat" positioning.** Most teams see DOJ press releases, OIG enforcement pages, and Google Alerts as "too noisy, not worth monitoring." The filtering layer — AI classifying each result by ICP fit, violation type, company size — is what nobody will bother to build. Three layers stacked: (1) Ingestion of sources most teams write off as noise, (2) AI + structured enrichment turning noise into signal, (3) Turning each signal into a PVP the prospect would pay for. Each layer is hard enough that nobody does all three.
+10. **The moat is domain-specific interpretation, not architecture.** The tooling (Clay, parse.bot, Apify) is commoditized. Knowing that a "Claims Review" CIA category maps to a pre-billing review product, or that a FMCSA driver OOS rate above 5.51% means a carrier has a recruiting/screening problem — that's the part platforms and agencies can't replicate without domain knowledge.
 
 ---
 

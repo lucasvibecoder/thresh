@@ -1,2 +1,13 @@
 .vercel
 node_modules
+
+# macOS
+.DS_Store
+
+# Credentials (NEVER commit)
+.env.local
+.env*.local
+.mcp.json
+
+# Accidental copy of gtm-alpha repo (real one is at sibling level)
+gtm-alpha/

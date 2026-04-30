@@ -1,0 +1,143 @@
+send_priority,company,domain,vertical,signal,first_name,last_name,title,email,linkedin,subject,body,public_data_angle
+1,Keebler Health,keebler.health,Healthcare / Medicare risk adjustment,Series A $22M (2026-04-15),Isaac,Park,"CEO, Co-Founder",isaac@keebler.health,https://www.linkedin.com/in/isaacpark,cms hcc data,"Hey Isaac,
+
+Saw the $22M Series A. Congrats.
+
+Risk adjustment is the cleanest signal-data pitch I've seen this year. Your buyers (MA plans, at-risk providers) show up in CMS HCC files, Star Ratings, and state MA enrollment shifts. All public.
+
+Most teams pitching them lead with ""AI-first."" Yours could lead with their actual coding gaps, by plan, by quarter.
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Worth a quick look?
+
+Cheers,
+Lucas","CMS HCC coding files, MA Star Ratings, state MA enrollment shifts"
+1,Sunbound,sunboundhomes.com,Senior care fintech,Series A (2026-04-14),Manny,Cominsky,CEO,manny@sunboundhomes.com,https://www.linkedin.com/in/mcominsky,cms five-star signals,"Hey Manny,
+
+Saw the Series A.
+
+Senior care is one of the few verticals where your buyer's operational pain is graded publicly every quarter. CMS Five-Star deficiencies, state survey citations, days-cash-on-hand for non-profits. All public, all predictive of who needs you next.
+
+Most outbound to SNFs is generic. Yours could be ""we noticed your last survey flagged X.""
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what this looks like for senior care?
+
+Cheers,
+Lucas","CMS Care Compare, Five-Star deficiencies, state survey citations, Provider of Services file"
+1,Joyful Health,joyfulhealth.io,Healthcare revenue cycle / RCM,Series A $22M (2026-04-16),Eliana,Berger,"CEO, Co-Founder",eliana@joyfulhealth.io,https://www.linkedin.com/in/elianaberger,medicare claims signals,"Hey Eliana,
+
+Saw the $22M.
+
+Your pitch is ""we recover 5-10x our fees."" That's quantified pain. Medicare claims data is public. So are denial rates by specialty. So is which practices are leaving money on the table.
+
+Most outbound to practices is ""AI-powered RCM"" generic. Yours could be ""we ran your claims, here's the leak.""
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what one looks like for healthcare practices?
+
+Cheers,
+Lucas","CMS physician billing PUF, denial patterns by specialty, Medicare claims"
+1,HeyDonto,heydonto.com,Healthcare / dental data intelligence,Seed $20M at $200M val (2026-04-07),Rivers,Morrell,"Founder, CEO",rivers@heydonto.com,,dental interop signals,"Hey Rivers,
+
+$20M at $200M val. Congrats.
+
+Dental and health interop is one of the verticals where buyers leave a public trail: state dental boards, CMS Medicaid dental utilization, FDA recalls, payor network changes. All sourceable.
+
+Most outbound to dental orgs is generic. Yours could lead with the specific data leak each org cares about.
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what one looks like for dental?
+
+Cheers,
+Lucas","State dental boards, CMS Medicaid dental utilization, FDA recalls, payor network changes"
+1,Primepoint,primepoint.ai,Construction intelligence / GC SaaS,Seed $10M (2026-04-13),Lubomir,Bourdev,"CEO, Co-Founder",lubomir@primepoint.ai,https://www.linkedin.com/in/lubomir-bourdev-51a8652,gc safety data,"Hey Lubomir,
+
+Saw the $10M seed.
+
+Construction is one of the cleanest verticals for signal-based outbound. OSHA violations, building permits, ENR rankings, jobsite incident reports. All public. You can rank GCs by who's actually losing money on rework right now.
+
+Most outbound to construction is ""schedule a demo."" Yours could be ""we saw your last 3 OSHA citations were drawing-related.""
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what this looks like for GCs?
+
+Cheers,
+Lucas","OSHA violations, building permits, ENR rankings, jobsite incident reports"
+2,Coral,trycoral.ai,Healthcare provider automation,Seed $12.5M (2026-04-20),Ajay,Shrihari,Founder,ajay@trycoral.ai,https://www.linkedin.com/in/ajay-shrihari,provider denial data,"Hey Ajay,
+
+Congrats on the $12.5M.
+
+You're going after the right buyer. Provider orgs are measured publicly on HCAHPS, CMS Compare, prior-auth denial rates by payor. Same pain points your platform fixes.
+
+Most teams pitching health systems use the same enterprise sales motion. Yours could rank prospects by their actual measured denial rate.
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what one of these looks like?
+
+Cheers,
+Lucas","CMS Compare, HCAHPS, prior-auth denial rates by payor"
+2,Ethermed,ethermed.ai,Healthcare prior authorization,Series A $8.5M (2026-04-16),Daniel,Friedman,"CEO, Co-Founder",dan@ethermed.ai,https://www.linkedin.com/in/dfriedm,prior auth signals,"Hey Dan,
+
+Saw the Series A.
+
+Prior auth is a vertical where the buyer's pain is literally a CMS dataset. Denial rates by plan, by service category, by state. Public. So are appeals win rates.
+
+Plenty of room to rank prospects by actual measured pain instead of generic firmographics.
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Worth showing you what this looks like for payor outreach?
+
+Cheers,
+Lucas","CMS denial rate data, appeals win rates, payor policy changes, state DOI filings"
+2,Boom,boom.build,Surety / contractor underwriting fintech,Seed (2026-04-14),Alex,Bandes,"CEO, Co-Founder",alex@boom.build,https://www.linkedin.com/in/alexbandes,contractor risk signals,"Hey Alex,
+
+Saw the seed.
+
+Your buyer (sureties, lenders) underwrites contractors with publicly available data they're not using. State licensing boards, OSHA citations, mechanic's liens, federal contract awards. Plenty of signal to surface contractors before they default.
+
+Most surety-tech outbound is generic ""modern underwriting."" Yours could be ""we found 50 contractors in your book with new OSHA hits.""
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what this looks like for sureties?
+
+Cheers,
+Lucas","State contractor licensing boards, OSHA citations, mechanic's liens, federal contract awards"
+2,Critical Loop,criticalloop.com,Energy / microgrid for data centers + critical infra,Series A $26M (2026-04-13),Balachandar,Ramamurthy,CEO,bala@criticalloop.com,https://www.linkedin.com/in/balachandarramamurthy,ferc queue signals,"Hey Bala,
+
+Saw the $26M Series A.
+
+Your buyers (data centers, manufacturers, critical infra) leave a public trail in FERC interconnection queues, EIA generator data, NERC reliability filings, and utility tariff changes.
+
+Plenty of signal to find who's about to need power before their utility tells them.
+
+Most outbound in this space pitches ""microgrid solutions."" Yours could be ""we saw your queue position slipped two quarters.""
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Worth a quick look?
+
+Cheers,
+Lucas","FERC interconnection queues, EIA generator data, NERC reliability filings, utility tariff changes"
+3,Vibrant Practice,vibrantpractice.com,Functional / longevity medicine SaaS,Seed $9.3M (2026-04-13),Sunita,Mohanty,"CEO, Co-Founder",sunita@vibrantpractice.com,https://www.linkedin.com/in/sunita-mohanty-0843b0,clinic growth signals,"Hey Sunita,
+
+Saw the $9.3M seed.
+
+Functional and longevity clinics are fragmented, but their growth shows up in public data: state med board licenses, CMS Open Payments, NPI registry changes, new clinician hires.
+
+Plenty of signal to find practices about to outgrow whatever they're using now.
+
+I build signal-based prospect lists for companies selling into regulated verticals.
+
+Want to see what this looks like for functional medicine?
+
+Cheers,
+Lucas","State medical boards, CMS Open Payments, NPI registry changes, clinician hire patterns"

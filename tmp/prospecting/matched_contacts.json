@@ -1,0 +1,82 @@
+{
+  "boom": {
+    "name": "Alex Bandes",
+    "title": "Co-Founder & CEO",
+    "email": "alex@boom.build",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/alexbandes",
+    "domain": "boom.build"
+  },
+  "coral": {
+    "name": "Ajay Shrihari",
+    "title": "Founder",
+    "email": "ajay@trycoral.ai",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/ajay-shrihari",
+    "domain": "trycoral.ai"
+  },
+  "criticalloop": {
+    "name": "Balachandar Ramamurthy",
+    "title": "Chief Executive Officer",
+    "email": null,
+    "email_status": "unavailable",
+    "linkedin": "http://www.linkedin.com/in/balachandarramamurthy",
+    "domain": "criticalloop.com"
+  },
+  "ethermed": {
+    "name": "Daniel Friedman",
+    "title": "CEO and Cofounder",
+    "email": "dan@ethermed.ai",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/dfriedm",
+    "domain": "ethermed.ai"
+  },
+  "heydonto": {
+    "name": "Rivers Morrell",
+    "title": null,
+    "email": "rivers@heydonto.com",
+    "email_status": "verified",
+    "linkedin": null,
+    "domain": "heydonto.com"
+  },
+  "joyful": {
+    "name": "Eliana Berger",
+    "title": "Co-Founder/CEO",
+    "email": "eliana@joyfulhealth.io",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/elianaberger",
+    "domain": "joyfulhealth.io"
+  },
+  "keebler": {
+    "name": "Isaac Park",
+    "title": "Chief Executive Officer, Co-Founder",
+    "email": "isaac@keebler.health",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/isaacpark",
+    "domain": "keebler.health"
+  },
+  "primepoint": {
+    "name": "Lubomir Bourdev",
+    "title": "Co-founder and CEO",
+    "email": "lubomir@primepoint.ai",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/lubomir-bourdev-51a8652",
+    "domain": "primepoint.ai"
+  },
+  "sunbound": {
+    "name": "Manny Cominsky",
+    "title": "CEO",
+    "email": "manny@sunboundhomes.com",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/mcominsky",
+    "domain": "sunboundhomes.com"
+  },
+  "vibrant": {
+    "name": "Sunita Mohanty",
+    "title": "Co-founder, CEO",
+    "email": "sunita@vibrantpractice.com",
+    "email_status": "verified",
+    "linkedin": "http://www.linkedin.com/in/sunita-mohanty-0843b0",
+    "domain": "vibrantpractice.com"
+  }
+}
