@@ -11,3 +11,13 @@ node_modules
 
 # Accidental copy of gtm-alpha repo (real one is at sibling level)
 gtm-alpha/
+
+# Local-only Claude Code settings
+.claude/
+
+# Internal outbound notes (named prospects, sent log) — never commit to public repo
+outbound/qualified-from-gtm-alpha.md
+outbound/sent-log.md
+
+# Local-only page drafts (not for deploy)
+drafts/
