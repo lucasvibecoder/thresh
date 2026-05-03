@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Samsara Playbook — Signal-First Outbound | Thresh</title>
-    <meta name="description" content="A Signal-First Outbound playbook built for Samsara. Three plays for finding motor carriers hit by CSA score declines, nuclear verdicts, or new Director of Safety hires — with three real safety scorecards built from public FMCSA data.">
+    <meta name="description" content="Signal-first outbound for Samsara: nine public-data plays (Verizon Connect migration, CSA red zone, FMCSA compliance reviews, nuclear verdicts, new safety leaders, and more), with depth on the top three and real FMCSA safety scorecards.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#080808">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
@@ -12,16 +12,17 @@
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="The Samsara Playbook — Signal-First Outbound">
-    <meta property="og:description" content="Three plays for finding motor carriers hit by CSA score declines, nuclear verdicts, or new Director of Safety hires. Three real safety scorecards downloadable.">
+    <meta property="og:description" content="Nine signal-triggered plays for fleet GTM: migration disruption, CSA red zone, FMCSA ratings, verdicts, hires, and more — with three deep dives and downloadable FMCSA scorecards.">
     <meta property="og:url" content="https://runthresh.com/playbooks/samsara-com/">
     <meta property="og:image" content="https://runthresh.com/og-image.png">
     <meta property="og:site_name" content="Thresh">
     <meta property="article:published_time" content="2026-04-29T12:00:00Z">
+    <meta property="article:modified_time" content="2026-05-03T12:00:00Z">
     <meta property="article:author" content="Lucas Linares">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Samsara Playbook — Signal-First Outbound">
-    <meta name="twitter:description" content="Three plays for finding motor carriers hit by CSA declines, nuclear verdicts, or new safety hires. Real downloadable scorecards.">
+    <meta name="twitter:description" content="Nine public-data plays for Samsara. Top three: Verizon migration, CSA red zone, compliance review — plus scorecards and full menu.">
     <meta name="twitter:image" content="https://runthresh.com/og-image.png">
 
     <script type="application/ld+json">
@@ -29,9 +30,9 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "The Samsara Playbook — Signal-First Outbound",
-      "description": "Three plays for finding motor carriers hit by CSA score declines, nuclear verdicts, or new Director of Safety hires.",
+      "description": "Nine signal-triggered plays for Samsara fleet GTM with three deep dives and FMCSA scorecard examples.",
       "datePublished": "2026-04-29T12:00:00Z",
-      "dateModified": "2026-04-29T12:00:00Z",
+      "dateModified": "2026-05-03T12:00:00Z",
       "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
       "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
       "mainEntityOfPage": "https://runthresh.com/playbooks/samsara-com/",
@@ -43,7 +44,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
-    <link rel="stylesheet" href="/output.css">
+    <style>
+        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
+            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
+            .nav-close{display:none}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
+        .play-menu-details summary{cursor:pointer;font-family:JetBrains Mono,monospace;font-size:.75rem;color:#00FF41;list-style:none}
+        .play-menu-details summary::-webkit-details-marker{display:none}
+        .play-menu-details pre{white-space:pre-wrap;font-family:JetBrains Mono,monospace;font-size:.7rem;line-height:1.5;color:#9CA1AA;margin-top:1rem}
+    </style>
+    <link rel="stylesheet" href="../../output.css">
 </head>
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
@@ -51,12 +75,24 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
 
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
-            <div class="flex items-center gap-6">
-                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
-                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <a href="/#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../../index.html" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
+                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </label>
+            <div class="nav-menu md:flex items-center gap-6">
+                <a href="../index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="../../blog/index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="../../index.html#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
             </div>
         </div>
     </nav>
@@ -74,14 +110,20 @@
                     playbook built for<br class="hidden sm:block">
                     <span class="headline-accent">Samsara.</span>
                 </h1>
-                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                    Samsara sells fleet telematics, AI dash cams, and driver safety platforms to motor carriers. Their three sharpest buyers are carriers entering FMCSA investigation territory, carriers in the geographic shadow of a nuclear verdict, and carriers who just hired their first Director of Safety. This is the playbook to reach them.
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-6 leading-relaxed font-light">
+                    Nine cold-ready plays built from public substrate — regulatory cliffs (FMCSA SMS and SAFER), competitive disruption (Verizon Connect's international migration), and trajectory signals (new safety leaders, hiring, expansion). Below: run these three first, then the full menu, then depth on the trio that matters most.
+                </p>
+                <p class="reveal text-brand-faint text-sm max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    // Data stack: FMCSA SMS and SAFER, OSHA workplace-safety enforcement where it compounds carrier risk, industry press and alerts, LinkedIn and job boards — layered by play, not every play uses every source.
                 </p>
                 <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="/#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
-                    <a href="#plays" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">How it's built</a>
+                    <a href="../../index.html#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                    <a href="#activation" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">Run these first</a>
                 </div>
-                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: April 29, 2026</p>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 3, 2026</p>
+                <p class="reveal mt-4 font-mono text-xs text-brand-muted text-center max-w-2xl mx-auto leading-relaxed">
+                    // Side-by-side: <a href="./legacy.html" class="text-brand-accent hover:underline">earlier three-play edition (Apr 2026)</a> — same scorecards, pre–GTM Alpha v5 menu + depth.
+                </p>
             </div>
         </section>
 
@@ -92,15 +134,15 @@
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
-                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Every telematics rep sounds the same. Samsara doesn't have to.</h2>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Every fleet platform rep sounds the same. Samsara doesn't have to.</h2>
                     <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
-                        Motive, Lytx, Geotab, and Verizon Connect all send the same email — generic claims about ROI, fleet visibility, and compliance. Samsara has the FMCSA data advantage: every motor carrier's CSA score is public, and most carriers don't monitor their own scores month-to-month. Lead with their data, not yours.
+                        Most competitors open with ROI and visibility. This playbook opens with <strong class="text-brand-text font-medium">their</strong> migration deadline, <strong class="text-brand-text font-medium">their</strong> CSA percentile, or <strong class="text-brand-text font-medium">their</strong> SAFER rating change — then attaches product. Same stack as generic outbound says "we help fleets like yours."
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
                     <div>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic telematics rep sends today.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic fleet rep sends today.</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
@@ -119,7 +161,7 @@
                     </div>
 
                     <div>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">What Samsara sends with the data.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 md:mt-0 mb-4">Play 2 signal — CSA red zone (real carrier).</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
@@ -140,7 +182,7 @@
 
                 <div class="reveal mt-4">
                     <p class="provenance-label text-brand-muted leading-relaxed">
-                        That second email isn't a template. Every number — BR Williams' Unsafe Driving 2.13 → 2.30, the 40% speeding split, 100% tire violation OOS rate — comes from FMCSA's Safety Measurement System. Public, free, refreshed monthly. The full scorecard is downloadable below.
+                        BR Williams numbers are from FMCSA's Safety Measurement System — public, refreshed monthly. Full scorecards for Play 2 are downloadable in the deep-dive section. Live outbound: verify G2 rankings and IDC study disclosure language before you paste satisfaction or crash-reduction stats into email.
                     </p>
                 </div>
             </div>
@@ -148,7 +190,7 @@
 
         <div class="divider max-w-6xl mx-auto"></div>
 
-        <!-- CORE PRINCIPLES -->
+        <!-- PRINCIPLES -->
         <section class="py-16 sm:py-24 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="reveal mb-12">
@@ -158,18 +200,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger">
                     <div class="reveal bg-brand-surface panel p-8 card-lift">
                         <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
-                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Hard data over soft signals.</p>
-                        <p class="text-brand-muted text-sm leading-relaxed">FMCSA SMS data refreshed monthly. CSA percentiles. Specific violation counts. A nuclear verdict on a specific date in a specific state. No "intent surge" or "buying signals" — facts the prospect's regulators have already published.</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Public substrate first.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Migration windows, CSA percentiles, SAFER ratings, press events, title changes — anchored on facts prospects can look up. No "intent surge" as the lead.</p>
                     </div>
                     <div class="reveal bg-brand-surface panel p-8 card-lift">
                         <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
-                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Mirror the situation, don't pitch.</p>
-                        <p class="text-brand-muted text-sm leading-relaxed">"Your Unsafe Driving percentile crossed 78." "A $141M verdict was just awarded in your state." Then the value angle follows. The pitch comes after the prospect agrees the situation is real and urgent.</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Mirror the moment, don't pitch.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Name the disruption or threshold first. Product lands as the logical response after they agree the situation is real.</p>
                     </div>
                     <div class="reveal bg-brand-surface panel p-8 card-lift">
                         <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
-                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Verifiable in 5 minutes.</p>
-                        <p class="text-brand-muted text-sm leading-relaxed">Every claim ties to FMCSA SMS, FMCSA SAFER, FreightWaves, or CCJ — all public. The prospect can pull their own carrier snapshot and verify the numbers before they reply.</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Verifiable in minutes.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">FMCSA, SAFER, and press links back every regulatory claim. Vendor stats (G2, IDC) need a freshness check and sponsorship disclosure before send.</p>
                     </div>
                 </div>
             </div>
@@ -183,9 +225,10 @@
                 <div class="reveal">
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">In This Playbook</p>
                     <ul class="space-y-3 font-mono text-sm">
-                        <li><a href="#play-1" class="text-brand-muted hover:text-brand-accent transition-colors">01_ The Compliance Cliff — Carriers entering FMCSA investigation territory</a></li>
-                        <li><a href="#play-2" class="text-brand-muted hover:text-brand-accent transition-colors">02_ The Verdict Response — Nuclear verdicts in their geography</a></li>
-                        <li><a href="#play-3" class="text-brand-muted hover:text-brand-accent transition-colors">03_ The Safety Mandate — Carriers hiring their first Director of Safety</a></li>
+                        <li><a href="#activation" class="text-brand-muted hover:text-brand-accent transition-colors">01_ Run these first — activation summary</a></li>
+                        <li><a href="#portfolio-note" class="text-brand-muted hover:text-brand-accent transition-colors">02_ Portfolio note — substrate gap</a></li>
+                        <li><a href="#play-menu" class="text-brand-muted hover:text-brand-accent transition-colors">03_ Nine-play menu — send-ready openers</a></li>
+                        <li><a href="#plays" class="text-brand-muted hover:text-brand-accent transition-colors">04_ Three deep plays — architecture + PVP</a></li>
                         <li><a href="#doesnt-solve" class="text-brand-muted hover:text-brand-accent transition-colors">What this playbook doesn't solve</a></li>
                         <li><a href="#data-sources" class="text-brand-muted hover:text-brand-accent transition-colors">Data sources</a></li>
                     </ul>
@@ -195,32 +238,306 @@
 
         <div class="divider max-w-6xl mx-auto"></div>
 
-        <!-- PLAYS -->
+        <!-- ACTIVATION -->
+        <section id="activation" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Activation Summary</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Run these three first.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Operator-fast top of funnel: highest-conviction motion before you skim the other six plays in the menu.</p>
+                </div>
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-6 sm:p-8">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">#</th>
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Persona</th>
+                                <th class="py-3 pr-4">Motion</th>
+                                <th class="py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">1</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Forced Migration off Verizon Connect</td>
+                                <td class="py-4 pr-4 align-top">VP Operations or Director of Fleet — 50–500 vehicles, UK / IE / IT / FR / PT / PL / NL / DE / AU</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">2</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">CSA Score Red Zone</td>
+                                <td class="py-4 pr-4 align-top">Director of Safety — US motor carrier, 50–500 vehicles</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">3</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Compliance Review Triggered</td>
+                                <td class="py-4 pr-4 align-top">Director of Safety or Owner/CEO — Conditional or Unsatisfactory SAFER rating</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal mt-6 text-brand-muted text-sm leading-relaxed max-w-3xl">
+                    <span class="font-mono text-brand-accent">Override:</span> <strong class="text-brand-text font-medium">Insurance Mandate Renewal (Play 4)</strong> — forced buyer and hard deadline, but the mandate letter is usually private. Promote into the top three when a <strong class="text-brand-text">broker partnership</strong> can surface renewals; otherwise route warm.
+                </p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PORTFOLIO NOTE -->
+        <section id="portfolio-note" class="py-12 sm:py-16 px-6 scroll-mt-20">
+            <div class="max-w-3xl mx-auto reveal">
+                <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Portfolio Note</p>
+                <h2 class="font-display font-bold section-heading text-xl sm:text-2xl mb-4">Substrate gap (not a detection gap).</h2>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    All nine plays here run on <strong class="text-brand-text font-medium">public</strong> data. Samsara also sits on proprietary fleet aggregates (behavior percentiles, maintenance benchmarks, harsh-event distributions, training completion) that could power a peer-benchmark "where you rank vs. your band" play — that Cat A-style motion needs vendor or brief-side substrate; it isn't in this public-only menu.
+                </p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- NINE-PLAY MENU -->
+        <section id="play-menu" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Play Menu</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Nine plays. Pick by signal.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each block: one-line hook + optional full opener. Compressed "why it works" — the deep section below carries architecture.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger">
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 1 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Forced Migration off Verizon Connect</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">VP Ops / Fleet in nine international geos, 50–500 units — one-page Samsara vs post-migration Geotab while the 18-month handover is live.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, {{company_name}} has roughly 18 months of Verizon Connect access before the Geotab handover lands fully — October 2025 to April 2027.
+
+Most VC customers we talk to during this window run the same evaluation: stay on a platform you didn't choose, or take the migration window as a chance to re-evaluate. Samsara is ranked #1 on G2 for fleet management 5 quarters running — 84% user satisfaction vs. Geotab 76% (G2 public reviews).
+
+I built a 1-page side-by-side comparing what {{company_name}}'s VC setup would look like on Samsara vs. what it'll look like on Geotab post-migration — feature parity, deployment timeline, your hardware path.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 2 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">CSA Score Red Zone</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Director of Safety when Unsafe Driving, HOS, or Crash BASIC crosses the intervention band — carrier-specific scorecard from SMS.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, your Unsafe Driving BASIC hit {{csa_percentile}}% this month.
+
+That puts {{company_name}} above the 65% threshold where FMCSA investigation triggers. It's also the same number your insurance carrier pulls when they price your next renewal.
+
+I built a safety scorecard from your publicly available FMCSA data — your trend over the last 12 months, how you compare to carriers your size, and the violation categories driving the score.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 3 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Compliance Review Triggered</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">New Conditional or Unsatisfactory SAFER rating — corrective-action profile from inspection history.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, FMCSA flagged {{company_name}} with a {{rating}} safety rating in the last review.
+
+You've got a corrective action window open. Most carriers in this position deploy AI cameras + automated coaching as the visible safety investment — it's the corrective measure FMCSA recognizes, and the same evidence your insurer prices into your next renewal.
+
+I pulled your inspection history from FMCSA SAFER and built a 1-page corrective-action profile — what specific violations are driving the rating, which ones AI cameras and coaching directly address, and benchmarks for carriers your size that improved similar ratings on a ~12-month path.
+
+Should this go to you or your DOT compliance lead?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 4 · Cat B · Broker-friendly</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Insurance Mandate Renewal</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">CFO or Director of Safety 60–90 days before renewal when telematics is becoming a quote condition — best with broker-sourced mandate signal.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, more carriers your size are getting renewal letters that say "cameras and telematics required to quote" — the trend's been accelerating across the last 12–18 months (CCJ, FreightWaves).
+
+If {{company_name}} is in the renewal window now or in the next 90 days, the question shifts from "should we deploy telematics" to "how fast can we get it installed before the renewal date." Samsara installs in weeks, not months — hardware, cellular, and software in a single SKU.
+
+I can put together a 90-day deployment plan sized to your fleet and renewal date.
+
+Should this go to you or your insurance broker?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 5 · Cat B · Event</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Nuclear Verdict in Region</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Within days of a major verdict in the prospect's state — exposure profile from public CSA and crash record.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, the {{verdict_amount}} verdict against {{verdict_carrier}} in {{state}} {{week_or_month}} hit every fleet operator in the state — every safety director I've spoken to in {{state}} has had the "that could be us" conversation with their CEO this month.
+
+Carriers WITH dash cam footage at the moment of impact see 63% lower crash rates in Year 1 per a Samsara-sponsored IDC study — and defensible evidence when a case goes to a jury.
+
+I pulled {{company_name}}'s public CSA and crash record and built a 1-page exposure profile — where you're most vulnerable to a similar verdict pattern, and what carriers in your size range that stayed below threshold did to reduce risk.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 6 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">New Safety Leader Hired</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">New Director of Safety / VP Safety within 90 days — 90-day plan tied to their public CSA position.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, you took the {{title}} role at {{company_name}} {{weeks_in_role}} weeks ago.
+
+The first 90 days for new safety leaders almost always include the same questions: where are we on CSA, where's the crash exposure, what's the fastest measurable improvement my CEO will see by month 6. Carriers that show CSA improvement in Year 1 share a pattern — AI dash cams plus automated coaching that triages events so the safety team isn't reviewing everything manually (Samsara-sponsored IDC study).
+
+I built a 90-day plan specific to {{company_name}}'s current CSA position and fleet size — what to baseline, what to install, where the early wins are.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 7 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First Fleet Manager Hire</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">First dedicated fleet manager at a 30–500 employee company — platform comparison sized to their fleet.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, {{company_name}} posted the {{title}} role {{weeks_ago}} weeks ago — looks like the first dedicated fleet role at the company.
+
+The first 60 days in a first-fleet-manager seat almost always include picking the platform the fleet will run on for the next 3+ years. Samsara is ranked #1 on G2 for fleet management 5 quarters running (84% user satisfaction).
+
+I built a 1-page comparison sized to {{company_name}}'s current fleet — Samsara vs. the two alternatives most companies your size end up evaluating, the install path, the ROI math.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 8 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Driver Hiring Surge</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">5+ active CDL roles with large sign-on bonuses — retention exposure profile; strongest paired with a CSA signal.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, {{company_name}} has {{cdl_role_count}} active CDL postings right now — most with sign-on bonuses {{bonus_range}}.
+
+At those numbers, you're paying twice for the same seat: once on the bonus, once on training, and again every time a new hire turns over inside 90 days. Carriers using AI coaching and exoneration cameras typically retain drivers longer because drivers exit cleanly with their record intact and stop leaving over false-positive accusations.
+
+I pulled {{company_name}}'s CSA and inspection history and built a quick retention exposure profile — where the highest-turnover behaviors are, and where coaching tech makes the biggest dent.
+
+Should this go to you or your driver recruiting lead?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift md:col-span-2">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 9 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Fleet Expansion Announcement</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">30–60 days after a public fleet expansion — deployment plan sized to new units (clean install window).</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>{{first_name}}, saw the announcement on {{expansion_announcement}} — {{vehicle_count}} new {{vehicle_type}} on the way for {{company_name}}.
+
+New vehicles are the cleanest moment to install telematics — install during outfitting, no retrofit cost, full data from day one. If {{company_name}} doesn't have telematics on the existing fleet yet, expansion is the natural decision point. If you do, it's the renegotiation point.
+
+I built a 1-page deployment plan for the new units sized to your existing fleet stack — install path, cellular setup, integration with your dispatch.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THREE DEEP PLAYS -->
         <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal mb-16">
-                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Intelligence Plays</p>
-                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three triggers. Three messages.</h2>
-                    <p class="text-brand-muted text-lg leading-relaxed font-light">Each play targets a different moment in the safety director's calendar — when their score crosses the line, when fear lands in their state, or when they walk in on day one. One message per moment.</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Deep Dives</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three plays with full architecture.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Failure mode → trigger → persona → opener → PVP. Menu emails above match Variant A here for Plays 1–3.</p>
                 </div>
 
-                <!-- PLAY 1: COMPLIANCE CLIFF -->
-                <article id="play-1" class="mb-24 scroll-mt-20">
+                <!-- DEEP 1 -->
+                <article id="play-deep-1" class="mb-24 scroll-mt-20">
                     <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Compliance Cliff</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For motor carriers whose CSA percentile crosses 65% in Unsafe Driving, HOS Compliance, or Crash Indicator on the FMCSA Safety Measurement System. Public, monthly-refreshed data. Carriers above threshold trigger FMCSA investigation.</p>
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Forced Migration off Verizon Connect</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Forced platform migration — international Verizon Connect customers moving to Geotab on a published window. Retraining and integration rework either way; the question is whether they accept the default or re-evaluate.</p>
                     </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">Most mid-market carriers (50–500 vehicles) don't monitor their own CSA scores month-to-month. They find out the score is bad when the FMCSA investigation letter arrives, or when their insurance broker calls with a renewal repricing. By then, the spiral is real: bad scores → higher premiums → less safety budget → more violations → worse scores. The 65% threshold is a lagging indicator they didn't see coming.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">The carrier's CSA data is public — but they haven't done the analysis. The Carrier Safety Scorecard pulls 12 months of trend data, peer comparison, and specific violation drivers, all from FMCSA SMS. The PVP is useful whether or not they buy Samsara. Information asymmetry: real, repeatable, defensible.</p>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> Public evidence of Verizon Connect use; HQ or ops in UK, IE, IT, FR, PT, PL, NL, DE, or AU; ~50–500 vehicles; inside October 2025–April 2027 migration narrative (confirm dates against Geotab's public statements before citing).</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> VP Operations or Director of Fleet — owns the rebuild of dispatch integrations and driver workflow.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> One-page side-by-side: current VC → post-migration Geotab vs current VC → Samsara (feature parity, timeline, hardware path, integration touchpoints). Useful even if they stay on Geotab — it's the evaluation work they'd do internally.</p>
                     </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example artifact</p>
+                        <p class="text-brand-faint text-sm mb-4">No named fleet PDF on this page — the deliverable is built per account from public specs and the prospect's footprint. Use the menu email + PVP spec above as the template.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">VARIANT A // MENU</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, {{company_name}} has roughly 18 months of Verizon Connect access before the Geotab handover lands fully — October 2025 to April 2027.</p>
+                                <br>
+                                <p>Most VC customers we talk to during this window run the same evaluation: stay on a platform you didn't choose, or take the migration window as a chance to re-evaluate. Samsara is ranked #1 on G2 for fleet management 5 quarters running — 84% user satisfaction vs. Geotab 76% (G2 public reviews).</p>
+                                <br>
+                                <p>I built a 1-page side-by-side comparing what {{company_name}}'s VC setup would look like on Samsara vs. what it'll look like on Geotab post-migration — feature parity, deployment timeline, your hardware path.</p>
+                                <br>
+                                <p>Want me to send it?</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
+                <!-- DEEP 2 -->
+                <article id="play-deep-2" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">CSA Score Red Zone</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Safety score death spiral — CSA climbing through the intervention band, insurance repricing, less budget for safety, worse inspections. Public SMS data makes the trajectory visible before many mid-market teams internalize it.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> 65%+ percentile in Unsafe Driving, HOS Compliance, or Crash Indicator on latest SMS refresh; 50–500 power units; US motor carrier.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Director of Safety or Safety Manager — owns the investigation conversation and corrective narrative.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Carrier safety scorecard: 12-month trajectory, peer band, violation drivers, optional corrective patterns (vendor-neutral analysis, Samsara only where product maps to findings).</p>
+                    </div>
                     <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP — sent to BR Williams Trucking, February 2026</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Executed example — BR Williams Trucking (Feb 2026)</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
@@ -231,128 +548,63 @@
                             <div class="email-body">
                                 <p>{{first_name}}, your Unsafe Driving BASIC moved from 2.13 to 2.30 last month — a single-month jump driven by high-severity speeding. Vehicle Maintenance climbed from 2.96 to 3.08 over the same period.</p>
                                 <br>
-                                <p>For context: carriers that deploy AI dash cams and automated coaching see an average 8X return on safety investment per IDC's research, with the biggest impact in the Unsafe Driving category.</p>
-                                <br>
                                 <p>I pulled your publicly available CSA data and built a one-page safety scorecard — 12-month trend, peer comparison, the specific violations driving each measure. Attached.</p>
                                 <br>
                                 <p>Does this match what you're seeing internally?</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifacts: Three full safety scorecards</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-4">Three executed scorecards across trucking and construction. Each is a 1-page PDF: CSA percentiles, 12-month trends, top violation categories, peer comparison, risk assessment. Built entirely from FMCSA public data.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Artifacts — Play 2 (FMCSA scorecards)</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">Three executed scorecards. Each PDF: CSA percentiles, trends, violation drivers, peer comparison — built from public FMCSA data only.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/playbooks/samsara-com/br-williams-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">BR Williams (trucking) →</a>
-                            <a href="/playbooks/samsara-com/williams-plumbing-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Williams Plumbing (construction) →</a>
-                            <a href="/playbooks/samsara-com/cs-companies-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">CS Companies (construction) →</a>
+                            <a href="./br-williams-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">BR Williams (trucking) →</a>
+                            <a href="./williams-plumbing-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Williams Plumbing →</a>
+                            <a href="./cs-companies-safety-scorecard.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">CS Companies →</a>
                         </div>
                     </div>
-
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                    <div class="reveal">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Key sources</p>
                         <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://ai.fmcsa.dot.gov/SMS/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA Safety Measurement System (SMS)</a> — monthly CSA percentiles by BASIC category, public</li>
-                            <li>→ <a href="https://safer.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA SAFER Company Snapshot</a> — safety rating, fleet size, industry classification</li>
-                            <li>→ <a href="https://data.transportation.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">DOT DataHub</a> — bulk SMS data download</li>
+                            <li>→ <a href="https://ai.fmcsa.dot.gov/SMS/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA SMS</a></li>
+                            <li>→ <a href="https://safer.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA SAFER</a></li>
+                            <li>→ <a href="https://data.transportation.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">DOT DataHub</a></li>
                         </ul>
                     </div>
                 </article>
 
-                <!-- PLAY 2: VERDICT RESPONSE -->
-                <article id="play-2" class="mb-24 scroll-mt-20">
+                <!-- DEEP 3 -->
+                <article id="play-deep-3" class="mb-12 scroll-mt-20">
                     <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Verdict Response</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For carriers in the same state as a recent nuclear verdict ($10M+) against a trucking company. Reach out within 14 days, while the news is fresh and "that could be us" is in every safety director's head.</p>
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Compliance Review Triggered</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> SAFER publishes Conditional or Unsatisfactory after a compliance review — finite corrective window, insurance and shipper pressure in parallel. Telematics + video is the visible investment many carriers use in that window.</p>
                     </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">Nuclear verdicts against trucking companies are up roughly 50% YoY — 135 awards over $10 million in 2024, totaling $31.3 billion per the U.S. Chamber of Commerce. Each verdict creates a ripple effect: carriers in the same state read the FreightWaves headline, insurance brokers send alerts, and internal conversations shift from "should we invest in safety tech?" to "can we afford NOT to?" The 14-day window is when budget conversations become possible that wouldn't have been a month earlier.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">No information asymmetry needed here — the prospect knows their own exposure better than we do. The value is naming the event, asking the right question, and being there during the 2-week window when fear is highest. The connection between "dash cam footage" and "liability defense" is freshest right after a verdict lands.</p>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> New Conditional or Unsatisfactory in recent SAFER refresh; 50–500 power units.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Director of Safety; Owner/CEO at smaller fleets.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Corrective-action profile from public inspection history — violations grouped by BASIC, mapping to what coaching and cameras address, plus benchmarks for similar carriers (substantiate named case timelines in the real artifact before claiming specific carrier counts).</p>
                     </div>
-
-                    <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example PVP — sent within 14 days of a nuclear verdict</p>
+                    <div class="reveal mb-6">
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
-                                <span class="email-label">SUBJECT: $141M verdict in Texas</span>
+                                <span class="email-label">VARIANT A // MENU (SOFTENED BENCHMARK LINE)</span>
                             </div>
-                            <div class="email-body">
-                                <p>{{first_name}}, a $141M verdict was just awarded against a regional carrier in Texas this week.</p>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, FMCSA flagged {{company_name}} with a {{rating}} safety rating in the last review.</p>
                                 <br>
-                                <p>The award specifically cited the absence of dash cam footage as a factor — the defendant carrier had no video record to support their driver's account.</p>
+                                <p>You've got a corrective action window open. Most carriers in this position deploy AI cameras + automated coaching as the visible safety investment — it's the corrective measure FMCSA recognizes, and the same evidence your insurer prices into your next renewal.</p>
                                 <br>
-                                <p>You can't control whether a distracted driver crosses into your lane. You can control whether you have footage proving your driver did everything right. Carriers running both telematics and video see a 63% reduction in crash rates in year one (Samsara customer data).</p>
+                                <p>I pulled your inspection history from FMCSA SAFER and built a 1-page corrective-action profile — what specific violations are driving the rating, which ones AI cameras and coaching directly address, and benchmarks for carriers your size that improved similar ratings on a ~12-month path.</p>
                                 <br>
-                                <p>Worth a 15-minute conversation about what coverage looks like for {{company_name}}'s fleet?</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
-                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://www.freightwaves.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FreightWaves</a> — nuclear verdict announcements + trucking news</li>
-                            <li>→ <a href="https://www.ccjdigital.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Commercial Carrier Journal (CCJ)</a> — verdict coverage + insurance trends</li>
-                            <li>→ <a href="https://www.fleetowner.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FleetOwner</a> — industry news</li>
-                            <li>→ <a href="https://instituteforlegalreform.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">U.S. Chamber Institute for Legal Reform</a> — nuclear verdict statistics</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- PLAY 3: SAFETY MANDATE -->
-                <article id="play-3" class="mb-12 scroll-mt-20">
-                    <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Safety Mandate</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For carriers who just hired a new Director of Safety or Safety Manager — first 90 days. Detectable via LinkedIn job-change signals. The new hire's first 90 days are when tooling decisions get made.</p>
-                    </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">A new safety director walks into a fleet on day one with a mandate from leadership: "fix safety." They inherit whatever stack already exists — often nothing more than spreadsheets and incident reports. They have 90 days to demonstrate progress. They're evaluating tools, talking to peers, and looking for the highest-leverage move. This is the blank-slate moment — vendor relationships haven't been locked in yet.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">No legacy vendor loyalty. Internal political pressure to ship something visible. The new safety director needs to establish credibility fast, and "I deployed AI dash cams in my first quarter and our CSA scores improved by month 9" is the kind of result that does that.</p>
-                    </div>
-
-                    <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example PVP — sent within 30 days of the hire</p>
-                        <div class="email-card">
-                            <div class="email-bar">
-                                <span class="email-dot"></span>
-                                <span class="email-dot"></span>
-                                <span class="email-dot"></span>
-                                <span class="email-label">SUBJECT: your first 90 days at {{company_name}}</span>
-                            </div>
-                            <div class="email-body">
-                                <p>{{first_name}}, congrats on the new role at {{company_name}}.</p>
-                                <br>
-                                <p>I pulled their public CSA data — Unsafe Driving sits at {{percentile}}% and Vehicle Maintenance is at {{vm_percentile}}%. Both are within striking distance of the 65% intervention threshold.</p>
-                                <br>
-                                <p>The safety directors who hit their first 90-day milestone tend to ship one visible thing fast — usually AI dash cams + automated coaching, because the data feedback loop closes within weeks instead of quarters.</p>
-                                <br>
-                                <p>I built a 1-page safety scorecard for {{company_name}} from public FMCSA data showing trend, peer comparison, and the specific violations driving each measure. Useful as you set baseline for whatever you ship in Q1.</p>
+                                <p>Should this go to you or your DOT compliance lead?</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
-                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://www.linkedin.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">LinkedIn job-change signals</a> — new Director of Safety / Safety Manager appointments</li>
-                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack API</a> — open Director of Safety job postings (pre-hire signal)</li>
-                            <li>→ FMCSA SMS + SAFER for the carrier's current scorecard (same as Play 1)</li>
-                        </ul>
-                    </div>
                 </article>
-
             </div>
         </section>
 
@@ -367,16 +619,22 @@
                 </div>
                 <ul class="reveal space-y-5 list-x">
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Non-trucking fleets — FMCSA only regulates motor carriers. Construction fleets and field service operations show up with low FMCSA power-unit counts that undercount their actual fleet. CRM/Gong data is the fix; public data alone misleads</span>
+                        <span class="redacted-item" tabindex="0" role="button">Play 1 is geo-specific (UK/EU/AU migration window) — don't run that copy against US-only CSA lists without retargeting</span>
                     </li>
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Carriers under 50 vehicles — ROI on the platform may not justify the contract size. Better targets are 50–500 vehicle mid-market carriers</span>
+                        <span class="redacted-item" tabindex="0" role="button">Play 4 (insurance mandate) — cold detection is weak; broker partnership or warm intros beat blind scraping</span>
                     </li>
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Carriers under UNSATISFACTORY rating — they're fighting for survival and likely don't have budget for new platforms; better as a long-tail re-engagement than primary outreach</span>
+                        <span class="redacted-item" tabindex="0" role="button">Non-trucking fleets — FMCSA can undercount construction and field service; pair public data with internal fleet truth</span>
                     </li>
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Carriers locked into recent Motive, Lytx, or Verizon Connect contracts — timing objection neutralizes the message; better as renewal-window outreach when contract end-date is observable</span>
+                        <span class="redacted-item" tabindex="0" role="button">Carriers under 50 vehicles — contract ROI often thin; prioritize mid-market band</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Going-concern UNSAT carriers — may lack budget; long-tail nurture vs primary outbound</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Fresh competitor lock-in — time outreach to renewal or stack a regulatory trigger</span>
                     </li>
                 </ul>
             </div>
@@ -409,13 +667,13 @@
 
         <div class="divider max-w-6xl mx-auto"></div>
 
-        <!-- DATA SOURCES TABLE -->
+        <!-- DATA SOURCES -->
         <section id="data-sources" class="py-16 sm:py-24 px-6 scroll-mt-20">
             <div class="max-w-5xl mx-auto">
                 <div class="reveal mb-12">
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Data Sources</p>
                     <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">The full source stack.</h2>
-                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every signal in this playbook traces to one of these. All public, most free.</p>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Mapped by play in the menu above. Most links are public and free.</p>
                 </div>
                 <div class="reveal bg-brand-surface panel p-6 sm:p-8">
                     <div class="overflow-x-auto">
@@ -429,39 +687,59 @@
                             </thead>
                             <tbody class="text-brand-muted">
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">FMCSA Safety Measurement System</td>
-                                    <td class="py-4 pr-4 align-top">CSA percentiles by BASIC, monthly refresh, by USDOT number</td>
-                                    <td class="py-4 align-top"><a href="https://ai.fmcsa.dot.gov/SMS/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">ai.fmcsa.dot.gov</a> (free, public)</td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">FMCSA SMS</td>
+                                    <td class="py-4 pr-4 align-top">CSA percentiles by BASIC, monthly refresh</td>
+                                    <td class="py-4 align-top"><a href="https://ai.fmcsa.dot.gov/SMS/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">ai.fmcsa.dot.gov</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">FMCSA SAFER</td>
-                                    <td class="py-4 pr-4 align-top">Safety rating, fleet size, industry classification</td>
+                                    <td class="py-4 pr-4 align-top">Safety rating, fleet size, inspection summary</td>
                                     <td class="py-4 align-top"><a href="https://safer.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">safer.fmcsa.dot.gov</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">DOT DataHub</td>
-                                    <td class="py-4 pr-4 align-top">Bulk SMS / SAFER data for systematic monitoring</td>
+                                    <td class="py-4 pr-4 align-top">Bulk SMS / SAFER for monitoring</td>
                                     <td class="py-4 align-top"><a href="https://data.transportation.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">data.transportation.gov</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">FreightWaves</td>
-                                    <td class="py-4 pr-4 align-top">Nuclear verdicts + trucking industry news</td>
-                                    <td class="py-4 align-top"><a href="https://www.freightwaves.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">freightwaves.com</a></td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">OSHA enforcement</td>
+                                    <td class="py-4 pr-4 align-top">Workplace safety citations where they compound fleet or ops risk (play-dependent)</td>
+                                    <td class="py-4 align-top"><a href="https://www.osha.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">osha.gov</a> — use when the play explicitly layers workplace safety</td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Commercial Carrier Journal</td>
-                                    <td class="py-4 pr-4 align-top">Verdict coverage, insurance market trends</td>
-                                    <td class="py-4 align-top"><a href="https://www.ccjdigital.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">ccjdigital.com</a></td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">G2 / Capterra</td>
+                                    <td class="py-4 pr-4 align-top">Public satisfaction and grid position (verify before citing)</td>
+                                    <td class="py-4 align-top"><a href="https://www.g2.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">g2.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">LinkedIn</td>
+                                    <td class="py-4 pr-4 align-top">VC mentions, title changes, fleet roles</td>
+                                    <td class="py-4 align-top">linkedin.com</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">TheirStack / job boards</td>
+                                    <td class="py-4 pr-4 align-top">Open roles, hiring surges, first fleet manager signals</td>
+                                    <td class="py-4 align-top"><a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">theirstack.com</a>, Indeed</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">FreightWaves / CCJ / FleetOwner</td>
+                                    <td class="py-4 pr-4 align-top">Verdicts, renewals, industry news</td>
+                                    <td class="py-4 align-top">freightwaves.com, ccjdigital.com, fleetowner.com</td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">U.S. Chamber Institute for Legal Reform</td>
-                                    <td class="py-4 pr-4 align-top">Nuclear verdict statistics, year-over-year trends</td>
+                                    <td class="py-4 pr-4 align-top">Nuclear verdict trend statistics</td>
                                     <td class="py-4 align-top"><a href="https://instituteforlegalreform.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">instituteforlegalreform.com</a></td>
                                 </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Press / SEC</td>
+                                    <td class="py-4 pr-4 align-top">Fleet expansion, M&amp;A, filings</td>
+                                    <td class="py-4 align-top">Company press releases, <a href="https://www.sec.gov/edgar" class="text-brand-accent hover:underline" target="_blank" rel="noopener">SEC EDGAR</a></td>
+                                </tr>
                                 <tr>
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">TheirStack + LinkedIn</td>
-                                    <td class="py-4 pr-4 align-top">New Director of Safety hires + open postings</td>
-                                    <td class="py-4 align-top"><a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">theirstack.com</a> + LinkedIn</td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Insurance trade press</td>
+                                    <td class="py-4 pr-4 align-top">Renewal and telematics mandate narratives</td>
+                                    <td class="py-4 align-top">CCJ, Insurance Journal, broker LinkedIn</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -481,7 +759,7 @@
                     <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">I'll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.</p>
                     <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">First 10 prospects are free. If it books meetings, we talk about a monthly engagement.</p>
                     <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
-                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Show me the signal →</a>
+                    <a href="../../index.html#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Show me the signal →</a>
                 </div>
             </div>
         </section>
@@ -492,7 +770,8 @@
                 <div class="reveal">
                     <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
                     <ul class="space-y-2 font-mono text-xs text-brand-faint">
-                        <li>2026-04-29 — Playbook published. 3 plays, 3 executed safety scorecards (BR Williams, Williams Plumbing, CS Companies), 7 data sources.</li>
+                        <li>2026-05-03 — Copy regenerated from hybrid v5 play design: activation summary (3), nine-play menu with collapsible openers, three deep dives (Verizon migration, CSA red zone, compliance review). Scorecards remain under Play 2. Claims scrubbed for G2/IDC disclosure; Play 3 benchmark line softened for web.</li>
+                        <li>2026-04-29 — Initial publish. Three legacy plays; three executed FMCSA scorecards (BR Williams, Williams Plumbing, CS Companies).</li>
                     </ul>
                 </div>
             </div>
@@ -509,11 +788,11 @@
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="../index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="../../blog/index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <a href="../../privacy.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <span class="text-sm text-brand-faint">NYC / LA</span>
             </div>
@@ -553,7 +832,28 @@
         });
     </script>
 
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
 </body>
 </html>
