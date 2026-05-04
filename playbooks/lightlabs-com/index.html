@@ -54,6 +54,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+    <style>
+        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
+            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
+            .nav-close{display:none}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
+    </style>
 
     <link rel="stylesheet" href="/output.css">
 </head>
@@ -64,14 +84,26 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
                 THRESH_
             </a>
-            <div class="flex items-center gap-6">
+            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
+                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </label>
+            <div class="nav-menu md:flex items-center gap-6">
                 <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
                 <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <a href="/#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
+                <a href="/#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
                     Show Me the Signal
                 </a>
             </div>
@@ -657,8 +689,29 @@
     </script>
 
     <!-- Vercel Analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
 
 </body>
 </html>

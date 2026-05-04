@@ -25,5 +25,28 @@
         <p class="message">This page doesn't exist.</p>
         <a href="/">Back to Thresh</a>
     </div>
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
 </body>
 </html>

@@ -96,8 +96,24 @@
     }
     </script>
 
-    <!-- RB2B visitor identification -->
-    <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("4O7Z0HERMVNX");</script>
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+            var rb2bKey = config.rb2bKey || '4O7Z0HERMVNX';
+
+            if (!isProduction || !rb2bKey || window.reb2b) return;
+
+            window.reb2b = { loaded: true };
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://ddwl4m2hdecbv.cloudfront.net/b/' + rb2bKey + '/' + rb2bKey + '.js.gz';
+            document.head.appendChild(script);
+        })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,6 +143,20 @@
         .section-heading{text-transform:uppercase;letter-spacing:-.02em}
         .headline-accent{color:#00FF41}
         .hidden{display:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            .nav-menu.open{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
         @media(min-width:640px){.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:pb-32{padding-bottom:8rem}.sm\:block{display:block}.sm\:flex-row{flex-direction:row}.sm\:w-auto{width:auto}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}
         @media(min-width:768px){.md\:text-6xl{font-size:3.75rem;line-height:1}}
         @media(min-width:1024px){.lg\:text-7xl{font-size:4.5rem;line-height:1}}
@@ -141,14 +171,25 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">
                 THRESH_
             </a>
-            <div class="flex items-center gap-6">
+            <button id="nav-toggle" class="nav-toggle md:hidden" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <svg id="nav-open-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="nav-close-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="nav-menu" class="nav-menu md:flex items-center gap-6">
                 <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
                 <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <a href="#contact" class="text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
+                <a href="#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">
                     Show Me the Signal
                 </a>
             </div>
@@ -177,8 +218,8 @@
                     Signal-based outbound for B2B companies selling into regulated, licensed, or inspected industries — where public data creates an unfair advantage. I find the trigger, build the list, and write the messages.
                 </p>
                 <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#example" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
-                        See a Real Example
+                    <a href="/playbooks/" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                        See the Playbooks
                     </a>
                     <a href="#contact" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">
                         Show Me the Signal
@@ -668,6 +709,43 @@
 
         // Nav scroll behavior
         const nav = document.querySelector('nav');
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navOpenIcon = document.getElementById('nav-open-icon');
+        const navCloseIcon = document.getElementById('nav-close-icon');
+        const navMediaQuery = window.matchMedia('(min-width: 768px)');
+
+        const closeNavMenu = () => {
+            if (!navMenu || !navToggle || !navOpenIcon || !navCloseIcon) return;
+            navMenu.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navOpenIcon.classList.remove('hidden');
+            navCloseIcon.classList.add('hidden');
+        };
+
+        if (navToggle && navMenu && navOpenIcon && navCloseIcon) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navMenu.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                navOpenIcon.classList.toggle('hidden', isOpen);
+                navCloseIcon.classList.toggle('hidden', !isOpen);
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!navMediaQuery.matches) closeNavMenu();
+                });
+            });
+
+            navMediaQuery.addEventListener('change', (event) => {
+                if (event.matches) closeNavMenu();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') closeNavMenu();
+            });
+        }
+
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
@@ -765,9 +843,29 @@
     </script>
 
     <!-- Vercel Analytics + Speed Insights -->
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
 
 </body>
 </html>
