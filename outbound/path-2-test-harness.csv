@@ -1,0 +1,26 @@
+company_name,domain,description,expected_vertical_saas,expected_niche,expected_regulated,expected_primary_dataset,notes
+Hauler Hero,hauler-hero.com,Operations software for waste haulers,true,waste haulers,true,FMCSA + EPA,top-conviction Thresh ICP
+Charta Health,chartahealth.com,AI pre-billing platform for healthcare practices,true,healthcare practices,true,CMS + OIG,Thresh prior campaign
+Skimmer,getskimmer.com,Pool service business management software,true,pool service businesses,true,state pool permits,Crawford customer
+Extensiv,extensiv.com,Cloud platform for 3PL warehouse operations,true,3PL warehouses,true,FMCSA + state warehouse licensing,Crawford customer
+ChiroHD,chirohd.com,EHR and practice management for chiropractors,true,chiropractic practices,true,state chiro license boards,Crawford customer
+CoverForce,coverforce.com,API-driven commercial insurance distribution platform for agencies,true,insurance agencies,true,NAIC,Thresh Tier 1
+Get Double Nickel,getdoublenickel.com,CDL recruiting ATS for trucking carriers,true,trucking carriers,true,FMCSA SAFER,Thresh Tier 1
+Stratus,stratus.build,BIM-to-fabrication SaaS for MEP and sheet metal contractors,true,MEP contractors,true,OSHA + contractor licenses,Thresh Tier 1
+Lightlabs,lightlabs.com,ISO 17025 food and supplement testing lab platform,true,food testing labs,true,FDA + FSMA,Thresh prior campaign
+Owner.com,owner.com,Marketing and ordering platform for independent restaurants,true,restaurants,true,FDA + local health depts,Crawford customer
+Bobyard,bobyard.com,Estimating software for landscape contractors,true,landscape contractors,false,null,vertical SaaS but buyers not strongly regulated
+Get-Ryze,get-ryze.ai,AI workflow tool for advertising agencies,true,ad agencies,false,null,vertical SaaS but ad agencies not regulated
+Stuut,stuut.ai,AR automation for industrial CFOs,true,industrial CFOs,false,null,vertical-ish but niche not directly regulated
+Helpside,helpside.com,Regional PEO providing payroll and benefits,true,SMB employers,false,null,vertical-ish PEO; OSHA could apply but soft
+HiBob,hibob.com,Modern HRIS for global growing companies,false,null,false,null,horizontal HRIS — should classify as not vertical SaaS
+Plaid,plaid.com,Financial data API connecting apps to bank accounts,false,null,false,null,horizontal fintech infrastructure
+Ramp,ramp.com,Corporate cards and spend management,false,null,false,null,horizontal finance/spend
+Listenlabs,listenlabs.ai,AI-powered qualitative research platform,false,null,false,null,horizontal research tool — buyers are research/insights teams broadly
+Reflex,reflex.dev,Open-source Python framework for building web apps,false,null,false,null,horizontal dev tool — not vertical SaaS
+Fieldwire,fieldwire.com,Construction project management software,true,construction GCs and subs,true,OSHA + contractor licenses,vertical SaaS but acquired by Hilti — Crustdata may show acquired-status
+Wold Architects,woldae.com,Architecture firm specializing in K-12 schools,false,null,false,null,services firm not SaaS — should classify as not vertical SaaS
+Okland Construction,okland.com,General contractor doing commercial construction,false,null,false,null,GC services firm not SaaS
+Withterminal,withterminal.com,Telematics API for insurers and software companies,true,insurance carriers and software platforms,true,NAIC,edge case — vertical-ish but buyers are software cos one degree removed
+Listen,listenapp.com,General-purpose B2B sales tool with AI features,false,null,false,null,horizontal B2B sales — not vertical
+Truckstop,truckstop.com,Load board and freight matching for trucking,true,freight brokers and carriers,true,FMCSA broker authority,vertical but very large/established — edge for Thresh stage filter
