@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ambrook Playbook — Operational Trigger Intelligence | Thresh</title>
+    <meta name="description" content="Ten signal-based plays for Ambrook (accounting + embedded banking for US ag and construction): NRCS conservation contracts, new ag LLC formations, multi-contract operators, PE-acquired contractors, ESOP filings — drawn from EWG, USDA, SAM.gov, SEC EDGAR, and DOL EFAST2 public data.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
+    <link rel="canonical" href="https://runthresh.com/playbooks/ambrook-com/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Ambrook Playbook — Operational Trigger Intelligence">
+    <meta property="og:description" content="Ten public-data plays for Ambrook: conservation-contract operators, new ag LLCs, PE-acquired contractors, ESOP filers, and more — with three deep dives, recipient role-play diagnostics, and a downloadable EQIP practice-code one-pager.">
+    <meta property="og:url" content="https://runthresh.com/playbooks/ambrook-com/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
+    <meta property="og:site_name" content="Thresh">
+    <meta property="article:published_time" content="2026-05-06T12:00:00Z">
+    <meta property="article:modified_time" content="2026-05-06T12:00:00Z">
+    <meta property="article:author" content="Lucas Linares">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Ambrook Playbook — Operational Trigger Intelligence">
+    <meta name="twitter:description" content="Ten public-data plays for Ambrook. Top three: active conservation-contract operators, new ag LLCs, multi-contract operators — with role-play diagnostics and an EQIP practice-code one-pager.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Ambrook Playbook — Operational Trigger Intelligence",
+      "description": "Ten operational-trigger plays for Ambrook, with three deep dives, recipient role-play diagnostics, and an EQIP practice-code one-pager.",
+      "datePublished": "2026-05-06T12:00:00Z",
+      "dateModified": "2026-05-06T12:00:00Z",
+      "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
+      "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
+      "mainEntityOfPage": "https://runthresh.com/playbooks/ambrook-com/",
+      "image": "https://runthresh.com/og-image.png"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+    <style>
+        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
+            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
+            .nav-close{display:none}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
+        .play-menu-details summary{cursor:pointer;font-family:JetBrains Mono,monospace;font-size:.75rem;color:#00FF41;list-style:none}
+        .play-menu-details summary::-webkit-details-marker{display:none}
+        .play-menu-details pre{white-space:pre-wrap;font-family:JetBrains Mono,monospace;font-size:.7rem;line-height:1.5;color:#9CA1AA;margin-top:1rem}
+        .roleplay-details summary{cursor:pointer;list-style:none}
+        .roleplay-details summary::-webkit-details-marker{display:none}
+        .roleplay-details[open] .roleplay-summary-closed{display:none}
+        .roleplay-details:not([open]) .roleplay-summary-open{display:none}
+        .transcript-block{font-family:Inter Tight,sans-serif;color:#E8EAF0;line-height:1.7}
+        .transcript-block h4{font-family:JetBrains Mono,monospace;font-size:.75rem;color:#00FF41;letter-spacing:.05em;text-transform:uppercase;margin:1.5rem 0 .5rem}
+        .transcript-block p{margin:0 0 1rem;font-size:.95rem}
+        .transcript-block strong{color:#E8EAF0;font-weight:500}
+        .transcript-block em{color:#9CA1AA;font-style:italic}
+        .pre-email-card{background:#0c0c0c;border:1px solid rgba(255,255,255,.10);padding:1rem 1.25rem;margin:.75rem 0;font-family:JetBrains Mono,monospace;font-size:.75rem;color:#9CA1AA;line-height:1.6;white-space:pre-wrap}
+        .pre-email-card .pre-email-subject{color:#E8EAF0;font-weight:500;margin-bottom:.5rem;display:block}
+    </style>
+    <link rel="stylesheet" href="../../output.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../../index.html" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
+                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </label>
+            <div class="nav-menu md:flex items-center gap-6">
+                <a href="../index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="../../blog/index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="../../index.html#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="relative z-10">
+
+        <!-- HERO -->
+        <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">The Ambrook Playbook</p>
+                </div>
+                <h1 class="reveal font-display font-[900] section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
+                    An Operational Trigger Intelligence<br class="hidden sm:block">
+                    playbook built for<br class="hidden sm:block">
+                    <span class="headline-accent">Ambrook.</span>
+                </h1>
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-6 leading-relaxed font-light">
+                    Ten plays, each tied to a public operational trigger — active NRCS conservation contracts, new ag and construction LLC formations, PE-acquired specialty contractors, first-bookkeeper hires, federal contract wins, ESOP filings. Below: the three to run first, the full menu, depth on the trio that matters most, and the recipient role-play diagnostics that drove the final copy.
+                </p>
+                <p class="reveal text-brand-faint text-sm max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    // Data stack: EWG Conservation Database, state Secretary-of-State / OpenCorporates / Middesk feeds, SEC EDGAR, USDA Rural Development press releases, TheirStack job postings, SAM.gov Awards API, DOL EFAST2 — layered by play, not every play uses every source.
+                </p>
+                <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="../../index.html#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                    <a href="#activation" class="w-full sm:w-auto text-center font-body font-semibold border border-brand-secondary text-brand-secondary px-8 py-4 hover:bg-brand-secondary hover:text-white btn-secondary transition-all text-base">Run these first</a>
+                </div>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 6, 2026</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THE SHIFT -->
+        <section class="py-16 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Every ag accounting rep sounds the same. Ambrook doesn't have to.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
+                        Most competitors open with "purpose-built for farms." This playbook opens with <strong class="text-brand-text font-medium">their</strong> active NRCS contract, <strong class="text-brand-text font-medium">their</strong> 90-day-old LLC filing, or <strong class="text-brand-text font-medium">their</strong> two-contract reporting bind — then attaches product. Same stack as generic outbound says "we help operators like you."
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic ag accounting rep sends today.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // GENERIC</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Hi [First Name],</p>
+                                <br>
+                                <p>I'm reaching out because we work with farms and ranches like yours to simplify accounting, banking, and grant tracking. Our purpose-built ag platform helps operators see per-enterprise margins, manage cash flow, and stay compliant.</p>
+                                <br>
+                                <p>I'd love to show you how we've helped similar operators in your region. Do you have 15 minutes this week?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 md:mt-0 mb-4">Play 1 signal — active EQIP contract (real practice codes).</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // SIGNAL-MATCHED</span>
+                            </div>
+                            <div class="email-body">
+                                <p>{{first_name}}, saw {{company_name}}'s active EQIP contract in the public NRCS data.</p>
+                                <br>
+                                <p>With Jan 15 batching coming up, the field rep who used to flag missing documentation isn't there anymore. Practice-code tracking is on you now.</p>
+                                <br>
+                                <p>Ambrook tags transactions to specific practice codes in the books. Things like the 340 cover-crop line or the 528 prescribed-grazing entries get their own bucket, not a spreadsheet next to QBO. CPA gets a clean export instead of a year-end rebuild.</p>
+                                <br>
+                                <p>Want me to send a one-page on how the EQIP tagging works?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal mt-4">
+                    <p class="provenance-label text-brand-muted leading-relaxed">
+                        Practice codes 340 (cover crop), 528 (prescribed grazing), and 590 (nutrient management) are real NRCS practices defined in the Field Office Technical Guide. EWG Conservation Database publishes recipient-name + state + program data quarterly; state-NRCS press releases publish FY award announcements. The signal-matched email above is the post-role-play final draft — see the role-play section below for what got cut.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PRINCIPLES -->
+        <section class="py-16 sm:py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Core Principles</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl">Three rules behind every play.</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger">
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Public substrate first.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">EWG conservation contracts, state SoS filings, USDA RD press releases, SAM.gov awards, DOL Form 5500 — anchored on facts a recipient can look up. No "we work with operators like you" as the lead.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Lead with the trigger, not the pitch.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">Name the active contract, the new entity, the second concurrent contract. Product lands as the logical response after the recipient agrees the situation is real — not before.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-8 card-lift">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
+                        <p class="font-display font-bold text-lg mb-3 text-brand-text">Operator voice, not vendor voice.</p>
+                        <p class="text-brand-muted text-sm leading-relaxed">"What the FSA office wants to see," not "audit-ready reports on demand." "Accounting," not "books platform." Rancher, not "operator." The role-play section below is where the vendor voice got debugged.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- EXECUTIVE CONTEXT -->
+        <section class="py-16 sm:py-24 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-8">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Executive Context</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Why this market, why now.</h2>
+                </div>
+                <div class="reveal bg-brand-surface panel p-6 sm:p-8 text-brand-muted text-base leading-relaxed font-light">
+                    <p class="mb-4">Ambrook builds accounting and embedded banking for the US "industries America depends on" — proven in farming and ranching, expanding into construction, trucking, manufacturing, property management, and nonprofits. Series A ($26.1M co-led by Thrive Capital and Field Ventures, July 2025), positioned head-on against QuickBooks Online ($59 Build / $99 Pro vs. QBO $115 / $275) and against Excel + paper at the bottom of the market.</p>
+                    <p class="mb-4">The strategic moment: a structurally fragmented buyer base that is simultaneously distressed (315 Chapter 12 farm bankruptcies in CY2025, +46% YoY; record $624.7B farm-sector debt forecast for 2026), reconfigured by federal-funding chaos (Trump admin froze 31,000 conservation contracts in early 2025; NRCS lost 23% of staff), and undergoing the largest generational asset transfer in modern US history (>$1T in farmland sales over the next 20 years, 38% of farmers over 65, $1T uncalled PE capital chasing specialty contractors at 7-9x EBITDA multiples).</p>
+                    <p class="mb-0 text-brand-text">Almost none of these buyers are actively shopping for accounting software. The strongest signals here are operational moments that force a financial-system rebuild against an external clock — and those moments are exactly what this playbook detects.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- TOC -->
+        <section class="py-12 px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">In This Playbook</p>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li><a href="#activation" class="text-brand-muted hover:text-brand-accent transition-colors">01_ Run these first — activation summary</a></li>
+                        <li><a href="#portfolio-note" class="text-brand-muted hover:text-brand-accent transition-colors">02_ Portfolio note — substrate distribution</a></li>
+                        <li><a href="#play-menu" class="text-brand-muted hover:text-brand-accent transition-colors">03_ Ten-play menu — send-ready openers</a></li>
+                        <li><a href="#plays" class="text-brand-muted hover:text-brand-accent transition-colors">04_ Three deep plays — architecture + PVP</a></li>
+                        <li><a href="#signal-stacks" class="text-brand-muted hover:text-brand-accent transition-colors">05_ Signal stacks — three pain-point clusters</a></li>
+                        <li><a href="#role-play" class="text-brand-muted hover:text-brand-accent transition-colors">06_ Recipient role-play — pre-send diagnostics</a></li>
+                        <li><a href="#revision-log" class="text-brand-muted hover:text-brand-accent transition-colors">07_ Role-play revision log — what got cut and why</a></li>
+                        <li><a href="#claim-sources" class="text-brand-muted hover:text-brand-accent transition-colors">08_ Claim sources — every number, sourced</a></li>
+                        <li><a href="#competitive" class="text-brand-muted hover:text-brand-accent transition-colors">09_ Competitive landscape</a></li>
+                        <li><a href="#doesnt-solve" class="text-brand-muted hover:text-brand-accent transition-colors">What this playbook doesn't solve</a></li>
+                        <li><a href="#data-sources" class="text-brand-muted hover:text-brand-accent transition-colors">Data sources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ACTIVATION -->
+        <section id="activation" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Activation Summary</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Run these three first.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">All three target the proven multi-enterprise farm/ranch ICP because public conservation data runs deepest there. Construction (Persona 2) gets six plays in the menu but none in the top three — construction signals are higher-quality but lower-volume than the conservation database.</p>
+                </div>
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-6 sm:p-8">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">#</th>
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Persona</th>
+                                <th class="py-3 pr-4">Motion</th>
+                                <th class="py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">1</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Active conservation-contract operator</td>
+                                <td class="py-4 pr-4 align-top">Owner-operator of multi-enterprise farm/ranch ($500K–$5M) carrying ≥1 active EQIP/CSP/RCPP/ACEP contract, on QBO or Excel</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">2</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">New ag LLC formation (NAICS 111-115)</td>
+                                <td class="py-4 pr-4 align-top">Owner-operator of an ag entity formed in the last 90 days; chart-of-accounts decision still open</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">3</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Operator with 2+ concurrent NRCS contracts</td>
+                                <td class="py-4 pr-4 align-top">Same as #1, multi-contract sub-segment — cost-of-tracking inflection at exactly two contracts</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal mt-6 text-brand-muted text-sm leading-relaxed max-w-3xl">
+                    <span class="font-mono text-brand-accent">Pilot order post-role-play:</span> <strong class="text-brand-text font-medium">Play 4 first</strong> (highest-conviction recipient signal, smallest revisions). Play 1 second, timed to the Q4 send window when Jan 15 is genuinely approaching. Play 2 third — Variant A removes the AI-SDR tell but hasn't been re-tested; consider another role-play round before sending.
+                </p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PORTFOLIO NOTE -->
+        <section id="portfolio-note" class="py-12 sm:py-16 px-6 scroll-mt-20">
+            <div class="max-w-3xl mx-auto reveal">
+                <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Portfolio Note</p>
+                <h2 class="font-display font-bold section-heading text-xl sm:text-2xl mb-4">Substrate distribution — Cat A is empty by design.</h2>
+                <p class="text-brand-muted text-base leading-relaxed mb-6">
+                    Six plays are <strong class="text-brand-text font-medium">Cat B</strong> (single public fact about the prospect: a filing, a hire, an award). Four plays are <strong class="text-brand-text font-medium">Cat B/C hybrid</strong> — a public fact layered with regime-shift or trajectory framing where the prose budget genuinely earns its keep (the NRCS staff cuts behind Play 1, the cost-of-tracking inflection in Play 4, the PE platform standardization clock in Play 5, the exit-multiple math in Play 9). <strong class="text-brand-text font-medium">Cat A is empty</strong> — Ambrook does not have prospect-specific telemetry on cold prospects, and the brief did not surface customer-base aggregated benchmarks that earn cold use.
+                </p>
+                <div class="overflow-x-auto bg-brand-surface panel p-4 sm:p-6">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">Cat</th>
+                                <th class="py-3 pr-4">Definition</th>
+                                <th class="py-3 pr-4">Plays</th>
+                                <th class="py-3">Cold-Ready</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Cat A</td><td class="py-3 pr-4 align-top">Prospect-specific telemetry (their data, not ours)</td><td class="py-3 pr-4 align-top font-mono">0</td><td class="py-3 align-top font-mono">0</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Cat B</td><td class="py-3 pr-4 align-top">Single public fact about the prospect</td><td class="py-3 pr-4 align-top font-mono">6</td><td class="py-3 align-top font-mono">6</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Cat C</td><td class="py-3 pr-4 align-top">Aggregated benchmark from our customer base</td><td class="py-3 pr-4 align-top font-mono">0</td><td class="py-3 align-top font-mono">0</td></tr>
+                            <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Cat B/C hybrid</td><td class="py-3 pr-4 align-top">Public fact + regime-shift / trajectory framing</td><td class="py-3 pr-4 align-top font-mono">4</td><td class="py-3 align-top font-mono">4</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- TEN-PLAY MENU -->
+        <section id="play-menu" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Play Menu</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Ten plays. Pick by signal.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each block: one-line hook + send-ready opener. Compressed "why it works" — the deep section below carries architecture for Plays 1, 2, and 4.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger">
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 1 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Active conservation-contract operator</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Owner-operators carrying an active EQIP, CSP, RCPP, or ACEP contract — before the Jan 15 NRCS national batching window. Practice-code tagging artifact.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your EQIP, before Jan 15
+
+{{first_name}}, saw {{company_name}}'s active {{program}} contract in the public NRCS data.
+
+With Jan 15 batching coming up, the field rep who used to flag missing documentation isn't there anymore. Practice-code tracking is on you now.
+
+Ambrook tags transactions to specific practice codes in the books. Things like the 340 cover-crop line or the 528 prescribed-grazing entries get their own bucket, not a spreadsheet next to QBO. CPA gets a clean export instead of a year-end rebuild.
+
+Want me to send a one-page on how the {{program}} tagging works?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 2 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">New ag LLC formation (NAICS 111-115)</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Newly-formed ag entities within 90 days of state SoS filing — before they default to QuickBooks for the chart-of-accounts decision.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: schedule f and quickbooks
+
+{{first_name}}, congrats on the new {{state}} entity. Quick note on accounting before QBO becomes the default.
+
+The most expensive line item for new farm LLCs at year-end is usually the CPA hour spent sorting transactions QBO categorized wrong. Schedule F doesn't map to QuickBooks's chart of accounts. Raised vs. purchased livestock basis, breeding stock depreciation, and multi-enterprise splits all need a manual rebuild.
+
+Ambrook is built on Schedule F from day one. The categories already match.
+
+Is the accounting decision still open, or is QBO going in?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 3 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">New construction LLC formation (NAICS 236-238)</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Newly-formed small construction entities within 90 days — before per-job margin pain forces a mid-year switch off QuickBooks.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your new {{state}} construction LLC
+
+{{first_name}}, saw {{company_name}} filed with the {{state}} Secretary of State on {{filing_date}}, NAICS {{naics}}.
+
+The standard pattern: small contractors set up QuickBooks Online, run for six months, then realize per-job margin is invisible because QBO's job costing fights you. By then, switching becomes real work: chart-of-accounts rebuild plus data migration.
+
+Ambrook does per-job tracking, mobile receipt capture, and an FDIC-insured deposit account in one place. $99/mo on Pro vs. QBO Plus at $275.
+
+Is the books decision still open, or is QBO already running?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 4 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Operator with 2+ concurrent NRCS contracts</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">The cost-of-tracking inflection where the QBO+spreadsheet workaround that handled one contract collapses on the second.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your two NRCS contracts
+
+{{first_name}}, public NRCS data shows {{company_name}} carrying {{n_contracts}} concurrent contracts ({{programs}}).
+
+One contract fits in QuickBooks. The second breaks it: practice codes don't have a place to live, and the CPA rebuilds the spreadsheet at year-end. Wendy at Yubeta Cattle on the same problem: "4 hours, on a delivery drive, vs. a week on QuickBooks."
+
+Ambrook tags transactions to contract IDs and practice codes in the books. Migration is hours, not weeks.
+
+Is multi-contract reporting on you or a CPA right now?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 5 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">PE-acquired specialty contractor</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">30-90 days post-close, before the platform's integration team forces accounting standardization. Owners with clean per-job, per-entity P&amp;L on day 90 keep leverage.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: post-close at {{company_name}}
+
+{{first_name}}, saw {{company_name}}'s deal with {{pe_acquirer}} closed in {{month}}.
+
+The pattern at integration: by month six, the platform asks you to standardize on its accounting tool. If yours is QBO Desktop with mismapped jobs, the integration team rebuilds it for you and you eat the time. If you ship clean per-job and per-entity P&L on day 90, you keep more leverage in those conversations.
+
+Ambrook is mobile-first, runs per-entity from day one, and exports cleanly to most platform tools.
+
+Want me to send a one-page on what "clean per-job" looks like before integration?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 6 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First bookkeeper hire at sub-50 farm or contractor</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">First "bookkeeper / office manager / controller" posting in 24 months at a sub-50-employee farm or contractor — the operational signal that the prior setup broke.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: before the new bookkeeper starts
+
+{{first_name}}, saw the {{role}} posting at {{company_name}}.
+
+Whoever takes the role inherits a multi-year QBO file with categories that don't quite fit Schedule F (or jobs, depending on the side of the business). They spend their first quarter cleaning up, then build a spreadsheet next to QBO to handle what QBO can't.
+
+Ambrook is Schedule F & C-native, mobile for receipt capture, and has US-based support that knows ag and construction. Migration is hours, not weeks.
+
+Is the books platform still open for the new hire to weigh in, or is that already settled?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 7 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First federal contract via SAM.gov</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Small contractors winning their first federal contract ≥$100K — 7-45 day window before the contracting officer requests per-WBS detail.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your {{agency}} contract
+
+{{first_name}}, saw {{company_name}}'s ${{value}} {{agency}} award on SAM.gov ({{date}}).
+
+First federal contract triggers Miller Act bond paperwork and, sometime in months four to six, a contracting officer asking for per-WBS job-cost detail. QBO can't produce that without a custom report.
+
+Ambrook does per-job, per-WBS tracking with mobile field capture, same workflow on your private jobs, no double entry.
+
+Is bonding/CO reporting going on a tool, or staying in QuickBooks?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 8 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">USDA Value-Added Producer Grant recipient</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Farmers and ranchers who just received a VAPG award — 30-120 days before grant-tagged reporting calcifies into a spreadsheet.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your VAPG award
+
+{{first_name}}, saw {{company_name}} on USDA Rural Development's FY{{year}} VAPG list ({{state}}, ${{amount}} for {{project}}).
+
+The next 18-36 months of agency reporting hinges on whether your books separate the value-added line from the rest of the operation. Most operators try this in QuickBooks and end up rebuilding the chart of accounts mid-year.
+
+Ambrook runs per-enterprise P&L natively and tags transactions to the grant for the agency report.
+
+Is the value-added line already split out in the books, or still mixed in?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 9 · Cat B/C · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Service-contract pivot at specialty contractor</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Contractors visibly pivoting to recurring service revenue — service-tech postings + service/maintenance pages added — before exit-multiple math forces a per-contract margin rebuild.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your service-tech postings
+
+{{first_name}}, saw {{company_name}}'s service-tech / maintenance-lead postings this {{month}}, plus a new {{membership_or_service_contract}} page on the site.
+
+Service-revenue-heavy contractors trade at 7-9x EBITDA at exit vs. 4-6x build-only (KPMG and UHY both confirm). The catch: buyers want per-contract margin proof. QBO mushes service revenue into the project P&L. At exit, that's two to three turns.
+
+Ambrook tracks per-contract and per-route P&L without a separate field-service tool.
+
+Is per-contract margin already a tracked metric, or still a spreadsheet?</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift md:col-span-2">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 10 · Cat B · Public</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First-time ESOP filing by small construction firm</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Sub-50-employee construction firms filing their first Form 5500 ESOP plan — the year-1 audit will surface every place QBO didn't track cleanly.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: your year-1 ESOP audit
+
+{{first_name}}, saw {{company_name}}'s {{plan_year}} Form 5500 ESOP filing.
+
+Year-one ESOPs always show where the books were soft. The trustee's valuation forces it out. The audit team rebuilds whatever QBO didn't track cleanly: per-entity, per-job, retained earnings.
+
+Ambrook keeps per-entity and per-job books from the start, and exports an audit-ready package for the trustee. Owner-operator pricing, not Sage / Foundation pricing.
+
+Is year-2 audit prep going on a tool, or still a CPA hand-build?</pre>
+                        </details>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THREE DEEP PLAYS -->
+        <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Deep Dives</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three plays with full architecture.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Failure mode → trigger → persona → opener → PVP. Plays 1, 2, and 4 — selected for first activation because public conservation data and state SoS data are the deepest and freest detection paths.</p>
+                </div>
+
+                <!-- DEEP 1 -->
+                <article id="play-deep-1" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Active conservation-contract operator</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Grant / cost-share / loan compliance reporting overhead, in a year of agency-side capacity loss. NRCS technical-assistance staff is down 23%; the documentation burden has silently shifted from the field rep to the operator, and almost no accounting tool maps transactions to NRCS practice codes natively.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> Operator name in EWG Conservation Database with 1+ active EQIP, CSP, RCPP, or ACEP contract (FY2024+); or named in a state-NRCS press release for FY2026 awards.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Owner-operator of a multi-enterprise farm/ranch carrying ≥1 active conservation contract, on QBO or Excel. Family bookkeeper (often spouse) is the daily product user and influencer.</p>
+                        <p><span class="font-mono text-brand-accent">Disqualifiers ·</span> Already an Ambrook customer; FY2017–2023 contract past closeout; &gt;$5M revenue; visibly already on Traction Ag or FarmRaise.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> One-page comparison: practice-code tagging produces agency-ready reports in Ambrook vs. the spreadsheet-alongside-QBO approach. Includes a sample of what the agency receives. Useful even if they never buy — practice codes are publicly documented; the comparison helps the operator pressure-test their current workflow.</p>
+                    </div>
+                    <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Artifact — Play 1 (EQIP practice-code one-pager)</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">Two-column comparison of QBO+spreadsheet vs. Ambrook Funding Library. Same operator, same five months, same three NRCS practices: 340 (cover crop), 528 (prescribed grazing), 590 (nutrient management). Sample agency-ready report rendered in each column — the shared-practice fence rebuild row is the case where the spreadsheet workflow visibly breaks.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="./pvp-eqip-practice-code.html" target="_blank" rel="noopener" class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Open one-pager →</a>
+                        </div>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant A · post-role-play final draft</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: your EQIP, before Jan 15</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, saw {{company_name}}'s active {{program}} contract in the public NRCS data.</p>
+                                <br>
+                                <p>With Jan 15 batching coming up, the field rep who used to flag missing documentation isn't there anymore. Practice-code tracking is on you now.</p>
+                                <br>
+                                <p>Ambrook tags transactions to specific practice codes in the books. Things like the 340 cover-crop line or the 528 prescribed-grazing entries get their own bucket, not a spreadsheet next to QBO. CPA gets a clean export instead of a year-end rebuild.</p>
+                                <br>
+                                <p>Want me to send a one-page on how the {{program}} tagging works?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant B · year-end CPA-bill angle</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: the year-end {{program}} bill</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, year-end is when most {{program}} contract holders find out the CPA bill went up because of the time spent sorting practice codes in QBO.</p>
+                                <br>
+                                <p>Ambrook tags transactions to practice codes in the books. The 340 cover-crop line or the 528 prescribed-grazing entries each get their own bucket. CPA gets a clean export instead of a year-end rebuild.</p>
+                                <br>
+                                <p>Want me to send the workflow for {{program}}?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Key sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>→ <a href="https://farm.ewg.org/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">EWG Conservation Database</a></li>
+                            <li>→ <a href="https://www.nrcs.usda.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">USDA NRCS state press releases</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- DEEP 2 -->
+                <article id="play-deep-2" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">New ag LLC formation (NAICS 111-115)</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Tax-and-managerial blindness from generic accounting. Schedule F was never a QBO chart of accounts; most operators discover this at the year-end CPA conversation, after QBO is already in. The 30-90 day post-formation window is when switching cost is lowest.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> New LLC, S-corp, or partnership formed in last 90 days, NAICS prefix 111–115, surfaced in OpenCorporates / Middesk / state SoS feed.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Owner-operator of a newly-formed ag entity. Spouse-bookkeeper is the daily product user and a hidden influencer.</p>
+                        <p><span class="font-mono text-brand-accent">Disqualifiers ·</span> Already running QBO with &gt;90 days of transactions; dormant entity with no banking activity; single-purpose holding entity; rental-only LLC.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Two-column chart showing Ambrook's Schedule F-native chart of accounts vs. QBO's default SMB chart, with the categories that don't map highlighted. Useful as a planning artifact even if they don't buy — hands them something they can show their CPA.</p>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant A · post-role-play final draft</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: schedule f and quickbooks</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, congrats on the new {{state}} entity. Quick note on accounting before QBO becomes the default.</p>
+                                <br>
+                                <p>The most expensive line item for new farm LLCs at year-end is usually the CPA hour spent sorting transactions QBO categorized wrong. Schedule F doesn't map to QuickBooks's chart of accounts. Raised vs. purchased livestock basis, breeding stock depreciation, and multi-enterprise splits all need a manual rebuild.</p>
+                                <br>
+                                <p>Ambrook is built on Schedule F from day one. The categories already match.</p>
+                                <br>
+                                <p>Is the accounting decision still open, or is QBO going in?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant B · QBO-inertia angle</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: before quickbooks goes in</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, most farm LLCs end up on QuickBooks because that's what people know. By month four, the CPA is rebuilding it because Schedule F doesn't fit QBO's chart of accounts. Things like feed inventory at year-end or grazing-share splits don't have a place to live.</p>
+                                <br>
+                                <p>Ambrook is built on Schedule F from day one. The categories match the form.</p>
+                                <br>
+                                <p>Is QBO already on, or is accounting still an open call?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Key sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>→ <a href="https://opencorporates.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">OpenCorporates</a></li>
+                            <li>→ <a href="https://www.middesk.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Middesk Business Identity API</a></li>
+                            <li>→ State Secretary of State filing feeds (per-state)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- DEEP 3 -->
+                <article id="play-deep-3" class="mb-12 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Operator with 2+ concurrent NRCS contracts</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Compliance reporting overhead multiplied by contract count, plus per-enterprise visibility broken when program flows mix in QBO. Two concurrent contracts is the inflection where the spreadsheet workaround that handled one contract collapses on the second.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> Recipient name in EWG Conservation Database carrying ≥2 distinct contract IDs across EQIP, CSP, RCPP, or ACEP within FY2023–FY2025. Higher conviction when programs span 2+ distinct programs (1 EQIP + 1 CSP, not 2 EQIPs).</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Owner-operator of a multi-enterprise farm/ranch carrying 2+ active conservation contracts, with a family bookkeeper as influencer.</p>
+                        <p><span class="font-mono text-brand-accent">Disqualifiers ·</span> Already on a vertical-ag tool; single contract only; cooperative or large institutional operator out of band.</p>
+                        <p><span class="font-mono text-brand-accent">Selection note ·</span> Selected over Play 5 (PE-acquired contractor) at equal composite score because (a) higher specificity to Ambrook's Funding Library moat, (b) free and structured detection via EWG vs. paid PitchBook or fragile portfolio scrapes, (c) closer alignment with Persona 1, the proven ICP.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Two-column workflow showing how multi-contract reporting flows in QBO+spreadsheet vs. Ambrook with practice-code tagging. Includes a sample monthly NRCS-ready export. Multi-contract operators benefit from seeing the workflow regardless of whether they buy.</p>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant A · post-role-play final draft</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: your two NRCS contracts</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, public NRCS data shows {{company_name}} carrying {{n_contracts}} concurrent contracts ({{programs}}).</p>
+                                <br>
+                                <p>One contract fits in QuickBooks. The second breaks it: practice codes don't have a place to live, and the CPA rebuilds the spreadsheet at year-end. Wendy at Yubeta Cattle on the same problem: "4 hours, on a delivery drive, vs. a week on QuickBooks."</p>
+                                <br>
+                                <p>Ambrook tags transactions to contract IDs and practice codes in the books. Migration is hours, not weeks.</p>
+                                <br>
+                                <p>Is multi-contract reporting on you or a CPA right now?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Variant B · quote-first angle (Carlos: "send B")</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: the second eqip contract</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
+                                <p>{{first_name}}, Wendy at Yubeta Cattle on what changed when she added a second NRCS contract: "4 hours, on a delivery drive, vs. a week on QuickBooks."</p>
+                                <br>
+                                <p>The pattern: a spreadsheet alongside QBO handles one contract. The second one doesn't fit. Practice codes overlap and don't have a place to live.</p>
+                                <br>
+                                <p>Ambrook tags transactions to contract IDs in the books. {{n_contracts}} contracts on a single ledger, not on a spreadsheet next to QBO. Migration takes hours.</p>
+                                <br>
+                                <p>Is multi-contract reporting on you or a CPA?</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- SIGNAL STACKS -->
+        <section id="signal-stacks" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Signal Stacks</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Three pain-point clusters.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each cluster pairs a Current State (the painful present) with a Desired Future (what they want to become), plus a stack of situational, execution, and pain signals that confirm the operator is in that pattern. Stacks come from the 1A intelligence brief.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP3 · Active conservation-contract operator with NRCS chaos backdrop</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>Operator has 1+ active EQIP/CSP/RCPP contract requiring per-practice transaction tagging. NRCS technical-assistance staff is down 23%; 2025 IRA-funding freeze leaves payment timing uncertain; the Jan 15, 2026 national batching deadline is approaching. Existing QBO/Excel setup has no native way to tag against NRCS practice codes.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>Per-program, per-practice transaction tagging that produces audit-ready compliance reports on demand. Confidence that the next NRCS request — for documentation supporting payment release, or for the next program-cycle application — is one click away. Funding-Library-style discovery of additional programs the operator qualifies for.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">EWG: 1+ active EQIP/CSP/RCPP/ACEP contract; higher conviction at 2+ concurrent</td><td class="py-3 align-top">The compliance load they cannot escape</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">Approach of Jan 15, 2026 NRCS batching deadline; new state-NRCS press releases for FY2026 awards</td><td class="py-3 align-top">Time-bound sector trigger; new awards = fresh setup window</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">High-Chapter-12 state (IA, WI, MN); Section 22006 distress assistance</td><td class="py-3 align-top">Distress amplifies the urgency of clean reporting</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP4 · Construction valuation-cleanup wave</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>Specialty contractor (HVAC, plumbing, roofing, electrical) is being acquired by PE or pivoting to recurring service revenue to chase a 7-9x exit multiple vs. 4-6x build-only. Existing QBO setup mushes service revenue with project revenue. PE due-diligence or post-close integration deadline forces cleanup against an external clock.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>Per-contract and per-job margin visible to the owner, the new PE board member, and the M&amp;A diligence team. Mobile-first field receipt capture so service techs feed data without trapping it on paper.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">Contractor named in PE-acquisition press release or PE-portfolio page</td><td class="py-3 align-top">Forced books-cleanup against external deadline</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">Service-tech / maintenance-lead postings OR website addition of "service contracts" / "maintenance plans" page</td><td class="py-3 align-top">Pivot to recurring revenue requires per-contract margin tracking</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">First-time bookkeeper / controller hire at the same contractor</td><td class="py-3 align-top">Existing system breaking under operational load</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP1 + PP4 · New entity formation in ag/construction</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>New LLC/S-corp formed in NAICS 111-115 or 236-238 within last 90 days. New EIN, new bank account, new chart of accounts decision pending. Operator is making the platform choice fresh — no migration cost yet, no inertia. If succession-driven, lender and CPA are demanding clean financials immediately.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>Industry-tuned defaults from Day 1 (Schedule F &amp; C ready; per-enterprise structure; multi-bank Wallet). New-entity setup completed in under 1 hour vs. weeks of QBO chart-of-accounts customization.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">New LLC formation in ag (NAICS 111-115) or construction (NAICS 236-238) at state SoS / OpenCorporates / Middesk</td><td class="py-3 align-top">Window when accounting platform choice is freshly being made</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">Surname-match against existing entity in same NAICS within 30 miles</td><td class="py-3 align-top">Succession-driven formation — higher urgency for clean books</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">First-ever bookkeeper / office manager / controller posting within 60 days</td><td class="py-3 align-top">Operator outgrowing previous setup</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ROLE-PLAY TRANSCRIPTS -->
+        <section id="role-play" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Recipient Role-Play</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three subagents read the cold emails in character. This is what they said.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each subagent was given a concrete persona — Iowa cattle/hay operator, new Wisconsin ag LLC, California ranch with two NRCS contracts — and asked to react honestly to the <strong class="text-brand-text">pre-revision</strong> versions of Variant A and Variant B. Their reactions drove specific edits. The post-revision drafts in the deep-play section above reflect every catch logged below.</p>
+                    <p class="text-brand-faint text-sm leading-relaxed font-light max-w-3xl mt-4">// This is the part of the workflow that doesn't compress to a one-shot prompt. The recipient-side reactions — what trips, what reads as automation, what register breaks the spell — are where the message actually gets debugged.</p>
+                </div>
+
+                <!-- MIKE -->
+                <details class="reveal roleplay-details bg-brand-surface panel p-6 sm:p-8 mb-6">
+                    <summary>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div>
+                                <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-1">Recipient · Play 1</p>
+                                <h3 class="font-display font-bold text-xl text-brand-text">Mike Hartwell — Iowa cattle/hay, 1 active EQIP contract</h3>
+                                <p class="text-brand-muted text-sm mt-1">52, owner-operator of Hartwell Ranch, 1,200 acres, 350 cow-calf pairs · books in QBO · spouse Diane keeps them at the kitchen table</p>
+                            </div>
+                            <span class="font-mono text-xs text-brand-accent whitespace-nowrap">
+                                <span class="roleplay-summary-closed">+ Read transcript</span>
+                                <span class="roleplay-summary-open">− Collapse</span>
+                            </span>
+                        </div>
+                    </summary>
+
+                    <div class="transcript-block mt-8">
+
+                        <h4>Scene</h4>
+                        <p>Late November 2026. Roughly 7 weeks before the Jan 15 batching deadline. Friday morning, 6:45am. Coffee in hand. Scanning his inbox before going out to feed. Just got off a call with his local NRCS field office last week — the rep was new, didn't have answers about a payment timing question for a practice he completed in October. He hung up frustrated. He's heard secondhand that the office lost staff after the IRA freeze last year.</p>
+
+                        <h4>Pre-revision Variant A</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: your EQIP, before Jan 15</span>Mike, saw Hartwell Ranch's active EQIP contract in the public NRCS data.
+
+With NRCS staff down 23% and the Jan 15 batching window approaching, the burden of clean practice-code documentation has shifted off the field rep and onto you.
+
+Ambrook tags transactions to specific NRCS practice codes natively. Audit-ready reports come out in one click instead of a spreadsheet rebuild at year-end.
+
+Want me to send a one-page on how the practice-code tagging works for EQIP?</div>
+
+                        <h4>Pre-revision Variant B</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: your EQIP reporting</span>Mike, between the IRA payment freeze and a 23% NRCS staff cut, operators with EQIP contracts are doing more of the documentation themselves this year than ever.
+
+The pattern: a spreadsheet alongside QBO works for one contract. By the second one, it doesn't.
+
+Ambrook tags transactions to specific NRCS practice codes natively. Iowa operators are using it to produce audit-ready reports on demand.
+
+Want a 10-minute walkthrough of the EQIP workflow?</div>
+
+                        <h4>Mike's reaction · 6:47am, second cup of coffee</h4>
+
+                        <p><strong>5-second reaction.</strong> Variant A subject — "your EQIP, before Jan 15" — okay, that made me pause. Whoever this is at least knows the date that matters. First line names my ranch and says they pulled it from public NRCS data. Fine. I'd keep reading. Variant B subject — "your EQIP reporting" — generic. Reads like a software pitch. First line opens with "IRA payment freeze and 23% NRCS staff cut" — sounds like she read a Politico article. I'd probably scroll past unless I had time, which at 6:45am I don't.</p>
+
+                        <p><strong>What lands.</strong> Variant A: "the burden of clean practice-code documentation has shifted off the field rep and onto you." That's actually true. After last week's call with the new rep who couldn't answer my payment question, that line lands. Somebody figured out what's actually changed for me, not just what's in the news. Variant B: "a spreadsheet alongside QBO works for one contract. By the second one, it doesn't." That's a real observation. I've got one contract now. If I stack another practice on, Diane's kitchen-table system breaks. Whoever wrote that has talked to a rancher before, or at least watched one try to reconcile a cost-share payment.</p>
+
+                        <p><strong>AI-SDR pattern-match.</strong> Both emails have "23% NRCS staff cut" — that's the tell. It's a stat. Stats in cold email = scraped from a headline, plugged into a template, sent to 4,000 EQIP holders. The fact that BOTH variants have the exact same number tells me this is a template with one swappable hook. "Audit-ready reports come out in one click" — software-marketing voice. Ranchers don't say "audit-ready." We say "what the FSA office wants to see." "Operators" — twice in B. Nobody calls me an operator except a vendor. I'm a rancher, or Mike, or "the Hartwells."</p>
+
+                        <p><strong>Off-register.</strong> "Tags transactions to specific NRCS practice codes natively." <em>Natively.</em> That's a software word. Pull it. "On demand" — same problem. Sounds like a SaaS landing page. "Iowa operators are using it" — vague social proof. Name one or don't say it.</p>
+
+                        <p><strong>Would I reply?</strong> Variant A, maybe. The Jan 15 framing earns the open, and the one-pager ask is low-friction. I might forward it to Diane and say "look at this when you have a minute." Variant B, no. Too much setup, no urgency hook, and the "10-minute walkthrough" ask is too much for a cold first email.</p>
+
+                        <p><strong>Cut / Add.</strong> <strong>Cut:</strong> "23% NRCS staff cut." It's the AI-SDR tell. <strong>Add:</strong> One sentence showing she knows what an EQIP practice code actually looks like — like "the 340 cover-crop line item or the 528 prescribed-grazing entries." That's the proof I'd nod at.</p>
+
+                    </div>
+                </details>
+
+                <!-- SARAH -->
+                <details class="reveal roleplay-details bg-brand-surface panel p-6 sm:p-8 mb-6">
+                    <summary>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div>
+                                <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-1">Recipient · Play 2</p>
+                                <h3 class="font-display font-bold text-xl text-brand-text">Sarah Whitcomb — Wisconsin, new beef cattle LLC, day 45 post-filing</h3>
+                                <p class="text-brand-muted text-sm mt-1">38, just filed Wildflower Farm LLC, NAICS 112 · taking over a 600-acre cattle operation from her parents · ZERO patience for vendor pitches that don't get how a small farm works</p>
+                            </div>
+                            <span class="font-mono text-xs text-brand-accent whitespace-nowrap">
+                                <span class="roleplay-summary-closed">+ Read transcript</span>
+                                <span class="roleplay-summary-open">− Collapse</span>
+                            </span>
+                        </div>
+                    </summary>
+
+                    <div class="transcript-block mt-8">
+
+                        <h4>Scene</h4>
+                        <p>May 6, 2026 (no seasonal anchor). Mid-morning, sitting at the kitchen table with a list of platform decisions to make. Has been getting pitched constantly since the LLC filing went public — banking, insurance, accounting, equipment financing.</p>
+
+                        <h4>Pre-revision Variant A</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: your new Wisconsin farm LLC</span>Sarah, saw Wildflower Farm LLC filed with the Wisconsin Secretary of State on March 22, 2026, NAICS 112.
+
+The pattern we see: operators set up QuickBooks the first month, then realize at tax time that Schedule F categories don't map to QBO's chart of accounts. CPA fees go up. Per-enterprise margin stays invisible.
+
+Ambrook starts you on Schedule F-native books from day one. $59/mo on Build vs QuickBooks at $115.
+
+Is the books platform still open, or is QBO already in?</div>
+
+                        <h4>Pre-revision Variant B</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: before quickbooks goes in</span>Sarah, congrats on the new entity. Quick note before the books platform decision settles.
+
+Schedule F doesn't map clean to QuickBooks's chart of accounts. The sequence we see most often: QBO month one, year-end CPA conversation, a four-figure cleanup bill.
+
+Ambrook starts on a Schedule F-native chart of accounts from the first transaction. $59/mo on Build vs QBO at $115.
+
+Is books still an open decision, or is QBO already on?</div>
+
+                        <h4>Sarah's reaction · kitchen table, coffee getting cold, dad outside checking the south fence</h4>
+
+                        <p><strong>5-second reaction.</strong> Variant A subject "your new Wisconsin farm LLC" — instant ick. That's the same energy as the bank pitches and the insurance guy who called Tuesday. Reads like I'm a record in a database. First line confirms it: "saw Wildflower Farm LLC filed with the Wisconsin Secretary of State on March 22, 2026, NAICS 112" — you just read me my own filing back at me. That's not insight, that's a scrape. NAICS 112 in a cold email is the tell. Nobody who actually knows farms talks in NAICS codes. Variant B subject "before quickbooks goes in" — okay, that one I'd open. It's lowercase, it's specific, it sounds like something Becca would text me. "Congrats on the new entity" is a touch stiff but it's not creepy.</p>
+
+                        <p><strong>What lands.</strong> Variant B: "Schedule F doesn't map clean to QuickBooks's chart of accounts." That's the line. That's the only line in either email that made me think this person has actually sat next to a farmer at tax time. "Year-end CPA conversation, a four-figure cleanup bill" — yeah, I've heard that exact story from Becca about her first year. That lands.</p>
+
+                        <p><strong>AI-SDR pattern-match.</strong> Variant A reeks of it. "The pattern we see" — every AI SDR email I've gotten in the last six weeks uses that construction. Reading my filing data back as the opener (date + state + NAICS) is the most automatable move possible. Anyone can scrape Secretary of State filings; Clay can do it in an afternoon. Variant B uses "the sequence we see most often" which is the same pattern but it's buried under a real insight, so it survives.</p>
+
+                        <p><strong>Off-register.</strong> "Per-enterprise margin stays invisible" in Variant A — what? That's coastal SaaS deck language. A farmer says "I can't tell which pasture is making me money" or "I don't know if the cow-calf side is actually paying for itself." "Per-enterprise margin" is something a Sequoia partner says. Both emails say "books platform" — nobody calls it that. We say "accounting" or "QuickBooks" because that's the noun.</p>
+
+                        <p><strong>Reply?</strong> Variant B, maybe. The Schedule F line earns the reply. I'd probably write back "what do the categories actually look like" because that's the real question. Variant A goes in trash.</p>
+
+                        <p><strong>The $59 vs $115 line.</strong> Beside the point. I'm about to spend $40K on a bull. $56/month is rounding error. Lead with the Schedule F pain, not the price. Price as the headline makes you sound like a Groupon.</p>
+
+                        <p><strong>Cut / Add.</strong> <strong>Cut:</strong> the NAICS code, the filing date callback, "per-enterprise margin." Cut the price comparison from the lead. <strong>Add:</strong> one concrete Schedule F category that QBO mangles — like "show me how you handle raised vs purchased livestock basis" or "feed inventory at year-end." That's the line that proves you've done this before.</p>
+
+                    </div>
+                </details>
+
+                <!-- CARLOS -->
+                <details class="reveal roleplay-details bg-brand-surface panel p-6 sm:p-8">
+                    <summary>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div>
+                                <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-1">Recipient · Play 4</p>
+                                <h3 class="font-display font-bold text-xl text-brand-text">Carlos Hidalgo — California, 2 concurrent NRCS contracts</h3>
+                                <p class="text-brand-muted text-sm mt-1">48, third-generation owner-operator of Hidalgo Family Ranch · 2,400 acres mixed livestock + 80 acres organic vegetables · CSP (FY2024) + EQIP (FY2026) · wife Elena handles QBO</p>
+                            </div>
+                            <span class="font-mono text-xs text-brand-accent whitespace-nowrap">
+                                <span class="roleplay-summary-closed">+ Read transcript</span>
+                                <span class="roleplay-summary-open">− Collapse</span>
+                            </span>
+                        </div>
+                    </summary>
+
+                    <div class="transcript-block mt-8">
+
+                        <h4>Scene</h4>
+                        <p>Late November 2026. About 7 weeks from the Jan 15 NRCS batching deadline. Saturday morning, 7:15am, after he's been out moving cattle since 5. Coffee, kitchen table, scrolling email on his phone. Elena spent a Saturday in April trying to figure out where to record a $3,200 fence-rebuild that touches both contracts and gave up — threw it in a "review later" tag. CPA in Modesto charged $4,800 last year for the year-end cleanup, more than half of which was sorting which transactions belonged to which contract.</p>
+
+                        <h4>Pre-revision Variant A</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: your two NRCS contracts</span>Carlos, public NRCS data shows Hidalgo Family Ranch carrying 2 concurrent contracts (CSP and EQIP).
+
+The operators we work with say one contract fits in QuickBooks. The second one breaks it. The practice codes don't have a place to live, and the CPA rebuilds the spreadsheet at year-end.
+
+Ambrook tags transactions to specific contract IDs and practice codes natively. Wendy at Yubeta Cattle: "4 hours, on a delivery drive, vs. a week on QuickBooks."
+
+Is multi-contract reporting on you or a CPA right now?</div>
+
+                        <h4>Pre-revision Variant B</h4>
+                        <div class="pre-email-card"><span class="pre-email-subject">Subject: the second eqip contract</span>Carlos, Wendy at Yubeta Cattle on what changed when she added a second NRCS contract: "4 hours, on a delivery drive, vs. a week on QuickBooks."
+
+The pattern: a spreadsheet alongside QBO handles one contract. The second one doesn't fit. Practice codes overlap and don't have a place to live.
+
+Ambrook tags transactions to specific contract IDs natively. 2 contracts is exactly the use case.
+
+Is multi-contract reporting on you or a CPA?</div>
+
+                        <h4>Carlos's reaction · 7:15am, second cup of coffee, phone in hand</h4>
+
+                        <p><strong>5-second reaction.</strong> Subject "your two NRCS contracts" — that stops my thumb. Most vendor email I trash without opening. This one knows I have two. That's not something Ambrook's marketing team guessed. So I open it. First line confirms it — CSP and EQIP, named by program. OK. Keep reading. Bar cleared. Variant B subject "the second eqip contract" — also good. Maybe better. It's the contract that's actually breaking things. Specific.</p>
+
+                        <p><strong>What lands.</strong> "The practice codes don't have a place to live" — yes. That's the exact problem. Elena said almost those words in April. Whoever wrote this has talked to someone like us, or watched someone like Elena try to file a fence rebuild that touches two contracts. "The CPA rebuilds the spreadsheet at year-end" — that's $4,800 of my money they just described. Lands hard. "2 contracts is exactly the use case" in B — direct. I like it.</p>
+
+                        <p><strong>AI-SDR / template radar.</strong> Honestly? Not much trips it. No "I came across your profile," no "quick question," no fake personalization. The data citation is real (NRCS contracts ARE public). The problem statement is operationally correct. One small thing: "The operators we work with say" in Variant A is slightly social-proofy in a way that could be filler. But it's mild. The CTA — "Is multi-contract reporting on you or a CPA right now?" — is a real question with a binary answer. Not "open to a quick chat?" That's not an AI-SDR move.</p>
+
+                        <p><strong>The Wendy quote.</strong> Moves me. Feels real. "On a delivery drive" is the detail that sells it — nobody manufactures "on a delivery drive." That's a person who actually called Wendy. If it just said "saved a week" I'd roll my eyes. But: I don't know who Yubeta Cattle is. If she's a 50-head hobbyist it doesn't apply to me. If she's running real numbers it does. The quote works, the attribution could carry one more beat — "Wendy at Yubeta, ~200 head" or similar.</p>
+
+                        <p><strong>Forward to Elena or trash?</strong> Forward to Elena. She's the one fighting QBO. This is her decision more than mine. That's a different verdict than "I reply." I might forward and let her drive it. That's a strong signal — most cold email I trash, period.</p>
+
+                        <p><strong>B vs A opener.</strong> B works better for me. Quote-first is more human at 7am with cattle dust still on my boots. A opens with "public NRCS data shows" which is competent but slightly clinical — feels like I'm being looked at in a database. B opens with another rancher's voice. I'd rather hear from her than from your data pull, even though the data pull is what got my attention in the subject.</p>
+
+                        <p><strong>Cut one, add one.</strong> <strong>Cut:</strong> "The operators we work with say" in A. Just state the pattern. I don't need the social proof there — the specificity already earned it. <strong>Add:</strong> One concrete number on time-to-set-up or what year-end looks like. "Most operators have it tagged in a weekend" or "your CPA gets a clean export instead of a spreadsheet." Right now I believe you understand the problem. I don't yet know what it costs me to find out if you solve it. <strong>Send B.</strong></p>
+
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- REVISION LOG -->
+        <section id="revision-log" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Role-Play Revision Log</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">What got cut, and the catch that drove it.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every edit ties back to a specific recipient line. The post-revision drafts in the deep-play section above incorporate every row.</p>
+                </div>
+
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-4 sm:p-6">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Edit</th>
+                                <th class="py-3">Recipient catch driving it</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">1 (both)</td><td class="py-3 pr-4 align-top">Removed "23% NRCS staff cut" stat from Variant A; reframed Variant B around year-end CPA bill instead of regime change</td><td class="py-3 align-top">Mike: "stats in cold email = scraped from a headline. The fact that BOTH variants have the exact same number tells me this is a template"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">1 (both)</td><td class="py-3 pr-4 align-top">Added practice-code specifics ("the 340 cover-crop line or the 528 prescribed-grazing entries")</td><td class="py-3 align-top">Mike: "name a practice code... that's the proof I'd nod at"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">1 (both)</td><td class="py-3 pr-4 align-top">Replaced "natively" with "in the books"; replaced "audit-ready reports" with "clean export"</td><td class="py-3 align-top">Mike: "natively / on demand / audit-ready — software-marketing voice"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">1 Variant B</td><td class="py-3 pr-4 align-top">New subject "the year-end {{program}} bill" replacing "your {{program}} reporting"</td><td class="py-3 align-top">Mike: "your {{program}} reporting — generic. Reads like a software pitch"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">2 Variant A</td><td class="py-3 pr-4 align-top">New subject "schedule f and quickbooks" replacing "your new {{state}} farm LLC"; opener no longer reads filing date + NAICS code back</td><td class="py-3 align-top">Sarah: "reads like I'm a record in a database... NAICS 112 in a cold email is the tell. Nobody who actually knows farms talks in NAICS codes"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">2 Variant A</td><td class="py-3 pr-4 align-top">Added Schedule F category specifics (raised vs. purchased livestock basis, breeding stock depreciation, multi-enterprise splits)</td><td class="py-3 align-top">Sarah: "name one concrete Schedule F category that QBO mangles — that's the line that proves you've done this before"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">2 (both)</td><td class="py-3 pr-4 align-top">Removed "$59 vs $115" pricing from the lead body (kept in Step 2)</td><td class="py-3 align-top">Sarah: "I'm about to spend $40K on a bull. $56/month is rounding error. Lead with the Schedule F pain, not the price"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">2 (both)</td><td class="py-3 pr-4 align-top">Replaced "books platform" with "accounting"; replaced "per-enterprise margin stays invisible" with category-level specifics</td><td class="py-3 align-top">Sarah: "books platform — nobody calls it that... Per-enterprise margin is something a Sequoia partner says"</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">2 Variant B</td><td class="py-3 pr-4 align-top">New opener "most farm LLCs end up on QuickBooks because that's what people know" replacing "congrats on the new entity"</td><td class="py-3 align-top">Sarah said B "maybe" already; sharpened to lead with default-inertia observation</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">4 Variant A</td><td class="py-3 pr-4 align-top">Removed "The operators we work with say"; added "Migration is hours, not weeks"</td><td class="py-3 align-top">Carlos: "cut 'the operators we work with say' — I don't need the social proof there. Add one concrete number on time-to-set-up"</td></tr>
+                            <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">4 (both)</td><td class="py-3 pr-4 align-top">Replaced "natively" with "in the books"</td><td class="py-3 align-top">Same software-word problem flagged across plays</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reveal mt-8 bg-brand-surface panel p-6">
+                    <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">Reply-tracking note</p>
+                    <p class="text-brand-muted text-sm leading-relaxed">Carlos said he'd forward the email to Elena (his wife/bookkeeper) rather than reply directly. Forward / CC behavior is positive engagement that won't show as a reply in standard tracking. Wire this into the CRM step — count "operator forwarded to spouse-bookkeeper" as engagement, not silence.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CLAIM SOURCES -->
+        <section id="claim-sources" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Claim Sources</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Every number, sourced.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every specific number, percentage, or capability assertion that appears in a menu or deep-play message. No claim enters a message without a named public source, a vendor-published source, or a plain-language qualifier.</p>
+                </div>
+
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-4 sm:p-6">
+                    <table class="w-full text-xs text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                <th class="py-2 pr-3">Claim</th>
+                                <th class="py-2 pr-3">Source</th>
+                                <th class="py-2 pr-3">Tier</th>
+                                <th class="py-2">Treatment</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"active EQIP/CSP/RCPP/ACEP contract"</td><td class="py-3 pr-3 align-top">EWG Conservation Database / NRCS public data</td><td class="py-3 pr-3 align-top font-mono">Named public dataset</td><td class="py-3 align-top">Use directly. Frame as "the public NRCS data."</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"NRCS staff down 23%"</td><td class="py-3 pr-3 align-top">Sustainable Ag Coalition + GAO + USDA press chronology</td><td class="py-3 pr-3 align-top font-mono">Named public source</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Jan 15 batching window / deadline"</td><td class="py-3 pr-3 align-top">USDA NRCS national batching deadline announcement</td><td class="py-3 pr-3 align-top font-mono">Named public deadline</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Wendy at Yubeta Cattle: 4 hours, on a delivery drive, vs. a week on QuickBooks"</td><td class="py-3 pr-3 align-top">Ambrook customer testimonial</td><td class="py-3 pr-3 align-top font-mono">Named customer</td><td class="py-3 align-top">Use directly with name attribution.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"$59/mo on Build vs QuickBooks at $115"</td><td class="py-3 pr-3 align-top">Ambrook + Intuit published pricing</td><td class="py-3 pr-3 align-top font-mono">Vendor-published</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"$99/mo on Pro vs. QBO Plus at $275"</td><td class="py-3 pr-3 align-top">Ambrook + Intuit published QBO Plus tier pricing</td><td class="py-3 pr-3 align-top font-mono">Vendor-published</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"7-9x EBITDA at exit vs. 4-6x build-only — KPMG and UHY both confirm"</td><td class="py-3 pr-3 align-top">KPMG Home Services Fall 2025; UHY March 2025; Roofing Contractor 2025</td><td class="py-3 pr-3 align-top font-mono">Named industry research</td><td class="py-3 align-top">Use with attribution.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Schedule F &amp; C native"</td><td class="py-3 pr-3 align-top">Ambrook published feature description</td><td class="py-3 pr-3 align-top font-mono">Vendor capability</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"tags transactions to specific NRCS practice codes"</td><td class="py-3 pr-3 align-top">Ambrook Funding Library product description</td><td class="py-3 pr-3 align-top font-mono">Vendor capability</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"per-job, per-WBS tracking with mobile field capture"</td><td class="py-3 pr-3 align-top">Ambrook product surface</td><td class="py-3 pr-3 align-top font-mono">Vendor capability</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"per-enterprise P&amp;L"</td><td class="py-3 pr-3 align-top">Ambrook product + customer testimony (Jacob at JG Livestock)</td><td class="py-3 pr-3 align-top font-mono">Vendor + customer</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"FDIC-insured deposit account"</td><td class="py-3 pr-3 align-top">Ambrook Wallet on Stripe Treasury (vendor disclosure)</td><td class="py-3 pr-3 align-top font-mono">Vendor + partner</td><td class="py-3 align-top">Use directly. Avoid naming Stripe Treasury in cold copy — internal plumbing, not buyer-relevant.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Miller Act bond paperwork"</td><td class="py-3 pr-3 align-top">US federal contracting law — Miller Act $100K threshold</td><td class="py-3 pr-3 align-top font-mono">Public statute</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"trustee" / "audit-ready package for the trustee"</td><td class="py-3 pr-3 align-top">ESOP regulatory structure — DOL EFAST2 trustee requirement</td><td class="py-3 pr-3 align-top font-mono">Public regulatory</td><td class="py-3 align-top">Use directly.</td></tr>
+                            <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"the practice codes don't have a place to live"</td><td class="py-3 pr-3 align-top">Spreadsheet workaround pattern observed in Ambrook customer testimonials</td><td class="py-3 pr-3 align-top font-mono">Observed pattern</td><td class="py-3 align-top">Use directly as illustrative frame.</td></tr>
+                            <tr><td class="py-3 pr-3 align-top text-brand-text">Volume estimates ("tens of thousands of operators," etc.)</td><td class="py-3 pr-3 align-top">Brief individual-signal volume estimates</td><td class="py-3 pr-3 align-top font-mono">Plain-language estimate</td><td class="py-3 align-top">Use only with explicit "estimated" language.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="reveal mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-brand-muted">
+                    <div class="bg-brand-surface panel p-5">
+                        <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">No bare KPI targets</p>
+                        <p class="leading-relaxed">No "55% open rate" / "8% reply rate" — the "What to Track" frame names metrics, not forecasts.</p>
+                    </div>
+                    <div class="bg-brand-surface panel p-5">
+                        <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">No vendor-internal names</p>
+                        <p class="leading-relaxed">Stripe Treasury is internal plumbing; "FDIC-insured deposit account" is what the buyer evaluates.</p>
+                    </div>
+                    <div class="bg-brand-surface panel p-5">
+                        <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">No specific dollar migration costs</p>
+                        <p class="leading-relaxed">Switching cost is described qualitatively. No "$2-5K" assertions.</p>
+                    </div>
+                    <div class="bg-brand-surface panel p-5">
+                        <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">Customer testimonials with named attribution only</p>
+                        <p class="leading-relaxed">Wendy at Yubeta Cattle is the only name used because she's the only quantified Ambrook testimonial in the brief.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- COMPETITIVE -->
+        <section id="competitive" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Competitive Landscape</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Where Ambrook wins, where it loses, where the gaps are.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger mb-8">
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">Where Ambrook wins</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>→ Multi-enterprise farm/ranch operators on QBO who have outgrown the chart of accounts</li>
+                            <li>→ Conservation-contract holders — Funding Library + tag-based grant tracking has no QBO equivalent</li>
+                            <li>→ Mobile-heavy operators (field receipt capture is an Ambrook differentiator)</li>
+                            <li>→ Operators making the 1→2 entity transition — per-entity Build-tier pricing vs QBO's one-file-only</li>
+                            <li>→ Cross-vertical owner-operators (farm + small contractor + a few trucks) — Ambrook holds all three</li>
+                            <li>→ Construction operators in PE-acquired or service-pivot situations who need per-job + per-contract margin but can't justify $200-500/mo + $5K-25K Foundation/Sage implementation</li>
+                        </ul>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-secondary uppercase mb-3">Where Ambrook loses</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>→ Agronomy-heavy row-crop operations needing deep field-management integration → Traction Ag</li>
+                            <li>→ Single-user farms wanting one-time payment with no subscription → FarmBooks ($595 desktop)</li>
+                            <li>→ Mid-market construction firms ($5M+) needing AIA G702/G703, retainage, lien waivers, certified payroll → Foundation / Sage 100 Contractor / Knowify</li>
+                            <li>→ Owner-operators with a CPA who refuses to learn anything other than QBO Desktop → status-quo wins</li>
+                            <li>→ Trucking owner-operators needing IFTA fuel-tax automation tightly integrated with accounting → Tailwind / ProTransport / TruckLogics</li>
+                        </ul>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">Gaps Ambrook can own</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>→ Active conservation-contract operator targeting (Signal 1, 9) — Traction Ag and FarmRaise market grant tools but neither systematically prospects from EWG-style data</li>
+                            <li>→ Construction service-contract pivot detection (Signal 4) — no construction accounting vendor monitors website-change + service-tech-hire as a dual signal</li>
+                            <li>→ PE-acquired-contractor outbound (Signal 3) — most outbound to acquired contractors is tax/audit-firm-led</li>
+                            <li>→ First-bookkeeper-hire targeting (Signal 6) — generic SMB tools don't filter to ag/construction NAICS at sub-50-employee scale</li>
+                            <li>→ The spouse/family-bookkeeper persona as a direct messaging target — no accounting vendor in the fragmented vertical SMB space addresses this hidden buyer explicitly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- DOESN'T SOLVE -->
+        <section id="doesnt-solve" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-8">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-faint uppercase mb-4">What This Playbook Doesn't Solve</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl mb-6 text-brand-muted">Where this approach falls short.</h2>
+                </div>
+                <ul class="reveal space-y-5 list-x">
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">No plays target the trucking vertical — that's a known gap; FMCSA QCMobile, OOS rates, and MCS-150 dataset are available but need a separate research run before activation</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Persona 3 (family bookkeeper) lacks direct outbound contact paths — reached indirectly through Plays 2/3 and Play 6; a Persona-3-direct play needs reply-pattern data first</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Cat A is empty — no prospect-specific telemetry on cold prospects, and no customer-base aggregated benchmarks earn cold use yet</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Play 4 lacks an event-trigger anchor outside the Jan 15 NRCS batching window — after that deadline passes, needs a different time-bound trigger or it degrades to continuous-cadence</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">PP2 (cash fragmentation) is the underrepresented failure mode — no top-of-funnel signal in the brief reliably indicates an operator is hitting cash-flow visibility pain in a public way</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">EWG Conservation Database has a 1-2 year lag — pair with state-NRCS press-release feeds for FY2026 freshness</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- DATA SOURCES -->
+        <section id="data-sources" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Data Sources</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">The full source stack.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Mapped by play in the menu above. Most links are public and free.</p>
+                </div>
+                <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-brand-border">
+                                    <th class="text-left py-3 pr-4 font-mono text-xs tracking-wider text-brand-accent uppercase">Source</th>
+                                    <th class="text-left py-3 pr-4 font-mono text-xs tracking-wider text-brand-accent uppercase">What It Tracks</th>
+                                    <th class="text-left py-3 font-mono text-xs tracking-wider text-brand-accent uppercase">Where to Find It</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-brand-muted">
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">EWG Conservation Database</td>
+                                    <td class="py-4 pr-4 align-top">Recipient name, state, county, program, contract year for EQIP/CSP/RCPP/ACEP (FY2017–2024)</td>
+                                    <td class="py-4 align-top"><a href="https://farm.ewg.org/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">farm.ewg.org</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">USDA NRCS</td>
+                                    <td class="py-4 pr-4 align-top">State press releases for fresh FY2026 awards; Field Office Technical Guide for practice codes</td>
+                                    <td class="py-4 align-top"><a href="https://www.nrcs.usda.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">nrcs.usda.gov</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">OpenCorporates</td>
+                                    <td class="py-4 pr-4 align-top">New entity formations across US jurisdictions; structured API</td>
+                                    <td class="py-4 align-top"><a href="https://opencorporates.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">opencorporates.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Middesk</td>
+                                    <td class="py-4 pr-4 align-top">Business identity API with NAICS classification + filing history</td>
+                                    <td class="py-4 align-top"><a href="https://www.middesk.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">middesk.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">State Secretary of State feeds</td>
+                                    <td class="py-4 pr-4 align-top">Daily filings; quality varies by state (NY/CA/FL/TX strong; smaller ag states weaker)</td>
+                                    <td class="py-4 align-top">per-state SoS websites</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">SAM.gov Awards API</td>
+                                    <td class="py-4 pr-4 align-top">Federal contract awards: awardee, NAICS, value, agency, set-aside</td>
+                                    <td class="py-4 align-top"><a href="https://sam.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">sam.gov</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">USASpending.gov</td>
+                                    <td class="py-4 pr-4 align-top">Historical award cross-check for first-time-winner flag</td>
+                                    <td class="py-4 align-top"><a href="https://www.usaspending.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">usaspending.gov</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">SEC EDGAR</td>
+                                    <td class="py-4 pr-4 align-top">PE acquisition 8-K filings for SEC-reporting acquirers</td>
+                                    <td class="py-4 align-top"><a href="https://www.sec.gov/edgar" class="text-brand-accent hover:underline" target="_blank" rel="noopener">sec.gov/edgar</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">DOL EFAST2 Form 5500</td>
+                                    <td class="py-4 pr-4 align-top">Annual ESOP plan filings — plan sponsor, NAICS, plan code, plan year</td>
+                                    <td class="py-4 align-top"><a href="https://www.efast.dol.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">efast.dol.gov</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">USDA Rural Development</td>
+                                    <td class="py-4 pr-4 align-top">VAPG award announcements per state RD office</td>
+                                    <td class="py-4 align-top"><a href="https://www.rd.usda.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">rd.usda.gov</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">TheirStack</td>
+                                    <td class="py-4 pr-4 align-top">Job postings (bookkeeper / controller / service tech) by NAICS + headcount</td>
+                                    <td class="py-4 align-top"><a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">theirstack.com</a></td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Niche ag job boards</td>
+                                    <td class="py-4 pr-4 align-top">Ag-specific bookkeeper / office manager postings</td>
+                                    <td class="py-4 align-top">RanchWork.com, farmjobsearch.com</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Wayback Machine + visualping</td>
+                                    <td class="py-4 pr-4 align-top">Website-change detection (service-contract / membership pages)</td>
+                                    <td class="py-4 align-top">archive.org, visualping.io</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">PE platform portfolio pages</td>
+                                    <td class="py-4 pr-4 align-top">Top 30-50 home-services rollups (Apex, Champions, Tecta, Aligned, Eskola)</td>
+                                    <td class="py-4 align-top">platform-specific portfolio URLs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="py-24 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Offer</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">Want one of these built for your company?</h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">I'll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.</p>
+                    <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">First 10 prospects are free. If it books meetings, we talk about a monthly engagement.</p>
+                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
+                    <a href="../../index.html#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Show me the signal →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANGELOG -->
+        <section class="py-12 px-6 border-t border-brand-border/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
+                    <ul class="space-y-2 font-mono text-xs text-brand-faint">
+                        <li>2026-05-06 — Initial publish. Ten plays, three deep dives (active conservation-contract operator, new ag LLC, 2+ concurrent NRCS contracts), full role-play transcripts (Mike / Sarah / Carlos), revision log, claim sources, and the EQIP practice-code one-pager artifact.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="../index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="../../blog/index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="../../privacy.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+
+        const heroSection = document.querySelector('main > section:first-child');
+        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => { el.classList.add('active'); }, i * 150);
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (!heroSection.contains(el)) { observer.observe(el); }
+        });
+
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+                    else { nav.classList.remove('scrolled'); }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
+</body>
+</html>

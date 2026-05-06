@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EQIP practice-code tagging — one-pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: lowercase;
+  }
+  .label::before { content: "// "; color: var(--accent); }
+
+  .label-muted {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 8px 0 0;
+    color: var(--text);
+  }
+
+  h1 .accent { color: var(--accent); }
+
+  .header-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .section-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 40px 0 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .codes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .code-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+  }
+  .code-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .code-name {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 4px;
+  }
+  .code-desc {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin-bottom: 24px;
+  }
+
+  .compare-col {
+    padding: 0;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+  }
+  .compare-col + .compare-col { border-left: 1px solid var(--border); }
+
+  .col-head {
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 18px;
+  }
+  .col-head .col-system {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .col-head .col-name {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    margin-top: 4px;
+  }
+  .col-head.qbo .col-name { color: var(--secondary); }
+  .col-head.ambrook .col-name { color: var(--accent); }
+
+  .step {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .step-body {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .step-body em {
+    color: var(--muted);
+    font-style: normal;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    background: rgba(255,255,255,0.03);
+    padding: 1px 6px;
+  }
+
+  .report {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    padding: 18px 18px 14px;
+    margin-top: 16px;
+  }
+  .report-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .report pre {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    line-height: 1.65;
+    color: var(--text);
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .report pre .dim { color: var(--faint); }
+  .report pre .accent { color: var(--accent); }
+  .report pre .warn { color: var(--secondary); }
+  .report pre .head {
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .read-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    padding: 14px 18px;
+    border-top: 1px solid var(--border);
+    background: var(--surface-alt);
+  }
+  .read-note strong { color: var(--text); font-weight: 500; }
+
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 760px) {
+    .compare { grid-template-columns: 1fr; grid-template-rows: none; }
+    .compare-col { display: block; grid-row: auto; }
+    .compare-col + .compare-col { border-left: none; border-top: 1px solid var(--border); }
+    .codes { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+
+  @media print {
+    body::before { display: none; }
+    body { background: #000; }
+    .page { padding: 24px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / agency-ready reporting</span>
+      <h1>EQIP practice-code tagging<br/><span class="accent">QBO + spreadsheet vs. Ambrook Funding Library</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;active EQIP / CSP / RCPP / ACEP holders</div>
+      <div><strong>use</strong>&nbsp;&nbsp;contract close-out, payment release, program renewal</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> The same task — producing the practice-code-tagged transaction record NRCS will ask for at close-out or payment-release — done two ways. Same example operation, same three practices, same five months of activity.</p>
+    <p><strong>What it is not.</strong> A pitch. The mapping between practice codes and transactions is publicly documented in the NRCS Field Office Technical Guide. This is a workflow comparison the operator can pressure-test against their current setup, regardless of what tool they use.</p>
+  </section>
+
+  <span class="label-muted">practice codes referenced</span>
+  <div class="codes" style="margin-top:10px">
+    <div class="code-card">
+      <div class="code-num">340</div>
+      <div class="code-name">Cover Crop</div>
+      <div class="code-desc">Grasses, legumes, or forbs planted for seasonal vegetative cover between cash crops.</div>
+    </div>
+    <div class="code-card">
+      <div class="code-num">528</div>
+      <div class="code-name">Prescribed Grazing</div>
+      <div class="code-desc">Managed harvest of vegetation by grazing or browsing animals to a planned schedule.</div>
+    </div>
+    <div class="code-card">
+      <div class="code-num">590</div>
+      <div class="code-name">Nutrient Management</div>
+      <div class="code-desc">Managing amount, source, placement, form, and timing of plant nutrients and soil amendments.</div>
+    </div>
+  </div>
+
+  <span class="label">workflow comparison</span>
+  <h2 class="section-title">Same operator, same five months, two systems</h2>
+
+  <div class="compare">
+
+    <div class="compare-col">
+      <div class="col-head qbo">
+        <div class="col-system">system</div>
+        <div class="col-name">QuickBooks Online + spreadsheet</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Setup</div>
+        <div class="step-body">QBO chart of accounts uses generic SMB categories. Operator opens a side spreadsheet (one tab per contract, columns for practice code, vendor, amount, completion date, notes). Tags in QBO are limited and don't accept practice-code values; <em>Class</em> tracking is repurposed for "EQIP" vs. "operations" but holds one value per transaction.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Per-transaction</div>
+        <div class="step-body">Operator (or spouse) records the transaction in QBO, flips to the spreadsheet, copies the date and amount, types the practice code, types a note like "north field, 80 acres, see invoice." A $3,200 fence rebuild that touches both <em>340</em> and <em>528</em> ends up duplicated on two spreadsheet tabs with a manual note about the split. Receipt photos live in a phone camera roll or a Drive folder, separate from both.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">When the agency asks</div>
+        <div class="step-body">Operator pulls a QBO general-ledger export, the spreadsheet, and the Drive folder. CPA reconciles the three sources — every line touched by the contract has to be cross-referenced by hand. Items where the spreadsheet and QBO disagree get flagged and re-investigated. Receipts are matched back to spreadsheet rows manually. A single contract takes a CPA half a day to a full day; two overlapping contracts can take a week.</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">sample agency-ready output</div>
+<pre><span class="head">CONTRACT 74-2026-EQIP-XXXX  |  ASSEMBLED FROM: QBO export + spreadsheet + Drive folder</span>
+<span class="warn">[reconciled by CPA — 6.5 hrs billed]</span>
+
+practice  vendor              date        amount     receipt
+<span class="dim">--------  ------------------  ----------  ---------  ---------</span>
+340       Midwest Seed Co.    2026-09-12  $4,180.00  IMG_4421
+340       Midwest Seed Co.    2026-09-19  $1,950.00  IMG_4438
+528       Riverside Fence     2026-10-04  $3,200.00  <span class="warn">SPLIT*</span>
+528       Powerline Hardware  2026-10-22  $612.55    IMG_4502
+590       AgriCo Nutrients    2026-08-30  $2,840.00  IMG_4385
+590       AgriCo Nutrients    2026-11-08  $1,710.00  IMG_4567
+
+<span class="warn">*SPLIT: fence rebuild touches both 340 (cover-crop perimeter)
+and 528 (prescribed grazing). Allocated 50/50 in spreadsheet
+(see notes tab). Verified against invoice line items 11/14/26.</span></pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> The output is correct, but the path to it isn't. Every audit-ready row depends on a human keeping three systems in sync. Year-end is when the gap shows up.
+      </div>
+    </div>
+
+    <div class="compare-col">
+      <div class="col-head ambrook">
+        <div class="col-system">system</div>
+        <div class="col-name">Ambrook Funding Library</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Setup</div>
+        <div class="step-body">Operator adds the contract to the Funding Library once: contract ID, program (EQIP / CSP / RCPP / ACEP), fiscal year, total obligation, and the practice codes the contract covers. The chart of accounts is Schedule F-native; the practice-code tags live on the transaction itself, not in a parallel spreadsheet.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Per-transaction</div>
+        <div class="step-body">When a transaction is recorded — bank feed, AI receipt scan, or manual entry — it's tagged with one or more practice codes (<em>340</em>, <em>528</em>, <em>590</em>) and the contract ID. The same fence rebuild gets two tags (<em>340</em> + <em>528</em>) on a single line; the system knows to count it under both contracts without double-counting cash. Receipt image is attached to the transaction. No separate spreadsheet, no Drive folder cross-reference.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">When the agency asks</div>
+        <div class="step-body">Operator filters by contract ID (or fiscal year, or practice code) and exports. The output is the same data the CPA was hand-assembling, produced from a single source. Year-end CPA scope drops to review, not rebuild.</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">sample agency-ready output</div>
+<pre><span class="head">CONTRACT 74-2026-EQIP-XXXX  |  EXPORT FROM AMBROOK FUNDING LIBRARY</span>
+<span class="accent">[generated 2026-11-30  |  source: ledger + tags]</span>
+
+practice  vendor              date        amount     receipt    contract
+<span class="dim">--------  ------------------  ----------  ---------  ---------  ---------</span>
+340       Midwest Seed Co.    2026-09-12  $4,180.00  attached   74-2026
+340       Midwest Seed Co.    2026-09-19  $1,950.00  attached   74-2026
+528       Riverside Fence     2026-10-04  $3,200.00  attached   74-2026 <span class="accent">+340</span>
+528       Powerline Hardware  2026-10-22  $612.55    attached   74-2026
+590       AgriCo Nutrients    2026-08-30  $2,840.00  attached   74-2026
+590       AgriCo Nutrients    2026-11-08  $1,710.00  attached   74-2026
+
+<span class="accent">subtotal 340: $6,130.00  (3 transactions, incl. 1 shared)
+subtotal 528: $3,812.55  (2 transactions, incl. 1 shared)
+subtotal 590: $4,550.00  (2 transactions)</span>
+shared lines flagged: 1   |   double-counted cash: $0.00</pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> Same numbers, single source. Shared-practice line is tagged once and reported under both codes without double-counting cash — the case the spreadsheet workaround usually breaks on.
+      </div>
+    </div>
+
+  </div>
+
+  <section style="margin-top:40px">
+    <span class="label">where the systems diverge</span>
+    <h2 class="section-title">The five places the workflows actually differ</h2>
+    <div class="compare" style="margin-top:14px">
+      <div class="compare-col">
+        <div class="col-head qbo">
+          <div class="col-system">qbo + spreadsheet</div>
+          <div class="col-name">friction points</div>
+        </div>
+        <div class="step"><div class="step-body">1. Practice code lives in a parallel sheet, not on the transaction.</div></div>
+        <div class="step"><div class="step-body">2. Class tracking holds one value per transaction — shared practices break the model.</div></div>
+        <div class="step"><div class="step-body">3. Receipt images live in a third location (camera roll, Drive).</div></div>
+        <div class="step"><div class="step-body">4. Reconciliation is the CPA's job at year-end.</div></div>
+        <div class="step"><div class="step-body">5. Each new contract multiplies the spreadsheet, not divides the work.</div></div>
+      </div>
+      <div class="compare-col">
+        <div class="col-head ambrook">
+          <div class="col-system">ambrook funding library</div>
+          <div class="col-name">structural difference</div>
+        </div>
+        <div class="step"><div class="step-body">1. Practice code is a tag on the ledger transaction.</div></div>
+        <div class="step"><div class="step-body">2. Multiple tags per transaction; shared practices reported under both, no double-counted cash.</div></div>
+        <div class="step"><div class="step-body">3. Receipts attached to the transaction at capture.</div></div>
+        <div class="step"><div class="step-body">4. Export is a filter on existing data, not an assembly job.</div></div>
+        <div class="step"><div class="step-body">5. Adding a second contract is a Funding Library entry, not a new spreadsheet.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <div>practice code definitions: NRCS Field Office Technical Guide</div>
+      <div>contract / fiscal year structure: NRCS Conservation Programs documentation</div>
+    </div>
+    <div>
+      <div>example data is illustrative</div>
+      <div>artifact for: EQIP-holder workflow review</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
