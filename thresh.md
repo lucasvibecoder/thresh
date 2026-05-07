@@ -1,34 +1,58 @@
 # thresh.md — Business Operating Document
 
-**Last updated:** 2026-03-01
+**Last updated:** 2026-05-07
+
+> **Status (2026-05-07):** Operating doc, evolving. Offer reframed around in-engagement carry-the-bag validation; pricing tiers documented. Phase 0 outbound test active across 3 cells inside Logistics meta-vertical. Pricing and exact engagement scope still pending validation from Phase 0 results.
 
 ---
 
 ## What Thresh Is
 
-Signal-based outbound intelligence. We find public data that proves a company's prospects have a problem right now, build the list, write the messages, and hand over the deliverable. The client sends it through whatever channel fits their buyer — email, phone, LinkedIn, direct mail.
+Forward-Deployed GTM Engineering applied to outbound. A temporary builder who embeds inside a B2B company, deploys a custom signal-based outbound system, instruments it, documents it, and leaves it working in the team's hands. Same archetype as Palantir's FDEs, Vista's VCG, Alpine's CIT — applied to outbound rather than enterprise software or services rollups.
 
-**What Thresh is not:** A Clay agency. An SDR service. A CRM consultancy. An email infrastructure provider. We deliver intelligence and messages. The client owns execution.
+The work: find public-data pain signals, build target lists, write messages so valuable that the receipient would pay to receive (PVPs), launch the first campaigns, leave a working system the client owns.
+
+Default engagement shape: 60-90 day deployment, optional extension if both parties want to keep going.
+
+---
+
+## Current Direction (2026-05-07)
+
+Active Phase 0 validation across **3 cells inside the Logistics & Supply Chain meta-vertical** — Cell A (long-haul/mid-size carrier safety, FMCSA-anchored), Cell B (reverse-logistics/hazmat shippers, EPA ECHO-anchored), Cell C (PE-acquired regional waste haulers, M&A + state mandate-anchored). 30-day positive reply rate by cell determines which to scale into Phase 1.
+
+Strategic playbook + sequencing: `~/Documents/projects/second-brain-cli/Reference/Thresh Phase 0 Playbook.md`. Operational state: `outbound/pipeline.md`.
 
 ---
 
 ## The Offer
 
-**Day 1 (free sample):** 10 prospects experiencing a specific public trigger, enriched with decision-maker contacts, each with a 3-4 sentence insight-based message. Delivered as a CSV. No charge.
+A 60-90 day deployment where Lucas embeds with a vertical SaaS company, builds a custom signal-based outbound system, **AND personally books the first N qualified meetings off it before handing the system to the client's team.** The wedge against PMM-led competitors (Slingshot, Blueprint) is the in-engagement validation — Lucas carries the bag for the first 4 weeks himself, so the client inherits a working production line plus the credibility of an ex-SDR, founding AE who booked meetings off it before the handoff.
 
-**Paid engagement:** $3,000-5,000/month. 100 new prospects per month, one signal, one vertical. Messages written. Contacts enriched. CSV delivered. Signal refined monthly based on what converts.
+The 7-piece deliverable system (deliverable #5 is the headline outcome the other six support):
 
-**Upsell path (Month 4+):** Add signals, add verticals, add call transcript analysis (trade Gong access for sharper messaging). Retainer grows with scope.
+1. **Pain signal map** — 5+ validated signals showing "this prospect is bleeding right now"
+2. **Data source registry** — 3-5 unique public data sources mapped to their vertical, with API/scrape playbooks
+3. **Validated ICP** — live list of companies currently triggering the signals (proof the pipeline works)
+4. **Messaging framework** — PVP-style messages keyed to each signal, tested by Lucas in production
+5. **First campaign — N meetings personally booked by Lucas in the first 4 weeks** (the headline outcome — distinguishes Thresh from "we built a system, your team executes" competitors)
+6. **Instrumented dashboard** — signal → enriched contact → message → response → meeting
+7. **Runbook** — "follow this and you'll book meetings like the N I just put on your calendar"
+
+### Pricing tiers (working hypothesis, pending Phase 0 validation)
+
+| Tier | Cost | Delivery | Purpose |
+|---|---|---|---|
+| **Free Playbook buildout (the output of GTM-Alpha)** | $0 | GTM Alpha output: 5+ signals + 3 PVPs + 5 named prospects + sample messaging | Lead magnet — proves competence and exposes operational complexity |
+| **Monthly retainer** | $3K–$5K/month | Ongoing list refreshes, messaging iteration, no carry-the-bag | Lower-friction conversion path for sample recipients not yet ready for full engagement |
+| **Full Thresh engagement (flagship)** | $50K–$100K fixed-fee | All 7 deliverables including N meetings personally booked + full system handoff + runbook | The flagship offer; capacity-constrained to 1-2 simultaneous engagements |
+
+Will update once first 1-3 deals close.
 
 ---
 
 ## Offer Evolution
 
-| Phase | Timeline | What Changes | Price |
-|-------|----------|-------------|-------|
-| **Phase 1: Prove it** | Now – Month 6 | Current offer. Free 10 then $3-5K/month. Short engagements, one signal, one vertical. Building proof and case studies. | $3,000-5,000/month |
-| **Phase 2: Multi-signal** | Month 6-12 | Multi-signal packages. Cross-referenced data sources per vertical (e.g., OSHA + permit filings + insurance lapse data for construction). Deeper intelligence per prospect. | $6,000-10,000/month |
-| **Phase 3: Continuous monitoring** | Year 2+ | Live system that flags new prospects as they cross thresholds. Not monthly batches — ongoing detection. Client gets alerts when a new company enters the danger zone. | $10,000-15,000/month retainers |
+Phase 2 (multi-signal, ongoing intelligence) and Phase 3 (continuous monitoring) deferred until Phase 1 is validated by 3-5 closed deployments.
 
 ---
 
@@ -44,7 +68,7 @@ Signal-based outbound intelligence. We find public data that proves a company's 
 | Category | Vertical SaaS, B2B services, or industrial technology |
 | Buyer's industry | Must sell into regulated, licensed, or inspected industries where federal/state/local public data tracks their buyers' problems. Examples but not limited to: construction, fleet management, energy, commercial real estate, data centers, automotive, local services, fintech, healthcare facilities, manufacturing |
 | Geography | US-based (federal databases are US-centric for now) |
-| GTM maturity | Has a product, has some customers, doing outbound but results are mediocre. Not pre-product. Not enterprise with a 20-person sales org. |
+| GTM maturity | Has a product, has some customers, doing outbound but results are mediocre. Maybe just got burned by another agency or AI-sdr who promise massive send volume but leads to shitty meetins or simply no results. Not pre-product. Not enterprise with a 20-person sales org. |
 
 ### Stage Model
 
@@ -55,7 +79,7 @@ Companies go through a predictable sequence from founder-led sales to outbound i
 | **0 — Founder-led** | $0-$250K | Founder is the sales team | Personal network, warm intros, occasional cold email from Gmail | Too early |
 | **1 — First sales hire** | $250K-$1M | Founder + 1 SDR or AE | First outbound attempts, basic CRM, manual everything | Getting warm |
 | **2 — Small team, no ops** | $1M-$5M | 2-8 reps, VP Sales just arrived, no ops person | Outbound exists but is manual and inconsistent. VP Sales is "doing it all" — strategy, hiring, prospecting, closing, AND building infrastructure. Reps spend ~33% of time actually selling. | **SWEET SPOT** |
-| **3 — First ops hire** | $3M-$10M | Sales team + first RevOps/Sales Ops person | CRM cleanup, reporting, pipeline management — but still no signal-based outbound or intelligence layer | Still good |
+| **3 — First ops hire** | $3M-$10M | Small/founding Sales team + first RevOps/Sales Ops person | CRM cleanup, reporting, pipeline management — but still no signal-based outbound or intelligence layer | Still good |
 | **4 — GTM Engineer** | $10M+ | Proven GTM motion, 10+ tools | Decided to build in-house. Has named the problem. | Too late |
 
 **Key data point:** Only 128 GTM Engineer job posts appeared in a 3-month window in 2025 — one for every 92 SDR positions. ~45% of those titled "GTM Engineer" are actually agencies/consultants. (Source: Kyle Poyar / Growth Unhinged)
@@ -75,10 +99,11 @@ Companies go through a predictable sequence from founder-led sales to outbound i
 6. **Job posting mentions Clay/Apollo/Outreach as "nice to have"** — Exploring outbound tools, hasn't built systems yet.
 7. **Recently adopted HubSpot or Salesforce** — Formalizing CRM = starting to think about process. (Detectable via BuiltWith, Wappalyzer.)
 
+
 #### Tier 3 — Behavioral / harder to detect
 
 8. **Founder still doing demos** — Visible on LinkedIn activity, Calendly links, conference speaking.
-9. **Tried and abandoned an outbound agency** — Frustrated buyer, ready for a different approach. Sometimes visible in LinkedIn posts/comments.
+9. **Tried and abandoned an outbound agency or AI SDR tool** — Frustrated buyer, ready for a different approach. Sometimes visible in LinkedIn posts/comments. Spent 3–6 months and $30–80K on an AI SDR vendor (11x.ai, Artisan, AiSDR, Reggie, Air AI). Deliverability collapsed in week 4. Sales-domain reputation damaged. Cost-per-meeting blew from $35 to $150–300.
 10. **Posting on LinkedIn/Reddit about outbound challenges** — Founders sharing struggles publicly.
 
 ### Qualifying Signals (how we know they're ready to buy)
@@ -188,7 +213,7 @@ Before any engagement, answer these five questions:
 2. **Do their buyers not already know this data is public?** (If buyers already track it → no asymmetry → hard stop)
 3. **Is their sending infrastructure healthy?** (If burned domains and won't fix → hard stop)
 4. **Do they have a sales motion that can act on the list?** (If no one is sending emails or making calls → too early)
-5. **Can they pay $3-5K/month after the free sample?** (If the budget isn't there → friendly no, revisit later)
+5. **Can they pay either $3-5K/month for the retainer or $50-100K for the full Thresh engagement?** (If the budget isn't there → friendly no, revisit later)
 
 If all five are yes, take the engagement. If any are no, either fix the blocker first or walk.
 
