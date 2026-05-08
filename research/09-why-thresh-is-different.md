@@ -102,7 +102,7 @@ The immediate priority: get one named case study with conversion metrics on the 
 - After 30+ searches across the entire outbound landscape, **nobody else is doing this**
 - The 277 Park Ave email is the most compelling outbound example on any competitor's website — and it's on yours
 - The Reddit crowd writing "saw your LinkedIn post" icebreakers with ChatGPT is what the market thinks "signal-based" means — you're operating on a different plane
-- Slingshot charges $16K to start. You offer 10 prospects free. The risk asymmetry is your weapon.
+- Slingshot charges $16K to start. You offer a 5-prospect GTM Alpha sample free. The risk asymmetry is your weapon.
 - The data you use is public but effectively invisible. That's a moat that gets deeper with every new industry you learn.
 - You carried quota for 4 years. You know what it feels like to get a bad list and a template. You're building the thing you wished existed.
 

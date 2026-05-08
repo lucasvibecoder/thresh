@@ -15,9 +15,18 @@ gtm-alpha/
 # Local-only Claude Code settings
 .claude/
 
+# Local-only Codex CLI settings
+.codex/
+
+# Provider run artifacts (transient — Apollo/Firecrawl/TheirStack outputs)
+deepline/
+
 # Internal outbound notes (named prospects, sent log) — never commit to public repo
 outbound/qualified-from-gtm-alpha.md
 outbound/sent-log.md
+
+# Corpus query outputs — large, regenerable from Supabase, may contain raw play text
+outbound/queries/*.json
 
 # Local-only page drafts (not for deploy)
 drafts/

@@ -30,6 +30,11 @@
 - Sold to engineering and security teams at enterprises
 - Learned outbound prospecting fundamentals in a technical, compliance-heavy market
 
+### Gosite — SDR intern
+- Made 100+ cold calls per day 
+- Sold website software to blue collar industries like construction, painters, plumbers, etc
+- Learned how to cold call into one of the hardest industreis to sell to (blue collar business owners get hammered with cold calls every day)
+
 ## Technical Skills (Strong)
 - **Clay:** Expert-level. Built complex enrichment workflows, waterfall enrichment, signal-based prospecting, AI scoring, multi-step automation
 - **Prompt Engineering:** Advanced. Built multi-prompt qualification systems, AI-powered research agents, buyer intelligence extraction
