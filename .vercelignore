@@ -1,0 +1,23 @@
+# Block internal docs from being deployed to runthresh.com.
+# Same syntax as .gitignore. Files listed here stay in the repo
+# but never get uploaded to Vercel.
+
+# Claude / agent instructions
+CLAUDE.md
+AGENTS.md
+README.md
+
+# Internal strategy + operating docs
+thresh.md
+
+# Internal research (competitive analysis, buyer intelligence, design specs)
+research/
+
+# Outbound state + queries
+outbound/
+
+# Working directories (provider runs, temp data, drafts)
+deepline/
+tmp/
+drafts/
+.codex/
