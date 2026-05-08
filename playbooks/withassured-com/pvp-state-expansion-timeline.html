@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Per-state per-payer enrollment timeline — one-pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: lowercase;
+  }
+  .label::before { content: "// "; color: var(--accent); }
+
+  .label-muted {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 8px 0 0;
+    color: var(--text);
+  }
+
+  h1 .accent { color: var(--accent); }
+
+  .header-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .section-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 40px 0 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .states {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .state-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    text-align: center;
+  }
+  .state-card .state-code {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .state-card .state-rank {
+    color: var(--faint);
+    font-size: 10px;
+    margin-top: 2px;
+  }
+  .state-card.longest {
+    border-color: var(--secondary);
+    background: rgba(212,98,43,0.04);
+  }
+  .state-card.longest .state-code { color: var(--secondary); }
+  .state-card.longest .state-rank { color: var(--secondary); }
+
+  .compare {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin-bottom: 24px;
+  }
+
+  .compare-col {
+    padding: 0;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+  }
+  .compare-col + .compare-col { border-left: 1px solid var(--border); }
+
+  .col-head {
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 18px;
+  }
+  .col-head .col-system {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .col-head .col-name {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    margin-top: 4px;
+  }
+  .col-head.serial .col-name { color: var(--secondary); }
+  .col-head.parallel .col-name { color: var(--accent); }
+
+  .step {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .step-body {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .step-body em {
+    color: var(--muted);
+    font-style: normal;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    background: rgba(255,255,255,0.03);
+    padding: 1px 6px;
+  }
+
+  .report {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    padding: 18px 18px 14px;
+    margin-top: 16px;
+  }
+  .report-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .report pre {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    line-height: 1.65;
+    color: var(--text);
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .report pre .dim { color: var(--faint); }
+  .report pre .accent { color: var(--accent); }
+  .report pre .warn { color: var(--secondary); }
+  .report pre .head {
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .read-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    padding: 14px 18px;
+    border-top: 1px solid var(--border);
+    background: var(--surface-alt);
+  }
+  .read-note strong { color: var(--text); font-weight: 500; }
+
+  .pole-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .pole-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+  }
+  .pole-card .pole-state {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--secondary);
+    letter-spacing: 0.04em;
+  }
+  .pole-card .pole-summary {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 6px 0 14px;
+    line-height: 1.55;
+  }
+  .pole-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+  }
+  .pole-table th {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--faint);
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .pole-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .pole-table td.days {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .pole-table td.warn {
+    color: var(--secondary);
+    font-weight: 500;
+  }
+  .pole-table tr:last-child td { border-bottom: none; }
+
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 760px) {
+    .compare { grid-template-columns: 1fr; grid-template-rows: none; }
+    .compare-col { display: block; grid-row: auto; }
+    .compare-col + .compare-col { border-left: none; border-top: 1px solid var(--border); }
+    .states { grid-template-columns: repeat(3, 1fr); }
+    .pole-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+
+  @media print {
+    body::before { display: none; }
+    body { background: #000; }
+    .page { padding: 24px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / multi-state expansion timeline</span>
+      <h1>Per-state per-payer enrollment timeline<br/><span class="accent">Sequential vs. parallel credentialing — same 18-state plan</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Series B/C digital-health COOs</div>
+      <div><strong>use</strong>&nbsp;&nbsp;board-memo timeline check, payer-mix sequencing</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> The same multi-state expansion plan — an illustrative 18-state target list a Series-B-funded digital-health platform might announce — sequenced two ways. Same provider count, same payer mix, same industry-baseline 60-120 day per-payer enrollment math. The difference is whether enrollment runs in series (the default ops-team approach) or in parallel.</p>
+    <p><strong>What it is not.</strong> A pitch. Per-payer enrollment timelines are publicly observable from CMS Medicaid MCO directories, state insurance commissioner data, and CAQH submission feedback patterns. This is a sequencing comparison the COO can pressure-test against the announced board timeline, regardless of which credentialing system they're using.</p>
+  </section>
+
+  <span class="label-muted">illustrative state targets · ranked by enrollment difficulty</span>
+  <div class="states" style="margin-top:10px">
+    <div class="state-card longest">
+      <div class="state-code">CA</div>
+      <div class="state-rank">longest pole</div>
+    </div>
+    <div class="state-card longest">
+      <div class="state-code">TX</div>
+      <div class="state-rank">longest pole</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">FL</div>
+      <div class="state-rank">3</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">NY</div>
+      <div class="state-rank">4</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">IL</div>
+      <div class="state-rank">5</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">PA</div>
+      <div class="state-rank">6</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">OH</div>
+      <div class="state-rank">7</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">GA</div>
+      <div class="state-rank">8</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">NC</div>
+      <div class="state-rank">9</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">MI</div>
+      <div class="state-rank">10</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">VA</div>
+      <div class="state-rank">11</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">WA</div>
+      <div class="state-rank">12</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">MA</div>
+      <div class="state-rank">13</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">CO</div>
+      <div class="state-rank">14</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">AZ</div>
+      <div class="state-rank">15</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">MN</div>
+      <div class="state-rank">16</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">OR</div>
+      <div class="state-rank">17</div>
+    </div>
+    <div class="state-card">
+      <div class="state-code">CT</div>
+      <div class="state-rank">18</div>
+    </div>
+  </div>
+
+  <span class="label">workflow comparison</span>
+  <h2 class="section-title">Same 18 states, two enrollment sequencing approaches</h2>
+
+  <div class="compare">
+
+    <div class="compare-col">
+      <div class="col-head serial">
+        <div class="col-system">approach</div>
+        <div class="col-name">Sequential per-state credentialing</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Setup</div>
+        <div class="step-body">Credentialing team picks the next state on the announced map and works it to completion before opening the next. State 1: license verification → CAQH submission → per-payer enrollment for ~6-12 commercial + 1-3 Medicaid MCOs in that state. Each per-payer enrollment runs <em>90-120 days</em> at industry baseline.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Per-state cycle</div>
+        <div class="step-body">In each new state, the slowest payer sets the timeline. California Medi-Cal MCO enrollment runs 120-180 days; Texas Medicaid MCOs typically 90-150. Even after the longest-pole payer clears, the cohort isn't fully billable until each payer-specific contract is loaded, panel position is confirmed, and effective dates are issued. Net: <em>~150 days per state</em> from first submission to fully-billable steady-state.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">When the board asks</div>
+        <div class="step-body">"Q4 2026 = 18 states by year-end" against a 150-day-per-state cycle = 2,700 cycle-days for the full plan. Even with team-stacking, a serial sequence misses the announced timeline by 4-6 months. Operations team gets pressure to "go faster" before they can structurally restage the work; first attempt is usually adding headcount, which doesn't compress the per-payer wait.</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">sample timeline projection · serial</div>
+<pre><span class="head">PLAN: 18 STATES BY Q4 2026  |  APPROACH: SEQUENTIAL  |  PROJECTED MISS: 4-6 MONTHS</span>
+<span class="warn">[reconstructed from per-state per-payer enrollment baselines]</span>
+
+state    start         live          days   gating payer
+<span class="dim">-------  ------------  ------------  -----  -----------------------------</span>
+CA       2026-04-15    2026-09-12    150    Medi-Cal Health Net <span class="warn">(180d)</span>
+TX       2026-09-12    2027-02-08    149    Superior HealthPlan <span class="warn">(150d)</span>
+FL       2027-02-08    2027-07-07    149    Sunshine Health (Medicaid)
+NY       2027-07-07    2027-12-04    150    UnitedHealth Community Plan
+IL       2027-12-04    2028-05-02    150    Meridian / Centene MCO
+<span class="warn">...13 states still pending as of Q4 2026 announced target.</span>
+<span class="warn">Plan reaches state 5 (IL) by May 2028 — 17 months past announcement.</span></pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> The timeline math compounds, not linearly. Each state's longest-pole payer sets the floor; team capacity doesn't reduce that floor. Year-end vs. announcement reads as a 4-6 month miss in the friendly case.
+      </div>
+    </div>
+
+    <div class="compare-col">
+      <div class="col-head parallel">
+        <div class="col-system">approach</div>
+        <div class="col-name">Parallel multi-state credentialing</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Setup</div>
+        <div class="step-body">Credentialing pipeline runs all 18 states' per-payer enrollments simultaneously from kickoff. Provider data, license verifications, and CAQH submissions are shared substrates; per-payer applications fan out to all states in parallel waves. Operations team sequences <em>by payer-type</em> (commercial first, Medicaid MCO behind), not by state.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Per-payer cycle</div>
+        <div class="step-body">Per-payer enrollment still runs 90-120 days at industry baseline — that math doesn't change. What changes is what's running concurrently. UnitedHealth commercial across all 18 states runs as one wave; Aetna across all 18 as the next; Medicaid MCOs by state behind. The longest-pole-state-payer (Medi-Cal Health Net at 180 days) is no longer also the longest-pole-platform — it's just one payer in one state, with the other 17 states running in parallel.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">When the board asks</div>
+        <div class="step-body">"Q4 2026 = 18 states by year-end" with a parallel pipeline = 6-9 months from kickoff to majority-billable across the full state set. Lagging states (CA Medi-Cal, TX Medicaid MCO) close out in months 7-9 but most of the headcount is billable in months 4-6. Board memo reframes from "we're missing the timeline" to "we're staging the revenue ramp."</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">sample timeline projection · parallel</div>
+<pre><span class="head">PLAN: 18 STATES BY Q4 2026  |  APPROACH: PARALLEL  |  PROJECTED ON PLAN</span>
+<span class="accent">[reconstructed from per-payer enrollment baselines, run concurrently]</span>
+
+wave     payer-type             start         live          days
+<span class="dim">-------  ---------------------  ------------  ------------  ----</span>
+1        Commercial top-3       2026-04-15    2026-07-22    98
+2        Commercial mid-tier    2026-04-15    2026-08-12    119
+3        Medicaid MCO (most)    2026-04-15    2026-09-08    146
+4        CA Medi-Cal MCO        2026-04-15    2026-10-12    <span class="warn">180</span>
+5        TX Medicaid MCO        2026-04-15    2026-09-22    <span class="warn">150</span>
+
+<span class="accent">By Q4 2026: 18 states, ~85% of payer panels live.
+Remaining ~15% (Medi-Cal + TX Medicaid + 2 NY plans) close Q1 2027.</span></pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> Same per-payer math; different sequencing. The lagging payers don't gate the announcement — they gate the last 15% of revenue, which is a different conversation with the board than "we missed the date."
+      </div>
+    </div>
+
+  </div>
+
+  <section style="margin-top:48px">
+    <span class="label">longest-pole states</span>
+    <h2 class="section-title">California and Texas — where the math actually breaks</h2>
+    <p style="color: var(--muted); font-size: 13.5px; max-width: 800px; margin: 0 0 12px;">Per-payer enrollment is industry-baseline 60-120 days for commercial and 60-150 for Medicaid MCOs nationally — but the floor is set by individual payers in individual states. CA and TX are repeat offenders for Series-B telebehavioral and virtual-care platforms because Medi-Cal MCO enrollment + Texas STAR/STAR+PLUS Medicaid managed care add 30-60 days on top of the commercial baseline.</p>
+
+    <div class="pole-grid">
+      <div class="pole-card">
+        <div class="pole-state">CA · longest pole</div>
+        <p class="pole-summary">Commercial top-3 + Medi-Cal Health Net + Anthem Blue Cross Medi-Cal + LA Care + Molina. Medi-Cal MCO enrollment compounds because each MCO requires CalOptima or county-specific addendums on top of the state-level credentialing.</p>
+        <table class="pole-table">
+          <thead>
+            <tr><th>Payer</th><th>Type</th><th style="text-align:right;">Days</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Anthem Blue Cross</td><td>Commercial</td><td style="text-align:right;" class="days">95</td></tr>
+            <tr><td>Blue Shield of CA</td><td>Commercial</td><td style="text-align:right;" class="days">110</td></tr>
+            <tr><td>Kaiser Permanente</td><td>Commercial / HMO</td><td style="text-align:right;" class="days">120</td></tr>
+            <tr><td>UnitedHealthcare</td><td>Commercial</td><td style="text-align:right;" class="days">100</td></tr>
+            <tr><td>Health Net</td><td>Medi-Cal MCO</td><td style="text-align:right;" class="warn">180</td></tr>
+            <tr><td>Molina Healthcare</td><td>Medi-Cal MCO</td><td style="text-align:right;" class="warn">160</td></tr>
+            <tr><td>L.A. Care Health Plan</td><td>Medi-Cal MCO</td><td style="text-align:right;" class="warn">155</td></tr>
+            <tr><td>CalOptima (OC)</td><td>Medi-Cal MCO</td><td style="text-align:right;" class="warn">170</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pole-card">
+        <div class="pole-state">TX · longest pole</div>
+        <p class="pole-summary">STAR/STAR+PLUS Medicaid MCOs + commercial top-3. Texas has 17 MCOs across STAR, STAR+PLUS, and STAR Kids; high-volume markets (Houston, Dallas, San Antonio) require enrollment in 4-6 MCOs each just to access Medicaid populations.</p>
+        <table class="pole-table">
+          <thead>
+            <tr><th>Payer</th><th>Type</th><th style="text-align:right;">Days</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Blue Cross Blue Shield TX</td><td>Commercial</td><td style="text-align:right;" class="days">90</td></tr>
+            <tr><td>UnitedHealthcare TX</td><td>Commercial</td><td style="text-align:right;" class="days">100</td></tr>
+            <tr><td>Aetna TX</td><td>Commercial</td><td style="text-align:right;" class="days">105</td></tr>
+            <tr><td>Cigna TX</td><td>Commercial</td><td style="text-align:right;" class="days">95</td></tr>
+            <tr><td>Superior HealthPlan</td><td>STAR / STAR+PLUS MCO</td><td style="text-align:right;" class="warn">150</td></tr>
+            <tr><td>Amerigroup Texas</td><td>STAR / STAR+PLUS MCO</td><td style="text-align:right;" class="warn">140</td></tr>
+            <tr><td>Molina Healthcare TX</td><td>STAR MCO</td><td style="text-align:right;" class="warn">145</td></tr>
+            <tr><td>Texas Children's Health Plan</td><td>STAR Kids</td><td style="text-align:right;" class="warn">135</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:48px">
+    <span class="label">where the approaches diverge</span>
+    <h2 class="section-title">The five places sequential vs. parallel actually differ</h2>
+    <div class="compare" style="margin-top:14px">
+      <div class="compare-col">
+        <div class="col-head serial">
+          <div class="col-system">sequential approach</div>
+          <div class="col-name">friction points</div>
+        </div>
+        <div class="step"><div class="step-body">1. Each state's longest-pole payer sets the per-state cycle floor; team capacity can't reduce the floor.</div></div>
+        <div class="step"><div class="step-body">2. Provider data and CAQH submissions get re-prepared per state; no shared substrate.</div></div>
+        <div class="step"><div class="step-body">3. Adding headcount adds parallel state-projects, not parallel per-payer work — diminishing returns.</div></div>
+        <div class="step"><div class="step-body">4. State 12+ in a 12-state plan is touched 12 months after kickoff — any provider-data change in the original substrate has to be back-applied.</div></div>
+        <div class="step"><div class="step-body">5. Board narrative becomes "we're slipping the timeline" — no good answer.</div></div>
+      </div>
+      <div class="compare-col">
+        <div class="col-head parallel">
+          <div class="col-system">parallel approach</div>
+          <div class="col-name">structural difference</div>
+        </div>
+        <div class="step"><div class="step-body">1. Longest-pole payer sets the platform's last-15% timeline, not the on-schedule timeline.</div></div>
+        <div class="step"><div class="step-body">2. Provider data + CAQH is a shared substrate; per-payer applications fan out from one source.</div></div>
+        <div class="step"><div class="step-body">3. Headcount adds per-payer-wave throughput; scales linearly rather than asymptotically.</div></div>
+        <div class="step"><div class="step-body">4. All states' substrates stay in sync because they're built off the same source-of-truth provider record.</div></div>
+        <div class="step"><div class="step-body">5. Board narrative becomes "85% of revenue live by Q4, last 15% staged into Q1" — different conversation.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <div>per-payer enrollment baselines: industry references (Aptarro 2026, Atlas Systems credentialing-turnaround analysis, Verisys, MedixRevenue 2026)</div>
+      <div>state Medicaid MCO directories: CMS + per-state insurance commissioner data</div>
+    </div>
+    <div>
+      <div>example data is illustrative — for an actual prospect, payer-mix and timing pulled from the prospect's state-target list</div>
+      <div>artifact for: Series B/C digital-health expansion-timeline review</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
