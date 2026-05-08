@@ -45,6 +45,10 @@
 - `research/` contains competitive analysis, buyer intelligence, positioning docs, and design specs.
 - These are reference material — read them for context but don't modify unless asked.
 
+## 4.5 Outbound Folder
+- `outbound/` holds cross-account state (`sent-log.md`, `prospecting-queries.md`, `qualified-from-gtm-alpha.md`).
+- Per-account drafts, deliverables, and sent emails live in `gtm-alpha/runs/<account>/outbound/`.
+
 ## 5. Editing Rules
 - HTML changes go in `index.html`. CSS/theme changes go in `src/input.css`.
 - After changing Tailwind classes in HTML or custom CSS in `src/input.css`, run `npm run build` to regenerate `output.css`.
