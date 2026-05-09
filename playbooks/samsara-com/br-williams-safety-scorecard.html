@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BR Williams Trucking — FMCSA Safety Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Inter Tight", system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; position: relative; min-height: 100vh; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px); z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  .label { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); text-transform: lowercase; }
+  .label::before { content: "// "; color: var(--accent); }
+  .label-muted { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1 { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 0; color: var(--text); }
+  h1 .accent { color: var(--accent); }
+  h1 .warn { color: var(--secondary); }
+  .header-meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); text-align: right; line-height: 1.6; }
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 32px; }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .key-finding { background: rgba(212,98,43,0.04); border: 1px solid var(--secondary); padding: 20px 24px; margin-bottom: 28px; }
+  .key-finding .kf-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .key-finding p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.6; }
+  .key-finding strong.warn { color: var(--secondary); }
+  .key-finding strong.num { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+  .section-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; margin: 40px 0 14px; letter-spacing: -0.005em; }
+
+  .basic-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 28px; }
+  .basic-cell { padding: 16px 14px; border-right: 1px solid var(--border); text-align: center; }
+  .basic-cell:last-child { border-right: none; }
+  .basic-cell .basic-name { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+  .basic-cell .basic-value { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 26px; color: var(--text); line-height: 1; margin-bottom: 6px; }
+  .basic-cell .basic-trend { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); }
+  .basic-cell .basic-status { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); letter-spacing: 0.05em; text-transform: uppercase; }
+  .basic-cell.elevated .basic-value { color: var(--secondary); }
+  .basic-cell.elevated .basic-trend { color: var(--secondary); font-weight: 500; }
+  .basic-cell.elevated .basic-status { color: var(--secondary); }
+  .basic-cell.clean .basic-value { color: var(--accent); }
+  .basic-cell.clean .basic-status { color: var(--accent); }
+
+  .table-wrap { background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
+  table.viol { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.viol th { text-align: left; padding: 12px 16px; background: var(--surface-alt); font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--border); }
+  table.viol th.right { text-align: right; }
+  table.viol th.center { text-align: center; }
+  table.viol td { padding: 12px 16px; color: var(--text); border-bottom: 1px solid var(--border); }
+  table.viol td.right { text-align: right; font-family: "JetBrains Mono", monospace; }
+  table.viol td.center { text-align: center; font-family: "JetBrains Mono", monospace; }
+  table.viol tr:last-child td { border-bottom: none; }
+  table.viol td.warn { color: var(--secondary); font-weight: 500; }
+  table.viol td.maxsev { color: var(--secondary); font-weight: 600; }
+  table.viol td.dim { color: var(--muted); font-size: 11.5px; }
+
+  .insight { background: var(--surface-alt); border-left: 2px solid var(--accent); padding: 12px 16px; margin: 12px 0 24px; font-size: 12.5px; color: var(--text); line-height: 1.6; }
+  .insight strong { color: var(--accent); font-weight: 500; }
+  .insight.warn { border-left-color: var(--secondary); }
+  .insight.warn strong { color: var(--secondary); }
+
+  .crash-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 14px; }
+  .crash-cell { padding: 16px; border-right: 1px solid var(--border); text-align: center; }
+  .crash-cell:last-child { border-right: none; background: var(--surface-alt); }
+  .crash-cell .crash-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
+  .crash-cell .crash-num { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 22px; color: var(--text); }
+  .crash-cell.fatal .crash-num { color: var(--secondary); }
+  .crash-cell.total .crash-num { color: var(--accent); }
+
+  .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; margin-bottom: 24px; }
+  .risk-card { background: var(--surface); border: 1px solid var(--border); padding: 18px 20px; }
+  .risk-card.high { border-color: var(--secondary); }
+  .risk-card .risk-name { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+  .risk-card .risk-level { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 16px; color: var(--text); margin-bottom: 10px; }
+  .risk-card.high .risk-level { color: var(--secondary); }
+  .risk-card .risk-body { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .recs { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .rec { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .rec:last-child { border-bottom: none; }
+  .rec-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .rec-body .rec-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .rec-body .rec-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); line-height: 1.7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .basic-grid { grid-template-columns: 1fr 1fr; }
+    .basic-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .crash-grid { grid-template-columns: 1fr 1fr; }
+    .risk-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+  @media print { body::before { display: none; } body { background: #000; } .page { padding: 24px; max-width: 100%; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / fmcsa safety scorecard</span>
+      <h1>BR Williams Trucking<br/><span class="accent">FMCSA Safety Scorecard</span> <span style="color:var(--muted);">— January 2026</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Director of Safety, BR Williams Trucking LLC</div>
+      <div><strong>data current</strong>&nbsp;&nbsp;January 30, 2026 · USDOT 105824</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> A carrier-specific safety scorecard built entirely from public FMCSA data &mdash; Safety Measurement System (SMS) BASIC scores, SAFER inspection records, and the 24-month crash record. Designed to surface trends, severity-weighted violation drivers, and risk exposure that mid-market safety teams rarely have time to assemble themselves.</p>
+    <p><strong>What it is not.</strong> A pitch. Every number on this page links to a source you can verify in 5 minutes. The recommendations are vendor-neutral and executable this quarter without buying anything &mdash; we use them to focus the conversation, not to gate it.</p>
+  </section>
+
+  <div class="key-finding">
+    <div class="kf-label">key finding</div>
+    <p>BR Williams' Unsafe Driving measure rose from <strong class="num">2.13</strong> to <strong class="warn">2.30</strong> in the last month &mdash; a single-month jump driven by high-severity speeding violations. Vehicle Maintenance climbed from <strong class="num">2.96</strong> to <strong class="warn">3.08</strong> over the same period. Both measures trending in the wrong direction. Combined with a fatal crash on the 24-month record and no compliance review since 2010, the profile creates compounding risk: <strong class="warn">elevated measures attract FMCSA scrutiny AND drive insurance repricing simultaneously</strong>.</p>
+  </div>
+
+  <span class="label">your csa scorecard</span>
+  <h2 class="section-title">Five BASICs &mdash; current measure, MoM trend, risk level</h2>
+  <div class="basic-grid">
+    <div class="basic-cell elevated">
+      <div class="basic-name">Unsafe Driving</div>
+      <div class="basic-value">2.30</div>
+      <div class="basic-trend">+8.0% MoM (from 2.13)</div>
+      <div class="basic-status">Elevated</div>
+    </div>
+    <div class="basic-cell elevated">
+      <div class="basic-name">Vehicle Maint.</div>
+      <div class="basic-value">3.08</div>
+      <div class="basic-trend">+4.1% MoM (from 2.96)</div>
+      <div class="basic-status">Elevated</div>
+    </div>
+    <div class="basic-cell">
+      <div class="basic-name">HOS Compliance</div>
+      <div class="basic-value">0.23</div>
+      <div class="basic-trend">stable</div>
+      <div class="basic-status">Low</div>
+    </div>
+    <div class="basic-cell">
+      <div class="basic-name">Driver Fitness</div>
+      <div class="basic-value">0.07</div>
+      <div class="basic-trend">stable</div>
+      <div class="basic-status">Low</div>
+    </div>
+    <div class="basic-cell clean">
+      <div class="basic-name">Controlled Subst.</div>
+      <div class="basic-value">0.00</div>
+      <div class="basic-trend">clean</div>
+      <div class="basic-status">None</div>
+    </div>
+  </div>
+  <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint); margin: -16px 0 28px;">// Higher measure = worse. FMCSA uses these weighted violation scores to rank carriers against peers. Carriers above the 65th percentile in critical BASICs face investigation. Percentile rankings are not publicly displayed &mdash; measures are.</p>
+
+  <span class="label">what's driving your scores</span>
+  <h2 class="section-title">Unsafe Driving &mdash; 40 violations across 35 inspections</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px;">The violations cluster around a single behavior: <strong style="color: var(--text);">speeding</strong>.</p>
+
+  <div class="table-wrap">
+    <table class="viol">
+      <thead>
+        <tr>
+          <th>Violation Category</th>
+          <th class="center">Count</th>
+          <th class="center">Severity (1-10)</th>
+          <th>Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Speeding 15+ mph over limit</td><td class="center">3</td><td class="center maxsev">10 (max)</td><td class="dim">Highest weight FMCSA assigns</td></tr>
+        <tr><td>Speeding 11-14 mph over</td><td class="center">6</td><td class="center warn">7</td><td class="dim">Second-tier, high cumulative weight</td></tr>
+        <tr><td>Speeding 6-10 mph over</td><td class="center">7</td><td class="center">4</td><td class="dim">Lower weight but high volume</td></tr>
+        <tr><td>Hand-held mobile phone</td><td class="center">1</td><td class="center maxsev">10 (max)</td><td class="dim">Same severity as 15+ mph speeding</td></tr>
+        <tr><td>Failed to obey traffic device</td><td class="center">5</td><td class="center">5</td><td class="dim">Intersection / signal violations</td></tr>
+        <tr><td>Seatbelt non-use</td><td class="center">1</td><td class="center warn">7</td><td class="dim">Single instance, high severity</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight warn">
+    <strong>16 of 40 unsafe driving violations (40%) are speeding.</strong> Nine of those are in the 11+ mph tier where severity weights run 7-10. Speeding is the single largest contributor to your Unsafe Driving measure. The one hand-held phone violation carries severity weight 10 &mdash; equal to speeding 15+ mph. Phone use is the fastest-escalating FMCSA enforcement priority.
+  </div>
+
+  <h2 class="section-title">Vehicle Maintenance &mdash; 58 violations across 46 inspections</h2>
+  <div class="table-wrap">
+    <table class="viol">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th class="center">Violations</th>
+          <th class="center">Out-of-Service</th>
+          <th class="center">OOS Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Tire underinflation / leaks</td><td class="center warn">13</td><td class="center warn">13</td><td class="center maxsev">100%</td></tr>
+        <tr><td>Lighting defects</td><td class="center">16</td><td class="center">6</td><td class="center">38%</td></tr>
+        <tr><td>ABS / brake system</td><td class="center">10</td><td class="center">2</td><td class="center">20%</td></tr>
+        <tr><td>Missing inspection docs</td><td class="center">5</td><td class="center">0</td><td class="center">0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight warn">
+    <strong>Every single tire violation resulted in an out-of-service order.</strong> Tires carry severity weight 8 out of 10. This one violation category &mdash; vehicles running on underinflated or leaking tires &mdash; is the largest single driver of your Vehicle Maintenance measure.
+  </div>
+
+  <span class="label" style="margin-top:32px; display:inline-block;">crash record · 24 months</span>
+  <h2 class="section-title">5 reportable crashes</h2>
+  <div class="crash-grid">
+    <div class="crash-cell fatal">
+      <div class="crash-label">Fatal</div>
+      <div class="crash-num">1</div>
+    </div>
+    <div class="crash-cell">
+      <div class="crash-label">Injury</div>
+      <div class="crash-num">1</div>
+    </div>
+    <div class="crash-cell">
+      <div class="crash-label">Towaway</div>
+      <div class="crash-num">3</div>
+    </div>
+    <div class="crash-cell total">
+      <div class="crash-label">Total</div>
+      <div class="crash-num">5</div>
+    </div>
+  </div>
+  <div class="insight warn">
+    A fatal crash on the 24-month record amplifies every other risk factor. In Alabama &mdash; where a jury awarded $160 million in a trucking crash case in 2024 &mdash; the litigation environment makes every at-fault incident a potential catastrophic loss. Nationally, <strong>135 trucking verdicts exceeded $10 million in 2024 totaling $31.3B, a 52% increase over 2023</strong> (U.S. Chamber of Commerce, Institute for Legal Reform).
+  </div>
+
+  <span class="label" style="margin-top:32px; display:inline-block;">risk assessment</span>
+  <h2 class="section-title">Three audiences pricing the same data</h2>
+  <div class="risk-grid">
+    <div class="risk-card high">
+      <div class="risk-name">FMCSA Investigation</div>
+      <div class="risk-level">Elevated</div>
+      <div class="risk-body">Both critical BASIC measures worsening month-over-month. FMCSA triggers carrier investigations when percentiles cross the 65th threshold. BR Williams' last compliance review was in 2010 &mdash; 16 years ago. A carrier with worsening measures, a fatal crash, and no recent compliance review fits the profile FMCSA's data-driven enforcement system is designed to flag.</div>
+    </div>
+    <div class="risk-card high">
+      <div class="risk-name">Insurance Repricing</div>
+      <div class="risk-level">High</div>
+      <div class="risk-body">Commercial auto liability premiums rose 9% in 2025, extending 14 consecutive years of underwriting losses for insurers. Carriers with elevated safety measures and crash history face steeper increases. Insurers now pull CSA data directly when pricing renewals &mdash; the same data in this scorecard is the data your underwriter is looking at.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-name">Shipper Qualification</div>
+      <div class="risk-level">Moderate</div>
+      <div class="risk-body">Institutional shippers and freight brokers increasingly use CSA data to qualify carriers. Elevated Unsafe Driving and Vehicle Maintenance measures can disqualify a carrier from freight contracts, particularly with shippers maintaining strict safety thresholds.</div>
+    </div>
+  </div>
+
+  <span class="label" style="margin-top:32px; display:inline-block;">three actions for this quarter</span>
+  <h2 class="section-title">Vendor-neutral, executable without buying anything</h2>
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Target speeding violations &mdash; start with the 11+ mph tier</div>
+        <div class="rec-detail">Speeding accounts for 40% of your unsafe driving violations and carries the highest severity weights in the FMCSA system. Speed governors, real-time speed alerts, or in-cab coaching on speed-limit compliance would directly reduce the violations driving your Unsafe Driving measure. Focus on the 11+ mph tier first &mdash; those 9 violations carry severity weights of 7-10 and represent the majority of your score impact.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Fix the tire problem &mdash; 13 violations, 100% OOS rate</div>
+        <div class="rec-detail">13 tire violations with a 100% out-of-service rate means pre-trip inspections are not catching underinflation and air leaks before vehicles leave the yard. Tire pressure monitoring systems or mandatory documented pre-trip tire checks can eliminate this entire violation category. Tires carry severity weight 8 &mdash; removing this cluster alone would meaningfully reduce your Vehicle Maintenance measure.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Monitor your own data monthly &mdash; before FMCSA does</div>
+        <div class="rec-detail">Download your SMS data from the FMCSA DataHub after each monthly update. Track measure trends before FMCSA does. Your Unsafe Driving measure climbed 8% in one month &mdash; that kind of trajectory is exactly what triggers a compliance review, and catching it early gives you time to course-correct.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <div>FMCSA SMS (BR Williams BASIC detail): <a href="https://ai.fmcsa.dot.gov/SMS/Carrier/105824/Overview.aspx" target="_blank" rel="noopener">USDOT 105824 Overview</a></div>
+      <div>SAFER Company Snapshot: <a href="https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=105824" target="_blank" rel="noopener">safer.fmcsa.dot.gov</a> · Verdict + premium context: <a href="https://instituteforlegalreform.com/" target="_blank" rel="noopener">U.S. Chamber ILR</a> · <a href="https://www.ccjdigital.com/" target="_blank" rel="noopener">CCJ</a></div>
+    </div>
+    <div>
+      <div>built entirely from public data &mdash; no proprietary or confidential information</div>
+      <div>artifact for: mid-market motor-carrier safety review</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

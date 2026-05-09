@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Product Page Transparency Analysis — Naked Nutrition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+    z-index: 0;
+  }
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  .label { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); text-transform: lowercase; }
+  .label::before { content: "// "; color: var(--accent); }
+  .label-muted { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1 { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 0; color: var(--text); }
+  h1 .accent { color: var(--accent); }
+  h1 .warn { color: var(--secondary); }
+  .header-meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); text-align: right; line-height: 1.6; }
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 32px; }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .section-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; margin: 40px 0 14px; letter-spacing: -0.005em; }
+  .section-sub { color: var(--muted); font-size: 13px; max-width: 800px; margin: 0 0 14px; }
+
+  .key-finding { background: rgba(212,98,43,0.04); border: 1px solid var(--secondary); padding: 20px 24px; margin-bottom: 28px; }
+  .key-finding .kf-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .key-finding p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.6; }
+  .key-finding strong.warn { color: var(--secondary); }
+  .key-finding strong.ok { color: var(--accent); }
+
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 28px; }
+  .product-col { padding: 0; min-width: 0; border-right: 1px solid var(--border); }
+  .product-col:last-child { border-right: none; }
+  .prod-head { background: var(--surface-alt); border-bottom: 1px solid var(--border); padding: 14px 18px; }
+  .prod-head .prod-name { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 15px; color: var(--text); }
+  .prod-cell { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+  .prod-cell:last-child { border-bottom: none; }
+  .prod-cell .pc-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .prod-cell .pc-body { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+  .prod-cell .pc-body em { color: var(--muted); font-style: normal; font-family: "JetBrains Mono", monospace; font-size: 11px; }
+  .prod-cell.empty .pc-body { color: var(--secondary); font-family: "JetBrains Mono", monospace; font-size: 12px; }
+
+  .issue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .issue-card { background: var(--surface); border: 1px solid var(--border); padding: 16px 18px; }
+  .issue-card .issue-num { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .issue-card .issue-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 8px; }
+  .issue-card .issue-body { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+  .issue-card .issue-body strong { color: var(--text); font-weight: 500; }
+
+  .compete { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; font-size: 12.5px; }
+  .compete th { text-align: left; padding: 12px 14px; background: var(--surface-alt); font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); vertical-align: top; }
+  .compete th:last-child { border-right: none; }
+  .compete th.brand { color: var(--text); font-size: 13px; font-family: "Inter Tight", sans-serif; font-weight: 600; text-transform: none; letter-spacing: -0.005em; }
+  .compete th.brand-warn { color: var(--secondary); }
+  .compete td { padding: 12px 14px; color: var(--muted); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+  .compete td:last-child { border-right: none; }
+  .compete tr:last-child td { border-bottom: none; }
+  .compete td.dim-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.04em; text-transform: uppercase; background: var(--surface-alt); width: 16%; }
+  .compete td .ok { color: var(--accent); font-weight: 500; }
+  .compete td .warn { color: var(--secondary); font-weight: 500; }
+  .compete td .num { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+  .means-block { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin: 14px 0 28px; }
+  .means-block p { margin: 0; color: var(--text); font-size: 13.5px; line-height: 1.65; }
+
+  .recs { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .rec { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .rec:last-child { border-bottom: none; }
+  .rec-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .rec-body .rec-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .rec-body .rec-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); line-height: 1.7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .product-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .product-col:last-child { border-bottom: none; }
+    .issue-grid { grid-template-columns: 1fr; }
+    .compete { font-size: 11.5px; }
+    .compete td.dim-label { width: 25%; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+  @media print { body::before { display: none; } body { background: #000; } .page { padding: 24px; max-width: 100%; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / product page transparency analysis</span>
+      <h1>Product Page Transparency Analysis<br/><span class="warn">Naked Nutrition's purity claims</span> <span style="color:var(--muted);">vs. competitors that publish their test data</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Founder/CEO or VP Quality</div>
+      <div><strong>use</strong>&nbsp;&nbsp;competitive transparency benchmark, class-action exposure check</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> Naked Nutrition markets its products as "verified for purity" and "independently tested for heavy metals" but displays zero test data on product pages. Three competitors in the same category (AG1, Momentous, Ritual) publish actual lab results, batch-specific COAs, or full supply-chain traceability. This analysis maps the gap as it exists today &mdash; and shows where it lands relative to current legal exposure (the October 2025 Consumer Reports study and the resulting class action).</p>
+    <p><strong>What it is not.</strong> A pitch. Every claim links to a public source (Naked Nutrition's own product pages and FAQ, Informed Choice registry, Consumer Reports, competitor brand sites, court filings). The competitor benchmarks are the kind of audit your team would do internally before any vendor evaluation.</p>
+  </section>
+
+  <div class="key-finding">
+    <div class="kf-label">key finding</div>
+    <p>In Consumer Reports' October 2025 protein powder study, <strong class="warn">Naked Nutrition's Vegan Mass Gainer ranked last of 23 products tested for lead content (7.7 mcg per serving)</strong>. Momentous, in the same study, ranked <strong class="ok">#3 with lead levels below detection limits</strong> &mdash; and publishes the batch-level data directly on every product page. The gap between claiming purity and proving it is widening, and Naked Nutrition is on the wrong side.</p>
+  </div>
+
+  <span class="label">your product pages today</span>
+  <h2 class="section-title">Claims without proof &mdash; three highest-profile SKUs</h2>
+
+  <div class="product-grid">
+    <div class="product-col">
+      <div class="prod-head"><div class="prod-name">Naked Mass</div></div>
+      <div class="prod-cell">
+        <div class="pc-label">Purity claims made</div>
+        <div class="pc-body">"NSF-certified, thoroughly tested for accuracy and purity, confirmed for no harmful levels of contaminants"</div>
+      </div>
+      <div class="prod-cell empty">
+        <div class="pc-label">Test data shown</div>
+        <div class="pc-body">None displayed on page</div>
+      </div>
+      <div class="prod-cell">
+        <div class="pc-label">Certifications displayed</div>
+        <div class="pc-body">NSF Contents Certified badge<br/>Informed Choice badge</div>
+      </div>
+    </div>
+    <div class="product-col">
+      <div class="prod-head"><div class="prod-name">Naked Whey</div></div>
+      <div class="prod-cell">
+        <div class="pc-label">Purity claims made</div>
+        <div class="pc-body">"Independently tested for heavy metals," "100% pure, safe protein"</div>
+      </div>
+      <div class="prod-cell empty">
+        <div class="pc-label">Test data shown</div>
+        <div class="pc-body">A marketing image labeled "heavy metals testing" appears in the gallery &mdash; no numeric results.</div>
+      </div>
+      <div class="prod-cell">
+        <div class="pc-label">Certifications displayed</div>
+        <div class="pc-body">NSF Contents Certified badge<br/>Informed Choice badge</div>
+      </div>
+    </div>
+    <div class="product-col">
+      <div class="prod-head"><div class="prod-name">Vegan Mass Gainer</div></div>
+      <div class="prod-cell">
+        <div class="pc-label">Purity claims made</div>
+        <div class="pc-body">"Independent third-party testing for heavy metals"</div>
+      </div>
+      <div class="prod-cell empty">
+        <div class="pc-label">Test data shown</div>
+        <div class="pc-body">None displayed on page</div>
+      </div>
+      <div class="prod-cell empty">
+        <div class="pc-label">Certifications displayed</div>
+        <div class="pc-body">No NSF or Informed Choice badge</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Three issues compound the gap</h2>
+  <div class="issue-grid">
+    <div class="issue-card">
+      <div class="issue-num">issue 01</div>
+      <div class="issue-title">Certification inconsistency</div>
+      <div class="issue-body">Several product pages display the NSF Contents Certified badge, but Naked Nutrition's own FAQ states: <strong>"At this time, our Naked Nutrition's products are not NSF Certified."</strong> The Consumer Reports response page says Vegan Mass Gainer is "currently undergoing NSF Content Certification" &mdash; a statement first posted Oct 2025 that remains unchanged 4+ months later. Displaying a certification badge before certification is finalized creates both regulatory risk and plaintiff-ready evidence.</div>
+    </div>
+    <div class="issue-card">
+      <div class="issue-num">issue 02</div>
+      <div class="issue-title">Lab report policy</div>
+      <div class="issue-body">The FAQ states: <strong>"We do not send the official lab reports to customers, as we are prohibited from doing so by the lab."</strong> The FDA has publicly stated it is "not aware of any general regulation that prohibits companies from sharing their own testing results relating to heavy metals with its customers." With a class action filed Oct 2025 alleging misrepresentation of purity claims, this policy invites scrutiny rather than deflecting it.</div>
+    </div>
+    <div class="issue-card">
+      <div class="issue-num">issue 03</div>
+      <div class="issue-title">Informed Choice gap on Vegan Mass Gainer</div>
+      <div class="issue-body">Of Naked Nutrition's full product line, only 6 products carry Informed Choice certification: Naked Whey, Naked Mass, Naked Pea, and the three "Less Naked" variants. <strong>Vegan Mass Gainer &mdash; the specific product Consumer Reports identified with 7.7 mcg of lead per serving &mdash; is not among them.</strong> Verified absent from the choice.wetestyoutrust.com registry as of Feb 2026.</div>
+    </div>
+  </div>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">competitor benchmark</span>
+  <h2 class="section-title">What "proving it" looks like &mdash; AG1, Momentous, Ritual</h2>
+  <p class="section-sub">Three brands at different commitment levels. AG1 is "badge-forward" &mdash; certifications and downloadable COAs. Momentous and Ritual are "data-forward" &mdash; actual numeric results on product pages. The industry is moving from badge to data, accelerated by the Consumer Reports study that found two-thirds of protein powders tested exceeded their level of concern for lead.</p>
+
+  <table class="compete">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th class="brand">AG1</th>
+        <th class="brand">Momentous</th>
+        <th class="brand">Ritual</th>
+        <th class="brand brand-warn">Naked Nutrition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-label">Third-party certifications</td>
+        <td>NSF Certified for Sport</td>
+        <td>NSF Certified for Sport <span class="ok">+</span> Informed Sport (dual cert, all products)</td>
+        <td>USP Verified <span class="num">(&lt;1% of multivitamins)</span> + Clean Label Project + Informed Sport</td>
+        <td><span class="warn">NSF "currently undergoing" 4+ mo</span> · Informed Choice on 6 of N products</td>
+      </tr>
+      <tr>
+        <td class="dim-label">Test categories disclosed</td>
+        <td>9 categories (heavy metals, allergens, pesticides, microbes, banned)</td>
+        <td>Heavy metals, pesticides, mold, microbes, 270+ banned substances</td>
+        <td>Heavy metals (As, Cd, Hg, Pb), microbes, allergens</td>
+        <td><span class="warn">None disclosed publicly</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">Actual results on product pages</td>
+        <td>No inline numeric results &mdash; comparative language only. COAs downloadable as PDF.</td>
+        <td><span class="ok">Yes</span> &mdash; batch-specific heavy metal results published; batch lookup by lot number</td>
+        <td><span class="ok">Yes</span> &mdash; actual heavy metal values on Certificate of Traceability per product</td>
+        <td><span class="warn">None</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">Supply chain transparency</td>
+        <td>Testing partners named (Alkemist Labs, IEH, Merieux NutriSciences)</td>
+        <td>Testing partners disclosed</td>
+        <td><span class="ok">Full supply chain</span> &mdash; 55 suppliers named with manufacturing locations on interactive map</td>
+        <td><span class="warn">Not disclosed</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">Consumer Reports Oct 2025 ranking</td>
+        <td>Not tested in study</td>
+        <td><span class="ok">#3 of 23</span> &mdash; lead below detection limits</td>
+        <td>Not tested in study</td>
+        <td><span class="warn">#23 of 23</span> &mdash; 7.7 mcg lead/serving (Vegan Mass Gainer)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">what this means</span>
+  <h2 class="section-title">Maximum vulnerability on the transparency spectrum</h2>
+  <div class="means-block">
+    <p>Naked Nutrition occupies the riskiest position on the transparency spectrum: marketing language that implies verified safety, a certification badge displayed before certification is complete, a policy of withholding lab reports, and the worst ranking in the most widely cited independent study. Every day this gap persists, it's searchable &mdash; "naked nutrition lead" returns Consumer Reports, class action filings, and investigative coverage on the first page. The brands winning trust right now aren't the ones with the best marketing &mdash; they're the ones that let customers verify claims for themselves.</p>
+  </div>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">recommended next moves</span>
+  <h2 class="section-title">Three actions, executable this week</h2>
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Publish batch-specific test data on top SKUs' product pages</div>
+        <div class="rec-detail">Start with Naked Whey, which already has a verifiable Informed Choice certification. Display actual heavy metal results per batch &mdash; even if the numbers aren't zero. Momentous does this and ranked #3 in the same study that ranked Naked Nutrition last. Consumers trust brands that show imperfect data more than brands that claim perfection without evidence.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Resolve the NSF certification inconsistency immediately</div>
+        <div class="rec-detail">Either complete the NSF Content Certification and then display the badge, or remove the badge and language from product pages until certification is finalized. The current state &mdash; badge on product pages, denial on the FAQ, "currently undergoing" for 4+ months &mdash; is exactly the kind of inconsistency a plaintiff's attorney in the existing class action could cite as evidence of misleading marketing.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Reverse the "we can't share lab reports" policy</div>
+        <div class="rec-detail">Make COAs downloadable from each product page. If the lab agreement genuinely prohibits sharing, negotiate new terms or find a lab that allows it. Ritual names all 55 of its suppliers. AG1 offers downloadable COAs. In a post-Consumer Reports environment, the brands that build trust will be the ones that let customers verify claims themselves.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <div>Naked Nutrition pages: <a href="https://www.nakednutrition.com/products/weight-gainer-protein-supplement" target="_blank" rel="noopener">Naked Mass</a> · <a href="https://www.nakednutrition.com/products/grass-fed-whey-protein-powder" target="_blank" rel="noopener">Naked Whey</a> · <a href="https://www.nakednutrition.com/products/vegan-weight-gainer" target="_blank" rel="noopener">Vegan Mass Gainer</a> · <a href="https://www.nakednutrition.com/pages/faq" target="_blank" rel="noopener">FAQ</a> · <a href="https://www.nakednutrition.com/pages/lead-in-protein-powders-consumer-reports" target="_blank" rel="noopener">CR response page</a></div>
+      <div>External: <a href="https://choice.wetestyoutrust.com/supplement-search/brand/naked-nutrition" target="_blank" rel="noopener">Informed Choice registry</a> · <a href="https://www.consumerreports.org/health/food-safety/protein-powders-and-shakes-contain-high-levels-of-lead-a4206364640/" target="_blank" rel="noopener">Consumer Reports (Oct 2025)</a> · <a href="https://www.livemomentous.com/blogs/all/the-momentous-standard" target="_blank" rel="noopener">Momentous Standard</a> · <a href="https://drinkag1.com/about-ag1/quality-standards" target="_blank" rel="noopener">AG1 Quality</a> · <a href="https://ritual.com/ingredients" target="_blank" rel="noopener">Ritual Made Traceable</a> · <a href="https://topclassactions.com/lawsuit-settlements/lawsuit-news/naked-nutrition-class-action/" target="_blank" rel="noopener">Class action filing</a></div>
+    </div>
+    <div>
+      <div>all product-page screenshots verified Feb 2026; verify currency before referencing in subsequent sends</div>
+      <div>artifact for: DTC food / supplement transparency benchmark</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

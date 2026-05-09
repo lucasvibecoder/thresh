@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multi-Trade Integration Benchmark — Harrell-Fish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Inter Tight", system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; position: relative; min-height: 100vh; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px); z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  .label { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); text-transform: lowercase; }
+  .label::before { content: "// "; color: var(--accent); }
+  .label-muted { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1 { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 0; color: var(--text); }
+  h1 .accent { color: var(--accent); }
+  .header-meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); text-align: right; line-height: 1.6; }
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 32px; }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .key-finding { background: rgba(0,255,65,0.04); border: 1px solid var(--accent); padding: 20px 24px; margin-bottom: 28px; }
+  .key-finding .kf-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .key-finding p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.65; }
+  .key-finding strong.ok { color: var(--accent); }
+  .key-finding strong.num { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+  .section-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; margin: 40px 0 14px; letter-spacing: -0.005em; }
+
+  .status-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; font-size: 12.5px; }
+  .status-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table td.dim { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; width: 26%; background: var(--surface-alt); border-right: 1px solid var(--border); }
+  .status-table td.value { color: var(--text); }
+  .status-table td.value strong { color: var(--accent); font-weight: 600; }
+
+  .peers { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(6, auto); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 28px; }
+  .peer-col { display: grid; grid-template-rows: subgrid; grid-row: span 6; border-right: 1px solid var(--border); min-width: 0; }
+  .peer-col:last-child { border-right: none; }
+  .peer-head { background: var(--surface-alt); border-bottom: 1px solid var(--border); padding: 16px 18px; }
+  .peer-head .peer-num { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .peer-head .peer-name { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 16px; color: var(--text); }
+  .peer-head .peer-sponsor { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); margin-top: 4px; letter-spacing: 0.04em; }
+  .peer-cell { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+  .peer-cell:last-child { border-bottom: none; }
+  .peer-cell .pc-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .peer-cell .pc-body { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+  .peer-cell .pc-body strong { color: var(--accent); font-weight: 500; }
+  .peer-cell .pc-body em { color: var(--muted); font-style: normal; font-family: "JetBrains Mono", monospace; font-size: 11px; }
+  .peer-cell.debt { background: rgba(212,98,43,0.03); }
+  .peer-cell.debt .pc-label { color: var(--secondary); }
+
+  .means-list { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .means-item { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .means-item:last-child { border-bottom: none; }
+  .means-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .means-body .means-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .means-body .means-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  .means-body .means-detail strong { color: var(--text); font-weight: 500; }
+
+  .recs { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .rec { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .rec:last-child { border-bottom: none; }
+  .rec-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .rec-body .rec-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .rec-body .rec-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  .rec-body .rec-detail strong { color: var(--text); font-weight: 500; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); line-height: 1.7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .peers { grid-template-columns: 1fr; }
+    .peer-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .peer-col:last-child { border-bottom: none; }
+    .status-table td.dim { width: 35%; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+  @media print { body::before { display: none; } body { background: #000; } .page { padding: 24px; max-width: 100%; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / multi-trade integration benchmark</span>
+      <h1>Multi-Trade Integration Benchmark<br/><span class="accent">Three peer PE-backed mechanical platforms</span> <span style="color:var(--muted);">— what they consolidated, what they patched</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Steve Dawson, CEO, Harrell-Fish Inc.</div>
+      <div><strong>data current</strong>&nbsp;&nbsp;April 28, 2026</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> Three peer PE-backed mechanical platforms benchmarked at different points in their tuck-in sequence (Grizzly MEP at month 11 / three add-ons; United Building Solutions at month 14 / two add-ons; Service Logic newly acquired by Bain + Mubadala / month 4). Each peer mapped to where the integration debt is showing up. HFI's situation specifically: 20 days past first add-on (Ecofriendly Mechanical), 140 days past platform close, with both fabrication shop and VDC team listed publicly &mdash; the part of the operating stack that compounds quickly across multiple portcos.</p>
+    <p><strong>What it is not.</strong> A pitch. Every deal date, sponsor, and add-on sequence is from public PE press releases. The framework &mdash; toolchain decisions made between add-on one and add-on three set the 18-month integration cost trajectory &mdash; is the kind of analysis HFI's corp-dev team would do internally before evaluating any platform vendor.</p>
+  </section>
+
+  <div class="key-finding">
+    <div class="kf-label">key finding</div>
+    <p>Twenty days ago (April 8, 2026), Harrell-Fish announced its first platform add-on, Ecofriendly Mechanical. <strong class="ok">Add-on one is the moment the integration playbook stops being theoretical and becomes operational</strong> &mdash; every decision about fabrication, BIM/VDC, and field-shop coordination made between now and add-on three becomes the default the rest of the platform inherits. The pattern across three peer PE-backed mechanical platforms is that <strong class="ok">platforms that consolidated early spent materially less than platforms that tried to standardize on the largest portco's existing stack after add-on three</strong>. The window where consolidation decisions are cheaper than patches is open now, and it tends to close around add-on two.</p>
+  </div>
+
+  <span class="label">where harrell-fish sits today</span>
+  <h2 class="section-title">Status snapshot &mdash; April 28, 2026</h2>
+  <table class="status-table">
+    <tbody>
+      <tr><td class="dim">First add-on</td><td class="value"><strong>Ecofriendly Mechanical</strong>, announced April 8, 2026 (20 days ago)</td></tr>
+      <tr><td class="dim">Platform close</td><td class="value">December 9, 2025 (140 days ago) &mdash; first platform investment in New State's Fund IV</td></tr>
+      <tr><td class="dim">Sponsor</td><td class="value">New State Capital Partners (majority) + Amethyst Capital Group (independent sponsor partner)</td></tr>
+      <tr><td class="dim">HFI capabilities</td><td class="value">Mechanical contracting, plumbing, HVAC, fabrication shop, Virtual Design &amp; Construction (VDC)</td></tr>
+      <tr><td class="dim">End markets</td><td class="value">Healthcare, education, commercial, industrial, food service</td></tr>
+      <tr><td class="dim">Geography</td><td class="value">Bloomington, IN headquarters with multiple Indiana locations</td></tr>
+      <tr><td class="dim">Integration window</td><td class="value"><strong>Active</strong> &mdash; first add-on closed less than 30 days ago, integration playbook being written now</td></tr>
+    </tbody>
+  </table>
+  <p style="color: var(--muted); font-size: 13px; margin: -10px 0 28px;">The combination of (a) an explicit fabrication shop, (b) an explicit VDC team, and (c) a 20-day-old first add-on means HFI is now actively writing the integration playbook for the next 12-24 months &mdash; before integration capital is committed elsewhere.</p>
+
+  <span class="label">peer platform comparison</span>
+  <h2 class="section-title">Three peers at three different points in the tuck-in sequence</h2>
+
+  <div class="peers">
+
+    <div class="peer-col">
+      <div class="peer-head">
+        <div class="peer-num">peer 01 · month 11</div>
+        <div class="peer-name">Grizzly MEP</div>
+        <div class="peer-sponsor">Garnett Station Partners</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Launched</div>
+        <div class="pc-body">May 2025</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Add-ons since launch</div>
+        <div class="pc-body">Stiles Heating &amp; Cooling (May 2025) &mdash; HVAC, building controls, plumbing across GA + SC.<br/><br/>Air Design Systems (July 2025).<br/><br/>Excel Mechanical Contractors (Sep 10, 2025) &mdash; full-service mechanical and electrical, Baltimore-based, expanding into D.C., MD, VA.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Trades covered</div>
+        <div class="pc-body">Mechanical, electrical, plumbing, HVAC, building controls.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Pattern observed</div>
+        <div class="pc-body">Three add-ons across three states inside 5 months. By month 7 (Excel close), the portfolio had simultaneously absorbed a GA/SC HVAC platform and a Mid-Atlantic mechanical-and-electrical contractor. Public signals &mdash; separate brand identities, geographically dispersed shop ops, multi-trade scope &mdash; suggest the platform is operating with <em>portco-level toolchain autonomy</em> rather than a consolidated fab/VDC layer.</div>
+      </div>
+      <div class="peer-cell debt">
+        <div class="pc-label">Where integration debt surfaces</div>
+        <div class="pc-body">Cross-portco fabrication coordination as the platform pursues federal and tech-sector work, which Grizzly's executive commentary has flagged as a growth target.</div>
+      </div>
+    </div>
+
+    <div class="peer-col">
+      <div class="peer-head">
+        <div class="peer-num">peer 02 · month 14</div>
+        <div class="peer-name">United Building Solutions</div>
+        <div class="peer-sponsor">AE Industrial Partners</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Formed</div>
+        <div class="pc-body">February 2025</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Add-ons since formation</div>
+        <div class="pc-body">Total Comfort Solutions &mdash; North Florida HVAC (concurrent with platform formation, Feb 2025).<br/><br/>DFW Mechanical Group (Jan 20, 2026) &mdash; full-service commercial and industrial mechanical, plumbing, heating, piping; Wylie, TX.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Trades covered</div>
+        <div class="pc-body">Commercial HVAC, plumbing, heating, piping. Multi-state footprint now spanning Northeastern, Southeastern, and South-Central US.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Pattern observed</div>
+        <div class="pc-body">Two add-ons in 12 months. The DFW Mechanical add-on continues operating as a UBS division under DFW's existing president, Brett Thomas. This is the <em>"operate as-is"</em> path &mdash; geographically and operationally distinct portcos with brand and leadership preserved.</div>
+      </div>
+      <div class="peer-cell debt">
+        <div class="pc-label">Where integration debt surfaces</div>
+        <div class="pc-body">Multi-state estimating, fabrication scheduling, and BIM standards as UBS pursues larger commercial and industrial scopes that span the three regional footprints. Maintaining three separate operational stacks works for service work; new-construction project pursuit at scale tends to expose coordination gaps.</div>
+      </div>
+    </div>
+
+    <div class="peer-col">
+      <div class="peer-head">
+        <div class="peer-num">peer 03 · month 4</div>
+        <div class="peer-name">Service Logic</div>
+        <div class="peer-sponsor">Bain Capital + Mubadala</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Acquired</div>
+        <div class="pc-body">December 2025 &mdash; same vintage as Harrell-Fish</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Profile at acquisition</div>
+        <div class="pc-body">Largest privately-held commercial HVAC and mechanical services platform in North America. Charlotte, NC HQ. <strong>140+ locations, 5,000+ technicians</strong>. Preventative maintenance, emergency service, equipment replacement, retrofit, building automation.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Trades covered</div>
+        <div class="pc-body">Commercial HVAC, mechanical services, building automation, energy solutions.</div>
+      </div>
+      <div class="peer-cell">
+        <div class="pc-label">Pattern observed</div>
+        <div class="pc-body">Bain + Mubadala acquired a mature, already-consolidated platform. The integration question isn't <em>"consolidate the operating companies"</em> &mdash; it's <em>"what does the next-tier acquisition strategy look like under new ownership."</em> A different integration shape from HFI's: less about consolidating disparate stacks, more about tooling the platform for the next 18 months of bolt-on acquisitions.</div>
+      </div>
+      <div class="peer-cell debt">
+        <div class="pc-label">Where integration debt surfaces</div>
+        <div class="pc-body">Onboarding velocity for future tuck-ins. A platform with 140 locations and 5,000 technicians needs a templatized onboarding stack &mdash; fabrication standards, service-management tooling, BIM/VDC requirements, ERP integration &mdash; or every new acquisition becomes a multi-quarter integration project.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <span class="label" style="margin-top:32px; display:inline-block;">what this means for harrell-fish</span>
+  <h2 class="section-title">Three observations specific to HFI's situation</h2>
+  <div class="means-list">
+    <div class="means-item">
+      <div class="means-num">01</div>
+      <div class="means-body">
+        <div class="means-title">HFI is the only platform of the four with both an explicit fabrication shop AND an explicit VDC team</div>
+        <div class="means-detail">That's a meaningful capability advantage in mid-market mechanical, and it's also <strong>the part of the operating stack that compounds quickly across multiple portcos</strong>. The fab and VDC standards HFI sets in months 4 through 9 will be inherited by every future tuck-in. The Grizzly and UBS pattern of operating each portco on its own toolchain works for an HVAC service rollup; for a mechanical-construction platform with prefab capability, the math typically reverses by the third add-on.</div>
+      </div>
+    </div>
+    <div class="means-item">
+      <div class="means-num">02</div>
+      <div class="means-body">
+        <div class="means-title">The Ecofriendly add-on is a relatively low-stakes integration test, and it just closed</div>
+        <div class="means-detail">Both companies are Bloomington-headquartered and Ecofriendly is HVAC-focused. That makes it a lower-friction first integration than a multi-state mechanical add-on would be &mdash; and the 20-day-old close means the operational handoff is happening right now. <strong>The window to use this add-on as a deliberate stress test of the integration playbook</strong> &mdash; fab handoff, VDC standards, project handoff between operating units &mdash; closes once the next add-on enters diligence, typically 4-8 months out.</div>
+      </div>
+    </div>
+    <div class="means-item">
+      <div class="means-num">03</div>
+      <div class="means-body">
+        <div class="means-title">The healthcare and education end-market profile concentrates HFI in the high-coordination project type</div>
+        <div class="means-detail">Hospitals and university buildings carry the highest BIM-coordination requirements in mid-market commercial. That's <strong>a tailwind for HFI's existing VDC investment</strong> and a structural reason the fab/BIM consolidation question matters more for HFI than for a service-rollup platform.</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="label" style="margin-top:32px; display:inline-block;">recommendations</span>
+  <h2 class="section-title">Three actions, vendor-neutral, executable now</h2>
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Document the current fab-and-VDC handoff sequence at HFI before Ecofriendly integration is complete</div>
+        <div class="rec-detail">The current process at HFI, written down at this level of detail, becomes the default the next add-on inherits. <strong>The cost of writing it down while Ecofriendly is freshly integrating is meaningfully lower than after add-on three</strong> &mdash; and the absence of a written standard is the single most common reason multi-trade platforms run into project-handoff friction by add-on three.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Run a "what does add-on three look like?" exercise now, before add-on two enters diligence</div>
+        <div class="rec-detail">Almost all of the integration debt visible across Grizzly, UBS, and Service Logic peers shows up after the third add-on, not the first. <strong>The decisions that compound</strong> &mdash; toolchain standardization, BIM standards, ERP and project-management consolidation &mdash; <strong>are cheaper to make as constraints on the second add-on than as patches after the third</strong>. Use the next 60 days, while Ecofriendly is fresh, to write the technical due-diligence checklist HFI will use on add-on candidates two and three.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Treat platform-stage decisions on fab software and VDC tooling as 18-month decisions, not portco-by-portco</div>
+        <div class="rec-detail">Service Logic's challenge is now templatizing onboarding for the next 18 months of M&amp;A. UBS's challenge is sequencing multi-state coordination. Grizzly's challenge is cross-portco operational consistency. <strong>HFI's choice in the next 90 days about whether to standardize fab and VDC at the platform level (one stack across HFI + Ecofriendly + future add-ons) or portco level (each acquired company keeps its existing tools) will set the default for every future tuck-in. Make it deliberately, not by drift.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <div>HFI deals: <a href="https://www.prnewswire.com/news-releases/new-state-capital-partners-completes-majority-investment-in-harrell-fish-inc-302636201.html" target="_blank" rel="noopener">New State + HFI close (Dec 2025)</a> · <a href="https://www.prnewswire.com/news-releases/harrell-fish-acquires-ecofriendly-mechanical-302736556.html" target="_blank" rel="noopener">HFI + Ecofriendly (Apr 2026)</a></div>
+      <div>Peer platforms: <a href="https://www.businesswire.com/news/home/20250520766807/en/Garnett-Station-Partners-Launches-Grizzly-MEP-a-Commercial-Mechanical-Electrical-and-Plumbing-Services-Platform" target="_blank" rel="noopener">Grizzly MEP launch</a> · <a href="https://www.businesswire.com/news/home/20260120089736/en/United-Building-Solutions-Acquires-DFW-Mechanical-Group" target="_blank" rel="noopener">UBS + DFW</a> · <a href="https://www.businesswire.com/news/home/20251216286637/en/Bain-Capital-Completes-Acquisition-of-Service-Logic" target="_blank" rel="noopener">Bain + Service Logic</a></div>
+    </div>
+    <div>
+      <div>built entirely from public PE press releases &mdash; no proprietary or confidential information</div>
+      <div>artifact for: PE-backed multi-trade platform integration review</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

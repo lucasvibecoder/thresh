@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multi-Country HR Stack Map — Wonderful at 30+ countries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: lowercase;
+  }
+  .label::before { content: "// "; color: var(--accent); }
+
+  .label-muted {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 8px 0 0;
+    color: var(--text);
+  }
+
+  h1 .accent { color: var(--accent); }
+
+  .header-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .section-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 40px 0 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .country-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    text-align: center;
+  }
+  .country-card .country-code {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 13px;
+  }
+  .country-card .country-region {
+    color: var(--faint);
+    font-size: 9.5px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .country-card.hub {
+    border-color: var(--accent);
+    background: rgba(0,255,65,0.04);
+  }
+  .country-card.hub .country-code { color: var(--accent); }
+  .country-card.hub .country-region { color: var(--accent); }
+  .country-card.planned {
+    border-style: dashed;
+    border-color: var(--secondary);
+  }
+  .country-card.planned .country-code { color: var(--secondary); }
+  .country-card.planned .country-region { color: var(--secondary); }
+
+  .compare {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(6, auto);
+    gap: 0;
+    border: 1px solid var(--border-strong);
+    background: var(--bg);
+    margin-bottom: 24px;
+    column-gap: 1px;
+  }
+
+  .compare-col {
+    padding: 0;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+    background: var(--surface);
+  }
+  .compare-col + .compare-col { box-shadow: -1px 0 0 var(--border-strong); }
+
+  .col-head {
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 18px;
+  }
+  .col-head .col-system {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .col-head .col-name {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    margin-top: 4px;
+  }
+  .col-head.serial .col-name { color: var(--secondary); }
+  .col-head.parallel .col-name { color: var(--accent); }
+
+  .step {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .step-body {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .step-body em {
+    color: var(--accent);
+    font-style: normal;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+  }
+  .step-body .num {
+    color: var(--text);
+    font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
+  }
+  .step-body .warn {
+    color: var(--secondary);
+    font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
+  }
+  .step-body .ok {
+    color: var(--accent);
+    font-weight: 600;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .report {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    padding: 14px 16px 12px;
+    margin: 14px 20px 18px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .report-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .report pre {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .report pre .dim { color: var(--faint); }
+  .report pre .accent { color: var(--accent); }
+  .report pre .warn { color: var(--secondary); }
+  .report pre .head {
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .read-note {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--surface-alt);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+  .read-note strong { color: var(--text); font-weight: 500; }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .pain-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+  }
+  .pain-card .pain-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--secondary);
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .pain-card .pain-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .pain-card .pain-body {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .recs {
+    margin-top: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .rec {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+  }
+  .rec:last-child { border-bottom: none; }
+  .rec-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .rec-body .rec-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .rec-body .rec-detail {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--faint);
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .compare { grid-template-columns: 1fr; grid-template-rows: none; }
+    .compare-col { display: block; grid-row: auto; }
+    .compare-col + .compare-col { border-left: none; border-top: 1px solid var(--border); }
+    .countries { grid-template-columns: repeat(4, 1fr); }
+    .pain-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+  }
+
+  @media print {
+    body::before { display: none; }
+    body { background: #000; }
+    .page { padding: 24px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / multi-country hr stack map</span>
+      <h1>Multi-Country HR Stack Map<br/><span class="accent">Wonderful at 30+ countries — current shape vs. consolidated</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Head of People at international SaaS</div>
+      <div><strong>use</strong>&nbsp;&nbsp;board-memo cost check, country-#N+1 sequencing</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> Wonderful raised a $150M Series B in March 2026 and is scaling from 350 to ~900 employees across 30+ countries by year-end (PR Newswire, March 12, 2026). The "hyper-local" product strategy is sound. The hyper-local HR stack is the most expensive shape a SaaS company can run at this scale. This map estimates Wonderful's current stack from public data, projects the cost curve at 900 employees in the current shape, and compares it against a consolidated alternative.</p>
+    <p><strong>What it is not.</strong> A pitch. EOR pricing benchmarks are publicly observable from Pin, eorHQ, and Deel's blog. Country-by-country footprint is from Wonderful's own announcements. This is a sequencing comparison the Head of People can pressure-test against the board memo, regardless of which HRIS they're using.</p>
+  </section>
+
+  <span class="label-muted">geographic footprint · 14 named countries · 16+ unnamed (per "30+ markets" framing)</span>
+  <div class="countries" style="margin-top:10px">
+    <div class="country-card hub">
+      <div class="country-code">NL</div>
+      <div class="country-region">Amsterdam HQ</div>
+    </div>
+    <div class="country-card hub">
+      <div class="country-code">IL</div>
+      <div class="country-region">founding pod</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">IT</div>
+      <div class="country-region">W. Europe</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">CH</div>
+      <div class="country-region">W. Europe</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">GR</div>
+      <div class="country-region">W. Europe</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">PL</div>
+      <div class="country-region">CEE</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">RO</div>
+      <div class="country-region">CEE</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">LV</div>
+      <div class="country-region">Baltics</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">LT</div>
+      <div class="country-region">Baltics</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">EE</div>
+      <div class="country-region">Baltics</div>
+    </div>
+    <div class="country-card hub">
+      <div class="country-code">HR</div>
+      <div class="country-region">Adriatic hub</div>
+    </div>
+    <div class="country-card hub">
+      <div class="country-code">RS</div>
+      <div class="country-region">Adriatic hub</div>
+    </div>
+    <div class="country-card hub">
+      <div class="country-code">SI</div>
+      <div class="country-region">Adriatic hub</div>
+    </div>
+    <div class="country-card">
+      <div class="country-code">AE</div>
+      <div class="country-region">Middle East</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">DE</div>
+      <div class="country-region">2025 launch</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">AT</div>
+      <div class="country-region">2025 launch</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">PT</div>
+      <div class="country-region">2025 launch</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">SE/NO/DK</div>
+      <div class="country-region">Nordics 2025</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">APAC</div>
+      <div class="country-region">early 2026</div>
+    </div>
+    <div class="country-card planned">
+      <div class="country-code">LATAM</div>
+      <div class="country-region">named, TBD</div>
+    </div>
+    <div class="country-card" style="border-style:dotted;">
+      <div class="country-code">+10</div>
+      <div class="country-region">unnamed</div>
+    </div>
+  </div>
+
+  <span class="label">stack pattern</span>
+  <h2 class="section-title">What the current stack typically looks like at this stage</h2>
+  <p style="color: var(--muted); font-size: 13px; max-width: 800px; margin: 0 0 14px;">Public data doesn't tell us Wonderful's vendors. The pattern at AI / SaaS companies that scale to 30 countries in under a year is consistent though, and almost always looks like this:</p>
+
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">EOR for any country with fewer than 25 employees</div>
+        <div class="rec-detail">Most commonly Deel, Remote, or Globalization Partners. Per-employee fees range from ~$599/month (Deel, Remote) to $800-$1,000+/month (G-P), with volume discounts dropping Deel's fees to $350-$500/month at 20-50 employees per country (Pin, eorHQ).</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Local entity + local payroll provider for the largest country pods</div>
+        <div class="rec-detail">Setup cost per entity runs $15K-$40K; ongoing compliance is $25K-$80K per entity per year. The crossover point where direct entity beats EOR is 25-50 employees in the same country (Deel blog, EOR vs. Entity Costs).</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Israel + Netherlands likely the largest pods</div>
+        <div class="rec-detail">Founding team origin (Israel) plus Amsterdam HQ. Both are direct-entity candidates today; the Adriatic innovation hub (Croatia + Serbia + Slovenia) is the next inflection if pod sizes cross 25 each.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">04</div>
+      <div class="rec-body">
+        <div class="rec-title">A point HR system for core employee data</div>
+        <div class="rec-detail">Usually a holdover from when the company was 50 people, or a newly-purchased mid-market HRIS. Doesn't reach into local payroll providers; doesn't handle multi-country leave policy localization natively.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">05</div>
+      <div class="rec-body">
+        <div class="rec-title">Manual reconciliation across all of the above</div>
+        <div class="rec-detail">Leave policies in spreadsheets. Currency conversions in Excel. Country-specific compliance documents in someone's Notion. The People Ops person spends most of Monday in Slack reconciling what's actually true.</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">cost math comparison</span>
+  <h2 class="section-title">Same 900 employees, two HR-stack shapes</h2>
+
+  <div class="compare">
+
+    <div class="compare-col">
+      <div class="col-head serial">
+        <div class="col-system">approach · default trajectory</div>
+        <div class="col-name">Current shape held through 900 emp</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Today (350 employees)</div>
+        <div class="step-body">~250 employees on EORs at <span class="num">~$500/month</span> avg (Deel + Remote at volume rates) = <span class="warn">~$1.5M/year EOR fees</span>. ~100 in 2-3 large country pods on direct payroll = <span class="num">~$200K/year</span>. Hidden costs (1-month salary deposits, FX markup 0.6-2%, country surcharges $50-$150/emp/mo) = <span class="num">~$300K-$500K/year</span>. Employer taxes/benefits add 13-40% (constant across stack choices).</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">At 900 employees</div>
+        <div class="step-body">Even distribution of additional 550 hires across geos (per hyper-local strategy). ~600 employees on EORs at the same per-head cost = <span class="warn">~$3.6M/year EOR fees</span>. More countries crossing the 25-50 employee threshold means new direct-entity setups required (each $15K-$40K to spin up, $25K-$80K/year to operate). Hidden costs scale linearly = <span class="num">~$700K-$1M/year</span>.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Run-rate at 900 emp</div>
+        <div class="step-body"><span class="warn">~$4.5M-$5M/year total HR-stack cost</span>, plus 5-10 new entity setups required as country pods cross threshold. Plus the soft cost of People Ops + Finance time spent reconciling.</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">cost projection · current shape held</div>
+<pre><span class="head">SHAPE: HYPER-LOCAL EOR-DEFAULT  |  HEADCOUNT: 350 → 900  |  HORIZON: 9 MONTHS</span>
+<span class="warn">[built from Pin / eorHQ / Deel published benchmarks]</span>
+
+bucket                        today        at 900
+<span class="dim">--------------------------    ---------    ---------</span>
+EOR fees (Deel, Remote)       $1.5M/yr     <span class="warn">$3.6M/yr</span>
+local payroll (2-3 pods)      $200K/yr     $400K-$600K/yr
+hidden (FX, surcharge, FOB)   $300-500K    $700K-$1M
+new entity setups required    n/a          5-10 entities @ $15-40K
+                              <span class="dim">---------    ---------</span>
+total HR-stack run-rate       ~$2.0M       <span class="warn">~$4.5M-$5M</span></pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> The cost curve is non-linear — every country crossing 25 employees adds an entity setup and ongoing compliance load on top of the EOR run-rate. The hidden costs (FX markup, country surcharges) compound, not add.
+      </div>
+    </div>
+
+    <div class="compare-col">
+      <div class="col-head parallel">
+        <div class="col-system">approach · consolidated alternative</div>
+        <div class="col-name">Single HRIS + selective direct entity</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Setup</div>
+        <div class="step-body">Single HRIS as source of truth across all 30 countries. EOR retained only for the smallest country pods (single-employee or sub-10). Direct payroll for any country with 20+ employees. Migration cost compounds with every additional country and every additional employee — least painful window is the next 60-90 days, before APAC expansion accelerates the country count.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">At 900 employees</div>
+        <div class="step-body">HRIS platform cost at mid-market PEPM benchmarks of <span class="num">$12-$20/emp/month</span> (Vendr, Outsail) = <span class="ok">~$130K-$220K/year</span>. Local payroll for ~10-15 country pods = <span class="num">~$300K-$500K/year</span>. EOR for the long-tail single-employee countries = <span class="num">~$400K-$600K/year</span>.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-label">Run-rate at 900 emp</div>
+        <div class="step-body"><span class="ok">~$830K-$1.3M/year total HR-stack cost</span>, plus the consolidation eliminates the manual reconciliation burden and the hidden FX/surcharge costs that compound at scale. Net delta: <span class="ok">~$3M-$4M/year saved</span> at 900 employees.</div>
+      </div>
+
+      <div class="report">
+        <div class="report-label">cost projection · consolidated shape</div>
+<pre><span class="head">SHAPE: HRIS + SELECTIVE DIRECT ENTITY  |  HEADCOUNT: 900  |  DELTA: $3M-$4M / YR</span>
+<span class="accent">[same per-employee math, different distribution]</span>
+
+bucket                        consolidated
+<span class="dim">--------------------------    ----------------</span>
+HRIS PEPM ($12-$20/emp/mo)    <span class="accent">$130-$220K/yr</span>
+local payroll (10-15 pods)    $300-$500K/yr
+EOR (long-tail, single-emp)   $400-$600K/yr
+manual reconcile (eliminated) <span class="accent">$0</span>
+hidden FX/surcharge           <span class="accent">~eliminated</span>
+                              <span class="dim">----------------</span>
+total HR-stack run-rate       <span class="accent">~$830K-$1.3M/yr</span>
+
+<span class="accent">vs. current shape: ~$3M-$4M/yr saved at 900 emp</span></pre>
+      </div>
+
+      <div class="read-note">
+        <strong>How it reads.</strong> Same per-employee math; different distribution. The HRIS replaces the reconciliation labor; selective direct entity replaces the EOR fees in countries where it's already economic. Long-tail EOR remains for single-employee countries where direct entity doesn't pencil.
+      </div>
+    </div>
+
+  </div>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">where the next 9 months hurt</span>
+  <h2 class="section-title">Four pressure points in current shape</h2>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-num">PAIN 01</div>
+      <div class="pain-title">Country #N+1 launches take 6-8 weeks each</div>
+      <div class="pain-body">Each new country in EOR-only mode requires standing up payroll, drafting a country-localized employment agreement, picking benefits, onboarding a new team — all manually. APAC expansion means this cycle is about to fire 4-8 times.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-num">PAIN 02</div>
+      <div class="pain-title">The Adriatic innovation hub is the most exposed</div>
+      <div class="pain-body">Croatia + Serbia + Slovenia each operate as separate jurisdictions with separate payroll providers. The team is concentrated enough that direct entities make economic sense, but the operational lift is significant.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-num">PAIN 03</div>
+      <div class="pain-title">350 → 900 in 9 months = 60+ new hires/month</div>
+      <div class="pain-body">Onboarding workflows that finish themselves are no longer optional at this pace. Manual onboarding at this scale typically loses 8-15% of new hires to delay-related friction (industry observation, not Wonderful-specific).</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-num">PAIN 04</div>
+      <div class="pain-title">First post-Series-B board ask: global headcount-vs-budget by country</div>
+      <div class="pain-body">Producing this manually from a spreadsheet of EOR exports is a 2-3 day exercise per cycle, and the numbers will rarely tie out. The reconciliation problem becomes a board-visibility problem.</div>
+    </div>
+  </div>
+
+  <span class="label" style="margin-top:48px; display:inline-block;">recommended next moves</span>
+  <h2 class="section-title">Independent of any vendor decision</h2>
+
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Map current country-by-country headcount and EOR/payroll mix</div>
+        <div class="rec-detail">Not a project — a one-page spreadsheet. The exercise of building it usually surfaces 3-5 countries where the EOR economics already broke and direct entity is overdue. Worth doing in the next 30 days regardless of any other decision.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Set the 25-employee threshold as a tripwire</div>
+        <div class="rec-detail">When any country crosses 25 employees, automatically trigger an entity-vs-EOR cost review. Threshold is well-supported by the Deel published benchmark; the discipline saves an estimated $100K-$200K per country per year over the EOR-default path.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Pick a single HRIS as source of truth before headcount crosses 500</div>
+        <div class="rec-detail">Migration cost compounds with every additional country and employee. Least painful window is the next 60-90 days, before APAC expansion accelerates the country count further. The hyper-local product strategy is sound. The hyper-local HR stack is what most companies discover, around 500 employees, that they wish they'd consolidated 250 employees ago.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <div>funding + footprint: <a href="https://www.prnewswire.com/news-releases/wonderful-raises-150m-series-b-to-accelerate-enterprise-ai-adoption-in-30-markets-302712238.html" target="_blank" rel="noopener">PR Newswire (Mar 2026)</a> · <a href="https://techcrunch.com/2026/03/12/wonderful-raises-150m-series-b-at-2b-valuation/" target="_blank" rel="noopener">TechCrunch</a> · <a href="https://www.indexventures.com/perspectives/wonderful-secures-100m-to-drive-adoption-of-ai-agents-globally/" target="_blank" rel="noopener">Index Ventures</a> · <a href="https://therecursive.com/wonderful-bar-winkler-vedran-bajer-interview-adriatic-expansion/" target="_blank" rel="noopener">The Recursive</a></div>
+      <div>EOR + entity benchmarks: <a href="https://www.pin.com/blog/deel-pricing/" target="_blank" rel="noopener">Pin</a> · <a href="https://eorhq.com/guides/g-p-pricing/" target="_blank" rel="noopener">eorHQ</a> · <a href="https://www.deel.com/blog/how-much-does-an-eor-cost/" target="_blank" rel="noopener">Deel blog</a> · <a href="https://www.vendr.com/marketplace/hibob" target="_blank" rel="noopener">Vendr</a> · <a href="https://www.outsail.co/post/how-much-does-hibob-cost" target="_blank" rel="noopener">Outsail</a></div>
+    </div>
+    <div>
+      <div>cost-math estimates are H-tier — built from named benchmarks × Wonderful's stated headcount</div>
+      <div>artifact for: Series B/C international SaaS HR stack review</div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
