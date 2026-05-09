@@ -195,6 +195,69 @@ nav.scrolled {
     color: #C5CBD3;
 }
 
+/* Timeline strip — used on Tier 03 cohort card */
+.timeline-strip {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 4px;
+    flex-wrap: nowrap;
+}
+.timeline-block {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #E8EAF0;
+    background: #1A1A1A;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255, 0.10);
+    line-height: 1.4;
+    min-width: 0;
+}
+.timeline-block-focal {
+    color: #00FF41;
+    box-shadow: inset 0 0 0 1px rgba(0, 255, 65, 0.4);
+}
+.timeline-block-sub {
+    font-size: 9px;
+    font-weight: 500;
+    color: #9CA1AA;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.timeline-block-focal .timeline-block-sub {
+    color: #33FF66;
+}
+.timeline-arrow {
+    display: flex;
+    align-items: center;
+    color: #717985;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+@media (max-width: 640px) {
+    .timeline-strip {
+        flex-direction: column;
+        gap: 2px;
+    }
+    .timeline-arrow {
+        transform: rotate(90deg);
+        align-self: center;
+        padding: 2px 0;
+    }
+    .timeline-block {
+        padding: 10px 8px;
+        font-size: 11px;
+    }
+    .timeline-block-sub {
+        font-size: 10px;
+    }
+}
+
 /* Form inputs — square, mono, inset shadow */
 .form-input {
     background: #111111;
