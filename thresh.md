@@ -24,6 +24,22 @@ Strategic playbook + sequencing: `~/Documents/projects/second-brain-cli/Referenc
 
 ---
 
+## Open Questions (for /cross-pollinate)
+
+> **What this is.** Active questions and assumptions Thresh's plan rests on. The `/cross-pollinate` skill reads this section every time a new note is captured into second-brain and surfaces any capture that answers, contradicts, or adds evidence to one of these. Keep ≤10 entries. Drop questions when answered. Update weekly or on direction shifts.
+>
+> **Format per entry:** `Question | Currently assumed: X | Closes when: Y`
+
+- **Q1 — Mode-switch trigger from signal-based to full-TAM coverage.** Phase 0 is signal-first (find the 3% with the right tension). Haren's 5-stage model says full-TAM coverage of the unaware 97% wins at 5M+/mo. Don't know what the actual switch trigger is. *Currently assumed:* signal-first until ~1M/mo, then revisit. *Closes when:* practitioner answer or Phase 0 reply-rate decay data shows diminishing returns on the 3%.
+- **Q2 — Day 30 reply-rate threshold.** Phase 0 says Day 30 positive reply rate determines scale-vs-rewrite. *Currently assumed:* threshold not explicitly numbered. *Closes when:* a defensible benchmark for "Phase 0 is working" — likely tied to TAM size + offer difficulty per Nowoslawski's "1-in-2,000 can be a winner" framing.
+- **Q3 — Which parked vertical to revive first if trucking validates.** Hazmat / reverse-logistics / waste-hauler all parked. *Currently assumed:* hazmat first (closest signal architecture to trucking). *Closes when:* trucking Day 60 result + comparison signal-asymmetry test across the three.
+- **Q4 — Founding Cohort close rate.** Need to fill 3 spots at $20K founding rate. *Currently assumed:* 1-in-5 qualified conversations close. *Closes when:* actual outbound + warm-intro outcomes from first 10 conversations.
+- **Q5 — Whether the Anti-Guarantee converts or scares off.** Combined Service Guarantee + Anti-Guarantee is unusual. *Currently assumed:* the combination filters for serious buyers without killing the top of funnel. *Closes when:* 5 disqualifications + 5 progressions through guarantee discussion in live conversations.
+- **Q6 — Carry-the-bag offer reframe — does the prospect read it as "you're doing the work" or "you're a vendor"?** *Currently assumed:* framing as embedded operator (Vista VCG / Alpine CIT / Palantir FDE) lands as differentiated. *Closes when:* live reply data on the carry-the-bag-anchored sequence vs. control.
+- **Q7 — Post-cohort pricing trajectory.** $20K founding → $30K standard. *Currently assumed:* $30K is defensible after Phase 0 validation + Service Guarantee removal. *Closes when:* cohort completion + first $30K conversation either converts or fails on price.
+
+---
+
 ## Downstream Market Catalog
 
 A living library of regulatory events, compliance deadlines, and public-data moments in the *buyer's* market that create outbound urgency for Thresh clients. This is separate from the Observable Signals list (which qualifies whether a SaaS company is ready to *buy* Thresh) — entries here qualify whether a SaaS company has a hot *opportunity* in their customer base that Thresh can package.
