@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The HiBob Playbook — Signal-First Outbound | Thresh</title>
-    <meta name="description" content="A Signal-First Outbound playbook built for HiBob. Three plays for finding first-time Heads of People in their first 90 days, multi-country teams stretched across 3+ payroll providers, and CFOs running Workday at sub-enterprise scale — with a real Wonderful multi-country stack map downloadable.">
+    <meta name="description" content="Signal-first outbound for HiBob: ten public-data plays (first-time Heads of People, Workday TCO at sub-enterprise scale, multi-country sprawl, post-M&A consolidation, and more), with depth on the override trio and a real Wonderful multi-country stack map.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#080808">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
@@ -12,16 +12,17 @@
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="The HiBob Playbook — Signal-First Outbound">
-    <meta property="og:description" content="Three plays for HiBob: first-time Heads of People in their first 90 days, multi-country teams across 3+ payroll providers, CFOs running Workday at sub-enterprise scale.">
+    <meta property="og:description" content="Ten signal-triggered plays for mid-market HRIS GTM: funding firehose, position changes, Workday admin postings, multi-country sprawl, M&A — with three deep dives and a real Wonderful multi-country stack map.">
     <meta property="og:url" content="https://runthresh.com/playbooks/hibob-com/">
     <meta property="og:image" content="https://runthresh.com/og-image.png">
     <meta property="og:site_name" content="Thresh">
     <meta property="article:published_time" content="2026-05-03T12:00:00Z">
+    <meta property="article:modified_time" content="2026-05-08T12:00:00Z">
     <meta property="article:author" content="Lucas Linares">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The HiBob Playbook — Signal-First Outbound">
-    <meta name="twitter:description" content="Three plays for first-time Heads of People, multi-country sprawl, and Workday displacement at mid-market SaaS.">
+    <meta name="twitter:description" content="Ten public-data plays for HiBob. Override trio: Multi-Country Sprawl, First HRIS Moment, Workday Displacement — plus a Wonderful stack map and the full menu.">
     <meta name="twitter:image" content="https://runthresh.com/og-image.png">
 
     <script type="application/ld+json">
@@ -29,9 +30,9 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "The HiBob Playbook — Signal-First Outbound",
-      "description": "Three plays for finding first-time Heads of People in their first 90 days, multi-country teams across 3+ payroll providers, and CFOs running Workday at sub-enterprise scale.",
+      "description": "Ten signal-triggered plays for HiBob mid-market HRIS GTM with three deep dives and a Wonderful multi-country stack map.",
       "datePublished": "2026-05-03T12:00:00Z",
-      "dateModified": "2026-05-03T12:00:00Z",
+      "dateModified": "2026-05-08T12:00:00Z",
       "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
       "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
       "mainEntityOfPage": "https://runthresh.com/playbooks/hibob-com/",
@@ -62,8 +63,11 @@
             .nav-toggle{display:none}
             .nav-menu{display:flex;align-items:center;gap:1.5rem}
         }
+        .play-menu-details summary{cursor:pointer;font-family:JetBrains Mono,monospace;font-size:.75rem;color:#00FF41;list-style:none}
+        .play-menu-details summary::-webkit-details-marker{display:none}
+        .play-menu-details pre{white-space:pre-wrap;font-family:JetBrains Mono,monospace;font-size:.7rem;line-height:1.5;color:#9CA1AA;margin-top:1rem}
     </style>
-    <link rel="stylesheet" href="/output.css">
+    <link rel="stylesheet" href="../../output.css">
 </head>
 
 <body class="bg-brand-bg text-brand-text font-body antialiased">
@@ -72,7 +76,7 @@
 
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
         <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <a href="../../index.html" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
             <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
             <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
                 <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -86,9 +90,9 @@
                 </svg>
             </label>
             <div class="nav-menu md:flex items-center gap-6">
-                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
-                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <a href="/#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+                <a href="../index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="../../blog/index.html" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="../../index.html#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
             </div>
         </div>
     </nav>
@@ -99,7 +103,7 @@
         <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="reveal mb-6">
-                    <a href="/" class="inline-flex items-center gap-3 border border-brand-border/50 hover:border-brand-accent transition-all px-4 py-2">
+                    <a href="../../index.html" class="inline-flex items-center gap-3 border border-brand-border/50 hover:border-brand-accent transition-all px-4 py-2">
                         <span class="font-mono text-[11px] tracking-[0.15em] text-brand-muted uppercase">// Working sample.</span>
                         <span class="font-mono text-[11px] tracking-[0.15em] text-brand-accent uppercase">See the full offer →</span>
                     </a>
@@ -112,13 +116,12 @@
                     built for <span class="headline-accent">HiBob.</span>
                 </h1>
                 <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                    Three plays for HiBob&rsquo;s sharpest buyers &mdash; first-time Heads of People in their first 90 days, distributed teams across 3+ countries, CFOs running Workday at sub-enterprise scale.
+                    Ten plays tied to public operational triggers &mdash; first-time Heads of People, Workday admin postings, multi-country sprawl, Series B/C funding. Three deep dives on the override trio.
                 </p>
                 <div class="reveal flex justify-center">
-                    <a href="/#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                    <a href="../../index.html#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
                 </div>
-                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 3, 2026</p>
-                <p class="reveal mt-2 font-mono text-xs text-brand-faint">// Also see: <a href="/playbooks/hibob-com-v2/" class="text-brand-accent hover:text-brand-accent-hover hover:underline">10-play menu version →</a></p>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 8, 2026</p>
             </div>
         </section>
 
@@ -129,9 +132,9 @@
             <div class="max-w-4xl mx-auto">
                 <div class="reveal">
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
-                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Most mid-market HRIS vendors send the same email. HiBob has a better hand.</h2>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Every mid-market HRIS rep sounds the same. HiBob doesn't have to.</h2>
                     <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
-                        Workday, Rippling, BambooHR all sound the same — generic claims about modern HR and employee experience. Almost no HRIS vendor in this category tracks LinkedIn position-change firehoses, multi-country job-posting counts, or Workday admin role postings as outbound triggers. Inside the windows where a Head of People is 30 days into their role, a SaaS company is hiring across country #4, or a CFO is staring at a $400K Workday invoice — the alternative is doing the audit themselves with worse data. Lead with that situation.
+                        Most competitors open with "modern HR" and "employee experience." This playbook opens with <strong class="text-brand-text font-medium">their</strong> country count, <strong class="text-brand-text font-medium">their</strong> Workday admin posting, or <strong class="text-brand-text font-medium">their</strong> first Head of People hire — then attaches product. Same stack as generic outbound says "we help fast-growing teams like yours."
                     </p>
                 </div>
 
@@ -156,7 +159,7 @@
                     </div>
 
                     <div>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">What HiBob sends with the data.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 md:mt-0 mb-4">Play 5 signal — multi-country sprawl (real account).</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
@@ -177,7 +180,7 @@
 
                 <div class="reveal mt-4">
                     <p class="provenance-label text-brand-muted leading-relaxed">
-                        That second email isn't a template. The Wonderful $150M Series B and 30+ country footprint are from PR Newswire and TechCrunch (March 2026). The EOR-vs-entity cost math is anchored on Pin's 2026 Deel pricing analysis, eorHQ's G-P benchmarks, and Deel's own EOR-vs-entity blog. The full multi-country stack map sent to Wonderful is downloadable below.
+                        Wonderful's funding and 30+ country claim are from PR Newswire and TechCrunch (March 12, 2026). The full multi-country stack map sent to Wonderful is downloadable in the deep-dive section. Live outbound: verify EOR pricing benchmarks (Pin / eorHQ / Deel blog) are still current before pasting cost ranges into email.
                     </p>
                 </div>
             </div>
@@ -185,79 +188,287 @@
 
         <div class="divider max-w-6xl mx-auto"></div>
 
-        <!-- PLAYS -->
+        <!-- ACTIVATION -->
+        <section id="activation" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Activation Summary</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Run these three first.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Operator-fast top of funnel: highest-conviction motion before you skim the other seven plays in the menu.</p>
+                </div>
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-6 sm:p-8">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">#</th>
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Persona</th>
+                                <th class="py-3 pr-4">Motion</th>
+                                <th class="py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">1</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">First HRIS Moment</td>
+                                <td class="py-4 pr-4 align-top">First-time Head of People / VP People / CPO — 0–90 days into role at 100–1,000 emp SaaS</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">2</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Workday Displacement</td>
+                                <td class="py-4 pr-4 align-top">CFO at PE-backed / pre-IPO mid-market — 200–1,000 emp with active Workday admin posting</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">3</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">Series B/C HRIS Strain</td>
+                                <td class="py-4 pr-4 align-top">Head of People (or CEO/COO if no HoP yet) — $30M+ Series B/C in last 90 days, 100–1,000 emp</td>
+                                <td class="py-4 pr-4 align-top">Cold</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal mt-6 text-brand-muted text-sm leading-relaxed max-w-3xl">
+                    <span class="font-mono text-brand-accent">Override:</span> <strong class="text-brand-text font-medium">Multi-Country Sprawl (Play 5)</strong> — HiBob's most defensible wedge (built distributed-first from day 1). Promote into the top three when prospect mix is heavily international SaaS (Israeli, UK, Nordics, Western Europe HQ). The <strong class="text-brand-text">Multi-Country Sprawl</strong> deep dive below is the executed example — Wonderful at 30+ countries.
+                </p>
+                <p class="reveal mt-4 font-mono text-[11px] text-brand-faint leading-relaxed">// Composite scoring (1&ndash;5 weighted): Volume 0.20 &middot; Detectability 0.25 &middot; Specificity 0.25 &middot; Timing 0.15 &middot; Actionability 0.15. Full per-dimension breakdowns for all 10 plays in <a href="#methodology" class="text-brand-accent hover:underline">Methodology</a> below.</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- TEN-PLAY MENU -->
+        <section id="play-menu" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Play Menu</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Ten plays. Pick by signal.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each block: one-line hook + optional full opener. Compressed "why it works" — the deep section below carries architecture for the override trio.</p>
+                    <details class="reveal mt-5 max-w-3xl">
+                        <summary class="font-mono text-[11px] tracking-[0.15em] text-brand-faint uppercase cursor-pointer py-1 hover:text-brand-accent transition-colors" style="list-style:none;">+ What &ldquo;Cat B&rdquo; / &ldquo;Cat B/C&rdquo; means in the cards below</summary>
+                        <div class="mt-3 pl-3 border-l border-brand-border/30 text-brand-muted text-xs leading-relaxed space-y-2">
+                            <p><strong class="text-brand-text">Cat A</strong> &mdash; prospect-specific telemetry (their data, not ours). <strong class="text-brand-text">Cat B</strong> &mdash; single public fact about the prospect (funding, hire, country count, posting). <strong class="text-brand-text">Cat C</strong> &mdash; aggregated benchmark from the vendor&rsquo;s customer base.</p>
+                            <p>All ten plays here run on <strong class="text-brand-text">public</strong> data &mdash; Cat B and Cat B/C hybrid. HiBob also sits on proprietary mid-market HR aggregates across 4,200+ customers (multi-country payroll cost benchmarks, comp cycle completion times, eNPS norms by stage) that could power a Cat A-style peer-benchmark play; that needs vendor-side substrate and isn&rsquo;t in this public-only menu.</p>
+                            <p class="text-brand-faint">Caveat on Plays 4 and 8: Bob Finance launched November 2025 &mdash; proof points are thin until 2&ndash;3 named customer wins emerge.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger">
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 1 · Cat B · Public · Highest-conviction</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First HRIS Moment</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">First-time Head of People / VP People / CPO at 100–1,000 emp SaaS, 0–90 days in role — one-page HRIS comparison sized to their headcount and country count.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: First 90 days
+
+You're in week {{week_in_role}}. The HRIS audit is on your 90-day plan.
+
+Most first Heads of People at companies your size end up comparing the same three options: keep Gusto + bolt on Lattice/Carta/Greenhouse, move to Rippling, or move to Bob. Each has a clean answer when you weigh it against (a) your country footprint, (b) your headcount trajectory, and (c) what your CEO will actually use.
+
+I did the comparison for {{company_name}} specifically — at {{employee_count}} employees across {{country_count}} countries — using public data. One page, no pitch.
+
+Worth seeing?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 2 · Cat B/C · Public · High-conviction</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Workday Displacement</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">CFO at 200–1,000 emp PE-backed / pre-IPO with active Workday admin or HRIS-Workday job posting — TCO model: license + integrations + admin FTE.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: Workday at {{employee_count}}
+
+Workday at {{employee_count}} employees: license per employee at the mid-market tier runs roughly $100–500 per employee per year (Outsail benchmark), and that's before the integration costs and the admin team you're already paying for.
+
+I modeled the full all-in cost for {{company_name}} — license, integrations, admin FTEs — and compared it against what consolidating to Bob would look like. One PDF, sent to your CFO inbox.
+
+Want me to send it?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 3 · Cat B/C · Public · High-conviction</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Series B/C HRIS Strain</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Head of People (or CEO if no HoP) at SaaS / fintech / healthtech that closed $30M+ Series B/C in last 90 days — stage-sized HRIS comparison for the audit they're about to run.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: HRIS strain post-Series {{round_letter}}
+
+{{first_name}} — {{company_name}} just closed {{round}}. The pattern across funded SaaS companies your size: headcount typically scales 2-3x in the first 12-18 months, and the Gusto + Lattice + Slack stack starts breaking around month 6.
+
+I pulled together the HRIS comparison for a company on your trajectory — {{employee_count}} employees in {{country_count}} countries — using public data. Three options sized for your stage, what each costs at headcount 600, what breaks at 1,000.
+
+Worth a look before you start the audit?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 4 · Cat B · Public · Bob Finance</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">New CFO + Bob Finance Audit</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Newly-hired CFO at 200–2,000 emp PE-backed / pre-IPO, first 90 days — HR + Payroll + FP&amp;A consolidation map. Lean signal: Bob Finance is 5 months old, proof points thin.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: 90-day SaaS audit at {{company_name}}
+
+{{first_name}} — most new CFOs at PE-backed mid-market find three line items dominating the first 90-day SaaS audit: HRIS, FP&A, and a payroll provider that doesn't talk to either.
+
+HiBob shipped Bob Finance in November 2025, putting HR + payroll + finance on one platform (HiBob, November 4, 2025 announcement). I pulled together a one-page consolidation map for {{company_name}} using public data: current likely stack, estimated all-in cost at {{employee_count}} employees, what consolidation looks like.
+
+Want it sent to your inbox?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 5 · Cat B · Public · ↓ Real PVP attached</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Multi-Country Sprawl</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Head of People at 100–1,000 emp SaaS hiring in 3+ countries within rolling 90 days — multi-country stack map: countries, payroll providers, EOR vs. direct-hire pattern, gap analysis. <span class="text-brand-accent">Override-promotion candidate when prospect mix is international.</span></p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: {{country_count}} countries, {{provider_count}}+ providers
+
+{{company_name}} is hiring in {{country_list}}. That's {{country_count}} separate payroll workflows, {{country_count}} separate leave policies, and a People Ops person who spends most of Monday in Slack reconciling what's actually true.
+
+I mapped it for your team — current providers, where the gaps are, and what country #{{n_plus_1}} looks like in your current setup vs. consolidated.
+
+Send it over?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 6 · Cat B/C · Public · M&amp;A</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">M&amp;A Forced Consolidation</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">CHRO or CFO at the acquirer side of a recently-closed deal (200–2,000 emp acquirer) — consolidation map for the integration committee, before the 6–12 month deadline forces a default.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: {{company_name}} + {{target_name}} HRIS consolidation
+
+{{first_name}} — saw the {{target_name}} close in {{month}}. Across the 300+ public mid-market acquisitions YTD this year (SEC EDGAR), the integration question that lands first on CHRO desks is which HRIS survives.
+
+Both companies likely run different systems — and the 6–12 month integration window forces a decision either way. I mapped the consolidation options for {{company_name}} specifically, including the cost-by-headcount comparison.
+
+Worth a look before the integration committee meets?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 7 · Cat B · Public · Sharp window</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">New Country Expansion Window</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">Head of People within 60 days of a press announcement of a new country office — payroll routing + leave localization + onboarding setup map for the new country, before the pain compounds.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: {{company_name}}'s {{country}} expansion — HRIS gap
+
+{{first_name}}, {{company_name}} announced the {{country}} launch {{n_weeks}} weeks ago. The pattern across mid-market SaaS doing this: payroll, leave policy, and onboarding for the new country end up in three different tools by month 3, and the People Ops Manager spends most of their week reconciling.
+
+HiBob was built for distributed teams from inception — Israeli founding, London/NYC/Lisbon footprint. I pulled together a one-page setup map for {{company_name}} in {{country}}: payroll routing, leave localization, what country #{{n_plus_1}} looks like.
+
+Worth a look?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 8 · Cat B/C · Public · Sensitive</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Layoff → SaaS Rationalization</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">CFO at 200–2,000 emp tech company within 60 days of a layoff event affecting &gt;10% / 50+ employees — Workday or Rippling consolidation comparison. Sensitive messaging required.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: SaaS rationalization at {{company_name}}
+
+{{first_name}} — saw {{company_name}} in the recent Layoffs.fyi data. The post-layoff playbook in tech this quarter tends to hand CFOs a SaaS reduction target by day 60.
+
+If Workday or Rippling sits in the top-10 line items, the math at sub-1,000 headcount tilts toward consolidation — HiBob runs at a fraction of either at this size. I pulled together a consolidation comparison for {{company_name}} using public data: license + integration + admin estimate, side-by-side.
+
+Want it sent over?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 9 · Cat B · Public · Niche</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">First Compensation Manager Hire</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">New Compensation Manager (or Head of People when posting goes live) at 200–1,000 emp posting its first-ever dedicated comp role — perf + comp tooling comparison.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: {{company_name}}'s comp build-out
+
+{{first_name}} — {{company_name}} is hiring its first dedicated Compensation Manager. The 90-day deliverable for that role tends to be the same three things: comp framework, calibration process, comp tooling decision.
+
+Most companies at your size find that decision is between a comp point-tool (Pave, Carta-comp) plus their existing HRIS, or moving to a platform that integrates perf + comp natively. I pulled together a comparison for {{company_name}} specifically — what each path costs at {{employee_count}} employees and what the comp lead actually inherits.
+
+Worth seeing before they start?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 card-lift md:col-span-2">
+                        <p class="font-mono text-[10px] text-brand-faint uppercase tracking-wider mb-2">Play 10 · Cat B · Public · Niche emerging</p>
+                        <h3 class="font-display font-bold text-lg text-brand-text mb-2">Director of Employee Experience Hire</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-3">New Director of Employee Experience / Head of Culture at 200–1,000 emp — engagement signal stack rebuild (eNPS, recognition, manager 1:1 health). HiBob's engagement module is core platform.</p>
+                        <details class="play-menu-details">
+                            <summary>+ Send-ready email</summary>
+                            <pre>Subject: engagement rebuild at {{company_name}}
+
+{{first_name}} — {{company_name}} is hiring a Director of Employee Experience. That role tends to land with the same first task: rebuild the engagement signal stack — eNPS, recognition, manager 1:1 health — into something the CEO actually looks at.
+
+98% of CHROs say performance management is broken (SHRM 2026); engagement is usually the next line on the list. I pulled together a recognition + eNPS measurement comparison for {{company_name}} specifically, with what mid-market companies typically run vs. what HiBob's engagement module replaces.
+
+Worth a look?
+
+{{sender_name}}</pre>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THREE DEEP PLAYS -->
         <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
             <div class="max-w-4xl mx-auto">
                 <div class="reveal mb-16">
-                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Intelligence Plays</p>
-                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three triggers. Three messages.</h2>
-                    <p class="text-brand-muted text-lg leading-relaxed font-light">Each play targets a distinct buyer moment in mid-market HRIS. Two are time-boxed buying windows where the alternative is the buyer doing the audit themselves with worse data. The third is a chronic pain that compounds with every new country.</p>
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Deep Dives</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three plays with full architecture.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Failure mode → trigger → persona → opener → PVP. The override trio: Multi-Country Sprawl leads (the executed example below), then First HRIS Moment and Workday Displacement.</p>
                 </div>
 
-                <!-- PLAY 1 -->
-                <article id="play-1" class="mb-24 scroll-mt-20">
+                <!-- DEEP 1 -->
+                <article id="play-deep-1" class="mb-24 scroll-mt-20">
                     <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The First HRIS Moment</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For first-time Heads of People / VP People / CPOs at 100–1,000 employee SaaS companies, 30–90 days into the role. The new People leader has CEO air cover and a 90-day mandate that includes an HRIS audit. This is the highest-conviction window in the entire mid-market HRIS buying cycle.</p>
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Multi-Country Sprawl</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> SaaS company hiring across 3+ countries in 90 days runs a fragmented stack — EOR per country, local payroll for big pods, point HRIS, manual reconciliation in spreadsheets. The cost curve gets steep fast at 350 → 900 employees, and country #N+1 launches start taking 6–8 weeks each.</p>
                     </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">Mid-market company crossed 100–200 employees. The Gusto + Notion + Lattice + Slack patchwork — set up by a People Ops Manager three years ago — is visibly broken. The CEO is asking for "headcount visibility" or "a real talent strategy" within 90 days. The new Head of People is making four big buying decisions in the first six months: HRIS, ATS, performance, engagement. The first one usually picks the others.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">The new Head of People is going to do an HRIS audit in their first 30 days regardless of whether they ever talk to HiBob. Receiving a clean version of it from outside saves them 8–12 hours of comparative spreadsheet work and makes HiBob the named option from day one. Buyer is brand new, has CEO air cover, and hasn't been captured by an incumbent vendor.</p>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> Active job postings in 3+ different countries within rolling 90 days at a 100–1,000 employee SaaS company. Stronger when paired with a recent funding announcement or new-country press release.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> Head of People (primary) — owns payroll fragmentation pain. CEO or COO is the cold opener target if no HoP exists yet.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Multi-country HR stack map: country list, likely EOR vs. direct-entity mix at current size, cost math today vs. at projected headcount, country-by-country gap analysis. Built from public press, LinkedIn job postings, EOR pricing benchmarks (Pin, eorHQ, Deel blog) — no inside data required.</p>
                     </div>
-
                     <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example PVP — sent within 30 days of the hire</p>
-                        <div class="email-card">
-                            <div class="email-bar">
-                                <span class="email-dot"></span>
-                                <span class="email-dot"></span>
-                                <span class="email-dot"></span>
-                                <span class="email-label">SUBJECT: First 90 days</span>
-                            </div>
-                            <div class="email-body">
-                                <p>You're in week {{week_in_role}}. The HRIS audit is on your 90-day plan.</p>
-                                <br>
-                                <p>Most first Heads of People at companies your size end up comparing the same three options: keep Gusto + bolt on Lattice/Carta/Greenhouse, move to Rippling, or move to Bob. Each has a clean answer when you weigh it against (a) your country footprint, (b) your headcount trajectory, and (c) what your CEO will actually use.</p>
-                                <br>
-                                <p>I did the comparison for {{company_name}} specifically — at {{employee_count}} employees across {{country_count}} countries — using public data. One page, no pitch.</p>
-                                <br>
-                                <p>Worth seeing?</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
-                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://www.usergems.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">UserGems / Champify / CommonRoom</a> — LinkedIn position-change firehose for new Head of People hires</li>
-                            <li>→ <a href="https://www.crunchbase.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Crunchbase</a> — funding stage, employee count, sector</li>
-                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack</a> — country breakdown from job postings</li>
-                            <li>→ <a href="https://builtwith.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">BuiltWith</a> — current HRIS detection</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- PLAY 2 -->
-                <article id="play-2" class="mb-24 scroll-mt-20">
-                    <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Multi-Country Sprawl</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For Heads of People at 100–1,000 employee SaaS companies hiring across 3+ countries within rolling 90 days. HiBob's most underdefended wedge — the platform was built distributed-first from day 1, designed for the buyer who is one quarter away from country #4.</p>
-                    </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">Multi-country mid-market SaaS runs a fragmented stack — EOR per country, local payroll for the largest pods, point HRIS for core data, manual reconciliation in spreadsheets. The Head of People fields the same set of questions every week from the CFO, the new country GM, and a hire who just signed: "what's our PTO policy in Berlin?" "why did the Brazilian payroll come in 11% higher than budget?" The pain is chronic, not episodic — but it spikes when country #4 or #5 launches.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">Most US HR vendors don't track international hiring at all. The ones that do (Deel, Rippling) attack from contractor/payroll-first or HR-IT-blender angles. HiBob was built distributed-first — Tel Aviv, NYC, London, Lisbon footprint — and the buyer who is one quarter away from country #4 is the buyer the platform was designed for. A Head of People at a multi-country company doesn't have a clean view of their own HR stack. Receiving a clean external map of it is genuinely useful, even if they don't buy.</p>
-                    </div>
-
-                    <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP — sent to Wonderful (April 2026)</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Executed example — Wonderful (March 2026)</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
@@ -274,53 +485,80 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifact: The full Wonderful Multi-Country Stack Map</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-4">The complete custom analysis sent to Wonderful — 30+ country footprint mapped, current EOR/payroll mix estimate, cost math at 350 → 900 employees in current shape vs. consolidated, recommended next moves. Built from PR Newswire, TechCrunch, Index Ventures, The Recursive, EU-Startups, plus EOR pricing benchmarks (Pin, eorHQ, Deel blog, Vendr, Outsail) — public data only, no inside info.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Artifact — Play 5 (Wonderful multi-country stack map)</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">One executed PVP. The PDF: Wonderful's 30+ country footprint, current EOR/payroll mix estimate, cost math at 350 → 900 employees in current shape vs. consolidated, recommended next moves — built from PR Newswire, TechCrunch, Index Ventures, The Recursive, EU-Startups, plus EOR pricing benchmarks (Pin, eorHQ, Deel blog, Vendr, Outsail).</p>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="/playbooks/hibob-com/wonderful-multi-country-stack-map.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Download PDF →</a>
-                            <a href="/playbooks/hibob-com/wonderful-multi-country-stack-map.md" download class="inline-block font-body font-semibold border border-brand-secondary text-brand-secondary px-6 py-3 hover:bg-brand-secondary hover:text-white transition-all text-sm text-center">Download markdown →</a>
+                            <a href="./wonderful-multi-country-stack-map.pdf" download class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">Wonderful Multi-Country Stack Map →</a>
                         </div>
                     </div>
-
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                    <div class="reveal">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Key sources</p>
                         <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack</a> — multi-country job-posting count by company</li>
-                            <li>→ <a href="https://www.linkedin.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">LinkedIn</a> — employee location breakdown, country pods</li>
-                            <li>→ <a href="https://www.pin.com/blog/deel-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Pin (Deel pricing 2026)</a> + <a href="https://eorhq.com/guides/g-p-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">eorHQ (G-P pricing)</a> — EOR cost benchmarks</li>
-                            <li>→ <a href="https://www.deel.com/blog/how-much-does-an-eor-cost/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Deel blog</a> — EOR-vs-entity crossover math</li>
-                            <li>→ PR Newswire / BusinessWire — country expansion press</li>
+                            <li>→ <a href="https://www.prnewswire.com/news-releases/wonderful-raises-150m-series-b-to-accelerate-enterprise-ai-adoption-in-30-markets-302712238.html" class="text-brand-accent hover:underline" target="_blank" rel="noopener">PR Newswire — Wonderful $150M Series B (March 12, 2026)</a></li>
+                            <li>→ <a href="https://www.pin.com/blog/deel-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Pin — Deel Pricing 2026</a></li>
+                            <li>→ <a href="https://eorhq.com/guides/g-p-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">eorHQ — G-P Pricing 2026</a></li>
+                            <li>→ <a href="https://www.deel.com/blog/how-much-does-an-eor-cost/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Deel — EOR vs. Entity Costs</a></li>
                         </ul>
                     </div>
                 </article>
 
-                <!-- PLAY 3 -->
-                <article id="play-3" class="mb-12 scroll-mt-20">
+                <!-- DEEP 2 -->
+                <article id="play-deep-2" class="mb-24 scroll-mt-20">
                     <div class="reveal mb-6">
-                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
-                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Workday Displacement</h3>
-                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For CFOs at 200–1,000 employee PE-backed or pre-IPO companies running Workday at sub-enterprise scale, with an active Workday Administrator / HRIS Manager job posting. The CFO is in a 90-day SaaS audit; the Head of People is the quiet co-buyer.</p>
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">First HRIS Moment</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Mid-market company crossed 100–200 employees, the Gusto + Notion + Lattice + Slack patchwork broke, and the new Head of People's first 90 days are about replacing it. Highest-conviction window in the entire mid-market HRIS buying cycle — buyer is brand new, has CEO air cover, hasn't been captured by an incumbent.</p>
                     </div>
-
-                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
-                        <p class="text-brand-text text-base leading-relaxed mb-6">Workday is the right answer for Fortune 500 — and the wrong answer for the long tail of mid-market companies that bought it during the 2022–2024 enterprise enthusiasm wave. At 500 employees on Workday, the all-in cost (license + integrations + admin headcount) typically runs $400K–$700K per year (estimated based on Outsail benchmark data). The CFO inherited the contract from a predecessor's "we need enterprise HRIS" decision. The Head of People agrees but hasn't had political air cover to raise it. The presence of a dedicated Workday admin job posting at sub-1,000 headcount is itself the TCO signal.</p>
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
-                        <p class="text-brand-text text-base leading-relaxed">A CFO running a SaaS audit needs the TCO analysis whether or not they ever talk to HiBob. Building it themselves takes a junior FP&A person 6–10 hours of guesswork. Receiving a clean external version saves the work and gives the CFO an artifact to share with the CHRO and the board. Strongest stack patterns: Workday admin posting + recent layoff (10%+ workforce), or M&A close in last 90 days, or new CFO hired in last 90 days at PE-backed mid-market.</p>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> First-time Head of People / VP People / CPO hire announcement at a 100–1,000 employee company within the last 90 days. "First in function" check: prior role doesn't contain "People" or "HR." Compounds with Series B/C funding in prior 6 months and 3+ country footprint (Plays 3 + 5 stack here).</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> The new Head of People — 30–90 days into role. Reports to CEO with a clean mandate to build the people function. Making four big buying decisions in the first six months: HRIS, ATS, performance, engagement.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> 90-day HRIS comparison audit: their current employee count, their country footprint, their funding stage, three HRIS options most relevant at their size (typically HiBob, Rippling, BambooHR — Workday flagged as overkill). Each scored on real-cost-at-this-size, time-to-implement, multi-country, perf+comp depth, what breaks at headcount 300/500/1,000. Concludes with a single-paragraph recommendation the buyer can hand to their CEO.</p>
                     </div>
-
-                    <div class="reveal mb-8">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example PVP — fires when Workday admin posting goes live</p>
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Example artifact</p>
+                        <p class="text-brand-faint text-sm mb-4">No named PDF on this page — the deliverable is built per account from public LinkedIn / Crunchbase / job posting data and the prospect's specific employee count and country footprint. Use the menu email + PVP spec above as the template.</p>
                         <div class="email-card">
                             <div class="email-bar">
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
                                 <span class="email-dot"></span>
-                                <span class="email-label">SUBJECT: Workday at {{employee_count}}</span>
+                                <span class="email-label">VARIANT A // MENU</span>
                             </div>
-                            <div class="email-body">
+                            <div class="email-body font-mono text-xs">
+                                <p>You're in week {{week_in_role}}. The HRIS audit is on your 90-day plan.</p>
+                                <br>
+                                <p>Most first Heads of People at companies your size end up comparing the same three options: keep Gusto + bolt on Lattice/Carta/Greenhouse, move to Rippling, or move to Bob. Each has a clean answer when you weigh it against (a) your country footprint, (b) your headcount trajectory, and (c) what your CEO will actually use.</p>
+                                <br>
+                                <p>I did the comparison for {{company_name}} specifically — at {{employee_count}} employees across {{country_count}} countries — using public data. One page, no pitch.</p>
+                                <br>
+                                <p>Worth seeing?</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DEEP 3 -->
+                <article id="play-deep-3" class="mb-12 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">Deep 03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">Workday Displacement</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl"><strong class="text-brand-text">Failure mode:</strong> Mid-market company is on Workday at sub-enterprise scale (under 1,000 employees), the all-in cost (license + integrations + admin team) is visibly broken, and a CFO-led SaaS rationalization is either underway or one bad quarter away.</p>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8 space-y-4 text-brand-muted text-sm leading-relaxed">
+                        <p><span class="font-mono text-brand-accent">Trigger ·</span> Active job posting for "Workday Administrator," "Workday Analyst," or "HRIS Manager (Workday experience)" at a 200–1,000 employee company. Stronger paired with: recent layoff (10%+ workforce or 50+ employees) — Play 8 stacks; M&amp;A close in last 90 days — Play 6 stacks; new CFO hired in last 90 days — Play 4 stacks.</p>
+                        <p><span class="font-mono text-brand-accent">Persona ·</span> CFO (primary) — 200–1,000 emp, PE-backed or pre-IPO, often 0–12 months into role and running a 90-day audit. Head of People is co-buyer / quiet champion.</p>
+                        <p><span class="font-mono text-brand-accent">PVP ·</span> Workday TCO analysis: estimated annual license cost from public per-employee benchmarks (Outsail), integration cost estimate from job postings + tech stack, admin team cost from current Workday-related headcount, total annual summary, consolidated alternative cost, phased migration sketch with realistic timeline. CFO will share the artifact with CHRO and board — long-form attached PDF works here.</p>
+                    </div>
+                    <div class="reveal mb-6">
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">VARIANT A // MENU</span>
+                            </div>
+                            <div class="email-body font-mono text-xs">
                                 <p>Workday at {{employee_count}} employees: license per employee at the mid-market tier runs roughly $100–500 per employee per year (Outsail benchmark), and that's before the integration costs and the admin team you're already paying for.</p>
                                 <br>
                                 <p>I modeled the full all-in cost for {{company_name}} — license, integrations, admin FTEs — and compared it against what consolidating to Bob would look like. One PDF, sent to your CFO inbox.</p>
@@ -329,18 +567,285 @@
                             </div>
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
 
-                    <div class="reveal mb-6">
-                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
-                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
-                            <li>→ <a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">TheirStack</a> — Workday Administrator / HRIS Manager job postings at 200–1,000 emp</li>
-                            <li>→ <a href="https://efts.sec.gov/LATEST/search-index?q=%22completed+the+acquisition%22&forms=8-K" class="text-brand-accent hover:underline" target="_blank" rel="noopener">SEC EDGAR EFTS</a> — 8-K M&A filings (forced HRIS consolidation window)</li>
-                            <li>→ <a href="https://layoffs.fyi/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Layoffs.fyi</a> — tech layoff events triggering CFO SaaS rationalization</li>
-                            <li>→ <a href="https://www.outsail.co/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Outsail</a> — per-employee Workday license benchmarks</li>
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- SIGNAL STACKS -->
+        <section id="signal-stacks" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Signal Stacks</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Three pain-point clusters.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Each cluster pairs a Current State (the painful present) with a Desired Future (what they want to become), plus a stack of situational, execution, and pain signals that confirm the company is in that pattern.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP1 &middot; First HRIS audit window</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>Company crossed 100&ndash;200 employees and the Gusto + Notion + Lattice + Slack patchwork broke. A first-time Head of People landed with a 90-day mandate, or a new CFO opened a SaaS audit, or a Series B/C just closed and headcount is about to 2&ndash;3x. The HRIS audit is happening; the question is whose comparison the buyer sees first.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>One platform decision the buyer can hand to their CEO with confidence. Implementation in months, not the Workday 6&ndash;12-month spiral.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">First-time Head of People / VP People / CPO hire announcement at 100-1,000 emp SaaS in last 90 days</td><td class="py-3 align-top">CEO mandate + clean evaluation window + no incumbent capture</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">Series B/C $30M+ closed in last 90 days at 100-1,000 emp company (Crunchbase)</td><td class="py-3 align-top">Headcount typically scales 2-3x in next 12-18 months &mdash; current stack breaks</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">Newly-hired CFO at 200-2,000 emp PE-backed / pre-IPO, first 90 days (LinkedIn position-change firehose)</td><td class="py-3 align-top">First 90-day SaaS audit lands HRIS, FP&amp;A, and payroll in the top three line items</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP2 &middot; Multi-country payroll fragmentation</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>SaaS company hiring across 3+ countries in 90 days runs a fragmented stack &mdash; EOR per country, local payroll for big pods, point HRIS, manual reconciliation in spreadsheets. The cost curve gets steep fast at 350 &rarr; 900 employees, country #N+1 launches start taking 6&ndash;8 weeks each, and a People Ops person spends most of Monday in Slack reconciling what's actually true.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>One platform with country-by-country localization built in. Country #N+1 ships in days. EOR fees stop compounding past 25 employees per country.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">Active job postings in 3+ different countries within rolling 90 days at 100-1,000 emp SaaS (TheirStack)</td><td class="py-3 align-top">Multi-country sprawl is HiBob's most defensible wedge &mdash; built distributed-first from day 1</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">Press announcement of a new country office in last 60 days (PR Newswire / LinkedIn)</td><td class="py-3 align-top">Sharp 60-day window before payroll, leave, and onboarding fragment into three different tools</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">Recent funding announcement compounding country-count signal (Crunchbase + TheirStack overlay)</td><td class="py-3 align-top">Funded multi-country SaaS at 350+ employees has the budget AND the urgency in the same window</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">PP3 &middot; Forced consolidation events</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm text-brand-muted leading-relaxed">
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Current state</p>
+                                <p>Mid-market company is on Workday at sub-enterprise scale and the all-in cost (license + integrations + admin team) is visibly broken. Or: an M&amp;A close just landed and the integration committee has a 6&ndash;12 month deadline to consolidate two HRIS instances. Or: a layoff hit and the CFO has a SaaS reduction target by day 60. External event forces the platform decision &mdash; default is whichever incumbent is loudest.</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-brand-text mb-2">Desired future</p>
+                                <p>Consolidate to one platform at a fraction of the all-in cost. Integration committee picks the survivor before the 6-month deadline. SaaS rationalization target hit without breaking the people function.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs">
+                                <thead>
+                                    <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                        <th class="py-2 pr-4 text-left">Type</th>
+                                        <th class="py-2 pr-4 text-left">What to look for</th>
+                                        <th class="py-2 text-left">Why it matters</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-brand-muted">
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Situational</td><td class="py-3 pr-4 align-top">Active "Workday Administrator," "Workday Analyst," or "HRIS Manager (Workday)" posting at 200-1,000 emp company (TheirStack)</td><td class="py-3 align-top">Active job posting = TCO already visible-broken to whoever's hiring the role</td></tr>
+                                    <tr class="border-b border-brand-border/30"><td class="py-3 pr-4 align-top text-brand-text font-medium">Execution</td><td class="py-3 pr-4 align-top">8-K filing "completed the acquisition" within last 90 days, mid-market acquirer 200-2,000 emp (SEC EDGAR EFTS)</td><td class="py-3 align-top">6-12 month integration window forces a decision either way; HRIS lands first on CHRO desk</td></tr>
+                                    <tr><td class="py-3 pr-4 align-top text-brand-text font-medium">Pain</td><td class="py-3 pr-4 align-top">Layoff event affecting &gt;10% workforce or 50+ employees within last 60 days (Layoffs.fyi + state WARN portals)</td><td class="py-3 align-top">CFO has a SaaS reduction target by day 60 &mdash; sub-1,000 headcount tilts toward consolidation</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- METHODOLOGY + COMPOSITE SCORING (merged) -->
+        <section id="methodology" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-6">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Methodology</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Composite scoring rubric.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every signal scored 1&ndash;5 across five weighted dimensions. The activation order falls out of the math &mdash; with one operator override.</p>
+                </div>
+                <details class="reveal bg-brand-surface panel p-4 sm:p-6">
+                    <summary class="font-mono text-xs tracking-[0.15em] text-brand-accent uppercase cursor-pointer py-2" style="list-style:none;">+ Scoring methodology + per-play scores (all 10 plays)</summary>
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+                        <div class="bg-brand-surface-alt panel p-4">
+                            <p class="font-mono text-[10px] text-brand-accent uppercase tracking-wider mb-1">Volume &middot; 0.20</p>
+                            <p class="text-brand-muted text-xs leading-relaxed">Qualifying events / quarter.</p>
+                        </div>
+                        <div class="bg-brand-surface-alt panel p-4">
+                            <p class="font-mono text-[10px] text-brand-accent uppercase tracking-wider mb-1">Detectability &middot; 0.25</p>
+                            <p class="text-brand-muted text-xs leading-relaxed">Accessible via APIs / RSS / scrape.</p>
+                        </div>
+                        <div class="bg-brand-surface-alt panel p-4">
+                            <p class="font-mono text-[10px] text-brand-accent uppercase tracking-wider mb-1">Specificity &middot; 0.25</p>
+                            <p class="text-brand-muted text-xs leading-relaxed">Forced event vs. weak indicator.</p>
+                        </div>
+                        <div class="bg-brand-surface-alt panel p-4">
+                            <p class="font-mono text-[10px] text-brand-accent uppercase tracking-wider mb-1">Timing &middot; 0.15</p>
+                            <p class="text-brand-muted text-xs leading-relaxed">Action window clarity.</p>
+                        </div>
+                        <div class="bg-brand-surface-alt panel p-4">
+                            <p class="font-mono text-[10px] text-brand-accent uppercase tracking-wider mb-1">Actionability &middot; 0.15</p>
+                            <p class="text-brand-muted text-xs leading-relaxed">Can the right contact be reached.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left">
+                            <thead>
+                                <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                    <th class="py-2 pr-2">Play</th>
+                                    <th class="py-2 pr-2 text-center">Vol</th>
+                                    <th class="py-2 pr-2 text-center">Det</th>
+                                    <th class="py-2 pr-2 text-center">Spec</th>
+                                    <th class="py-2 pr-2 text-center">Time</th>
+                                    <th class="py-2 pr-2 text-center">Act</th>
+                                    <th class="py-2 text-right">Composite</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-brand-muted">
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 1 &middot; First HRIS Moment</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 text-right font-mono text-brand-text font-medium">4.55</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 3 &middot; Series B/C HRIS Strain</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">4.40</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 6 &middot; M&amp;A Forced Consolidation</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">4.25</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 2 &middot; Workday Displacement</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">4.05</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 7 &middot; New Country Expansion</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.95</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 8 &middot; Layoff &rarr; SaaS Rationalization</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.95</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 5 &middot; Multi-Country Sprawl</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">5</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.80</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 9 &middot; First Compensation Manager Hire</td><td class="py-2 pr-2 text-center font-mono">2</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.60</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-2 pr-2 align-top text-brand-text">Play 4 &middot; New CFO + Bob Finance Audit</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.55</td></tr>
+                                <tr><td class="py-2 pr-2 align-top text-brand-text">Play 10 &middot; Director of EE Hire</td><td class="py-2 pr-2 text-center font-mono">2</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">3</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 pr-2 text-center font-mono">4</td><td class="py-2 text-right font-mono text-brand-text font-medium">3.35</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="mt-4 font-mono text-[10px] text-brand-faint">// Source: gtm-alpha/runs/hibob.com/2-play-design-2026-04-30.md. Composite = (V &times; 0.20) + (D &times; 0.25) + (S &times; 0.25) + (T &times; 0.15) + (A &times; 0.15). Activation Summary lists Plays 1, 2, 3 in numeric order; composite-rank top 3 is 1, 3, 6 &mdash; Plays 7 and 8 tie at 3.95. Play 5 (Multi-Country Sprawl, override candidate) ranks 7th on cold composite but jumps to top-3 when prospect mix is heavily international.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CLAIM SOURCES -->
+        <section id="claim-sources" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-8">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Claim Sources</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Every number, sourced.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every specific number, percentage, or capability assertion that appears in a play message. No claim enters a message without a named public source, a vendor-published source, or a plain-language qualifier.</p>
+                </div>
+
+                <details class="reveal bg-brand-surface panel p-4 sm:p-6">
+                    <summary class="font-mono text-xs tracking-[0.15em] text-brand-accent uppercase cursor-pointer py-2" style="list-style:none;">+ Show full claim-source table &amp; treatment notes</summary>
+                    <div class="mt-6 overflow-x-auto">
+                        <table class="w-full text-xs text-left">
+                            <thead>
+                                <tr class="border-b border-brand-border font-mono text-brand-accent uppercase tracking-wider">
+                                    <th class="py-2 pr-3">Claim</th>
+                                    <th class="py-2 pr-3">Source</th>
+                                    <th class="py-2 pr-3">Tier</th>
+                                    <th class="py-2">Treatment</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-brand-muted">
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Workday license $100&ndash;$500 per employee per year (mid-market)"</td><td class="py-3 pr-3 align-top">Outsail Workday cost benchmark</td><td class="py-3 pr-3 align-top font-mono">Named public benchmark</td><td class="py-3 align-top">Cite as "Outsail benchmark." Verify currency annually.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"$400K&ndash;$700K all-in cost for 500-emp Workday"</td><td class="py-3 pr-3 align-top">Component-built from Outsail (license + integrations + admin FTE)</td><td class="py-3 pr-3 align-top font-mono">Sourced estimate</td><td class="py-3 align-top">Always frame as "estimated based on Outsail benchmarks" &mdash; never as a flat fact.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Bob Finance launched November 2025"</td><td class="py-3 pr-3 align-top">HiBob press release + PR Newswire (Nov 4, 2025)</td><td class="py-3 pr-3 align-top font-mono">Named public source</td><td class="py-3 align-top">Cite as "(HiBob, November 4, 2025 announcement)" &mdash; vendor-confirmed.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"#1 in 2025-2026 Sapient Insights Mid-Market Voice of the Customer"</td><td class="py-3 pr-3 align-top">Sapient Insights 2025-2026 report (HiBob press)</td><td class="py-3 pr-3 align-top font-mono">Named public source</td><td class="py-3 align-top">Attribute as "(Sapient Insights, 2025-2026)." Verify on annual republish.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"HiBob serves 4,200+ companies globally"</td><td class="py-3 pr-3 align-top">HiBob 2026 HR trends post</td><td class="py-3 pr-3 align-top font-mono">Vendor-reported</td><td class="py-3 align-top">Frame as "HiBob reports 4,200+ companies globally" &mdash; vendor-reported qualifier required.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Series B SaaS doubles/triples headcount in 12 months"</td><td class="py-3 pr-3 align-top">Fundraise Insider + Growth List benchmarks</td><td class="py-3 pr-3 align-top font-mono">Named industry benchmark</td><td class="py-3 align-top">Frame as "Series B-funded SaaS typically scales headcount 2-3x in the year after closing."</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Wonderful $150M Series B at $2B valuation, 30+ markets"</td><td class="py-3 pr-3 align-top">PR Newswire + TechCrunch (March 12, 2026)</td><td class="py-3 pr-3 align-top font-mono">Named public source</td><td class="py-3 align-top">Use directly in Wonderful PVP.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"98% of CHROs unhappy with how performance management works"</td><td class="py-3 pr-3 align-top">SHRM 2026 / HR Executive 2026</td><td class="py-3 pr-3 align-top font-mono">Named research</td><td class="py-3 align-top">Cite as "(SHRM 2026)" if used. Verify on annual republish.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Q1 2026: 45,000+ tech layoffs"</td><td class="py-3 pr-3 align-top">Network World, "Tech layoffs surpass 45,000 in early 2026"</td><td class="py-3 pr-3 align-top font-mono">Named public source</td><td class="py-3 align-top">Use directly with attribution. Layoff plays only.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">EOR pricing benchmarks (Deel, G-P, Remote)</td><td class="py-3 pr-3 align-top">Pin / eorHQ / Deel blog</td><td class="py-3 pr-3 align-top font-mono">Named public benchmarks</td><td class="py-3 align-top">Verify currency before each Multi-Country Sprawl PVP send.</td></tr>
+                                <tr class="border-b border-brand-border/30"><td class="py-3 pr-3 align-top text-brand-text">"Implementation runs in parallel with the existing system"</td><td class="py-3 pr-3 align-top">Industry pattern; not HiBob-specific</td><td class="py-3 pr-3 align-top font-mono">Hypothesis &mdash; softened</td><td class="py-3 align-top">Keep current "typically runs in parallel" softening.</td></tr>
+                                <tr><td class="py-3 pr-3 align-top text-brand-text">"4-6 month parallel run for Workday migration" (Play 3 objection)</td><td class="py-3 pr-3 align-top">Hypothesis &mdash; not HiBob-confirmed</td><td class="py-3 pr-3 align-top font-mono">Hypothesis</td><td class="py-3 align-top"><strong class="text-brand-text">Pre-send check.</strong> Pull HiBob's actual median migration time from CS before any TCO PVP goes out.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="reveal mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-brand-muted">
+                        <div class="bg-brand-surface panel p-5">
+                            <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">Bob Finance proof points still thin</p>
+                            <p class="leading-relaxed">Plays 4 and 8 reference Bob Finance (5 months old at time of writing). Don't lead a CFO sequence with Bob Finance unless prospect signal stack is already strong (new CFO + PE-backed + active SaaS audit).</p>
+                        </div>
+                        <div class="bg-brand-surface panel p-5">
+                            <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">Vendor-reported claims qualified</p>
+                            <p class="leading-relaxed">"4,200+ companies" and "#1 Sapient Insights" require attribution language in cold copy. The Sapient ranking is annual &mdash; verify it hasn't been superseded before each send.</p>
+                        </div>
+                        <div class="bg-brand-surface panel p-5">
+                            <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">No bare TCO numbers</p>
+                            <p class="leading-relaxed">The $400K&ndash;$700K Workday all-in figure stays as a per-prospect estimate built from Outsail components &mdash; not a flat headline number in the email body.</p>
+                        </div>
+                        <div class="bg-brand-surface panel p-5">
+                            <p class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-2">Workday migration timeline requires CS validation</p>
+                            <p class="leading-relaxed">Play 3 objection-handling references "4-6 month parallel run." Pull HiBob's actual median from CS before TCO PVPs ship to CFO desks.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- COMPETITIVE -->
+        <section id="competitive" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-12">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">HiBob-specific market read</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Where HiBob wins, where it loses, where the gaps are.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger mb-8">
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">Where HiBob wins</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>&rarr; 100&ndash;1,000 emp SaaS with 3+ country footprint &mdash; HiBob's distributed-first wedge (Israeli/UK/NYC/Lisbon DNA) lands sharper than US-domestic-first competitors</li>
+                            <li>&rarr; First-time Heads of People in their 90-day audit window &mdash; clean evaluation, CEO mandate, no incumbent capture</li>
+                            <li>&rarr; Post-Series-B/C funded SaaS with stated 2&ndash;3x headcount projections &mdash; the audit happens by month 6 either way</li>
+                            <li>&rarr; PE-backed mid-market on Workday at sub-enterprise scale &mdash; license + integrations + admin team is visibly broken at 200&ndash;1,000 emp</li>
+                            <li>&rarr; M&amp;A acquirers in the 6&ndash;12 month integration window when both sides run different HRIS &mdash; consolidation is forced</li>
                         </ul>
                     </div>
-                </article>
-
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-secondary uppercase mb-3">Where HiBob loses</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>&rarr; Sub-100 emp companies still on Gusto-only &mdash; HRIS pain hasn't compounded yet, no budget</li>
+                            <li>&rarr; Just-renewed Workday accounts (signed &lt;12 months ago) &mdash; political cost too high; queue for next renewal cycle (24 months out)</li>
+                            <li>&rarr; Companies already deeply on Rippling &mdash; IT/finance integration depth is a true differentiator HiBob can't match</li>
+                            <li>&rarr; True enterprise (1,000+ emp, multi-entity, public) &mdash; Workday's actual ICP, where compliance scope and global payroll depth matter more than mid-market ergonomics</li>
+                            <li>&rarr; Companies whose Head of People treats HRIS as a settled decision &mdash; the entire playbook is timing-dependent on the audit being open</li>
+                        </ul>
+                    </div>
+                    <div class="reveal bg-brand-surface panel p-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-3">Gaps HiBob can own</p>
+                        <ul class="text-brand-muted text-sm space-y-3 leading-relaxed">
+                            <li>&rarr; Cat A peer-benchmark productization &mdash; 4,200+ customers' worth of mid-market HR aggregates (multi-country payroll cost, comp cycle completion, eNPS norms by stage) sit unpackaged. Once they ship, Plays 5, 9, 10 cross from Cat B to Cat A primary</li>
+                            <li>&rarr; Multi-country stack-map artifact (Play 5) &mdash; Wonderful executed; productize the template across countries / EOR-vs-entity bands</li>
+                            <li>&rarr; Workday TCO-at-headcount benchmark (Play 2) &mdash; Outsail data plus HiBob CS migration timelines, packaged as a self-serve calculator the CFO can run before the call</li>
+                            <li>&rarr; Bob Finance evangelism in CFO sequences (Play 4) &mdash; needs 2&ndash;3 named customer wins to graduate from "lean signal" to leading anchor</li>
+                            <li>&rarr; First-in-function detection (Plays 1, 9, 10) &mdash; LinkedIn position-change firehose is the bottleneck. Productize a "first HoP / first comp / first DEE" enrichment that beats the manual verification step</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -357,18 +862,18 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="bg-brand-surface-alt panel p-6">
                                 <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
-                                <p class="font-display font-bold text-base mb-3 text-brand-text">Hard data over soft signals.</p>
-                                <p class="text-brand-muted text-sm leading-relaxed">LinkedIn position-change firehoses. Crunchbase funding rounds. TheirStack job postings by country and title. Specific people in specific roles at specific companies on specific dates. No "intent surge" or "buying signals."</p>
+                                <p class="font-display font-bold text-base mb-3 text-brand-text">Public substrate first.</p>
+                                <p class="text-brand-muted text-sm leading-relaxed">Funding rounds, position-change firehoses, country-job-posting counts, 8-K filings, layoffs &mdash; anchored on facts prospects can pull themselves. No "intent surge" as the lead.</p>
                             </div>
                             <div class="bg-brand-surface-alt panel p-6">
                                 <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
-                                <p class="font-display font-bold text-base mb-3 text-brand-text">Time-boxed buying windows.</p>
-                                <p class="text-brand-muted text-sm leading-relaxed">First Head of People hire: first 90 days. Multi-country expansion: 60&ndash;90 days post-launch. Workday TCO scrutiny: 90-day CFO audit window or pre-renewal cycle. Inside those windows, the alternative is the buyer doing the audit themselves with worse data.</p>
+                                <p class="font-display font-bold text-base mb-3 text-brand-text">Mirror the failure moment, don't pitch.</p>
+                                <p class="text-brand-muted text-sm leading-relaxed">Name the broken stack first &mdash; Gusto + Lattice + spreadsheets at 200 employees, Workday at 500, payroll across 7 countries. Product lands as the logical response after they agree the situation is real.</p>
                             </div>
                             <div class="bg-brand-surface-alt panel p-6">
                                 <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
-                                <p class="font-display font-bold text-base mb-3 text-brand-text">Verifiable in 5 minutes.</p>
-                                <p class="text-brand-muted text-sm leading-relaxed">Every claim ties to a public LinkedIn profile, Crunchbase round, job posting, or press release. The prospect can pull the same data and verify the framing themselves before they reply.</p>
+                                <p class="font-display font-bold text-base mb-3 text-brand-text">Verifiable in minutes.</p>
+                                <p class="text-brand-muted text-sm leading-relaxed">Crunchbase, LinkedIn, TheirStack, SEC EDGAR, and press links back every claim. Vendor stats (Sapient Insights, Vendr, Outsail) need a freshness check and disclosure language before send.</p>
                             </div>
                         </div>
                     </div>
@@ -387,49 +892,24 @@
                 </div>
                 <ul class="reveal space-y-5 list-x">
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Companies under 80 employees — too early for HRIS pain to compound, still on Gusto-only, no budget. Queue for nurture, not primary outbound</span>
+                        <span class="redacted-item" tabindex="0" role="button">Plays 5, 9, and 10 each have a Cat A upgrade path if HiBob plumbs aggregated benchmark data (multi-country payroll cost, comp cycle completion, eNPS norms). Today they ship as Cat B "we mapped your stack" — the sharper "your peers run X, you're at Y" version isn't built yet</span>
                     </li>
                     <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Heads of People who are internal promotions — they likely inherited and accepted the existing stack. "First in role" check is the qualifier</span>
+                        <span class="redacted-item" tabindex="0" role="button">Plays 4 and 8 (Bob Finance) lean on a 5-month-old product line — proof points are thin until 2–3 named customer wins emerge. Don't lead a CFO sequence with Bob Finance unless the prospect is signaled (new CFO + PE-backed + active SaaS audit)</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Plays 1 and 9 depend on a "first in this role at this company" check — the LinkedIn manual verification step is the bottleneck for full automation</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">All three deep plays implicitly position against Workday's 6–12 month implementation. HiBob's actual median implementation timeline at 500 employees is needed to make a sharp counter-claim — pull from CS before sending at scale</span>
+                    </li>
+                    <li class="flex text-brand-muted text-sm leading-relaxed">
+                        <span class="redacted-item" tabindex="0" role="button">Companies under 80 employees — too early for HRIS pain to compound, still on Gusto-only, no budget. Queue for nurture, not primary outbound</span>
                     </li>
                     <li class="flex text-brand-muted text-sm leading-relaxed">
                         <span class="redacted-item" tabindex="0" role="button">Just-renewed Workday accounts (signed &lt;12 months ago) — political cost too high; offer the TCO analysis as input for the next renewal cycle (24 months out)</span>
                     </li>
-                    <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Companies over 1,500 employees — Workday is the right answer at scale; HiBob's wedge is sub-enterprise mid-market</span>
-                    </li>
-                    <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Single-country US-only companies with US-distributed teams — Play 2 is multi-country specifically; remote-friendly US-only is a different motion</span>
-                    </li>
-                    <li class="flex text-brand-muted text-sm leading-relaxed">
-                        <span class="redacted-item" tabindex="0" role="button">Existing HiBob, Personio, or Deel HR customers — incumbent installed; different conversation entirely</span>
-                    </li>
                 </ul>
-            </div>
-        </section>
-
-        <div class="divider max-w-6xl mx-auto"></div>
-
-        <!-- SOCIAL PROOF -->
-        <section class="py-16 sm:py-20 px-6">
-            <div class="max-w-5xl mx-auto">
-                <div class="reveal">
-                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-10 text-center">What Reps Said When They Saw This Format</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
-                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
-                        <p class="text-brand-text text-base leading-relaxed mb-4">"I would absolutely send that to a customer."</p>
-                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Samsara</p>
-                    </blockquote>
-                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
-                        <p class="text-brand-text text-base leading-relaxed mb-4">"All of that is insanely actionable. Can you run it for another company?"</p>
-                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Trane</p>
-                    </blockquote>
-                    <blockquote class="reveal bg-brand-surface panel p-6 dossier-card">
-                        <p class="text-brand-text text-base leading-relaxed mb-4">"Damn dude this is amazing. We need this a lot in my industry."</p>
-                        <p class="font-mono text-brand-muted text-[10px] uppercase tracking-wider">Enterprise Rep // Truckstop</p>
-                    </blockquote>
-                </div>
             </div>
         </section>
 
@@ -441,7 +921,7 @@
                 <div class="reveal mb-12">
                     <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Data Sources</p>
                     <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">The full source stack.</h2>
-                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Every signal in this playbook traces to one of these. Most are public free tiers; the position-change firehoses (UserGems / Champify / CommonRoom) and TheirStack jobs API are paid layers.</p>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Mapped by play in the menu above. Most links are public and free; the position-change firehoses (UserGems / Champify / CommonRoom) and TheirStack jobs API are paid layers.</p>
                 </div>
                 <div class="reveal bg-brand-surface panel p-6 sm:p-8">
                     <div class="overflow-x-auto">
@@ -455,18 +935,18 @@
                             </thead>
                             <tbody class="text-brand-muted">
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">UserGems / Champify / CommonRoom</td>
-                                    <td class="py-4 pr-4 align-top">LinkedIn position-change firehose — new Heads of People, new CFOs, days in role</td>
-                                    <td class="py-4 align-top">usergems.com, champify.io, commonroom.io</td>
-                                </tr>
-                                <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">Crunchbase</td>
-                                    <td class="py-4 pr-4 align-top">Funding rounds, employee count, sector, investor list, M&amp;A close</td>
+                                    <td class="py-4 pr-4 align-top">Funding rounds, employee count, investor list, M&amp;A close</td>
                                     <td class="py-4 align-top"><a href="https://www.crunchbase.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">crunchbase.com</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">UserGems / Champify / CommonRoom</td>
+                                    <td class="py-4 pr-4 align-top">LinkedIn position-change firehose (new HoP, new CFO, days in role)</td>
+                                    <td class="py-4 align-top">usergems.com, champify.io, commonroom.io</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">TheirStack</td>
-                                    <td class="py-4 pr-4 align-top">Job postings — multi-country count, Workday admin titles, comp manager hires</td>
+                                    <td class="py-4 pr-4 align-top">Job postings — multi-country count, Workday admin roles, comp manager titles</td>
                                     <td class="py-4 align-top"><a href="https://theirstack.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">theirstack.com</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
@@ -480,29 +960,39 @@
                                     <td class="py-4 align-top"><a href="https://layoffs.fyi/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">layoffs.fyi</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">State DOL WARN portals</td>
+                                    <td class="py-4 pr-4 align-top">State-level layoff notices (50 separate sources, free)</td>
+                                    <td class="py-4 align-top">e.g. <a href="https://edd.ca.gov/en/jobs_and_training/Layoff_Services_WARN/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">CA EDD</a>, NY DOL, TX TWC</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">LinkedIn Sales Nav</td>
                                     <td class="py-4 pr-4 align-top">Employee count by country, persona search, current title, start date</td>
                                     <td class="py-4 align-top">linkedin.com/sales</td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">BuiltWith</td>
-                                    <td class="py-4 pr-4 align-top">HRIS detection — Workday, Rippling, BambooHR, Gusto from public web signals</td>
-                                    <td class="py-4 align-top"><a href="https://builtwith.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">builtwith.com</a></td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">BuiltWith / G2</td>
+                                    <td class="py-4 pr-4 align-top">HRIS detection (Workday, Rippling, BambooHR, Gusto) from public web</td>
+                                    <td class="py-4 align-top"><a href="https://builtwith.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">builtwith.com</a>, <a href="https://www.g2.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">g2.com</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Outsail / Vendr</td>
-                                    <td class="py-4 pr-4 align-top">Per-employee HRIS pricing benchmarks (mid-market) — Workday, HiBob, Rippling</td>
-                                    <td class="py-4 align-top"><a href="https://www.outsail.co/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">outsail.co</a>, <a href="https://www.vendr.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">vendr.com</a></td>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Apollo</td>
+                                    <td class="py-4 pr-4 align-top">Company enrichment, persona email find</td>
+                                    <td class="py-4 align-top"><a href="https://www.apollo.io/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">apollo.io</a></td>
                                 </tr>
                                 <tr class="border-b border-brand-border/30">
-                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Pin / eorHQ / Deel blog</td>
-                                    <td class="py-4 pr-4 align-top">EOR pricing benchmarks (Deel, G-P, Remote) and EOR-vs-entity crossover math</td>
-                                    <td class="py-4 align-top"><a href="https://www.pin.com/blog/deel-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">pin.com</a>, <a href="https://eorhq.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">eorhq.com</a></td>
-                                </tr>
-                                <tr>
                                     <td class="py-4 pr-4 align-top text-brand-text font-medium">PR Newswire / BusinessWire</td>
                                     <td class="py-4 pr-4 align-top">Country expansion announcements, funding press</td>
                                     <td class="py-4 align-top">prnewswire.com, businesswire.com</td>
+                                </tr>
+                                <tr class="border-b border-brand-border/30">
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Outsail / Vendr</td>
+                                    <td class="py-4 pr-4 align-top">Per-employee HRIS pricing benchmarks (mid-market)</td>
+                                    <td class="py-4 align-top"><a href="https://www.outsail.co/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">outsail.co</a>, <a href="https://www.vendr.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">vendr.com</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top text-brand-text font-medium">Pin / eorHQ / Deel blog</td>
+                                    <td class="py-4 pr-4 align-top">EOR pricing benchmarks (Deel, G-P, Remote) and EOR-vs-entity crossover math</td>
+                                    <td class="py-4 align-top"><a href="https://www.pin.com/blog/deel-pricing/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">pin.com</a>, <a href="https://eorhq.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">eorhq.com</a>, <a href="https://www.deel.com/blog/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">deel.com/blog</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -521,7 +1011,7 @@
                     <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">This is a working sample.</h2>
                     <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">The actual service is building plays like these for your TAM and running them.</p>
                     <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">Want me to build one for your company?</p>
-                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get in touch →</a>
+                    <a href="../../index.html#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get in touch →</a>
                 </div>
             </div>
         </section>
@@ -532,7 +1022,8 @@
                 <div class="reveal">
                     <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
                     <ul class="space-y-2 font-mono text-xs text-brand-faint">
-                        <li>2026-05-03 — Playbook published. 3 plays, 1 executed PVP (Wonderful multi-country stack map), 10 data sources.</li>
+                        <li>2026-05-08 — Tier-1 parity uplift + consolidation. The earlier 3-play edition (formerly at /playbooks/hibob-com/) was retired; the 10-play menu now lives at the canonical hibob-com URL. Added Signal Stacks (3 pain-point clusters), Methodology accordion (per-play composite scoring, 10 plays), Claim Sources (full table + treatment notes), Competitive Landscape (where HiBob wins / loses / can own gaps). Activation Summary now footers a composite-scoring legend that links to the rubric.</li>
+                        <li>2026-05-03 — Initial publish. Ten-play menu with collapsible openers, three deep dives (Multi-Country Sprawl override trio: Wonderful stack map executed, First HRIS Moment + Workday Displacement spec'd). Wonderful PVP attached under Play 5.</li>
                     </ul>
                 </div>
             </div>
@@ -549,11 +1040,11 @@
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="../index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="../../blog/index.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <a href="../../privacy.html" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
                 <span class="hidden sm:inline text-brand-faint">·</span>
                 <span class="text-sm text-brand-faint">NYC / LA</span>
             </div>
