@@ -6,8 +6,10 @@
 - Stack: HTML + Tailwind CSS v4 (built via `@tailwindcss/cli`) + vanilla JS.
 - Live at runthresh.com, deployed via Vercel from `main` branch.
 - **Build commands:**
-  - `npm run build` — generates `output.css` (run after any Tailwind class changes in `index.html`)
-  - `npm run dev` — watch mode, rebuilds on file changes
+  - `npm run build` — runs `build:css` (Tailwind) then `build:playbooks` (regenerates all playbook indexes from `_content/`)
+  - `npm run build:css` — Tailwind only
+  - `npm run build:playbooks` — playbook indexes + listing only (no Tailwind step). Add a slug to build one: `node playbooks/_build/build.js truckstop-com`
+  - `npm run dev` — Tailwind watch mode
 - **CSS architecture:**
   - `src/input.css` — Tailwind import, `@theme` config (colors, fonts, radius), and all custom CSS
   - `output.css` — generated file, committed for local preview. Vercel rebuilds on deploy.
@@ -55,6 +57,18 @@
 - Test changes by opening `index.html` directly in browser (no server needed).
 - Keep the page fast — no additional JS libraries or frameworks without asking.
 - Before building or revising any playbook, scan `playbooks/feedback-log.md` (claim ledger) and `playbooks/_CONVENTIONS.md` for relevant rules.
+
+### Playbook authoring (`/playbooks/{slug}/`)
+- **Source of truth:** `playbooks/_content/{slug}.html` (frontmatter + body). Never edit `playbooks/{slug}/index.html` directly — it's auto-generated and overwritten on every build.
+- **Shared boilerplate:** `playbooks/_partials/shell-top.html` (head + nav), `shell-bottom.html` (footer + scripts), `listing-card.html` (the listing-page card). Editing a partial updates all 7+ playbooks consistently — this is how we prevent drift.
+- **Build script:** `playbooks/_build/build.js` — composes partials + content, regenerates per-playbook `index.html` AND the cards block in `playbooks/index.html` (between `<!-- LIVE_PLAYBOOKS_START -->` and `<!-- LIVE_PLAYBOOKS_END -->` markers).
+- **Adding a new playbook:**
+  1. Create `playbooks/_content/{slug}.html` with frontmatter (TITLE, DESCRIPTION, OG_*, TWITTER_*, ARTICLE_*, LISTING_STATUS=live, LISTING_ORDER, LISTING_TAG, LISTING_TITLE, LISTING_DESCRIPTION, LISTING_FOOTNOTE) and the body (everything that goes inside `<main>`).
+  2. Run `npm run build:playbooks` (or `node playbooks/_build/build.js {slug}` to build only that one).
+  3. Add the playbook URL to `sitemap.xml`.
+  4. Any per-playbook artifact pages (PVPs, scorecards, benchmarks) live next to the index in `playbooks/{slug}/{artifact-name}.html` — those are hand-written; the build script does NOT manage artifact pages.
+- **Listing page:** Mostly hand-editable; only the cards block between markers is auto-regenerated. The "In The Queue" section, hero, and CTA stay manual.
+- **Drift uplift:** If a partial is updated (e.g., a new meta tag), running `npm run build:playbooks` propagates the change across all 7+ playbooks immediately. No manual repair across files.
 
 ## 6. SEO
 - Meta description, Open Graph, and Twitter card tags are in `<head>`.

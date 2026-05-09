@@ -1,101 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ambrook Playbook — Operational Trigger Intelligence | Thresh</title>
-    <meta name="description" content="Ten signal-based plays for Ambrook (accounting + embedded banking for US ag and construction): NRCS conservation contracts, new ag LLC formations, multi-contract operators, PE-acquired contractors, ESOP filings — drawn from EWG, USDA, SAM.gov, SEC EDGAR, and DOL EFAST2 public data.">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#080808">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
-    <link rel="canonical" href="https://runthresh.com/playbooks/ambrook-com/">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="The Ambrook Playbook — Operational Trigger Intelligence">
-    <meta property="og:description" content="Ten public-data plays for Ambrook: conservation-contract operators, new ag LLCs, PE-acquired contractors, ESOP filers, and more — with three deep dives, recipient role-play diagnostics, and a downloadable EQIP practice-code one-pager.">
-    <meta property="og:url" content="https://runthresh.com/playbooks/ambrook-com/">
-    <meta property="og:image" content="https://runthresh.com/og-image.png">
-    <meta property="og:site_name" content="Thresh">
-    <meta property="article:published_time" content="2026-05-06T12:00:00Z">
-    <meta property="article:modified_time" content="2026-05-06T12:00:00Z">
-    <meta property="article:author" content="Lucas Linares">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Ambrook Playbook — Operational Trigger Intelligence">
-    <meta name="twitter:description" content="Ten public-data plays for Ambrook. Top three: active conservation-contract operators, new ag LLCs, multi-contract operators — with role-play diagnostics and an EQIP practice-code one-pager.">
-    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Ambrook Playbook — Operational Trigger Intelligence",
-      "description": "Ten operational-trigger plays for Ambrook, with three deep dives, recipient role-play diagnostics, and an EQIP practice-code one-pager.",
-      "datePublished": "2026-05-06T12:00:00Z",
-      "dateModified": "2026-05-06T12:00:00Z",
-      "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
-      "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
-      "mainEntityOfPage": "https://runthresh.com/playbooks/ambrook-com/",
-      "image": "https://runthresh.com/og-image.png"
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
-    <style>
-        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
-        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
-        .nav-toggle:hover{color:#00FF41}
-        .nav-toggle svg{display:block}
-        @media(max-width:767px){
-            .nav-shell{flex-wrap:wrap}
-            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
-            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
-            .nav-menu a{display:block;padding:.5rem 0}
-            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
-            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
-            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
-            .nav-close{display:none}
-        }
-        @media(min-width:768px){
-            .nav-toggle{display:none}
-            .nav-menu{display:flex;align-items:center;gap:1.5rem}
-        }
-    </style>
-    <link rel="stylesheet" href="../../output.css">
-</head>
-
-<body class="bg-brand-bg text-brand-text font-body antialiased">
-
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
-
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
-        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
-            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
-            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
-                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </label>
-            <div class="nav-menu md:flex items-center gap-6">
-                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
-                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <a href="/#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="main-content" class="relative z-10">
-
+---
+TITLE: The Ambrook Playbook — Operational Trigger Intelligence | Thresh
+DESCRIPTION: Ten signal-based plays for Ambrook (accounting + embedded banking for US ag and construction): NRCS conservation contracts, new ag LLC formations, multi-contract operators, PE-acquired contractors, ESOP filings — drawn from EWG, USDA, SAM.gov, SEC EDGAR, and DOL EFAST2 public data.
+OG_TITLE: The Ambrook Playbook — Operational Trigger Intelligence
+OG_DESCRIPTION: Ten public-data plays for Ambrook: conservation-contract operators, new ag LLCs, PE-acquired contractors, ESOP filers, and more — with three deep dives, recipient role-play diagnostics, and a downloadable EQIP practice-code one-pager.
+TWITTER_TITLE: The Ambrook Playbook — Operational Trigger Intelligence
+TWITTER_DESCRIPTION: Ten public-data plays for Ambrook. Top three: active conservation-contract operators, new ag LLCs, multi-contract operators — with role-play diagnostics and an EQIP practice-code one-pager.
+ARTICLE_HEADLINE: The Ambrook Playbook — Operational Trigger Intelligence
+ARTICLE_DESCRIPTION: Ten operational-trigger plays for Ambrook, with three deep dives, recipient role-play diagnostics, and an EQIP practice-code one-pager.
+ARTICLE_PUBLISHED: 2026-05-06T12:00:00Z
+ARTICLE_MODIFIED: 2026-05-06T12:00:00Z
+LISTING_STATUS: live
+LISTING_ORDER: 5
+LISTING_TAG: Ag &amp; Construction Accounting · Embedded Banking
+LISTING_TITLE: The Ambrook Playbook
+LISTING_DESCRIPTION: For Ambrook to reach active NRCS conservation-contract operators before the Jan 15 batching deadline, newly-formed ag and construction LLCs in their first 90 days, multi-contract operators where the spreadsheet workaround collapses, PE-acquired specialty contractors, and first-time ESOP filers. Ten plays, three deep dives, plus full recipient role-play transcripts.
+LISTING_FOOTNOTE: Includes the EQIP practice-code one-pager + Mike / Sarah / Carlos pre-send role-play transcripts · 13 data sources
+---
 <!-- HERO -->
         <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
             <div class="max-w-4xl mx-auto text-center">
@@ -1348,83 +1268,3 @@ Is multi-contract reporting on you or a CPA?</div>
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex flex-col sm:flex-row items-center gap-4">
-                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
-                <span class="hidden sm:inline text-brand-faint">·</span>
-                <span class="text-sm text-brand-faint">NYC / LA</span>
-            </div>
-            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
-
-        const heroSection = document.querySelector('main > section:first-child');
-        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
-            setTimeout(() => { el.classList.add('active'); }, i * 150);
-        });
-        document.querySelectorAll('.reveal').forEach(el => {
-            if (!heroSection.contains(el)) { observer.observe(el); }
-        });
-
-        const nav = document.querySelector('nav');
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
-                    else { nav.classList.remove('scrolled'); }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    </script>
-
-    <script>
-        (function () {
-            var config = window.THRESH_RUNTIME || {};
-            var host = window.location.hostname;
-            var env = (config.vercelEnv || '').toLowerCase();
-            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
-            var isProduction = env ? env === 'production' : isProductionHost;
-
-            if (!isProduction) return;
-
-            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-
-            var analytics = document.createElement('script');
-            analytics.defer = true;
-            analytics.src = '/_vercel/insights/script.js';
-            document.body.appendChild(analytics);
-
-            var speedInsights = document.createElement('script');
-            speedInsights.defer = true;
-            speedInsights.src = '/_vercel/speed-insights/script.js';
-            document.body.appendChild(speedInsights);
-        })();
-    </script>
-</body>
-</html>

@@ -1,0 +1,80 @@
+    </main>
+
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+
+        const heroSection = document.querySelector('main > section:first-child');
+        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => { el.classList.add('active'); }, i * 150);
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (!heroSection.contains(el)) { observer.observe(el); }
+        });
+
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+                    else { nav.classList.remove('scrolled'); }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
+</body>
+</html>

@@ -2,7 +2,9 @@
   "name": "thresh",
   "private": true,
   "scripts": {
-    "build": "npx @tailwindcss/cli -i src/input.css -o output.css --minify",
+    "build:css": "npx @tailwindcss/cli -i src/input.css -o output.css --minify",
+    "build:playbooks": "node playbooks/_build/build.js",
+    "build": "npm run build:css && npm run build:playbooks",
     "dev": "npx @tailwindcss/cli -i src/input.css -o output.css --watch"
   },
   "devDependencies": {

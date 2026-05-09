@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Truckstop Playbook — Signal-First Outbound | Thresh</title>
+    <meta name="description" content="A Signal-First Outbound playbook built for Truckstop. Three plays for reaching freshly-authorized brokerages on day 1 of FMCSA authority, owner-operator carriers in their first 90 days, and shipper / 3PL compliance leads named in cargo theft events.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
+    <link rel="canonical" href="https://runthresh.com/playbooks/truckstop-com/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Truckstop Playbook — Signal-First Outbound">
+    <meta property="og:description" content="Three plays for the moments when freshly-authorized brokerages, new carriers, and post-incident shipper compliance leads are most receptive. Anchored on FMCSA L&I daily deltas and named-victim cargo theft events.">
+    <meta property="og:url" content="https://runthresh.com/playbooks/truckstop-com/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
+    <meta property="og:site_name" content="Thresh">
+    <meta property="article:published_time" content="2026-05-09T12:00:00Z">
+    <meta property="article:modified_time" content="2026-05-09T12:00:00Z">
+    <meta property="article:author" content="Lucas Linares">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Truckstop Playbook — Signal-First Outbound">
+    <meta name="twitter:description" content="Three plays anchored on FMCSA L&I daily deltas and named-victim cargo theft events. Includes the Foot Locker Post-Theft Vetting Audit.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Truckstop Playbook — Signal-First Outbound",
+      "description": "Three plays for reaching freshly-authorized brokerages, new carriers, and shipper compliance leads named in cargo theft events.",
+      "datePublished": "2026-05-09T12:00:00Z",
+      "dateModified": "2026-05-09T12:00:00Z",
+      "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
+      "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
+      "mainEntityOfPage": "https://runthresh.com/playbooks/truckstop-com/",
+      "image": "https://runthresh.com/og-image.png"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+    <style>
+        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
+            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
+            .nav-close{display:none}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
+    </style>
+    <link rel="stylesheet" href="../../output.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
+                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </label>
+            <div class="nav-menu md:flex items-center gap-6">
+                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="/#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="relative z-10">
+
+<!-- HERO -->
+        <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal mb-6">
+                    <a href="/" class="inline-flex items-center gap-3 border border-brand-border/50 hover:border-brand-accent transition-all px-4 py-2">
+                        <span class="font-mono text-[11px] tracking-[0.15em] text-brand-muted uppercase">// Working sample.</span>
+                        <span class="font-mono text-[11px] tracking-[0.15em] text-brand-accent uppercase">See the full offer →</span>
+                    </a>
+                </div>
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">The Truckstop Playbook</p>
+                </div>
+                <h1 class="reveal font-display font-[900] section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
+                    A Signal-First Outbound playbook<br class="hidden sm:block">
+                    built for <span class="headline-accent">Truckstop.</span>
+                </h1>
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    Three plays for Truckstop&rsquo;s sharpest buyers &mdash; freshly-authorized brokerages in their 30-day stack-decision window, owner-operator carriers between week-one load board and week-five factoring crisis, and shipper / 3PL compliance leads named in publicly-reported cargo theft events.
+                </p>
+                <div class="reveal flex justify-center">
+                    <a href="/#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                </div>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 9, 2026</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THE SHIFT -->
+        <section class="py-16 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Most fraud / RMIS vendors send the same email. Truckstop has a better hand.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
+                        Highway, Carrier Assure, Descartes MyCarrierPortal, RPost MC411 all sound the same &mdash; generic claims about fraud reduction and carrier monitoring. Almost no vendor in this category runs FMCSA Licensing &amp; Insurance daily deltas as outbound triggers, and almost none ties named-victim cargo theft events to the procurement-side review window. Truckstop bundles RMIS + Risk Factors Advanced + Verified Carrier + Denim factoring under one negotiated relationship &mdash; the only stack on the market that does. Lead with that situation.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic RMIS / fraud rep sends today.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // GENERIC</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Hi [First Name],</p>
+                                <br>
+                                <p>I&rsquo;m reaching out because we work with shippers and 3PLs to reduce cargo theft and improve carrier vetting. Our platform helps you catch fraud before it happens and protect your supply chain.</p>
+                                <br>
+                                <p>I&rsquo;d love to share how we&rsquo;ve helped companies like yours. Do you have 15 minutes this week?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">What Truckstop sends with the data.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // SIGNAL-MATCHED</span>
+                            </div>
+                            <div class="email-body">
+                                <p>FOX 11&rsquo;s coverage of last week&rsquo;s $4M Vernon recovery named Foot Locker among seven victims.</p>
+                                <br>
+                                <p>Across publicly-named retail theft events, the carrier-side failure usually narrows to three checks at tender &mdash; USDOT-validated identity, real-time CSA, and BMC-84 daily verification. Highway&rsquo;s Q1 2026 Index logs ~50% of incidents tied to MCs with legitimate authority and clean operating histories &mdash; the gap is known carriers whose status changed quietly.</p>
+                                <br>
+                                <p>Pulled together a 1-page audit framework on the three checks, mapped to Foot Locker&rsquo;s mid-modernization posture (Manhattan Active, the Haps ESC, the 2026 RFID rollout). Vendor-agnostic. Want me to send it before the audit-committee follow-up?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal mt-4">
+                    <p class="provenance-label text-brand-muted leading-relaxed">
+                        That second email is real. Sent May 9, 2026 to Foot Locker&rsquo;s Paul Cox (VP Global Transportation), John Matta (VP Logistics), and Elliott Rodgers (EVP &amp; COO) within seven days of the LA County Sheriff&rsquo;s Vernon raid. The audit framework, the Verisk + Highway + FBI IC3 synthesis, and the FMCSA-program-as-audit-rubric framing are the executed PVP &mdash; downloadable below.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ACTIVATION SUMMARY -->
+        <section id="activation" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Activation Summary</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Three plays, three distinct buyer moments.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">Two daily-refresh FMCSA event triggers (broker authority grant, carrier authority grant) plus one named-event news trigger. The brief intentionally caps the menu at three to cover all three personas (broker, carrier, shipper compliance) without diluting the framework. Seven additional plays exist in the full menu and activate as detection sources come online.</p>
+                </div>
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-6 sm:p-8">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">#</th>
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Persona</th>
+                                <th class="py-3 pr-4">Motion</th>
+                                <th class="py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">1</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The New Broker MC Bundle</td>
+                                <td class="py-4 pr-4 align-top">President / COO at a brokerage 0&ndash;30 days post-FMCSA authority grant</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">2</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The New Carrier MC Bundle</td>
+                                <td class="py-4 pr-4 align-top">Owner-dispatcher of a 1&ndash;20 truck fleet 0&ndash;30 days post-authority grant</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">3</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The Post-Theft Vetting Audit</td>
+                                <td class="py-4 pr-4 align-top">Director / VP Carrier Compliance at a publicly-named theft victim (shipper or 3PL), within 7&ndash;14 days of the event</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal mt-6 text-brand-muted text-sm leading-relaxed max-w-3xl">
+                    <span class="font-mono text-brand-accent">Composite ranking:</span> Plays 1 and 2 share the same FMCSA L&amp;I daily-delta pipeline &mdash; one integration unlocks both. Play 3 ships per acute event with a named-victim shipper watchlist + news + NER pipeline. The Foot Locker PVP is the executed example.
+                </p>
+                <p class="reveal mt-4 font-mono text-[11px] text-brand-faint leading-relaxed">// Top 3 selected from a 10-play menu. Seven more plays cover broker authority suspension cascades, TIA cessation events, BMC-84 provider-replacement scrambles, RFP compliance language, and AI-Ops hires &mdash; activate as detection sources come online.</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PLAYS -->
+        <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Three Deep Plays</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three triggers. Three messages.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Each play targets a distinct buyer moment in trucking. Two are daily-refresh event triggers from the FMCSA Licensing &amp; Insurance feed where the alternative to acting in 30 days is locking in four separate vendor relationships. The third is a named-event acute window where the alternative to acting in 7&ndash;14 days is the existing vendor surviving a board-level audit.</p>
+                </div>
+
+                <!-- PLAY 1 -->
+                <article id="play-1" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The New Broker MC Bundle</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For Presidents / COOs of brokerages 0&ndash;30 days post-FMCSA authority grant. The new authority makes five separate stack decisions in week one &mdash; load board, RMIS, BMC-84, factoring, fraud monitoring &mdash; and most stitch four or five vendors at $3K&ndash;$6K/mo before realizing one platform runs all of them.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">FMCSA grants new broker authorities daily. The President / COO who just got the MC has 30 days before the stack decisions calcify &mdash; load board, RMIS, BMC-84 placement, factoring relationships, fraud monitoring. There&rsquo;s no procurement team yet, no incumbent to switch from, and the cost of stitching four-to-five vendors is $3K&ndash;$6K/mo plus four-to-five separate integration projects. Every brokerage in this lifecycle moment is making the same mistakes.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">Almost no software vendor runs FMCSA L&amp;I daily authority-grant deltas as an outbound trigger &mdash; the integration exists at Highway and Carrier Assure for paid feeds but very few vendors run it at scale and pair it to outbound. Truckstop is the only stack on the market that runs Load Board Premium + RMIS + Risk Factors + Denim factoring under one negotiated relationship &mdash; a structural fit for the day-one buyer who has zero switching cost and four-vs-one as the only real question.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">The Message</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: MC granted on {date} &mdash; five buying decisions in 30 days</span>
+                            </div>
+                            <div class="email-body">
+                                <p>FMCSA granted your broker authority on {date}.</p>
+                                <br>
+                                <p>The next 30 days are when you make five separate stack decisions &mdash; load board, RMIS, BMC-84 placement, factoring, fraud monitoring. We see new brokers stitch four or five vendors and run $3K&ndash;$6K/mo across the stack.</p>
+                                <br>
+                                <p>Truckstop runs all four under one negotiated relationship: Load Board Premium, RMIS, Risk Factors, and factoring through Denim.</p>
+                                <br>
+                                <p>Want me to send our new-authority bundle pricing? Or is someone else running procurement and I should route it to them?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; <a href="https://li-public.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA Licensing &amp; Insurance</a> &mdash; daily authority-grant delta (free; bulk + custom diff)</li>
+                            <li>&rarr; FMCSA SAFER Company Snapshot &mdash; per-DOT JSON lookup (free)</li>
+                            <li>&rarr; <a href="https://apollo.io/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Apollo</a> / <a href="https://www.peopledatalabs.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">PDL</a> &mdash; President / COO enrichment</li>
+                            <li>&rarr; State Secretary of State filings &mdash; LLC organizer record (often the President of a sub-25-headcount brokerage)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 2 -->
+                <article id="play-2" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The New Carrier MC Bundle</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For owner-dispatchers of 1&ndash;20-truck fleets 0&ndash;30 days post-authority grant. Spot rates have been flat since mid-2025 &mdash; one slow-pay broker can stop fuel and payroll for a quarter. Pre-book load-board access in week one and factoring before the first 60-day receivable lands in week 4&ndash;6.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">A newly-authorized motor carrier needs loads in week one and factoring by week 5&ndash;8 when the first 60-day broker payment turns into a 90-day payment. Spot rates have been flat since mid-2025 &mdash; there&rsquo;s no margin cushion to absorb a slow-pay event. Most owner-operators chase a load board in week one and don&rsquo;t think about factoring until cash gets tight, which is the worst time to make the decision.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">FMCSA grants tens of thousands of new carrier authorities annually. The owner is the dispatcher is sometimes the driver &mdash; one decision-maker, no committee. Truckstop is the only vendor with native Load Board Basic + Denim factoring under one login at signup, and the conversation is about pre-booking week-one + week-five tools so the second crisis isn&rsquo;t a procurement scramble. State + insurance class is the segmentation that keeps the volume focused.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">The Message</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: MC just hit. Load board day one, factoring by week five.</span>
+                            </div>
+                            <div class="email-body">
+                                <p>FMCSA granted your motor carrier authority on {date}.</p>
+                                <br>
+                                <p>Week one you need a load board. By week five or six you&rsquo;ll have a 60-day receivable that&rsquo;s about to become a 90-day receivable, and one slow-pay broker can stop fuel and payroll for the rest of the quarter.</p>
+                                <br>
+                                <p>Truckstop runs both under one login &mdash; Load Board Basic at $42/mo and factoring through Denim at industry-standard rates.</p>
+                                <br>
+                                <p>Want me to send the new-carrier setup details? Or are you already on another board and want a side-by-side?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; <a href="https://li-public.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA Licensing &amp; Insurance</a> &mdash; daily authority-grant delta + insurance-class fleet-size proxy</li>
+                            <li>&rarr; FMCSA Pre-Employment Screening Program &mdash; first inspection-clear filter for active fleets</li>
+                            <li>&rarr; <a href="https://datagma.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Datagma</a> / <a href="https://prospeo.io/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Prospeo</a> &mdash; owner-operator email + phone enrichment (blue-collar SMB profile)</li>
+                            <li>&rarr; State SoS organizer record &mdash; owner-name fallback when website is empty</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 3 -->
+                <article id="play-3" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Post-Theft Vetting Audit</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For Directors / VPs of Carrier Compliance at shippers / 3PLs named in publicly-reported cargo theft events over $100K, within 7&ndash;14 days of the event. The named entity has a board-level moment, an insurance-renewal conversation that just got harder, and a CFO asking what specifically failed in vetting.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">Verisk CargoNet logged $725M in U.S. / Canada cargo theft losses in 2025 &mdash; up 60% YoY, with average per-incident loss of $273,990. Highway&rsquo;s Q1 2026 Freight Fraud Index reports ~50% of theft incidents tied to MCs with legitimate authority and previously clean operating histories &mdash; meaning the gap is known carriers whose status changed quietly. When the named-victim coverage hits, procurement opens an internal RMIS / vendor review within weeks and the existing vendor is the implicit suspect.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">Most B2B vendors don&rsquo;t tie news monitoring to procurement-side outbound, so the named entity hears from Truckstop within days while their existing vendor is still drafting an incident response. The vetting failure that allowed entry usually maps to three concrete checks &mdash; USDOT-validated identity, real-time CSA, BMC-84 daily verification &mdash; and Truckstop&rsquo;s RMIS + Risk Factors Advanced + Verified Carrier bundle answers all three. The deliverable is the audit framework itself, vendor-agnostic, framed for the CFO question that&rsquo;s landing on the compliance lead&rsquo;s desk by Friday.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP &mdash; sent to Foot Locker, May 9, 2026 (within 7 days of the LA County Sheriff&rsquo;s Vernon raid)</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">SUBJECT: FOX 11&rsquo;s $4M Vernon recovery &mdash; three vetting checks</span>
+                            </div>
+                            <div class="email-body">
+                                <p>FOX 11 reported the LA County Sheriff&rsquo;s $4M Vernon recovery last week &mdash; Foot Locker named alongside six other shippers.</p>
+                                <br>
+                                <p>Across publicly-named retail theft events, the carrier-side failure usually narrows to three checks at tender &mdash; USDOT-validated identity, real-time CSA, and BMC-84 daily verification. Highway&rsquo;s Q1 2026 Index logs ~50% of incidents tied to MCs with legitimate authority and clean operating histories &mdash; meaning the gap is known carriers whose status changed quietly.</p>
+                                <br>
+                                <p>Pulled together a one-page audit framework on the three checks, mapped to Foot Locker&rsquo;s public posture: the Manhattan Active rollout, the Haps ESC, the 2026 RFID move. Vendor-agnostic. Designed to be the artifact your team carries into the audit-committee conversation, not a Truckstop pitch.</p>
+                                <br>
+                                <p>Want me to send it before the audit-committee follow-up? Or should this go to whoever&rsquo;s running the post-incident review?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifact: The full Post-Theft Vetting Audit</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">The complete one-page audit framework sent to Foot Locker on May 9, 2026 &mdash; the three-check rubric (USDOT identity / real-time CSA / BMC-84 currency), the Verisk + Highway + FBI IC3 synthesis, the Foot Locker-specific posture map, and three vendor-agnostic recommendations executable in 30 days. Truckstop is named zero times in the body. Verification ledger included.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="./footlocker-post-theft-vetting-audit.html" target="_blank" rel="noopener" class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">View the audit →</a>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; Google Alerts (RSS) + <a href="https://firecrawl.dev/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Firecrawl</a> + Claude NER &mdash; news monitoring on the keyword set <em>(&ldquo;cargo theft&rdquo; OR &ldquo;freight theft&rdquo; OR &ldquo;trailer stolen&rdquo;) AND ($, million, value, loss)</em></li>
+                            <li>&rarr; <a href="https://www.freightwaves.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FreightWaves</a> / <a href="https://www.joc.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">JOC</a> / <a href="https://www.ttnews.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Transport Topics</a> / <a href="https://www.ccjdigital.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">CCJ Digital</a> &mdash; trade outlets seeded into the watchlist</li>
+                            <li>&rarr; Local LE press releases (LA County Sheriff, CHP, Houston PD, etc.) &mdash; original-source theft event coverage</li>
+                            <li>&rarr; <a href="https://www.verisk.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Verisk CargoNet</a> &mdash; annual / quarterly theft trend reports</li>
+                            <li>&rarr; <a href="https://www.globenewswire.com/news-release/2026/05/05/3288141/0/en/Freight-Fraud-Hits-Record-High-in-Q1-2026-Half-of-All-Incidents-Tied-to-Carriers-With-Clean-Records.html" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Highway Q1 2026 Freight Fraud Index</a> &mdash; clean-MC-fraud benchmark</li>
+                            <li>&rarr; <a href="https://www.ic3.gov/PSA/2026/PSA260430" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FBI IC3 PSA April 30, 2026</a> &mdash; cyber-enabled cargo-theft warning</li>
+                            <li>&rarr; <a href="https://li-public.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA L&amp;I</a> + <a href="https://csa.fmcsa.dot.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FMCSA CSA / SaferWatch</a> &mdash; the three-check rubric&rsquo;s public source-of-truth</li>
+                            <li>&rarr; Curated shipper / 3PL watchlist &mdash; Sysco, UPS, FedEx, C.H. Robinson, J.B. Hunt, GXO, Ryder, Schneider, XPO, Knight-Swift, Werner, Coyote, Loadsmart, Walmart, P&amp;G, Anheuser-Busch, ADM, plus Foot Locker, Epson, Deepcool, Renkus-Heinz, Medicube, Ulta Beauty, ALP Drifter (added after Vernon)</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="py-24 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Want Yours?</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">
+                        Tell me your market<br class="hidden sm:block">
+                        and I&rsquo;ll build you one.
+                    </h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">
+                        I&rsquo;ll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.
+                    </p>
+                    <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">
+                        First 10 prospects are free.
+                    </p>
+                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
+                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                        Show me the signal &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANGELOG -->
+        <section class="py-12 px-6 border-t border-brand-border/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
+                    <ul class="space-y-2 font-mono text-xs text-brand-faint">
+                        <li>2026-05-09 &mdash; Playbook published. 3 plays (New Broker MC Bundle, New Carrier MC Bundle, Post-Theft Vetting Audit), 1 executed PVP (Foot Locker Post-Theft Vetting Audit, sent to Paul Cox / John Matta / Elliott Rodgers within 7 days of the LA County Sheriff&rsquo;s $4M Vernon recovery). 13 data sources. Top 3 selected from a 10-play menu; full menu and operator checklist available on request.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+
+        const heroSection = document.querySelector('main > section:first-child');
+        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => { el.classList.add('active'); }, i * 150);
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (!heroSection.contains(el)) { observer.observe(el); }
+        });
+
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+                    else { nav.classList.remove('scrolled'); }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
+</body>
+</html>

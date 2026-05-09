@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Foot Locker — Post-Theft Vetting Audit</title>
+<meta name="description" content="A vendor-agnostic three-check audit framework sent to Foot Locker within 7 days of the LA County Sheriff's $4M Vernon recovery. USDOT-validated identity, real-time CSA, BMC-84 daily verification — the carrier-side checks that fail across publicly-named retail theft events." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://runthresh.com/playbooks/truckstop-com/footlocker-post-theft-vetting-audit.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Inter Tight", system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; position: relative; min-height: 100vh; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px); z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  .label { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); text-transform: lowercase; }
+  .label::before { content: "// "; color: var(--accent); }
+  .label-muted { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1 { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 0; color: var(--text); }
+  h1 .accent { color: var(--accent); }
+  h1 .warn { color: var(--secondary); }
+  .header-meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); text-align: right; line-height: 1.6; }
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 32px; }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .key-finding { background: rgba(212,98,43,0.04); border: 1px solid var(--secondary); padding: 20px 24px; margin-bottom: 28px; }
+  .key-finding .kf-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .key-finding p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.6; }
+  .key-finding strong.warn { color: var(--secondary); }
+  .key-finding strong.num { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+  .section-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; margin: 40px 0 14px; letter-spacing: -0.005em; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 28px; }
+  .stat-cell { padding: 18px 16px; border-right: 1px solid var(--border); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell .stat-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+  .stat-cell .stat-value { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 24px; color: var(--text); line-height: 1; margin-bottom: 8px; }
+  .stat-cell .stat-detail { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .stat-cell.warn .stat-value { color: var(--secondary); }
+
+  .table-wrap { background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
+  table.checks { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.checks th { text-align: left; padding: 12px 16px; background: var(--surface-alt); font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.checks td { padding: 14px 16px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.checks tr:last-child td { border-bottom: none; }
+  table.checks td.num { font-family: "JetBrains Mono", monospace; color: var(--accent); font-weight: 600; font-size: 16px; padding-top: 16px; }
+  table.checks td .check-name { font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  table.checks td .check-detail { color: var(--muted); font-size: 12px; line-height: 1.55; }
+
+  .narrative { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 14px; }
+  .narrative .narrative-num { font-family: "JetBrains Mono", monospace; color: var(--accent); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .narrative p { margin: 0; color: var(--text); font-size: 13.5px; line-height: 1.65; }
+  .narrative p strong { color: var(--accent); font-weight: 500; }
+
+  .recs { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .rec { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .rec:last-child { border-bottom: none; }
+  .rec-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .rec-body .rec-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .rec-body .rec-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .sources { font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: var(--muted); line-height: 1.7; margin-top: 14px; }
+  .sources ol { padding-left: 22px; margin: 0; }
+  .sources li { margin-bottom: 4px; }
+  .sources a { color: var(--muted); text-decoration: none; }
+  .sources a:hover { color: var(--accent); text-decoration: underline; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); line-height: 1.7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat-cell:last-child { border-bottom: none; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+    .rec { grid-template-columns: 40px 1fr; }
+  }
+  @media print { body::before { display: none; } body { background: #000; } .page { padding: 24px; max-width: 100%; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / post-theft vetting audit</span>
+      <h1>Foot Locker<br/><span class="accent">Post-Theft Vetting Audit</span> <span style="color:var(--muted);">— May 9, 2026</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Paul Cox · John Matta · Elliott Rodgers</div>
+      <div><strong>trigger event</strong>&nbsp;&nbsp;LA County Sheriff Vernon raid · May 1&ndash;2, 2026</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> A three-check audit framework for the carrier-vetting moment of tender, mapped to publicly-named retail theft patterns from Q1&ndash;Q2 2026. Built entirely from public sources: FMCSA Licensing &amp; Insurance, CSA / SaferWatch, Verisk CargoNet, Highway Q1 2026 Freight Fraud Index, FBI IC3, and LA County Sheriff press coverage. Delivered to Foot Locker&rsquo;s transportation leadership within 7 days of the Vernon recovery.</p>
+    <p><strong>What it is not.</strong> A pitch. Truckstop is named zero times in the body. Recommendations are vendor-agnostic and executable inside 30 days. Every claim is verifiable against the linked source.</p>
+  </section>
+
+  <div class="key-finding">
+    <div class="kf-label">key finding</div>
+    <p>On May 1&ndash;2, 2026, the Los Angeles County Sheriff&rsquo;s Cargo Criminal Apprehension Team (&ldquo;Cargo CATs&rdquo;) served a search warrant in Vernon, California and recovered approximately <strong class="warn">$4 million in stolen freight</strong> tied to seven named victims &mdash; <strong class="num">Foot Locker, Epson, Deepcool, Renkus-Heinz, Medicube, Ulta Beauty, and ALP Drifter Nicotine</strong>. The pattern that allowed the freight to leave Foot Locker&rsquo;s outbound network in the first place narrows, across publicly-named retail theft events from the past two quarters, to <strong class="warn">three carrier-level checks at the moment of tender</strong> &mdash; checks that are independently verifiable from public FMCSA data and that most TMS-native carrier directories do not run continuously.</p>
+  </div>
+
+  <span class="label">section 1</span>
+  <h2 class="section-title">The Vernon recovery in context</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">The Vernon raid is not a single-vendor failure. It is the recovery point for what Verisk CargoNet&rsquo;s January 2026 trend report frames as a structural shift. The dollars are concentrating because organized rings are filtering for higher-value targets and using carrier-side identity fraud to clear shipper-side checks.</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell warn">
+      <div class="stat-label">2025 cargo-theft losses (US/CA)</div>
+      <div class="stat-value">$725M</div>
+      <div class="stat-detail">+60% YoY · Verisk CargoNet (Jan 2026)</div>
+    </div>
+    <div class="stat-cell warn">
+      <div class="stat-label">avg. value per confirmed theft</div>
+      <div class="stat-value">$273,990</div>
+      <div class="stat-detail">+36% from 2024 ($202,364) · CargoNet</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">confirmed cargo-theft incidents 2025</div>
+      <div class="stat-value">2,646</div>
+      <div class="stat-detail">+18% YoY · CargoNet</div>
+    </div>
+  </div>
+
+  <p style="color: var(--text); font-size: 13.5px; margin: 0 0 14px; line-height: 1.65;">Highway&rsquo;s Q1 2026 Freight Fraud Index, published May 5, 2026, sharpens the diagnostic: roughly <strong style="color: var(--secondary);">half of all theft incidents in Q1 2026 involved Motor Carriers with legitimate authority and previously clean operating histories</strong>. Highway also flagged <strong style="color: var(--text); font-family: 'JetBrains Mono', monospace;">399 ownership changes</strong> across carrier profiles (a <strong style="color: var(--secondary);">169.6% YoY</strong> increase) and intercepted <strong style="color: var(--text); font-family: 'JetBrains Mono', monospace;">71,801 spoofed phone calls</strong> and <strong style="color: var(--text); font-family: 'JetBrains Mono', monospace;">2,256 reported identity-theft instances</strong> &mdash; up 89.6%.</p>
+
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 28px; line-height: 1.6;">The implication for Foot Locker&rsquo;s outbound and inter-DC moves is that the historical &ldquo;vet once at onboarding, refresh annually&rdquo; pattern no longer covers the actual attack surface &mdash; the MC that passed onboarding six months ago may have been quietly sold through a Telegram listing in March.</p>
+
+  <span class="label">section 2</span>
+  <h2 class="section-title">The three-check audit framework</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Across the publicly-named retail and electronics theft events the FBI, Verisk, Highway, and local LE bulletins documented in Q4 2025&ndash;Q1 2026, the carrier-level failure repeats. The check set below is the minimum a publicly-traded retailer with Foot Locker&rsquo;s footprint should be running on every brokered tender &mdash; not just at onboarding.</p>
+
+  <div class="table-wrap">
+    <table class="checks">
+      <thead>
+        <tr>
+          <th style="width: 40px;">#</th>
+          <th style="width: 22%;">Check</th>
+          <th style="width: 25%;">What it verifies</th>
+          <th style="width: 23%;">Public source of truth</th>
+          <th>Common failure mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">1</td>
+          <td><div class="check-name">USDOT-validated identity at tender</div></td>
+          <td><div class="check-detail">The carrier delivering the load matches the legal entity assigned in the TMS, by USDOT/MC number and registered legal name as of the tender timestamp.</div></td>
+          <td><div class="check-detail">FMCSA Licensing &amp; Insurance database; SAFER</div></td>
+          <td><div class="check-detail"><strong style="color: var(--secondary);">Trojan driver / change-of-ownership fraud</strong> &mdash; a clean MC on file was sold or leased; the truck that shows up is not the entity that was vetted.</div></td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td><div class="check-name">Real-time CSA / safety event monitoring</div></td>
+          <td><div class="check-detail">The carrier has not picked up a fresh OOS event, ELD violation, or insurance lapse since the last vetting refresh.</div></td>
+          <td><div class="check-detail">FMCSA SaferWatch / CSA scorecard / Pre-Employment Screening Program</div></td>
+          <td><div class="check-detail"><strong style="color: var(--secondary);">Stale vetting</strong> &mdash; onboarding-grade snapshot from 60&ndash;180 days ago, no continuous push of changes.</div></td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td><div class="check-name">BMC-84 / financial-responsibility currency on every broker in the chain</div></td>
+          <td><div class="check-detail">Any broker in the tender chain has an active surety bond as of today, with no recent provider change or cancellation event.</div></td>
+          <td><div class="check-detail">FMCSA L&amp;I; Federal Register; broker-of-record bond filings</div></td>
+          <td><div class="check-detail"><strong style="color: var(--secondary);">Bond replaced, lapsed, or in a 30-day cancellation window</strong>, signaling a broker in distress and elevated routing risk.</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 28px; line-height: 1.6;">A retailer roster the size of Foot Locker&rsquo;s &mdash; DCs in Camp Hill PA, Junction City KS, Los Angeles CA, Wausau WI, plus the new European Service Center in Haps, Netherlands opened in September 2025 on the Manhattan Active Warehouse Management platform &mdash; moves enough brokered freight that even a 1&ndash;2% carrier-roster turn between vettings produces a meaningful daily exposure window.</p>
+
+  <span class="label">section 3</span>
+  <h2 class="section-title">What this means for Foot Locker</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Three things are simultaneously true about Foot Locker&rsquo;s posture as of this week.</p>
+
+  <div class="narrative">
+    <div class="narrative-num">01_ The Vernon recovery is the public-record moment</div>
+    <p>The brand has been named alongside six other shippers in coverage from the LA Sheriff&rsquo;s Department, FOX 11, CBS Los Angeles, KTLA, NBC Los Angeles, and ABC7. Incident-response work that used to live entirely inside the carrier-compliance function now has board, audit-committee, and insurance-renewal visibility. The 7&ndash;30 day window after a public naming is when procurement reviews open and existing-vendor renewals get a second look.</p>
+  </div>
+
+  <div class="narrative">
+    <div class="narrative-num">02_ The supply-chain footprint is mid-modernization</div>
+    <p>Foot Locker is rolling RFID into its DCs in 2026, has consolidated onto Manhattan Active for inventory and order orchestration, opened a new automated European ESC in late 2025, and announced a 110,000-square-foot global headquarters relocation to St. Petersburg, Florida. RFID and Manhattan Active address inside-the-four-walls visibility &mdash; they do not, by themselves, run continuous FMCSA-side vetting on outbound brokered tenders. <strong>The carrier-vetting layer at the curb is the missing complement to the WMS/RFID story.</strong></p>
+  </div>
+
+  <div class="narrative" style="margin-bottom: 28px;">
+    <div class="narrative-num">03_ The category is actively targeted</div>
+    <p>Footwear sits squarely in the &ldquo;consumer goods&rdquo; / &ldquo;high-value retail&rdquo; cluster Verisk and CargoNet flagged as a 2025 surge category, alongside electronics and food/beverage. The Vernon haul itself &mdash; TVs, shoes, printers, data-center cooling equipment, speakers, skincare, nicotine pouches &mdash; is a fence operation specifically optimized for organized-retail-crime resale. <strong>Foot Locker is on the target list whether or not it changes vendors.</strong></p>
+  </div>
+
+  <span class="label">recommendations</span>
+  <h2 class="section-title">Three actions worth running this quarter</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Vendor-agnostic and executable inside 30 days, regardless of which RMIS or carrier-vetting platform Foot Locker chooses.</p>
+
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Re-baseline the active carrier roster against FMCSA today, not against the file from last vetting.</div>
+        <div class="rec-detail">Pull every active carrier MC currently authorized to tender to any Foot Locker DC, and run each one against FMCSA L&amp;I for (a) authority status, (b) ownership-record changes since the last vetting, and (c) BMC-84 / BMC-85 filings for the broker-of-record on each tender. Highway&rsquo;s Q1 2026 number &mdash; half of all incidents tied to clean-MC carriers &mdash; means the gap is not unknown carriers. It is known carriers whose status changed quietly. Expect the re-baseline to surface a small but non-trivial roster of MCs whose current state no longer matches the file.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Move from event-driven vetting to continuous-delta vetting on the broker layer.</div>
+        <div class="rec-detail">The BMC-84 check is the highest-signal early indicator of a broker in financial distress; bonds get replaced or canceled before authorities are formally suspended. A daily diff against FMCSA L&amp;I for broker-bond filings, scoped to the broker-of-record list on Foot Locker tenders, surfaces distress 30&ndash;60 days before TIA&rsquo;s cessation digest publishes. This is a low-cost integration relative to the WMS work already underway and slots cleanly alongside Manhattan Active&rsquo;s existing carrier-master tables.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Align the post-incident audit timeline to the CFO&rsquo;s question, not the procurement calendar.</div>
+        <div class="rec-detail">A standard procurement-driven RMIS review can take 60&ndash;120 days. The Vernon naming has already triggered insurance-renewal questions and audit-committee follow-up. The artifact the compliance organization will be asked to produce in the next 30 days is a one-page narrative that names what specifically was checked, when, and how the gap will close. Drafting that artifact now &mdash; even before a vendor decision is made &mdash; preempts the version that gets drafted under deadline pressure with incomplete data.</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="label-muted" style="display: block; margin-top: 40px;">sources</span>
+  <h2 class="section-title" style="margin-top: 8px;">Every claim in this audit links to a primary source.</h2>
+  <div class="sources">
+    <ol>
+      <li>FOX 11 Los Angeles. &ldquo;$4 million in stolen cargo recovered during Vernon raid: LASD.&rdquo; May 2, 2026. <a href="https://www.foxla.com/news/lasd-vernon-cargo-theft-recovery-4-million" target="_blank" rel="noopener">foxla.com</a></li>
+      <li>CBS News Los Angeles. &ldquo;1 arrested, $4 million in stolen cargo recovered in Los Angeles County during search warrant.&rdquo; May 1, 2026. <a href="https://www.cbsnews.com/losangeles/news/vernon-los-angeles-county-stolen-cargo-footlocker-deepcool-nicotine-pouches/" target="_blank" rel="noopener">cbsnews.com</a></li>
+      <li>ABC7 Los Angeles. &ldquo;LA County Sheriff&rsquo;s Department recovers $4 million in stolen goods during major cargo theft bust in Vernon.&rdquo; May 2, 2026. <a href="https://abc7.com/post/la-county-sheriffs-department-announces-major-cargo-theft-bust-in-vernon-nets-4-million-stolen-goods/19017219/" target="_blank" rel="noopener">abc7.com</a></li>
+      <li>KTLA. &ldquo;$4 million in cargo stolen from 8 companies recovered in L.A. County.&rdquo; May 2026. <a href="https://ktla.com/news/local-news/4-million-in-cargo-stolen-from-8-companies-recovered-in-l-a-county/" target="_blank" rel="noopener">ktla.com</a></li>
+      <li>Verisk. &ldquo;Cargo Theft Losses Surge to Estimated $725 Million in 2025, Verisk CargoNet Analysis Reveals.&rdquo; January 22, 2026. <a href="https://www.verisk.com/company/newsroom/cargo-theft-losses-surge-to-estimated-$725-million-in-2025-verisk-cargonet-analysis-reveals/" target="_blank" rel="noopener">verisk.com</a></li>
+      <li>CargoNet. &ldquo;2025 Theft Trends.&rdquo; January 2026. <a href="https://www.cargonet.com/news-and-events/cargonet-in-the-media/2025-theft-trends/" target="_blank" rel="noopener">cargonet.com</a></li>
+      <li>GlobeNewswire / Highway. &ldquo;Freight Fraud Hits Record High in Q1 2026: Half of All Incidents Tied to Carriers With Clean Records.&rdquo; May 5, 2026. <a href="https://www.globenewswire.com/news-release/2026/05/05/3288141/0/en/Freight-Fraud-Hits-Record-High-in-Q1-2026-Half-of-All-Incidents-Tied-to-Carriers-With-Clean-Records.html" target="_blank" rel="noopener">globenewswire.com</a></li>
+      <li>Internet Crime Complaint Center (FBI IC3). &ldquo;Cyber-Enabled Strategic Cargo Theft Surging.&rdquo; April 30, 2026. <a href="https://www.ic3.gov/PSA/2026/PSA260430" target="_blank" rel="noopener">ic3.gov</a></li>
+      <li>FreightWaves. &ldquo;Valid carrier authorities are being used in cargo theft schemes.&rdquo; May 2026. <a href="https://www.freightwaves.com/news/valid-carrier-authorities-are-being-used-in-cargo-theft-schemes" target="_blank" rel="noopener">freightwaves.com</a></li>
+      <li>Manhattan Associates. &ldquo;Foot Locker: Future-Proof Logistics Powered by the Manhattan Active® Platform.&rdquo; 2025. <a href="https://www.manh.com/our-insights/resources/articles/foot-locker-future-proof-logistics-powered-by-the-manhattan-active-platform" target="_blank" rel="noopener">manh.com</a></li>
+      <li>Foot Locker, Inc. &ldquo;Announces Plans for its Global Headquarters in St. Petersburg, Florida.&rdquo; March 31, 2025. <a href="https://www.businesswire.com/news/home/20250331003243/en/Foot-Locker-Inc.-Announces-Plans-for-its-Global-Headquarters-in-St.-Petersburg-Florida" target="_blank" rel="noopener">businesswire.com</a></li>
+      <li>FMCSA. Licensing &amp; Insurance public database. <a href="https://li-public.fmcsa.dot.gov/" target="_blank" rel="noopener">li-public.fmcsa.dot.gov</a></li>
+      <li>FMCSA. Compliance, Safety, Accountability (CSA) and SaferWatch. <a href="https://csa.fmcsa.dot.gov/" target="_blank" rel="noopener">csa.fmcsa.dot.gov</a></li>
+    </ol>
+  </div>
+
+  <footer class="footer">
+    <div>
+      Sent May 9, 2026 · Truckstop Post-Theft Vetting Audit · Vendor-agnostic · Verification ledger on file
+    </div>
+    <div>
+      <a href="../">← Back to Truckstop playbook</a> · <a href="/playbooks/">All playbooks</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
