@@ -95,15 +95,16 @@ Every entry follows the same structure:
 
 A 90-day deployment where Lucas embeds with a vertical SaaS company, builds a custom signal-based outbound system, **and personally runs sends, replies, meeting-booking, and cold calls during Weeks 4–7 before handing it off to the client's team during Weeks 8–12.** Weeks 1–3 are setup, infrastructure, inbox warmup, messaging finalization, and playbook lock with the client team. The wedge against PMM-led competitors (Slingshot, Blueprint) is the in-engagement work itself: Lucas sits the seat instead of shipping a system and walking. The client inherits a working production line *plus* the operating credibility of an ex-SDR/founding AE who actually ran the campaign before the handoff. Service Guarantee covers the carry-the-bag period (Lucas keeps working free until baseline reply rate hit, conditional on client meeting their obligations).
 
-The 7-piece deliverable system (deliverable #5 is the in-engagement validation the other six support):
+The 8-piece deliverable system (deliverable #6 is the in-engagement validation the other seven support):
 
 1. **Pain signal map** — 5+ validated signals showing "this prospect is bleeding right now"
 2. **Data source registry** — 3-5 unique public data sources mapped to their vertical, with API/scrape playbooks
 3. **Validated ICP** — live list of companies currently triggering the signals (proof the pipeline works)
-4. **Messaging framework** — PVP and PQS style messages keyed to each signal, tested by Lucas in production (definitions and examples in *Messaging vocabulary* below)
-5. **First campaign — Lucas personally runs sends, replies, meeting-booking, and cold calls during Weeks 4–7** (in-engagement validation — distinguishes Thresh from "we built a system, your team executes" competitors)
-6. **Instrumented dashboard** — signal → enriched contact → message → response → meeting
-7. **Runbook** — the operating manual the client's team uses to keep the system running after the 4-week handoff
+4. **Buyer channel map** — per-persona primary + secondary outreach channel (email / phone / LinkedIn DM / multi-channel) with evidence tier (live-tested / inferred-from-vendor-data / heuristic). Catches the channel-mismatch failure mode before messaging is built — a desk-role buyer reachable on email gets the inline PVP; a field-role buyer (e.g., owner-operator carrier, GC owner) gets the phone-script template instead. Output of gtm-alpha 1A Channel Topology + 3C Channel Stack.
+5. **Messaging framework** — PVP and PQS style messages keyed to each signal AND each persona's channel, tested by Lucas in production (definitions and examples in *Messaging vocabulary* below)
+6. **First campaign — Lucas personally runs sends, replies, meeting-booking, and cold calls during Weeks 4–7** (in-engagement validation — distinguishes Thresh from "we built a system, your team executes" competitors)
+7. **Instrumented dashboard** — signal → enriched contact → channel → message → response → meeting
+8. **Runbook** — the operating manual the client's team uses to keep the system running after the 4-week handoff
 
 ### Messaging vocabulary
 
@@ -147,7 +148,7 @@ The 7-piece deliverable system (deliverable #5 is the in-engagement validation t
 |---|---|---|---|
 | **Tier 1: GTM Alpha Playbook** | $0 | Pain Signal Map for vertical + 3 PVPs + 5 named prospects | Lead magnet. Hand-built per vertical, limited weekly capacity. |
 | **Tier 2: Signal Intelligence Retainer** | $3K–$5K/month | Monthly target list refresh, data pipe maintenance, messaging iteration, scored leads delivered to client team weekly. No carry-the-bag execution. | For sales orgs that already have an SDR seat. Lower-friction conversion path for sample recipients not yet ready for full engagement. |
-| **Tier 3: Founding Cohort — 90-Day Build (FLAGSHIP)** | **$20K founding / $30K post-cohort** | All 7 deliverables. See Founding Cohort details + Guarantee below. | Flagship. **3-spot Founding Cohort.** Founding rate while spots remain. After cohort closes, rate moves to $30K and Service Guarantee comes off. Capacity: 1–2 simultaneous engagements. |
+| **Tier 3: Founding Cohort — 90-Day Build (FLAGSHIP)** | **$20K founding / $30K post-cohort** | All 8 deliverables. See Founding Cohort details + Guarantee below. | Flagship. **3-spot Founding Cohort.** Founding rate while spots remain. After cohort closes, rate moves to $30K and Service Guarantee comes off. Capacity: 1–2 simultaneous engagements. |
 
 ### Founding Cohort details
 
