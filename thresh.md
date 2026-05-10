@@ -14,6 +14,20 @@ The work (still a WIP): find public-data pain signals, build target lists, write
 
 Default engagement shape: 90-day deployment standard. 60-day variant available at separate pricing. Optional extension if both parties want to keep going.
 
+### Definition stack — how to talk about Thresh
+
+Three layers, all of which are valid depending on context. Use them in this hierarchy:
+
+| Layer | Term | Use when |
+|---|---|---|
+| **Category** (defensive positioning) | **Operational trigger intelligence** | Site framing, principles, page hero, doctrine. Differentiates from Blueprint where companies don't have proprietary data ready. |
+| **Service shape** (delivery model) | **Forward-Deployed GTM Engineering** | Operating doc, internal framing, hiring/scope conversations. Names the embed-then-handoff archetype (Palantir FDE / Vista VCG / Alpine CIT). |
+| **Tactic** (what gets done) | **Signal-based outbound** | Cold-email pitch sentence, recognized-category prospect conversations. Always paired with the operational-trigger differentiator (see `project_thresh_pitch_and_offer.md`) to separate from the diluted version of the category. |
+
+**Why all three exist:** *Category* is what you defend against competitors. *Service shape* is what you actually do. *Tactic* is what buyers pattern-match to when they hear the pitch. Different audiences, different vocab, same offering. Don't collapse them — pick the right layer for the moment.
+
+**The vocabulary rule that governs this:** `~/.claude/projects/-Users-lucas-Documents-projects-thresh/memory/feedback_thresh_vocabulary.md` — operations-native vocab in framing; "signal-based outbound" allowed only in the cold-open pitch with the differentiator paired in the same sentence.
+
 ---
 
 ## Current Direction (2026-05-07)
