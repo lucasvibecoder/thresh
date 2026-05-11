@@ -1,8 +1,8 @@
 # thresh.md — Business Operating Document
 
-**Last updated:** 2026-05-08
+**Last updated:** 2026-05-11
 
-> **Status (2026-05-08):** Operating doc, evolving. Offer reframed around **Founding Cohort** — 3 vertical SaaS companies at founding rate ($20K flat / 90-day engagement). Carry-the-bag spans Weeks 4–7 of the 90-day engagement (Weeks 1–3 = setup + inbox warmup, Weeks 8–12 = transition + handoff). Service Guarantee + Anti-Guarantee combined. Payment terms: 50% upfront, 50% after first qualified reply. After cohort closes, rate moves to $30K and Service Guarantee comes off. Phase 0 outbound test active in trucking SaaS. Site (`runthresh.com`) updated 2026-05-08 to surface engagement shape, pricing, and guarantee. Reply-rate validation from Phase 0 will inform post-cohort pricing.
+> **Status (2026-05-11):** Operating doc, evolving. Offer reframed around **Founding Cohort** — 3 vertical SaaS companies at founding rate ($20K flat / 90-day engagement). Carry-the-bag spans Weeks 4–7 of the 90-day engagement (Weeks 1–3 = setup + inbox warmup, Weeks 8–12 = transition + handoff). Payment terms: 50% upfront, 50% after first qualified reply. After cohort closes, rate moves to $30K. **Service Guarantee + Anti-Guarantee removed from offer 2026-05-11** — too early to underwrite outcome thresholds without cross-vertical reply-rate baseline data; non-refundable disclosure now lives in the engagement contract, not the homepage. Rationale in `feedback_thresh_no_guarantees.md`. Phase 0 outbound test active in trucking SaaS. Site (`runthresh.com`) updated 2026-05-11 (commits 6d6e869, 52cf282, b797972) — Trucking-FMCSA example only, mobile nav bg fix, Founding Cohort copy tighten, bottom CTA recomposed as full Tier 1 "Claim the Playbook" pitch. Reply-rate validation from Phase 0 will inform post-cohort pricing.
 
 ---
 
@@ -48,9 +48,9 @@ Strategic playbook + sequencing: `~/Documents/projects/second-brain-cli/Referenc
 - **Q2 — Day 30 reply-rate threshold.** Phase 0 says Day 30 positive reply rate determines scale-vs-rewrite. *Currently assumed:* threshold not explicitly numbered. *Closes when:* a defensible benchmark for "Phase 0 is working" — likely tied to TAM size + offer difficulty per Nowoslawski's "1-in-2,000 can be a winner" framing.
 - **Q3 — Which parked vertical to revive first if trucking validates.** Hazmat / reverse-logistics / waste-hauler all parked. *Currently assumed:* hazmat first (closest signal architecture to trucking). *Closes when:* trucking Day 60 result + comparison signal-asymmetry test across the three.
 - **Q4 — Founding Cohort close rate.** Need to fill 3 spots at $20K founding rate. *Currently assumed:* 1-in-5 qualified conversations close. *Closes when:* actual outbound + warm-intro outcomes from first 10 conversations.
-- **Q5 — Whether the Anti-Guarantee converts or scares off.** Combined Service Guarantee + Anti-Guarantee is unusual. *Currently assumed:* the combination filters for serious buyers without killing the top of funnel. *Closes when:* 5 disqualifications + 5 progressions through guarantee discussion in live conversations.
+- **Q5 — Whether the Anti-Guarantee converts or scares off.** **Closed 2026-05-11** — Service Guarantee + Anti-Guarantee both removed from the offer entirely; question no longer applies. Rationale: too early in Thresh's life to underwrite outcome thresholds without cross-vertical baseline data. Captured in `feedback_thresh_no_guarantees.md`.
 - **Q6 — Carry-the-bag offer reframe — does the prospect read it as "you're doing the work" or "you're a vendor"?** *Currently assumed:* framing as embedded operator (Vista VCG / Alpine CIT / Palantir FDE) lands as differentiated. *Closes when:* live reply data on the carry-the-bag-anchored sequence vs. control.
-- **Q7 — Post-cohort pricing trajectory.** $20K founding → $30K standard. *Currently assumed:* $30K is defensible after Phase 0 validation + Service Guarantee removal. *Closes when:* cohort completion + first $30K conversation either converts or fails on price.
+- **Q7 — Post-cohort pricing trajectory.** $20K founding → $30K standard. *Currently assumed:* $30K is defensible after Phase 0 validation. *Closes when:* cohort completion + first $30K conversation either converts or fails on price.
 
 ---
 
@@ -93,7 +93,7 @@ Every entry follows the same structure:
 
 ## The Offer
 
-A 90-day deployment where Lucas embeds with a vertical SaaS company, builds a custom signal-based outbound system, **and personally runs sends, replies, meeting-booking, and cold calls during Weeks 4–7 before handing it off to the client's team during Weeks 8–12.** Weeks 1–3 are setup, infrastructure, inbox warmup, messaging finalization, and playbook lock with the client team. The wedge against PMM-led competitors (Slingshot, Blueprint) is the in-engagement work itself: Lucas sits the seat instead of shipping a system and walking. The client inherits a working production line *plus* the operating credibility of an ex-SDR/founding AE who actually ran the campaign before the handoff. Service Guarantee covers the carry-the-bag period (Lucas keeps working free until baseline reply rate hit, conditional on client meeting their obligations).
+A 90-day deployment where Lucas embeds with a vertical SaaS company, builds a custom signal-based outbound system, **and personally runs sends, replies, meeting-booking, and cold calls during Weeks 4–7 before handing it off to the client's team during Weeks 8–12.** Weeks 1–3 are setup, infrastructure, inbox warmup, messaging finalization, and playbook lock with the client team. The wedge against PMM-led competitors (Slingshot, Blueprint) is the in-engagement work itself: Lucas sits the seat instead of shipping a system and walking. The client inherits a working production line *plus* the operating credibility of an ex-SDR/founding AE who actually ran the campaign before the handoff.
 
 The 8-piece deliverable system (deliverable #6 is the in-engagement validation the other seven support):
 
@@ -147,12 +147,12 @@ The 8-piece deliverable system (deliverable #6 is the in-engagement validation t
 | Tier | Cost | Delivery | Purpose |
 |---|---|---|---|
 | **Tier 1: GTM Alpha Playbook** | $0 | Pain Signal Map for vertical + 3 PVPs + 5 named prospects | Lead magnet. Hand-built per vertical, limited weekly capacity. |
-| **Tier 2: Signal Intelligence Retainer** | $3K–$5K/month | Monthly target list refresh, data pipe maintenance, messaging iteration, scored leads delivered to client team weekly. No carry-the-bag execution. | For sales orgs that already have an SDR seat. Lower-friction conversion path for sample recipients not yet ready for full engagement. |
-| **Tier 3: Founding Cohort — 90-Day Build (FLAGSHIP)** | **$20K founding / $30K post-cohort** | All 8 deliverables. See Founding Cohort details + Guarantee below. | Flagship. **3-spot Founding Cohort.** Founding rate while spots remain. After cohort closes, rate moves to $30K and Service Guarantee comes off. Capacity: 1–2 simultaneous engagements. |
+| **Tier 2: Signal Intelligence Retainer** | $3K–$5K/month | Daily/weekly target list refresh from public-data signals, data pipe maintenance, messaging iteration, scored leads delivered to client team weekly. No carry-the-bag execution. | For sales orgs that already have an SDR seat. Lower-friction conversion path for sample recipients not yet ready for full engagement. |
+| **Tier 3: Founding Cohort — 90-Day Build (FLAGSHIP)** | **$20K founding / $30K post-cohort** | All 8 deliverables. See Founding Cohort details below. | Flagship. **3-spot Founding Cohort.** Founding rate while spots remain. After cohort closes, rate moves to $30K. Capacity: 1–2 simultaneous engagements. |
 
 ### Founding Cohort details
 
-**Cohort size:** 3 vertical SaaS companies. Founding rate while spots remain. After cohort closes, rate moves to $30K and Service Guarantee comes off.
+**Cohort size:** 3 vertical SaaS companies. Founding rate while spots remain. After cohort closes, rate moves to $30K.
 
 **Engagement timeline (90 days):**
 - **48-hour kickoff:** Expanded Signal Map + 20 hyper-targeted prospects delivered the moment the contract signs
@@ -161,14 +161,6 @@ The 8-piece deliverable system (deliverable #6 is the in-engagement validation t
 - **Weeks 8–12:** Transition — full handoff with permanent runbook
 
 **Payment terms:** 50% upfront, 50% after first qualified reply hits the client's inbox.
-
-### Guarantee
-
-**Conditional Personal Service Guarantee:** If the client doesn't hit a baseline positive reply rate by the end of the 4-week sprint (Weeks 4–7), Lucas personally continues to run, test, and iterate the campaigns free of charge until they do — provided the client responds within 24 hours, approves messaging on time, and attends all onboarding calls.
-
-**Anti-Guarantee on the build:** Because Lucas exposes the exact government data sources, prompt architecture, and messaging frameworks, all sales are final on the build itself. The Service Guarantee covers ongoing execution.
-
-Will update once first 1–3 deals close.
 
 ---
 
@@ -329,7 +321,7 @@ Persona 2 and Persona 3 often appear at the same account; CMO is typically the c
 |--------|-----|------------|
 | Very small TAM (< 500 total companies in their market) | Signal-based approach may exhaust the market in 2-3 months. Short engagement lifespan. | Price as a one-time project, not a retainer. Or expand to adjacent verticals. |
 | Blue collar buyers who don't check email | The messages are strong but the channel may not work for cold email specifically. | Frame deliverable as "messages" not "emails." Output works for call scripts, LinkedIn outreach, or direct mail. Discuss channel fit in the qualifying call. |
-| Client wants guaranteed meeting counts | Even though Lucas runs the campaign personally for 4 weeks (Weeks 4–7), too many variables sit outside his control (their market depth, list quality after audience filters, deliverability state, what happens on the call). The Service Guarantee covers continued execution if baseline reply rate isn't hit, but does not promise specific meeting counts. | Point them at the Service Guarantee: "I keep working free until your team is getting positive replies — that's the commitment. Specific meeting counts depend on your market and your team's continuation after handoff." If they still demand a meeting number, walk. |
+| Client wants guaranteed meeting counts | Even though Lucas runs the campaign personally for 4 weeks (Weeks 4–7), too many variables sit outside his control (their market depth, list quality after audience filters, deliverability state, what happens on the call). The work is paid execution, not an outcome contract. | Explain the constraint: meeting counts depend on market depth + list quality + their team's continuation after handoff. If they still demand a meeting number, walk. |
 | Large enterprise (500+ employees, complex procurement) | Long sales cycles, procurement review, and legal review on data sourcing eat the engagement margin. $20K founding (or $30K post-cohort) is still too low to absorb enterprise procurement timelines. | Only engage if there's a champion who can buy on a credit card or through a small consulting PO. Otherwise, pass until Thresh has case studies that justify enterprise-tier pricing. |
 
 ### The 5-Minute Qualifying Checklist
