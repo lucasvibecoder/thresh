@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blanc Playbook — Signal-First Outbound | Thresh</title>
+    <meta name="description" content="A Signal-First Outbound playbook built for Blanc. Three plays for reaching mid-stage fintech CCOs the moment a federal advisory, a sponsor's consent order, or a state DFS enforcement action forces a compliance-evidence rebuild.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080808">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23080808'/><text x='50' y='72' font-size='60' font-family='monospace' font-weight='bold' fill='%2300FF41' text-anchor='middle'>T_</text></svg>">
+    <link rel="canonical" href="https://runthresh.com/playbooks/blanchq-com/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Blanc Playbook — Signal-First Outbound">
+    <meta property="og:description" content="Three plays for the moments BaaS-using fintech CCOs are forced into a compliance-tooling decision. Anchored on FinCEN / CFPB / SEC advisories, sponsor consent orders, and state DFS enforcement.">
+    <meta property="og:url" content="https://runthresh.com/playbooks/blanchq-com/">
+    <meta property="og:image" content="https://runthresh.com/og-image.png">
+    <meta property="og:site_name" content="Thresh">
+    <meta property="article:published_time" content="2026-05-10T12:00:00Z">
+    <meta property="article:modified_time" content="2026-05-10T12:00:00Z">
+    <meta property="article:author" content="Lucas Linares">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Blanc Playbook — Signal-First Outbound">
+    <meta name="twitter:description" content="Three plays anchored on federal advisories, sponsor consent orders, and state DFS direct enforcement. Includes the Rain × FinCEN PPSI NPRM Advisory Change Map.">
+    <meta name="twitter:image" content="https://runthresh.com/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Blanc Playbook — Signal-First Outbound",
+      "description": "Three plays for reaching mid-stage fintech CCOs the moment a regulatory event forces a compliance-tooling decision.",
+      "datePublished": "2026-05-10T12:00:00Z",
+      "dateModified": "2026-05-10T12:00:00Z",
+      "author": { "@type": "Person", "name": "Lucas Linares", "url": "https://runthresh.com" },
+      "publisher": { "@type": "Organization", "name": "Thresh", "url": "https://runthresh.com" },
+      "mainEntityOfPage": "https://runthresh.com/playbooks/blanchq-com/",
+      "image": "https://runthresh.com/og-image.png"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+    <style>
+        .nav-toggle-input{position:absolute;opacity:0;pointer-events:none}
+        .nav-toggle{display:inline-flex;align-items:center;justify-content:center;padding:.5rem;color:#9CA1AA;cursor:pointer}
+        .nav-toggle:hover{color:#00FF41}
+        .nav-toggle svg{display:block}
+        @media(max-width:767px){
+            .nav-shell{flex-wrap:wrap}
+            .nav-menu{display:none;width:100%;padding-top:.75rem;border-top:1px solid #242424;margin-top:.75rem}
+            #nav-toggle:checked ~ .nav-menu{display:flex;flex-direction:column;gap:.5rem}
+            .nav-menu a{display:block;padding:.5rem 0}
+            .nav-menu .nav-cta{text-align:center;padding:.75rem 1rem}
+            #nav-toggle:checked + .nav-toggle .nav-open{display:none}
+            #nav-toggle:checked + .nav-toggle .nav-close{display:block}
+            .nav-close{display:none}
+        }
+        @media(min-width:768px){
+            .nav-toggle{display:none}
+            .nav-menu{display:flex;align-items:center;gap:1.5rem}
+        }
+    </style>
+    <link rel="stylesheet" href="../../output.css">
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand-accent focus:text-black focus:px-4 focus:py-2 focus:font-semibold focus:text-sm">Skip to content</a>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+        <div class="nav-shell max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="font-mono font-bold text-sm tracking-[0.2em] text-brand-accent hover:text-brand-accent-hover transition-colors">THRESH_</a>
+            <input id="nav-toggle" class="nav-toggle-input" type="checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle md:hidden" aria-label="Toggle navigation menu">
+                <svg class="nav-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="nav-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </label>
+            <div class="nav-menu md:flex items-center gap-6">
+                <a href="/playbooks/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <a href="/blog/" class="text-sm font-mono text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <a href="/#contact" class="nav-cta text-sm font-body font-semibold bg-brand-accent text-black px-5 py-2.5 hover:bg-brand-accent-hover btn-primary transition-all">Show Me the Signal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="relative z-10">
+
+<!-- HERO -->
+        <section class="min-h-screen flex flex-col items-center justify-center pb-12 sm:pb-32 px-6 pt-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal mb-6">
+                    <a href="/" class="inline-flex items-center gap-3 border border-brand-border/50 hover:border-brand-accent transition-all px-4 py-2">
+                        <span class="font-mono text-[11px] tracking-[0.15em] text-brand-muted uppercase">// Working sample.</span>
+                        <span class="font-mono text-[11px] tracking-[0.15em] text-brand-accent uppercase">See the full offer →</span>
+                    </a>
+                </div>
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-6">The Blanc Playbook</p>
+                </div>
+                <h1 class="reveal font-display font-[900] section-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-8">
+                    A Signal-First Outbound playbook<br class="hidden sm:block">
+                    built for <span class="headline-accent">Blanc.</span>
+                </h1>
+                <p class="reveal font-mono text-base sm:text-lg text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    Three plays for Blanc&rsquo;s sharpest buyers &mdash; mid-stage fintech CCOs the day a FinCEN or CFPB advisory hits their product line, the week their sponsor bank&rsquo;s consent order publishes, and the month a state regulator opens direct enforcement on a peer.
+                </p>
+                <div class="reveal flex justify-center">
+                    <a href="/#contact" class="w-full sm:w-auto text-center font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">Get one for your company →</a>
+                </div>
+                <p class="reveal mt-8 font-mono text-xs text-brand-faint">// Last updated: May 10, 2026</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- THE SHIFT -->
+        <section class="py-16 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">The Outbound This Replaces</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6 max-w-3xl">Most regtech vendors send the same email. Blanc has a better hand.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed max-w-3xl mb-12 font-light">
+                        Hadrius, Norm AI, Greenlite, Vanta, Drata all sound similar in a cold inbox &mdash; generic claims about audit readiness and AI-native compliance. Almost no vendor in this category ties the FinCEN, CFPB, or FDIC publication feed to outbound on the day a fintech CCO&rsquo;s product line lands in scope. Blanc covers the full Reg E / Reg Z / UDAAP / AML / BSA / TCPA / FDCPA / IAA / Exchange Act stack with logged evidence ready on demand &mdash; the framework breadth that matches what a sponsor TPRM team or state examiner will actually ask for. Lead with the moment, not the platform.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 reveal">
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">What a generic regtech rep sends today.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">OUTBOUND // GENERIC</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Hi [First Name],</p>
+                                <br>
+                                <p>I&rsquo;m reaching out because compliance is a top priority for fintechs right now. Our platform helps you automate Reg E, Reg Z, AML, and BSA controls so your team stays audit-ready.</p>
+                                <br>
+                                <p>Happy to share how we&rsquo;ve helped teams like yours. Do you have 15 minutes this week?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mt-8 sm:mt-0 mb-4">What Blanc sends with the signal.</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">LINKEDIN DM // SIGNAL-MATCHED</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Christopher &mdash; FinCEN&rsquo;s April 7 + 10 NPRM trio puts every stablecoin-infrastructure card issuer in a strange spot. Not the PPSI under Part 1033, but the counterparty PPSIs will push the new sanctions-program and block/freeze obligations down &mdash; while the parallel Program Reform NPRM hits Rain directly as a BSA-covered MSB on the &ldquo;in all material respects&rdquo; standard.</p>
+                                <br>
+                                <p>Comments close June 9. Most card-stack platforms haven&rsquo;t scoped the gap yet.</p>
+                                <br>
+                                <p>Pulled together the Advisory Change Map for the Rain stack specifically &mdash; sanctions program, risk-assessment codification, independent-testing cadence, and the three-clock view (30 / 90 / 365 days).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal mt-4">
+                    <p class="provenance-label text-brand-muted leading-relaxed">
+                        That second message is real. Drafted for Christopher Grieco &mdash; General Counsel &amp; Chief Compliance Officer at Rain &mdash; on May 9, 2026, within 30 days of FinCEN&rsquo;s April 7&ndash;10 NPRM trio. Send-ready, sitting on the runway pending the right week. The 1,107-word Advisory Change Map is the working artifact behind it, downloadable on Play 1 below.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- ACTIVATION SUMMARY -->
+        <section id="activation" class="py-16 sm:py-24 px-6 scroll-mt-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal mb-10">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Activation Summary</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">Three plays, three distinct buyer moments.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light max-w-3xl">One daily-refresh federal-advisory trigger, one weekly enforcement-action trigger against BaaS sponsor banks, one weekly multi-state DFS-enforcement trigger. The brief caps the menu at three for the fintech CCO persona without diluting the framework. Seven additional plays exist in the full menu and activate as the sponsor&harr;fintech mapping table and Tier-2 detection sources come online.</p>
+                </div>
+                <div class="reveal overflow-x-auto bg-brand-surface panel p-6 sm:p-8">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border font-mono text-xs text-brand-accent uppercase tracking-wider">
+                                <th class="py-3 pr-4">#</th>
+                                <th class="py-3 pr-4">Play</th>
+                                <th class="py-3 pr-4">Persona</th>
+                                <th class="py-3 pr-4">Motion</th>
+                                <th class="py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-brand-muted">
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">1</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The Federal Advisory Tooling Decision</td>
+                                <td class="py-4 pr-4 align-top">Mid-stage fintech CCO at a Series A&ndash;C BaaS-using fintech, product line named or implicated by a fresh FinCEN / CFPB / SEC advisory</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered LinkedIn DM</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">2</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The Sponsor Consent Order Cascade</td>
+                                <td class="py-4 pr-4 align-top">Mid-stage fintech CCO at a Series A&ndash;C BaaS-using fintech whose sponsor bank was just publicly actioned by FDIC / OCC / Fed</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered LinkedIn DM</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                            <tr class="border-b border-brand-border/30">
+                                <td class="py-4 pr-4 align-top font-mono text-brand-text">3</td>
+                                <td class="py-4 pr-4 align-top text-brand-text font-medium">The State DFS Direct Enforcement</td>
+                                <td class="py-4 pr-4 align-top">CCO (or pre-CCO COO/CFO) at a fintech with a fresh NY DFS / CA DFPI / TX DOB / MA DOB enforcement letter in the trailing 30 days</td>
+                                <td class="py-4 pr-4 align-top">Cold &mdash; event-triggered LinkedIn DM</td>
+                                <td class="py-4 align-top text-brand-accent">Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="reveal mt-6 text-brand-muted text-sm leading-relaxed max-w-3xl">
+                    <span class="font-mono text-brand-accent">Composite ranking:</span> Play 1 leads on detection speed &mdash; same-day from the FinCEN / CFPB / SEC publication feed at zero monitoring cost, no enrichment bottleneck. Plays 2 and 3 share a weekly cadence and add a curated sponsor&harr;fintech mapping table as the structural bottleneck.
+                </p>
+                <p class="reveal mt-4 font-mono text-[11px] text-brand-faint leading-relaxed">// Top 3 selected from a 10-play menu. Seven more plays cover new-CCO 0&ndash;90-day windows, BaaS sponsor wind-down migrations, product-launch framework gaps, CFPB Civil Penalty Fund news cycles, headcount-vs-tooling signals, funded-round sponsor references, and sponsor-TPRM-platform adoptions &mdash; activate as detection sources and the sponsor&harr;fintech mapping table come online.</p>
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- PLAYS -->
+        <section id="plays" class="py-16 sm:py-32 px-6 scroll-mt-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal mb-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Three Deep Plays</p>
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-6">Three triggers. Three messages.</h2>
+                    <p class="text-brand-muted text-lg leading-relaxed font-light">Each play targets a distinct buyer moment for a fintech CCO. One is a daily-refresh federal-advisory feed where the alternative to acting in 14 days is inheriting an audit finding at next exam. One is a weekly sponsor-bank enforcement feed where the alternative to acting in 30 days is the sponsor&rsquo;s TPRM team running a monthly evidence cycle the fintech can&rsquo;t hold. One is a multi-state DFS feed where the alternative to acting in 30 days is the regulator&rsquo;s evidence package landing without a workflow to produce it.</p>
+                </div>
+
+                <!-- PLAY 1 -->
+                <article id="play-1" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">01_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Federal Advisory Tooling Decision</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For mid-stage fintech CCOs at Series A&ndash;C BaaS-using fintechs whose product line is named or implicated by a fresh FinCEN advisory, CFPB circular, or SEC IA AML rule update. Day 0&ndash;14 is when the advisory has landed but the gap analysis hasn&rsquo;t been scoped &mdash; before outside counsel writes the memo, before next quarter&rsquo;s audit catches the change.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">A FinCEN, CFPB, or SEC advisory drops with a 30&ndash;90 day implicit deadline. The CCO&rsquo;s team is the role accountable for translating the advisory into internal control updates, on the regulator&rsquo;s clock. Teams without a regulatory-change-tracking workflow miss the deadline. The gap surfaces at the next exam as an audit finding. Day 0&ndash;14 is &ldquo;we just learned about this&rdquo;; day 30+ is &ldquo;we missed it.&rdquo;</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">Almost no software vendor runs the FinCEN / CFPB / SEC publication feed as a same-day outbound trigger. The advisory is public, the framework-mapping is public, the prospect&rsquo;s product line is observable from their site &mdash; the entire data layer is permissionless. Blanc&rsquo;s framework breadth (Reg E / Reg Z / UDAAP / AML / BSA / TCPA / FDCPA / IAA / Exchange Act) maps each advisory to the affected control section automatically. The outbound is structurally received as helpful because the pain is concrete and the clock is ticking on a date the regulator set.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">Real PVP &mdash; drafted for Christopher Grieco (General Counsel &amp; CCO, Rain) within 30 days of FinCEN&rsquo;s April 7&ndash;10 NPRM trio</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">LINKEDIN DM &mdash; to Christopher Grieco, Rain · drafted May 9, 2026</span>
+                            </div>
+                            <div class="email-body">
+                                <p>Christopher &mdash; FinCEN&rsquo;s April 7 + 10 NPRM trio puts every stablecoin-infrastructure card issuer in a strange spot: not the PPSI under Part 1033, but the counterparty PPSIs will push the new sanctions-program and block/freeze obligations down to, while the parallel Program Reform NPRM hits Rain directly as a BSA-covered MSB on the &ldquo;in all material respects&rdquo; standard. Comments close June 9, and the gap analysis at most card-stack platforms is still un-scoped at this stage. I wrote up the Advisory Change Map for the Rain stack specifically &mdash; sanctions program, risk-assessment codification, independent-testing cadence, and the three-clock view (30 / 90 / 365 days). Want me to send it over, or is the NPRM-trio scoping already running with outside counsel?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-8 bg-brand-surface panel p-6 sm:p-8 dossier-card">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">↓ Real Artifact: The full FinCEN Advisory Change Map</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-4">The 1,107-word Advisory Change Map drafted for Rain on May 9, 2026 &mdash; the dual-exposure framing (counterparty PPSI cascade + direct Program Reform NPRM hit), the line-item read of what each rule actually says, where each provision lands on a stablecoin-infrastructure card issuer&rsquo;s stack, the 30 / 90 / 365-day operational clocks, and three time-boxed recommendations executable inside the comment window. Blanc is named zero times in the body. Built entirely from the Federal Register, the four major law-firm NPRM summaries, and Rain&rsquo;s own published product surface.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="./fincen-advisory-response.html" target="_blank" rel="noopener" class="inline-block font-body font-semibold border border-brand-accent text-brand-accent px-6 py-3 hover:bg-brand-accent hover:text-black transition-all text-sm text-center">View the Advisory Change Map →</a>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; <a href="https://www.fincen.gov/news/news-releases" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FinCEN advisories &amp; news releases</a> &mdash; daily publication feed (free)</li>
+                            <li>&rarr; <a href="https://www.consumerfinance.gov/compliance/compliance-resources/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">CFPB enforcement actions &amp; circulars</a> &mdash; daily publication feed (free)</li>
+                            <li>&rarr; <a href="https://www.sec.gov/news/pressreleases" class="text-brand-accent hover:underline" target="_blank" rel="noopener">SEC press releases &amp; IA AML rule updates</a> &mdash; daily publication feed (free)</li>
+                            <li>&rarr; <a href="https://www.federalregister.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Federal Register full-text</a> &mdash; NPRM and final-rule corpus, daily refresh (free)</li>
+                            <li>&rarr; LLM topic classifier + ICP product-taxonomy filter &mdash; advisory text intersected with the prospect&rsquo;s product line (crypto, MSB, lending, payments, RIA-adjacent)</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 2 -->
+                <article id="play-2" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">02_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The Sponsor Consent Order Cascade</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For mid-stage fintech CCOs whose BaaS sponsor bank just received a public consent order from FDIC, OCC, or the Federal Reserve. The cascade lands in the fintech&rsquo;s inbox &mdash; quarterly-or-tighter evidence requests across Reg E / UDAAP / BSA &mdash; within 30 days of the action date. Reach the CCO before the first request lands.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">A sponsor bank gets actioned. The bank&rsquo;s risk committee imposes a 30&ndash;90 day TPRM hardening cycle on the team that manages fintech partners. That team cascades quarterly-or-tighter evidence requests &mdash; control-testing logs across Reg E / UDAAP / BSA, sampling rationale, exception handling &mdash; to every fintech on the BIN. Notion and spreadsheets work at quarterly cadence; they fall apart at monthly. The CCO has 30 days from action date to either produce on demand or watch the relationship narrow.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">The sponsor&rsquo;s regulator-imposed remediation runs through the fintech&rsquo;s inbox, not the bank&rsquo;s. The buyer is forced into a tooling decision on someone else&rsquo;s clock. Blanc&rsquo;s automated control testing across the exact frameworks the sponsor&rsquo;s TPRM team will test &mdash; the same frameworks named in the consent order &mdash; is a direct fit. The Lineage January 2024 order is the public-record precedent: it explicitly required the bank to drop partners that couldn&rsquo;t produce on cadence.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">The Message</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">LINKEDIN DM &mdash; {sponsor_name}&rsquo;s {sponsor_action_date} order and your monthly evidence load</span>
+                            </div>
+                            <div class="email-body">
+                                <p>{sponsor_name}&rsquo;s {sponsor_action_date} consent order is the kind that triggers monthly evidence requests across all their fintech partners &mdash; Lineage&rsquo;s Jan 2024 order explicitly required them to let go of partners.</p>
+                                <br>
+                                <p>The TPRM team will start asking for control-testing logs across Reg E / UDAAP / BSA on a quarterly-or-tighter cycle within the next month. Notion + spreadsheets stop working at that cadence.</p>
+                                <br>
+                                <p>Curious whether your sponsor&rsquo;s review schedule has tightened yet &mdash; and whether evidence prep is sitting with you or with a different lead.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; <a href="https://orders.fdic.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">FDIC Enforcement Decisions &amp; Orders (ED&amp;O)</a> &mdash; weekly publication feed (free)</li>
+                            <li>&rarr; <a href="https://apps.occ.gov/EnforcementActions/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">OCC Enforcement Actions</a> &mdash; weekly publication feed (free)</li>
+                            <li>&rarr; <a href="https://www.federalreserve.gov/supervisionreg/enforcementactions.htm" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Federal Reserve Enforcement Actions</a> &mdash; weekly publication feed (free)</li>
+                            <li>&rarr; <a href="https://www.bankingdive.com/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Banking Dive</a> BaaS coverage &mdash; running list of sponsor-bank events</li>
+                            <li>&rarr; Curated BaaS sponsor list (Lead, Column, Pathward, Lewis &amp; Clark, Choice, Sutton, Cross River, Evolve, Continental, Five Star) cross-matched against fintech-partner enrichment from Treasury Prime / Synctera / Unit partner directories + per-fintech ToS / &ldquo;issued by&rdquo; page</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- PLAY 3 -->
+                <article id="play-3" class="mb-24 scroll-mt-20">
+                    <div class="reveal mb-6">
+                        <p class="text-brand-accent font-mono font-bold text-sm mb-3">03_</p>
+                        <h3 class="font-display font-bold text-2xl sm:text-3xl mb-4 section-heading">The State DFS Direct Enforcement</h3>
+                        <p class="text-brand-muted text-base leading-relaxed font-light max-w-3xl">For CCOs (or pre-CCO COO/CFOs) at fintechs hit with a fresh enforcement letter, consent order, or warning letter from NY DFS, CA DFPI, TX DOB, or MA DOB in the trailing 30 days. The fintech is already in active rebuild mode &mdash; the regulator has set a date and the evidence package has a shape that doesn&rsquo;t reconstruct from Notion.</p>
+                    </div>
+
+                    <div class="reveal bg-brand-surface panel p-6 sm:p-8 mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">The Pain</p>
+                        <p class="text-brand-text text-base leading-relaxed mb-6">Unlike a federal sponsor-bank action where the cascade travels through the bank, a state action lands the fintech directly in remediation with a regulator-imposed timeline. The action&rsquo;s remediation deadline is a specific date. The regulator&rsquo;s report has a specific evidence shape &mdash; control test logs with timestamps, sampling rationale, exception handling &mdash; and that package does not reconstruct from a Notion wiki. NY DFS BitLicense actions in particular surface the crypto-fintech subsegment on a tight clock.</p>
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-accent uppercase mb-4">Why This Works</p>
+                        <p class="text-brand-text text-base leading-relaxed">The buyer is already in active rebuild mode &mdash; the procurement override is the regulator&rsquo;s deadline. Counsel writes the remediation plan; the testing engine has to actually run on a cadence the regulator can re-test. Blanc is the engine, not the plan. The deliverable is the structure of the evidence-package sections the regulator will ask for, framed as the artifact the team carries into the next supervisory meeting &mdash; not a vendor pitch.</p>
+                    </div>
+
+                    <div class="reveal mb-8">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-4">The Message</p>
+                        <div class="email-card">
+                            <div class="email-bar">
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-dot"></span>
+                                <span class="email-label">LINKEDIN DM &mdash; {state_regulator}&rsquo;s {action_date} enforcement and the evidence shape</span>
+                            </div>
+                            <div class="email-body">
+                                <p>{state_regulator}&rsquo;s {action_date} enforcement letter on {state_action_target} is the kind that puts a specific control under exam-grade scrutiny on a regulator-imposed timeline.</p>
+                                <br>
+                                <p>If {company} runs in {state_jurisdiction}, the remediation evidence package the regulator will ask for has a specific shape &mdash; control test logs, sampling rationale, exception handling &mdash; and that package doesn&rsquo;t reconstruct from Notion.</p>
+                                <br>
+                                <p>Is rebuilding the evidence layer something you&rsquo;re actively scoping right now, or is it owned by someone else on the team?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal mb-6">
+                        <p class="font-mono text-xs tracking-[0.2em] text-brand-muted uppercase mb-3">Data Sources</p>
+                        <ul class="text-brand-muted text-sm space-y-2 leading-relaxed">
+                            <li>&rarr; <a href="https://www.dfs.ny.gov/reports_and_publications/enforcement_actions" class="text-brand-accent hover:underline" target="_blank" rel="noopener">NY DFS Enforcement Actions</a> &mdash; weekly publication feed; BitLicense actions surface the crypto-fintech subsegment</li>
+                            <li>&rarr; <a href="https://dfpi.ca.gov/enforcement-actions/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">CA DFPI Enforcement Actions</a> &mdash; weekly publication feed</li>
+                            <li>&rarr; <a href="https://www.dob.texas.gov/" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Texas Department of Banking</a> &mdash; periodic enforcement publication</li>
+                            <li>&rarr; <a href="https://www.mass.gov/orgs/division-of-banks" class="text-brand-accent hover:underline" target="_blank" rel="noopener">Massachusetts Division of Banks</a> &mdash; periodic enforcement publication</li>
+                            <li>&rarr; LLM context filter on action language (&ldquo;inadequate controls,&rdquo; &ldquo;evidence,&rdquo; &ldquo;sampling,&rdquo; &ldquo;exception handling&rdquo;) + ICP fintech-product filter to drop pure settlements with no remediation requirement</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="py-24 sm:py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
+                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Want Yours?</p>
+                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">
+                        Tell me your market<br class="hidden sm:block">
+                        and I&rsquo;ll build you one.
+                    </h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">
+                        I&rsquo;ll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.
+                    </p>
+                    <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">
+                        First 10 prospects are free.
+                    </p>
+                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
+                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                        Show me the signal &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANGELOG -->
+        <section class="py-12 px-6 border-t border-brand-border/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal">
+                    <p class="font-mono text-xs tracking-[0.2em] text-brand-faint uppercase mb-4">// Changelog</p>
+                    <ul class="space-y-2 font-mono text-xs text-brand-faint">
+                        <li>2026-05-10 &mdash; Playbook published. 3 plays (The Federal Advisory Tooling Decision, The Sponsor Consent Order Cascade, The State DFS Direct Enforcement), 1 drafted PVP (Rain &times; FinCEN PPSI NPRM Advisory Change Map, drafted for Christopher Grieco &mdash; General Counsel &amp; CCO at Rain &mdash; within 30 days of FinCEN&rsquo;s April 7&ndash;10 NPRM trio, send-ready). Top 3 selected from a 10-play menu; full menu and operator checklist available on request.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-brand-border px-6 py-12 relative z-10">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="mailto:lucas.linares@runthresh.com" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">lucas.linares@runthresh.com</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://www.linkedin.com/in/lucas-linares1/" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">LinkedIn</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="https://github.com/lucasvibecoder" target="_blank" rel="noopener noreferrer" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">GitHub</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/playbooks/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Playbooks</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/blog/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Blog</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <a href="/privacy" class="text-sm text-brand-muted hover:text-brand-accent transition-colors py-2">Privacy</a>
+                <span class="hidden sm:inline text-brand-faint">·</span>
+                <span class="text-sm text-brand-faint">NYC / LA</span>
+            </div>
+            <p class="font-mono text-xs text-brand-faint">&copy; 2026 Thresh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -15px 0px' });
+
+        const heroSection = document.querySelector('main > section:first-child');
+        heroSection.querySelectorAll('.reveal').forEach((el, i) => {
+            setTimeout(() => { el.classList.add('active'); }, i * 150);
+        });
+        document.querySelectorAll('.reveal').forEach(el => {
+            if (!heroSection.contains(el)) { observer.observe(el); }
+        });
+
+        const nav = document.querySelector('nav');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+                    else { nav.classList.remove('scrolled'); }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <script>
+        (function () {
+            var config = window.THRESH_RUNTIME || {};
+            var host = window.location.hostname;
+            var env = (config.vercelEnv || '').toLowerCase();
+            var isProductionHost = host === 'runthresh.com' || host === 'www.runthresh.com';
+            var isProduction = env ? env === 'production' : isProductionHost;
+
+            if (!isProduction) return;
+
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+
+            var analytics = document.createElement('script');
+            analytics.defer = true;
+            analytics.src = '/_vercel/insights/script.js';
+            document.body.appendChild(analytics);
+
+            var speedInsights = document.createElement('script');
+            speedInsights.defer = true;
+            speedInsights.src = '/_vercel/speed-insights/script.js';
+            document.body.appendChild(speedInsights);
+        })();
+    </script>
+</body>
+</html>

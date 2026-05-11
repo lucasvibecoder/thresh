@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rain — FinCEN Advisory Change Map</title>
+<meta name="description" content="An Advisory Change Map drafted for Rain (rain.xyz) within 30 days of FinCEN's April 7–10, 2026 NPRM trio. Two operationally distinct exposure surfaces for a stablecoin-infrastructure card issuer — neither of which collapses to 'we already comply with BSA' — across the PPSI NPRM (Fed Reg 2026-04-10) and the parallel Program Reform NPRM." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://runthresh.com/playbooks/blanchq-com/fincen-advisory-response.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #141414;
+    --surface-alt: #1A1A1A;
+    --border: rgba(255,255,255,0.10);
+    --border-strong: rgba(255,255,255,0.18);
+    --accent: #00FF41;
+    --accent-light: rgba(0,255,65,0.10);
+    --secondary: #D4622B;
+    --text: #E8EAF0;
+    --muted: #9CA1AA;
+    --faint: #717985;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Inter Tight", system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; position: relative; min-height: 100vh; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px); z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  .label { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--accent); text-transform: lowercase; }
+  .label::before { content: "// "; color: var(--accent); }
+  .label-muted { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .label-muted::before { content: "// "; color: var(--faint); }
+
+  .header { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  h1 { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 0; color: var(--text); }
+  h1 .accent { color: var(--accent); }
+  h1 .warn { color: var(--secondary); }
+  .header-meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); text-align: right; line-height: 1.6; }
+  .header-meta strong { color: var(--muted); font-weight: 500; }
+
+  .intro { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 32px; }
+  .intro p { margin: 6px 0; color: var(--muted); font-size: 13.5px; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+
+  .key-finding { background: rgba(212,98,43,0.04); border: 1px solid var(--secondary); padding: 20px 24px; margin-bottom: 28px; }
+  .key-finding .kf-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .key-finding p { margin: 0; color: var(--text); font-size: 14px; line-height: 1.6; }
+  .key-finding strong.warn { color: var(--secondary); }
+  .key-finding strong.num { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+  .section-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; margin: 40px 0 14px; letter-spacing: -0.005em; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); background: var(--surface); margin-bottom: 28px; }
+  .stat-cell { padding: 18px 16px; border-right: 1px solid var(--border); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-cell .stat-label { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+  .stat-cell .stat-value { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 18px; color: var(--text); line-height: 1.2; margin-bottom: 8px; }
+  .stat-cell .stat-detail { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .stat-cell.warn .stat-value { color: var(--secondary); }
+
+  .table-wrap { background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
+  table.checks { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.checks th { text-align: left; padding: 12px 16px; background: var(--surface-alt); font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--faint); letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.checks td { padding: 14px 16px; color: var(--text); border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.checks tr:last-child td { border-bottom: none; }
+  table.checks td.num { font-family: "JetBrains Mono", monospace; color: var(--accent); font-weight: 600; font-size: 16px; padding-top: 16px; }
+  table.checks td .check-name { font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  table.checks td .check-detail { color: var(--muted); font-size: 12px; line-height: 1.55; }
+
+  .narrative { background: var(--surface); border: 1px solid var(--border); padding: 20px 24px; margin-bottom: 14px; }
+  .narrative .narrative-num { font-family: "JetBrains Mono", monospace; color: var(--accent); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .narrative p { margin: 0; color: var(--text); font-size: 13.5px; line-height: 1.65; }
+  .narrative p strong { color: var(--accent); font-weight: 500; }
+
+  .recs { margin-top: 14px; border: 1px solid var(--border); background: var(--surface); }
+  .rec { padding: 16px 20px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; }
+  .rec:last-child { border-bottom: none; }
+  .rec-num { font-family: "JetBrains Mono", monospace; font-size: 22px; color: var(--accent); font-weight: 600; line-height: 1; }
+  .rec-body .rec-title { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+  .rec-body .rec-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .sources { font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: var(--muted); line-height: 1.7; margin-top: 14px; }
+  .sources ol { padding-left: 22px; margin: 0; }
+  .sources li { margin-bottom: 4px; }
+  .sources a { color: var(--muted); text-decoration: none; }
+  .sources a:hover { color: var(--accent); text-decoration: underline; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--faint); line-height: 1.7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); text-decoration: underline; }
+
+  @media (max-width: 760px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat-cell:last-child { border-bottom: none; }
+    .header { flex-direction: column; align-items: flex-start; }
+    .header-meta { text-align: left; }
+    h1 { font-size: 22px; }
+    .rec { grid-template-columns: 40px 1fr; }
+  }
+  @media print { body::before { display: none; } body { background: #000; } .page { padding: 24px; max-width: 100%; } }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="header">
+    <div>
+      <span class="label">pvp / fincen advisory change map</span>
+      <h1>Rain<br/><span class="accent">FinCEN Advisory Change Map</span> <span style="color:var(--muted);">— May 9, 2026</span></h1>
+    </div>
+    <div class="header-meta">
+      <div><strong>artifact</strong>&nbsp;&nbsp;one-pager</div>
+      <div><strong>audience</strong>&nbsp;&nbsp;Christopher Grieco · General Counsel &amp; CCO, Rain</div>
+      <div><strong>trigger event</strong>&nbsp;&nbsp;FinCEN April 7&ndash;10, 2026 NPRM trio</div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p><strong>What this is.</strong> A regulator-shaped change map for the April 7&ndash;10, 2026 FinCEN NPRM trio (PPSI rule + Program Reform rule + the coordinated bank-regulator companion NPRMs), specifically as the rules land on a stablecoin-infrastructure card issuer. Built entirely from the Federal Register, the four major law-firm NPRM summaries (Covington, DLA Piper, Sullivan &amp; Cromwell, Mayer Brown), and Rain&rsquo;s own published product surface.</p>
+    <p><strong>What it is not.</strong> A pitch. Blanc is named zero times in the body. Recommendations are vendor-agnostic and executable inside the 30-day comment window. Every claim ties back to a primary source listed at the bottom.</p>
+  </section>
+
+  <div class="key-finding">
+    <div class="kf-label">key finding</div>
+    <p>The April 7&ndash;10 FinCEN NPRM trio creates <strong class="warn">two operationally distinct exposure surfaces</strong> for a stablecoin-infrastructure card issuer, neither of which collapses to &ldquo;we already comply with BSA.&rdquo; The first is <strong class="num">downstream</strong>: permitted payment stablecoin issuers (PPSIs) the platform settles against will be required to maintain &ldquo;effective sanctions compliance programs&rdquo; with technical capabilities to block, freeze, or reject impermissible secondary-market transactions &mdash; the first-ever federal-statute-level sanctions program requirement for U.S. persons. Those obligations push out to integrators through commercial agreements. The second is <strong class="num">direct</strong>: the parallel Program Reform NPRM rewrites the AML/CFT program standard for every BSA-covered financial institution &mdash; including a card-issuance and stablecoin-settlement MSB &mdash; codifying risk-assessment, the &ldquo;in all material respects&rdquo; implementation standard, and risk-based resource allocation as supervisable line items.</p>
+  </div>
+
+  <span class="label">section 1</span>
+  <h2 class="section-title">The 30-second read</h2>
+  <p style="color: var(--text); font-size: 13.5px; margin: 0 0 14px; line-height: 1.65;">Two rules, the same week, neither resolvable on first read in May 2026. The PPSI NPRM (Fed Reg 2026-04-10, 91 FR 06963) implements the GENIUS Act&rsquo;s BSA provisions for stablecoin issuers and introduces the novel federal-statute-level sanctions program requirement. The Program Reform NPRM (issued April 7, 2026) modernizes the AML/CFT program standard for every BSA-covered institution. The coordinated companion NPRMs from OCC, the Federal Reserve, the FDIC, and NCUA mirror the FinCEN proposal for supervised banks &mdash; meaning a card-issuing partner bank&rsquo;s BSA program reshapes on the same timeline.</p>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 28px; line-height: 1.6;">Both NPRMs close their comment windows on <strong style="color: var(--secondary);">2026-06-09</strong> (30 days from this writing). Implementation runs 12 months post-final for the Program Reform rule; the PPSI rule attaches to the GENIUS Act&rsquo;s three-year timeline. The gap between a current Reg E / Reg Z / UDAAP / sanctions program and the proposed standard is concrete, mappable, and at most companies sits in three or four control sections that don&rsquo;t reconstruct from spreadsheets.</p>
+
+  <span class="label">section 2</span>
+  <h2 class="section-title">What the rules actually say</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Two separate NPRMs, issued the same week, that operate on different parts of the BSA framework. The PPSI rule is targeted at stablecoin issuers; the Program Reform rule applies broadly across BSA-covered institutions. Both have downstream effects on stablecoin-infrastructure platforms even when the platform itself is not the primary regulated entity.</p>
+
+  <div class="narrative">
+    <div class="narrative-num">01_ PPSI NPRM (FinCEN + OFAC, Fed Reg 2026-04-10)</div>
+    <p>Implements the GENIUS Act&rsquo;s BSA provisions. A &ldquo;permitted payment stablecoin issuer&rdquo; is a U.S.-formed entity that is either a subsidiary of an insured depository institution approved for stablecoin issuance, a federal qualified PPSI, or a state qualified PPSI. The rule moves these entities from MSB classification into a dedicated BSA framework under proposed Part 1033. <strong>Mandatory program elements:</strong> an &ldquo;effective&rdquo; AML/CFT program with risk-based internal policies, procedures, and controls; independent testing with explicit recordkeeping of results and program enhancements; a designated AML/CFT officer; ongoing employee training; customer due diligence; an &ldquo;effective sanctions compliance program&rdquo; (the novel piece &mdash; the first-ever federal-statute requirement for U.S. persons to maintain such a program, per the joint FinCEN/OFAC framing); technical capability to block, freeze, or reject impermissible secondary-market transactions; sanctions-compliance recordkeeping that extends beyond current U.S. person obligations. Comment period closes 2026-06-09. Implementation attaches to the GENIUS Act&rsquo;s three-year timeline.</p>
+  </div>
+
+  <div class="narrative" style="margin-bottom: 28px;">
+    <div class="narrative-num">02_ Program Reform NPRM (FinCEN, April 7, 2026)</div>
+    <p>A separate but parallel rule, issued the same week, modernizing the AML/CFT program standard for all BSA-covered institutions under the Anti-Money Laundering Act of 2020. <strong>Key shifts:</strong> risk assessment becomes a formal, codified program component (currently a supervisory expectation but not explicitly required by rule); risk assessments must review and, where appropriate, incorporate Treasury&rsquo;s AML/CFT Priorities; for the first time, financial institutions are expressly permitted &mdash; and effectively required &mdash; to direct resources toward higher-risk activity and away from lower-risk areas, grounded in the documented risk assessment; a new &ldquo;in all material respects&rdquo; implementation standard, intended to separate criticism of program design from criticism of day-to-day execution. Comment period closes 2026-06-09. Implementation runs 12 months after the final rule publishes. The coordinated bank-regulator companion NPRMs from OCC, the Federal Reserve, the FDIC, and NCUA mirror the FinCEN proposal for their respective supervised institutions, meaning a card-issuing partner bank&rsquo;s BSA program will be reshaped on the same timeline.</p>
+  </div>
+
+  <span class="label">section 3</span>
+  <h2 class="section-title">Where this hits a stablecoin-infrastructure card issuer</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">A platform that turns stablecoins into card-network-acceptable settlement &mdash; cards issued by a partner bank under a Visa or Mastercard license, customer funds held as stablecoins, daily settlement to the network &mdash; sits at a regulatory junction the NPRMs explicitly reorganize.</p>
+
+  <div class="narrative">
+    <div class="narrative-num">01_ The PPSI side: the platform is the counterparty, not the issuer</div>
+    <p>Stablecoins held by customers and routed through the platform&rsquo;s settlement flow are issued by entities that will be reclassified under Part 1033. Those issuers will be required to extend &ldquo;effective sanctions compliance programs&rdquo; downstream, and the technical block/freeze/reject obligation only works if the platform can honor freeze requests in near-real-time. <strong>Expect counterparty agreements to be reopened, sanctions-screening attestations to become formal, and the platform&rsquo;s transaction-monitoring stack to need to produce an audit trail acceptable not just to internal counsel but to a PPSI&rsquo;s independent testing engagement.</strong></p>
+  </div>
+
+  <div class="narrative">
+    <div class="narrative-num">02_ The Program Reform side: the platform is directly in scope</div>
+    <p>A money services business operating as a card-issuance and stablecoin-settlement infrastructure layer is a BSA-covered financial institution. The risk-assessment codification, the AML/CFT Priorities incorporation, and the risk-based resource allocation provisions apply directly. <strong>The &ldquo;in all material respects&rdquo; implementation standard means a program that looks complete on paper but isn&rsquo;t running on a cadence the regulator can re-test will fail the standard on examination, regardless of design quality.</strong></p>
+  </div>
+
+  <div class="narrative" style="margin-bottom: 28px;">
+    <div class="narrative-num">03_ The partner-bank dimension: the cascade compounds both</div>
+    <p>The card-issuing bank&rsquo;s own BSA program will be reshaped by the parallel banking-regulator NPRM. The TPRM cycle the partner bank runs against fintech partners &mdash; quarterly evidence reviews, control-testing log requests, sanctions-screening attestations &mdash; will tighten the moment the bank&rsquo;s own examiner expectations recalibrate. <strong>The platform receives the cascade through the partner-bank relationship before the regulatory floor finalizes.</strong></p>
+  </div>
+
+  <span class="label">section 4</span>
+  <h2 class="section-title">The 30, 90, and 365-day clocks</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Three operational windows, each gating a distinct set of work. The downstream-counterparty obligation from PPSI partners will arrive <em>commercially</em> before the regulatory floor finalizes &mdash; an inversion of the typical &ldquo;rule finalizes, then implementation&rdquo; sequence that forces an earlier internal decision than the headline comment-period deadline suggests.</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="stat-label">day 0&ndash;30 · now to comment close</div>
+      <div class="stat-value">Gap analysis + comment letter</div>
+      <div class="stat-detail">Map current control sections to each NPRM. File a comment letter (typically on the downstream-integrator burden of the PPSI sanctions-program requirement). Coordinated industry posture is easier to build before June 9 than after.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">day 30&ndash;90 · comment close to first-final</div>
+      <div class="stat-value">Counterparty + TPRM reset</div>
+      <div class="stat-detail">PPSI counterparty agreements reopen. Card-network and partner-bank TPRM teams reset cadence to anticipate the final-rule shape. Sanctions-screening test logs and risk-assessment artifacts need to be in shape for a re-test scenario.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">day 90&ndash;365+ · final-rule implementation</div>
+      <div class="stat-value">12-month compliance build</div>
+      <div class="stat-detail">12 months post-final to bring the AML/CFT program into &ldquo;effective&rdquo; and &ldquo;in all material respects&rdquo; compliance. The PPSI rule&rsquo;s three-year GENIUS Act clock provides longer runway on the sanctions-tech side; integrator-counterparty obligations arrive earlier through commercial agreements.</div>
+    </div>
+  </div>
+
+  <span class="label">recommendations</span>
+  <h2 class="section-title">Three actions worth running inside the comment window</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: 0 0 14px; line-height: 1.6;">Vendor-agnostic and executable inside 30 days, regardless of which compliance platform a stablecoin-infrastructure card issuer is running today.</p>
+
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Map the platform&rsquo;s current control sections to the two NPRMs by 2026-05-31.</div>
+        <div class="rec-detail">Specifically: the sanctions program (where it sits today, what the PPSI rule&rsquo;s &ldquo;effective&rdquo; standard adds, where block/freeze/reject technical capability is owned), the risk assessment (whether the current document survives the codification standard and incorporates the Treasury AML/CFT Priorities), independent testing (cadence, scope, recordkeeping of enhancements), and AML/CFT officer designation language. A two-column map &mdash; current state vs. NPRM standard &mdash; surfaces the gaps in roughly half a day per control area.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">File a comment letter on the PPSI NPRM by 2026-06-09.</div>
+        <div class="rec-detail">Best target: the integrator-counterparty burden of the sanctions-program requirement, specifically whether the technical block/freeze/reject obligation flows downstream and at what cadence. Even a three-page letter establishes a record and signals industry posture to PPSI counterparties before the negotiation surface opens in day 30&ndash;90.</div>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Set the independent-testing cadence to match the &ldquo;in all material respects&rdquo; standard.</div>
+        <div class="rec-detail">Annual testing won&rsquo;t survive the new framing if the test scope doesn&rsquo;t re-validate day-to-day execution. The shift is from design-completeness to execution-fidelity; the testing engine has to run on a cadence the regulator can re-test, not just on an annual milestone. Quarterly sampling against the highest-risk control sections (sanctions-screening hits, card-issuance KYB exceptions, settlement-flow exception handling) is the minimum-viable starting point.</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="label-muted" style="display: block; margin-top: 40px;">sources</span>
+  <h2 class="section-title" style="margin-top: 8px;">Every claim in this change map links to a primary source.</h2>
+  <div class="sources">
+    <ol>
+      <li>FinCEN + OFAC. &ldquo;Permitted Payment Stablecoin Issuer Anti-Money Laundering/Countering the Financing of Terrorism Program and Sanctions Compliance Program Requirements.&rdquo; Federal Register, April 10, 2026 · 91 FR 06963. <a href="https://www.federalregister.gov/" target="_blank" rel="noopener">federalregister.gov</a></li>
+      <li>FinCEN. AML/CFT Program Reform NPRM. April 7, 2026. <a href="https://www.fincen.gov/" target="_blank" rel="noopener">fincen.gov</a></li>
+      <li>OCC, Federal Reserve, FDIC, NCUA. Coordinated companion NPRMs mirroring the FinCEN Program Reform proposal for supervised institutions. April 2026.</li>
+      <li>Anti-Money Laundering Act of 2020. Statutory authority for the AML/CFT program standard reform.</li>
+      <li>GENIUS Act. Statutory authority for the PPSI BSA framework and three-year implementation clock.</li>
+      <li>Covington &amp; Burling. PPSI NPRM client alert. April 2026. Source for PPSI definition (U.S.-formed IDI subsidiary, federal qualified PPSI, or state qualified PPSI), &ldquo;first-ever federal-statute sanctions program requirement&rdquo; framing, and technical block/freeze/reject capability scope.</li>
+      <li>DLA Piper. AML/CFT Program Reform NPRM alert. April 2026. Source for the April 7 publication date, 2026-06-09 comment close, and 12-month post-final implementation.</li>
+      <li>Sullivan &amp; Cromwell. Program Reform NPRM client memo. April 2026. Source for the risk-assessment codification, the &ldquo;in all material respects&rdquo; implementation standard, and the coordinated bank-regulator companion NPRM framing.</li>
+      <li>Mayer Brown. Program Reform NPRM client alert. April 2026. Source for risk-based resource allocation as a new express obligation.</li>
+      <li>Morrison Foerster. AML/CFT Program Reform NPRM alert. April 2026. Companion law-firm summary on implementation timeline.</li>
+      <li>Rain. About / product surface (wallets, virtual accounts, card issuing, rewards, onramps, offramps, payments, corporate cards; cards issued by Third National pursuant to Visa license; banking via SSB, Member FDIC; PCI DSS compliance achieved 2025). <a href="https://www.rain.xyz/about-us" target="_blank" rel="noopener">rain.xyz/about-us</a></li>
+      <li>Christopher Grieco public bio &mdash; General Counsel &amp; Chief Compliance Officer at Rain since February 2023; previously Associate Deputy Attorney General (U.S. Department of Justice), Associate Counsel to the President (The White House), Majority Counsel (House Judiciary Committee, white-collar subcommittee). Stanford JD. The Org + Federalist Society + Rain PCI DSS press release.</li>
+    </ol>
+  </div>
+
+  <footer class="footer">
+    <div>
+      Drafted May 9, 2026 · Rain × FinCEN PPSI NPRM Advisory Change Map · Vendor-agnostic · Built from public sources
+    </div>
+    <div>
+      <a href="../">← Back to Blanc playbook</a> · <a href="/playbooks/">All playbooks</a>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
