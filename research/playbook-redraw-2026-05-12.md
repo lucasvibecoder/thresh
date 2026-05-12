@@ -339,16 +339,60 @@ The rest of this playbook is the printing-side spine.
 │  → Bonus enrichment: paid Clay subscription (BuiltWith)             │
 │  → Bonus enrichment: vertical SaaS classification                   │
 │                                                                     │
-│  Cold-email anchor (WORKING DRAFT — Lucas to review):               │
-│  > Your GTM Engineer role has been open [N] days. The role fills    │
-│  > <30% of the time within 90. The reason isn't talent supply —     │
-│  > it's that the role was defined to do what Clay already does.     │
-│  > Here's what your team actually needs instead.                    │
+│  Cold-email anchors (rewritten 2026-05-12, lead with EDP):          │
 │                                                                     │
-│  Re-diagnosis hook (the meta-EDP from Stage 2 Step 5):              │
+│  ── ANGLE A · FOUNDER / CEO ──                                      │
+│  Subject: gtm engineer role at [Company]                            │
+│                                                                     │
+│  > [Company]'s GTM Engineer role just hit [N] days open.            │
+│  > Real GTME hires are rare. Growth Unhinged counted 128            │
+│  > GTM Engineer postings vs ~11,000 SDR postings in Q3              │
+│  > 2025, and ~45% of those GTME titles are agencies, not            │
+│  > in-house roles.                                                  │
+│  >                                                                  │
+│  > The bigger reason it stays open: most JDs ask for Clay           │
+│  > magic Clay already does, plus public-data signal work            │
+│  > that's hard to put in one person.                                │
+│  >                                                                  │
+│  > I run a 90-day engagement that delivers the public-data          │
+│  > signal work and outbound a GTME would build, while you           │
+│  > keep recruiting. Documented for handoff when you fill            │
+│  > the role.                                                        │
+│  >                                                                  │
+│  > Want the playbook we shipped for [their vertical]?               │
+│  >                                                                  │
+│  > Cheers,                                                          │
+│  > Lucas                                                            │
+│                                                                     │
+│  ── ANGLE B · VP SALES / HEAD OF SALES ──                           │
+│  Subject: your gtm engineer role                                    │
+│                                                                     │
+│  > The [Company] GTM Engineer role is [N] days in. Real             │
+│  > ones are rare. Kyle Poyar counted 128 GTM Engineer               │
+│  > postings vs ~11,000 SDR postings in Q3 2025, and ~45%            │
+│  > of those are agencies, not in-house roles.                       │
+│  >                                                                  │
+│  > The deeper pattern: JDs ask for Clay execution plus              │
+│  > public-data signal work. One person rarely owns both,            │
+│  > especially with no playbook in place yet.                        │
+│  >                                                                  │
+│  > I do the signal + outbound work directly as a 90-day             │
+│  > engagement. Run it for 4 weeks personally, then hand off         │
+│  > documented so the hire (when they land) inherits a               │
+│  > working system.                                                  │
+│  >                                                                  │
+│  > Want the playbook we shipped for [their vertical]?               │
+│  >                                                                  │
+│  > Cheers,                                                          │
+│  > Lucas                                                            │
+│                                                                     │
+│  Re-diagnosis hook (use as reply ammo, not first-touch):            │
 │  Reframe their GTME-shaped need as a data-quality problem one       │
 │  layer down. "You're hiring for Clay orchestration, but the         │
-│  bottleneck is the data underneath it."                             │
+│  bottleneck is the data underneath it." Cannonball renamed the      │
+│  role 'Revenue Growth Engineer' on 2026-01-31 because the term      │
+│  was getting watered down — same gap, cleaner label. Use this in    │
+│  a Day-7 follow-up or reply, not in the first-touch.                │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -467,18 +511,53 @@ The rest of this playbook is the printing-side spine.
 │  → Bonus Layer-B: cold-send audit of their actual threads to        │
 │    surface conversation-state failures                              │
 │                                                                     │
-│  Cold-email anchor (WORKING DRAFT — Lucas to review):               │
-│  > You bought [Vendor] ~75 days ago to scale outbound. You still    │
-│  > have [N] SDR roles open. The math on "AI replaces the SDR"       │
-│  > isn't playing out — and we audited 14 of your recent threads,    │
-│  > the agent kept sending next-in-sequence after the prospect       │
-│  > replied. Here's what the replacement playbook looks like.        │
+│  Cold-email anchors (rewritten 2026-05-12, lead with EDP):          │
 │                                                                     │
-│  Re-diagnosis hook:                                                 │
+│  ── ANGLE A · FOUNDER / CEO ──                                      │
+│  Subject: [Vendor] math at [Company]                                │
+│                                                                     │
+│  > [Company] bought [Vendor] ~[N] days ago. Your SDR/AE             │
+│  > roles are still open. The "AI replaces the SDR" math             │
+│  > isn't playing out. That's the typical 90-day pattern.            │
+│  >                                                                  │
+│  > Two things usually break: the agent sends the next email         │
+│  > after someone already replied, and the sending pattern           │
+│  > damages your domain so real human emails start landing           │
+│  > in spam.                                                         │
+│  >                                                                  │
+│  > I run a 90-day engagement: human-sent signal-based               │
+│  > outbound, documented for handoff.                                │
+│  >                                                                  │
+│  > Want the playbook we shipped for [their vertical]?               │
+│  >                                                                  │
+│  > Cheers,                                                          │
+│  > Lucas                                                            │
+│                                                                     │
+│  ── ANGLE B · VP SALES / HEAD OF SALES ──                           │
+│  Subject: cost-per-meeting at [Company]                             │
+│                                                                     │
+│  > [Company]'s [Vendor] contract is ~[N] days in. With              │
+│  > SDR/AE roles still open, the cost-per-meeting math is            │
+│  > usually 3-4x what the AI-SDR pitch promised by this              │
+│  > point.                                                           │
+│  >                                                                  │
+│  > The mechanics: agent sends sequence-next after replies,          │
+│  > and the send pattern eats into your domain reputation.           │
+│  > Cleanup is a quarter of pain.                                    │
+│  >                                                                  │
+│  > I do the signal + outbound work directly for 4 weeks             │
+│  > before handing it off. Human-sent, no domain damage,             │
+│  > full runbook for your team after.                                │
+│  >                                                                  │
+│  > Want the playbook we shipped for [their vertical]?               │
+│  >                                                                  │
+│  > Cheers,                                                          │
+│  > Lucas                                                            │
+│                                                                     │
+│  Re-diagnosis hook (use as reply ammo, not first-touch):            │
 │  Buyer reads their pain as "the AI isn't good enough." Reframe      │
 │  as "the AI doesn't have the data layer it needs to be specific."   │
-│  This is the meta-EDP from Stage 2 Step 5 in action — pull them     │
-│  back to data quality, not vendor selection.                        │
+│  Pull them back to data quality, not vendor selection.              │
 │                                                                     │
 │  Why T1 was absorbed instead of shipped separately: same buyer,     │
 │  same Layer-A signal (AI-SDR vendor logo), same core narrative      │

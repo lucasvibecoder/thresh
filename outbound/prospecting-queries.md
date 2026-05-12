@@ -2,6 +2,8 @@
 
 **Purpose:** Reusable queries to find Stage 2 niche vertical companies. Run these monthly to refresh the pipeline.
 
+**Related v1 TAM system:** `outbound/vertical-saas-tam-system.md` defines the newer lookalike-seeded watchlist model. Use this file for timing-signal discovery and supplemental prospecting; use the TAM system doc for the source-of-truth account universe.
+
 **API:** TheirStack v1 Jobs Search (POST `https://api.theirstack.com/v1/jobs/search`)
 **Auth:** Bearer token via `$THEIRSTACK_API_KEY` env var
 **Credits:** Free tier = 200/month. 1 credit = 1 record returned. `include_total_results: true` gives count for free.
@@ -72,6 +74,52 @@ curl -s -X POST "https://api.theirstack.com/v1/jobs/search" \
 **What to look for:** Same filtering as Query 1. Extra bonus: companies with <25 employees posting SDR = almost certainly their first outbound hire.
 
 **2026-02-25 baseline:** 893 jobs at 755 companies
+
+---
+
+### Query 4: T6 segment — GTM Engineer / Revenue Engineer / Growth Engineer at vertical SaaS (PLAYBOOK SEGMENT)
+
+Finds the T6 buyer from the 2026-05-12 playbook redraw: vertical SaaS Series A-B that opened a GTM-shaped role and (per the redraw thesis) hasn't filled it.
+
+```bash
+curl -s -X POST "https://api.theirstack.com/v1/jobs/search" \
+  -H "Authorization: Bearer $THEIRSTACK_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_title_or": ["GTM Engineer", "Revenue Engineer", "Growth Engineer", "Revenue Growth Engineer", "Go-to-Market Engineer"],
+    "job_country_code_or": ["US"],
+    "min_employee_count": 10,
+    "max_employee_count": 100,
+    "posted_at_gte": "YYYY-MM-DD",
+    "include_total_results": true,
+    "limit": 25
+  }'
+```
+
+**Set `posted_at_gte` to 90 days ago.** This captures both freshly-posted (low signal — they just started looking) and medium-vintage roles (high signal — they tried and the role didn't fill).
+
+**Signal interpretation:**
+- Posted < 30 days ago → too early, no proof the labor market said no yet
+- Posted 30-90 days ago → in the buying window; likely still open (verify per-account)
+- Posted >90 days ago → signal expired (either filled, or hiring abandoned — see "Per-account verification" below)
+
+**Per-account verification (REQUIRED before send):**
+LinkedIn job postings persist after roles are filled or quietly abandoned. Before sending:
+1. Check the company's `/careers` page directly — is the role still listed?
+2. If yes → "open [N] days" is a real, citable number in the cold email
+3. If no but TheirStack/LinkedIn still shows it → role was filled or hiring paused. Don't claim "[N] days open." Either skip the account, or reframe email around "saw your team posted a GTM Engineer role earlier this year" without claiming a day count.
+4. Some companies use Greenhouse or Lever as their ATS — those public boards are more authoritative than LinkedIn.
+
+**Filtering to T6 fits after the pull:**
+- Industry classification looks vertical-SaaS-shaped (not horizontal dev tools, not consumer)
+- Sells to a regulated/inspected/licensed industry (Information Asymmetry Test from thresh.md passes)
+- Series A-B funding stage (`last_funding_round_amount_readable` ≈ $5M-$50M)
+- Founder or VP Sales is on LinkedIn (multi-stakeholder send target)
+- `last_funding_round_date` within last ~24 months (still in scale phase)
+
+**Anchor template:** `research/playbook-redraw-2026-05-12.md` — SEGMENT 1, T6 cold-email anchors, Angle A (Founder) + Angle B (VP Sales).
+
+**Expected hit rate (rough):** ~25 results from this query, ~30-50% are vertical SaaS by industry filter, of those ~50% pass the Information Asymmetry Test. So 25 → ~4-6 strong fits per pull. May need 2-3 pulls (different posted_at_gte windows or expanded employee range) to get to 10 fits.
 
 ---
 
