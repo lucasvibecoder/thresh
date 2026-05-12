@@ -1,0 +1,4 @@
+first_name,last_name,email,title,seniority,company_name,domain,linkedin_url,tier,email_status,email_sub_status,domain_type,source_pass,lm_status,lm_message,lm_is_domain_catch_all,lm_is_valid,lm_mx_provider,variant_id,assigned_inbox
+Jen,Tindle,jtindle@bobtail.com,Chief Financial Officer,c_suite,Bobtail,bobtail.com,https://www.linkedin.com/in/jennifertindle,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Google,v2,l@threshworks.com
+Mike,Jardine,mike@mjnservices.com,President,c_suite,"MJN Services, Inc.",mjnservices.com,https://www.linkedin.com/in/mike-jardine-15108432,B,VALID,EMPTY,SMTP,pass2_tier_bc,valid,Email is valid.,,,Other,v2,l@threshworks.com
+Charis,Udolph,charis@factorloads.com,CFO,c_suite,FactorLoads,factorloads.com,https://www.linkedin.com/in/charis-udolph-8946357b,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a,valid,Email is valid.,,,Google,v2,l@withthresh.com

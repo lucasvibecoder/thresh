@@ -1,0 +1,3 @@
+first_name,last_name,email,title,seniority,company_name,domain,linkedin_url,tier,email_status,email_sub_status,domain_type,source_pass,lm_status,lm_message,lm_is_domain_catch_all,lm_is_valid,lm_mx_provider,variant_id,assigned_inbox
+Sandy,Beavers,sandy.beavers@corpbill.com,Vice President,vp,Corporate Billing,corpbill.com,https://www.linkedin.com/in/sandybeavers,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Other,v5,l@threshhq.com
+Lacey,Whitehead,lacey.whitehead@tbsokc.com,Chief Financial Officer,c_suite,"TBS Factoring Service, LLC",tbsfactoring.com,https://www.linkedin.com/in/lacey-whitehead-05185ab,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Microsoft,v5,lucas@threshhq.com

@@ -1,0 +1,7 @@
+Tools execute failed (status 422).
+Message: Validation failed for integration payload: size: must be <= 100
+Detail: size: must be <= 100
+Request ID: iad1::sh957-1778537631013-1c69918b6ff6
+Hint: Fix the payload according to the operation schema/sample.
+Validation issues:
+  - size: must be <= 100 (maximum)

@@ -1,0 +1,72 @@
+Status: completed
+Job ID: iad1::n42lr-1778537356407-468fd0ed7e68
+Result:
+{
+  "data": {
+    "trackId": "06c70d99-595c-4a97-9bc4-bf8909e6a09f",
+    "statistics": {
+      "total": 100,
+      "found": 0
+    },
+    "state": "PENDING",
+    "description": null
+  },
+  "meta": {
+    "response_adjustment": {
+      "final_status_code": 200,
+      "adjusted_reason": "ok",
+      "upstream_status": 200,
+      "upstream_body": {
+        "trackId": "06c70d99-595c-4a97-9bc4-bf8909e6a09f",
+        "statistics": {
+          "total": 100,
+          "found": 0
+        },
+        "state": "PENDING",
+        "description": null
+      },
+      "upstream_headers": {
+        "ratelimit-limit": "5",
+        "ratelimit-remaining": "4",
+        "ratelimit-reset": "1",
+        "x-ratelimit-limit-second": "5",
+        "x-ratelimit-remaining-second": "4"
+      },
+      "request_payload": {
+        "page": 0,
+        "size": 100,
+        "webhook": "https://runthresh.com/webhooks/ai-ark-noop",
+        "account": {
+          "domain": {
+            "any": {
+              "include": [
+                "factorloads.com",
+                "compassfs.net",
+                "tbsfactoring.com",
+                "summar.com",
+                "rivierafinance.com",
+                "bobtail.com",
+                "singlepointgroup.com",
+                "commercialfund.com",
+                "corpbill.com",
+                "bigthinkcapital.com",
+                "farwestcapital.com"
+              ]
+            }
+          }
+        },
+        "contact": {
+          "seniority": {
+            "any": {
+              "include": [
+                "c_suite",
+                "vp",
+                "director"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

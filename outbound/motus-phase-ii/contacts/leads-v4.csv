@@ -1,0 +1,4 @@
+first_name,last_name,email,title,seniority,company_name,domain,linkedin_url,tier,email_status,email_sub_status,domain_type,source_pass,lm_status,lm_message,lm_is_domain_catch_all,lm_is_valid,lm_mx_provider,variant_id,assigned_inbox
+Jeremy,Robison,jeremy@tetracapital.com,President,c_suite,Tetra Capital,tetracapital.com,https://www.linkedin.com/in/jeremy-robison-3308b013,C,VALID,EMPTY,SMTP,pass2_tier_bc,valid,Email is valid.,,,Microsoft,v4,lucas.l@threshhq.com
+Leif,Founds,leif.founds@corpbill.com,EVP / President of Corporate Billing,c_suite,Corporate Billing,corpbill.com,https://www.linkedin.com/in/leiffounds,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Other,v4,lucas.l@threshhq.com
+MICHELE,KELLY,michelek@factorloads.com,Vice President,vp,FactorLoads,factorloads.com,https://www.linkedin.com/in/michele-kelly-8937341a4,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a,valid,Email is valid.,,,Google,v4,lucas.linares@runthresh.com

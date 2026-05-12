@@ -1,0 +1,33 @@
+first_name,last_name,email,title,seniority,company_name,domain,linkedin_url,tier,email_status,email_sub_status,domain_type,source_pass
+Brian,W.,brian@bigthinkcapital.com,Executive Vice President Technology,vp,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/bweiss123,A,VALID,EMPTY,SMTP,pass1_tier_a
+Bryan,Copius,bryan@bigthinkcapital.com,Chief Operating Officer,c_suite,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/bryan-copius-ba7b8946,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+David,Brown,david.brown@bigthinkcapital.com,President,c_suite,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/david-brown-1178b3169,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Ethan,Zolga,ethan.zolga@bigthinkcapital.com,Vice President - Specialty Finance,vp,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/ethan-zolga,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Max,Bochner,max.bochner@bigthinkcapital.com,Director of Finance And Accounting,director,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/max-bochner-6030a64a,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Michael,Santos,mike.santos@bigthinkcapital.com,Vice President Client Success,vp,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/michael-santos-20a7551ab,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Stephanie,M.,stephanie@bigthinkcapital.com,Director of Operations,director,Big Think Capital,bigthinkcapital.com,https://www.linkedin.com/in/stephanie-jane-moreno,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Biboi,Salar,bsalar@bobtail.com,Director of Operations,director,Bobtail,bobtail.com,https://www.linkedin.com/in/biboi-salar-86176455,A,VALID,EMPTY,SMTP,pass1_tier_a
+Jen,Tindle,jtindle@bobtail.com,Chief Financial Officer,c_suite,Bobtail,bobtail.com,https://www.linkedin.com/in/jennifertindle,A,VALID,EMPTY,SMTP,pass1_tier_a
+DeLayne,Dean,dedean@corpbill.com,"Controller, Vice President - Finance, Operations & New Accounts",vp,Corporate Billing,corpbill.com,https://www.linkedin.com/in/delayne-dean-77b94351,A,VALID,EMPTY,SMTP,pass1_tier_a
+James,Golden,james.golden@corpbill.com,Vice President,vp,Corporate Billing,corpbill.com,https://www.linkedin.com/in/james-golden-37637016,A,VALID,EMPTY,SMTP,pass1_tier_a
+Leif,Founds,leif.founds@corpbill.com,EVP / President of Corporate Billing,c_suite,Corporate Billing,corpbill.com,https://www.linkedin.com/in/leiffounds,A,VALID,EMPTY,SMTP,pass1_tier_a
+Sandy,Beavers,sandy.beavers@corpbill.com,Vice President,vp,Corporate Billing,corpbill.com,https://www.linkedin.com/in/sandybeavers,A,VALID,EMPTY,SMTP,pass1_tier_a
+Wendy,Bobo,wendy.bobo@corpbill.com,Chief Financial Officer,c_suite,Corporate Billing,corpbill.com,https://www.linkedin.com/in/wendy-bobo-46411852,A,VALID,EMPTY,SMTP,pass1_tier_a
+Charis,Udolph,charis@factorloads.com,CFO,c_suite,FactorLoads,factorloads.com,https://www.linkedin.com/in/charis-udolph-8946357b,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Jennifer,P.,jennifer@factorloads.com,President,c_suite,FactorLoads,factorloads.com,https://www.linkedin.com/in/jennifer-p-87ab6658,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+MICHELE,KELLY,michelek@factorloads.com,Vice President,vp,FactorLoads,factorloads.com,https://www.linkedin.com/in/michele-kelly-8937341a4,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+David,Peters,david@farwestcap.com,Chief Executive Officer,c_suite,Far West Capital,farwestcapital.com,https://www.linkedin.com/in/david-peters-184972144,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Gregory,Kmiecik,gkmiecik@rivierafinance.com,Associate Vice President,vp,Riviera Finance,rivierafinance.com,https://www.linkedin.com/in/gregory-kmiecik-6525629,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Joseph,Clark,jclark@rivierafinance.com,Chief Operating Officer,c_suite,Riviera Finance,rivierafinance.com,https://www.linkedin.com/in/joseph-clark-53585b242,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Tony,Liu,tliu@rivierafinance.com,Vice President Information Technology,vp,Riviera Finance,rivierafinance.com,https://www.linkedin.com/in/toliu,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Andres Felipe,Chavez,achavez@summar.com,Client & Credit Director,director,Summar Financial,summar.com,https://www.linkedin.com/in/andres-felipe-chavez-1340ab83,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+David,Gomez,dgomez@summar.com,Chief Financial Officer,c_suite,Summar Financial,summar.com,https://www.linkedin.com/in/dgomezfl,A,VALID,EMPTY,SMTP,pass1_tier_a
+Luis M.,Cabrera,lcabrera@summar.com,VP Risk and Strategic Alliances,vp,Summar Financial,summar.com,https://www.linkedin.com/in/luismcabrera,A,VALID,EMPTY,CATCH_ALL,pass1_tier_a
+Yobany,Espitia,yespitia@summar.com,Chief Operating Officer,c_suite,Summar Financial,summar.com,https://www.linkedin.com/in/yobanyespitia,A,VALID,EMPTY,SMTP,pass1_tier_a
+Lacey,Whitehead,lacey.whitehead@tbsokc.com,Chief Financial Officer,c_suite,"TBS Factoring Service, LLC",tbsfactoring.com,https://www.linkedin.com/in/lacey-whitehead-05185ab,A,VALID,EMPTY,SMTP,pass1_tier_a
+Steve,Kochan,steve@haulpay.io,President,c_suite,HaulPay,haulpay.io,https://www.linkedin.com/in/stephenkochan,B,VALID,EMPTY,SMTP,pass2_tier_bc
+Mike,Jardine,mike@mjnservices.com,President,c_suite,"MJN Services, Inc.",mjnservices.com,https://www.linkedin.com/in/mike-jardine-15108432,B,VALID,EMPTY,SMTP,pass2_tier_bc
+Jeff,Foil,jeff@sevenoakscapital.com,President,c_suite,SevenOaks Capital Associates,sevenoakscapital.com,https://www.linkedin.com/in/jeff-foil-1290599,B,VALID,EMPTY,SMTP,pass2_tier_bc
+Kevin,Wood,kwood@flexent.com,President,c_suite,Flexent,flexent.com,https://www.linkedin.com/in/kevinswood,C,VALID,EMPTY,SMTP,pass2_tier_bc
+Jeremy,Robison,jeremy@tetracapital.com,President,c_suite,Tetra Capital,tetracapital.com,https://www.linkedin.com/in/jeremy-robison-3308b013,C,VALID,EMPTY,SMTP,pass2_tier_bc
+Robbie,France,rfrance@tmanagementgroup.com,President,c_suite,Transportation Management Group,tmanagementgroup.com,https://www.linkedin.com/in/robbie-france-481509124,C,VALID,EMPTY,CATCH_ALL,pass2_tier_bc

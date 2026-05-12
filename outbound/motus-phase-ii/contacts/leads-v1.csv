@@ -1,0 +1,4 @@
+first_name,last_name,email,title,seniority,company_name,domain,linkedin_url,tier,email_status,email_sub_status,domain_type,source_pass,lm_status,lm_message,lm_is_domain_catch_all,lm_is_valid,lm_mx_provider,variant_id,assigned_inbox
+Biboi,Salar,bsalar@bobtail.com,Director of Operations,director,Bobtail,bobtail.com,https://www.linkedin.com/in/biboi-salar-86176455,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Google,v1,lucas.l@threshworks.com
+Steve,Kochan,steve@haulpay.io,President,c_suite,HaulPay,haulpay.io,https://www.linkedin.com/in/stephenkochan,B,VALID,EMPTY,SMTP,pass2_tier_bc,valid,Email is valid.,,,Google,v1,lucas.l@threshworks.com
+Wendy,Bobo,wendy.bobo@corpbill.com,Chief Financial Officer,c_suite,Corporate Billing,corpbill.com,https://www.linkedin.com/in/wendy-bobo-46411852,A,VALID,EMPTY,SMTP,pass1_tier_a,valid,Email is valid.,,,Other,v1,lucas.l@withthresh.com

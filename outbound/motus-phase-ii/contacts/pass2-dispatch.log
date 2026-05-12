@@ -1,0 +1,100 @@
+Status: completed
+Job ID: iad1::kg5r4-1778537391547-359dc55ea83c
+Result:
+{
+  "data": {
+    "trackId": "1be3d1e1-2ed4-4504-a57f-3a5b2845727c",
+    "statistics": {
+      "total": 200,
+      "found": 0
+    },
+    "state": "PENDING",
+    "description": null
+  },
+  "meta": {
+    "response_adjustment": {
+      "final_status_code": 200,
+      "adjusted_reason": "ok",
+      "upstream_status": 200,
+      "upstream_body": {
+        "trackId": "1be3d1e1-2ed4-4504-a57f-3a5b2845727c",
+        "statistics": {
+          "total": 200,
+          "found": 0
+        },
+        "state": "PENDING",
+        "description": null
+      },
+      "upstream_headers": {
+        "ratelimit-limit": "5",
+        "ratelimit-remaining": "4",
+        "ratelimit-reset": "1",
+        "x-ratelimit-limit-second": "5",
+        "x-ratelimit-remaining-second": "4"
+      },
+      "request_payload": {
+        "page": 0,
+        "size": 200,
+        "webhook": "https://runthresh.com/webhooks/ai-ark-noop",
+        "account": {
+          "domain": {
+            "any": {
+              "include": [
+                "fleetonefactoring.com",
+                "truckingfactoring.com",
+                "nextdayfundinginc.com",
+                "hmdfinancial.com",
+                "ezfreightfactoring.com",
+                "porterfreightfunding.com",
+                "thunderfunding.com",
+                "carriernet.com",
+                "mjnservices.com",
+                "factoringexpress.com",
+                "grtplains.com",
+                "factortek.com",
+                "haulpay.io",
+                "gsquaredfunding.com",
+                "sevenoakscapital.com",
+                "carrierfs.com",
+                "basicblock.io",
+                "getscalefunding.com",
+                "transcap.com",
+                "rmcapitalgroupinc.com",
+                "gbcfactor.com",
+                "truckingcapital.com",
+                "factoryourload.com",
+                "ezinvoicefactoring.com",
+                "5starfreightfactoring.com",
+                "tetracapital.com",
+                "primefactoring.net",
+                "cashwayfunding.com",
+                "prime-factoring.com",
+                "factorplus.net",
+                "turbofactoring.com",
+                "xleratefinancial.com",
+                "loadxfactoring.com",
+                "flexent.com",
+                "txswcapital.com",
+                "transwestcapital.com",
+                "commercecommercialcredit.com",
+                "commonwealthmn.com",
+                "widestreamcapital.com",
+                "tmanagementgroup.com",
+                "trilogy.money"
+              ]
+            }
+          }
+        },
+        "contact": {
+          "seniority": {
+            "any": {
+              "include": [
+                "c_suite"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
