@@ -60,7 +60,7 @@
 
 ### Playbook authoring (`/playbooks/{slug}/`)
 - **Source of truth:** `playbooks/_content/{slug}.html` (frontmatter + body). Never edit `playbooks/{slug}/index.html` directly — it's auto-generated and overwritten on every build.
-- **Shared boilerplate:** `playbooks/_partials/shell-top.html` (head + nav), `shell-bottom.html` (footer + scripts), `listing-card.html` (the listing-page card). Editing a partial updates all 7+ playbooks consistently — this is how we prevent drift.
+- **Shared boilerplate:** `playbooks/_partials/shell-top.html` (head + nav), `shell-bottom.html` (centralized CTA form + footer + scripts), `listing-card.html` (the listing-page card). Editing a partial updates all 7+ playbooks consistently — this is how we prevent drift. The "Want yours?" form CTA at the bottom of every playbook lives in `shell-bottom.html` — edit there + run `npm run build:playbooks` to propagate.
 - **Build script:** `playbooks/_build/build.js` — composes partials + content, regenerates per-playbook `index.html` AND the cards block in `playbooks/index.html` (between `<!-- LIVE_PLAYBOOKS_START -->` and `<!-- LIVE_PLAYBOOKS_END -->` markers).
 - **Adding a new playbook:**
   1. Create `playbooks/_content/{slug}.html` with frontmatter (TITLE, DESCRIPTION, OG_*, TWITTER_*, ARTICLE_*, LISTING_STATUS=live, LISTING_ORDER, LISTING_TAG, LISTING_TITLE, LISTING_DESCRIPTION, LISTING_FOOTNOTE) and the body (everything that goes inside `<main>`).
