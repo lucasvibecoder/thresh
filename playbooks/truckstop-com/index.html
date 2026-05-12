@@ -403,31 +403,6 @@
             </div>
         </section>
 
-        <div class="divider max-w-6xl mx-auto"></div>
-
-        <!-- CTA -->
-        <section class="py-24 sm:py-32 px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="reveal bg-brand-surface panel p-10 sm:p-16">
-                    <p class="section-label text-xs tracking-[0.3em] text-brand-accent uppercase mb-4">Want Yours?</p>
-                    <h2 class="font-display font-bold section-heading text-2xl sm:text-3xl md:text-4xl mb-6">
-                        Tell me your market<br class="hidden sm:block">
-                        and I&rsquo;ll build you one.
-                    </h2>
-                    <p class="text-brand-muted text-base sm:text-lg mb-4 font-light leading-relaxed max-w-2xl mx-auto">
-                        I&rsquo;ll pick one signal in your market, pull 10 companies experiencing it right now, enrich the decision-makers, and write the messages. You send them.
-                    </p>
-                    <p class="text-brand-text text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto mb-8">
-                        First 10 prospects are free.
-                    </p>
-                    <p class="text-brand-accent font-mono text-sm mb-8">// Delivered in 48 hours.</p>
-                    <a href="/#contact" class="inline-block font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
-                        Show me the signal &rarr;
-                    </a>
-                </div>
-            </div>
-        </section>
-
         <!-- CHANGELOG -->
         <section class="py-12 px-6 border-t border-brand-border/30">
             <div class="max-w-4xl mx-auto">
@@ -439,6 +414,45 @@
                 </div>
             </div>
         </section>
+        <div class="divider max-w-6xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="py-24 sm:py-32 px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="reveal bg-brand-surface panel p-10 sm:p-14">
+                    <h2 class="font-display font-bold section-heading text-3xl sm:text-4xl mb-4">
+                        Want yours?
+                    </h2>
+                    <p class="text-brand-muted text-base sm:text-lg mb-8 font-light leading-relaxed">
+                        Drop your name and email.
+                    </p>
+                    <form id="playbook-form" class="space-y-4 text-left" action="https://formspree.io/f/mvzbnrkd" method="POST">
+                        <input type="hidden" name="source" value="playbook-page">
+                        <div>
+                            <label for="pb-name" class="block text-sm text-brand-muted mb-2">Name</label>
+                            <input type="text" id="pb-name" name="name" placeholder="Jane Smith" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="pb-email" class="block text-sm text-brand-muted mb-2">Email</label>
+                            <input type="email" id="pb-email" name="email" placeholder="jane@company.com" required class="form-input">
+                        </div>
+                        <p class="text-brand-accent font-mono text-xs text-center pt-2">// Delivered in 48 hours</p>
+                        <button type="submit" class="w-full font-body font-semibold bg-brand-accent text-black px-8 py-4 hover:bg-brand-accent-hover btn-primary transition-all text-base">
+                            Send it &rarr;
+                        </button>
+                    </form>
+                    <div id="playbook-success" class="hidden text-center">
+                        <p class="text-brand-accent font-mono font-bold text-lg mb-2">Got it.</p>
+                        <p class="text-brand-muted text-base">I'll reply within 24 hours with a playbook for your market.</p>
+                    </div>
+                    <div id="playbook-error" class="hidden text-center">
+                        <p class="text-brand-secondary font-mono font-bold text-lg mb-2">Something went wrong.</p>
+                        <p class="text-brand-muted text-base">Try again, or email me directly: <a href="mailto:lucas.linares@runthresh.com" class="text-brand-accent hover:text-brand-accent-hover">lucas.linares@runthresh.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="border-t border-brand-border px-6 py-12 relative z-10">
@@ -479,6 +493,30 @@
         document.querySelectorAll('.reveal').forEach(el => {
             if (!heroSection.contains(el)) { observer.observe(el); }
         });
+
+        const pbForm = document.getElementById('playbook-form');
+        const pbSuccess = document.getElementById('playbook-success');
+        const pbError = document.getElementById('playbook-error');
+        if (pbForm) {
+            pbForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                fetch(pbForm.action, {
+                    method: 'POST',
+                    body: new FormData(pbForm),
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    pbForm.classList.add('hidden');
+                    if (response.ok) {
+                        pbSuccess.classList.remove('hidden');
+                    } else {
+                        pbError.classList.remove('hidden');
+                    }
+                }).catch(() => {
+                    pbForm.classList.add('hidden');
+                    pbError.classList.remove('hidden');
+                });
+            });
+        }
 
         const nav = document.querySelector('nav');
         let ticking = false;
