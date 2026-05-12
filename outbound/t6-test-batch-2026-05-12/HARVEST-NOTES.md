@@ -58,3 +58,41 @@ Next-session todo update: promote S-A from Stage-2.5 stub to a full Stage-3 segm
 ## Credits burned
 
 50 of ~150 remaining. ~100 left for future queries.
+
+---
+
+## Per-account verification (2026-05-12)
+
+After contact-finding, verified each posting against the company's authoritative ATS / careers page / LinkedIn listing.
+
+| Account | Job URL | Status | Days open | T6 fit |
+|---------|---------|--------|-----------|--------|
+| Harper | `jobs.ashbyhq.com/harperinsure/0e713032-76ec-4c12-b244-f99ffbc198a9` | Presumed live (JD title visible; JS-rendered Ashby page — visual confirm before send) | 61 | ✓ |
+| Logicbroker | `linkedin.com/jobs/view/growth-engineer-at-logicbroker-4411326116` | Active, **4 days ago, 36 applicants** | 4 | ✗ FAILS T6 vintage |
+| Software Toolbox | `softwaretoolbox.com/careers` | Active. JD = lifecycle marketing / HubSpot / demand-gen (more marketing-tilted than the "GTM Engineer" title implies) | 68 | ✓ |
+
+## Logicbroker — decision
+
+The role was posted 4 days ago. T6's whole thesis ("60+ days open = labor market couldn't fill this") doesn't apply. They have 36 applicants flowing in.
+
+**Two paths:**
+- **Drop Logicbroker from this batch.** Cleanest. Send to Harper + Software Toolbox only (4 emails, 2 accounts).
+- **Reframe for Logicbroker.** Different pitch: not "the role won't fill" but "the JD is mis-shaped — ~45% of GTME hires end up agencies because JDs ask for Clay execution + signal work in one person, and you'll likely see that pattern in your 36 applicants." Workable but blunter, and the data point requires more careful citation than a 61-day vintage signal does.
+
+**Recommended:** drop for now. Better to keep the test batch clean — Harper + Software Toolbox are 4 honest sends with a verified signal vintage.
+
+## Software Toolbox — personalization nuance
+
+The JD reads as **lifecycle marketing / demand-gen / HubSpot**, not as "engineering-shaped GTM operator." This shifts the multi-stakeholder pairing:
+
+- **Win Worrall (Sales Director)** — still the right sales-side angle
+- **Michael Mcmahon (CFO)** — workable for the Founder anchor (he touches GTM spend) BUT the email should lean into the marketing-tilted shape of the role (cost-per-meeting math, demand-gen execution) rather than the "Clay magic" framing
+
+For Software Toolbox the cold email should mention the actual JD ask (lifecycle / HubSpot / demand-gen) rather than the generic "Clay execution + public-data signal work" line, since their JD doesn't have a Clay angle.
+
+## Final batch for this week
+
+- **Account 1 — Harper:** Dakotah Rice (CEO) + Sebastian Correa (Head of Growth) — anchor uses generic T6 framing, signal vintage solid
+- **Account 2 — Software Toolbox:** Michael Mcmahon (CFO) + Win Worrall (Sales Director) — anchor needs marketing-tilted variant per JD nuance
+- **Dropped this batch:** Logicbroker (T6 vintage fail), ici (US ICP fail)
+- **Total:** 4 first-touch emails, 2 accounts
