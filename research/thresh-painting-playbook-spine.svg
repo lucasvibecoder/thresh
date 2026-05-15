@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1500" width="1400" height="1500">
+  <defs>
+    <style>
+      .bg { fill: #0E0D1E; }
+      .node { fill: #4A47C6; }
+      .node-card { fill: #5854D1; }
+      .text-title { fill: #FFFFFF; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .text-subtitle { fill: #B0AFBA; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 400; text-anchor: middle; }
+      .text-node { fill: #FFFFFF; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 17px; font-weight: 600; text-anchor: middle; }
+      .text-node-sm { fill: #E8E7F0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+      .text-layer { fill: #9E9CA8; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 400; text-anchor: end; }
+      .connector { stroke: #5C5B6A; stroke-width: 1.5; fill: none; }
+      .loop { stroke: #6F6D80; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; }
+      .text-loop { fill: #9E9CA8; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; font-style: italic; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5C5B6A" />
+    </marker>
+    <marker id="arrow-loop" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6F6D80" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1400" height="1500" />
+
+  <!-- Title -->
+  <text class="text-title" x="700" y="75">The Thresh painting playbook</text>
+  <text class="text-subtitle" x="700" y="105">Painting spine · vertical SaaS · existential pain · 20%+ reply bar</text>
+
+  <!-- Layer labels -->
+  <text class="text-layer" x="140" y="204">Layer 0</text>
+  <text class="text-layer" x="140" y="222">Route</text>
+
+  <text class="text-layer" x="140" y="414">Layer 1</text>
+  <text class="text-layer" x="140" y="432">Inputs</text>
+
+  <text class="text-layer" x="140" y="679">Layer 2</text>
+  <text class="text-layer" x="140" y="697">Synthesis</text>
+
+  <text class="text-layer" x="140" y="919">Layer 3</text>
+  <text class="text-layer" x="140" y="937">Cards</text>
+
+  <text class="text-layer" x="140" y="1094">Layer 4</text>
+  <text class="text-layer" x="140" y="1112">Execute</text>
+
+  <text class="text-layer" x="140" y="1279">Layer 5</text>
+  <text class="text-layer" x="140" y="1297">Measure &amp; loop</text>
+
+  <!-- Stage 0: single node -->
+  <rect class="node" x="460" y="170" width="480" height="80" rx="10" />
+  <text class="text-node" x="700" y="215">Painting vs Printing fork</text>
+
+  <!-- Connector: Stage 0 → Stage 1 siblings (T-junction) -->
+  <path class="connector" d="M 700 250 L 700 295" />
+  <path class="connector" d="M 340 295 L 1060 295" />
+  <path class="connector" d="M 340 295 L 340 320" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 700 295 L 700 320" marker-end="url(#arrow)"/>
+  <path class="connector" d="M 1060 295 L 1060 320" marker-end="url(#arrow)"/>
+
+  <!-- Stage 1 siblings: Reddit, LinkedIn, G2 -->
+  <rect class="node" x="200" y="320" width="280" height="70" rx="10" />
+  <text class="text-node" x="340" y="361">Reddit (HIGH)</text>
+
+  <rect class="node" x="560" y="320" width="280" height="70" rx="10" />
+  <text class="text-node" x="700" y="361">LinkedIn (MED)</text>
+
+  <rect class="node" x="920" y="320" width="280" height="70" rx="10" />
+  <text class="text-node" x="1060" y="361">G2 (LOW)</text>
+
+  <!-- Connector: 3 siblings → corpus (Y-merge) -->
+  <path class="connector" d="M 340 390 L 340 425" />
+  <path class="connector" d="M 700 390 L 700 425" />
+  <path class="connector" d="M 1060 390 L 1060 425" />
+  <path class="connector" d="M 340 425 L 1060 425" />
+  <path class="connector" d="M 700 425 L 700 460" marker-end="url(#arrow)" />
+
+  <!-- Stage 1 corpus -->
+  <rect class="node" x="460" y="460" width="480" height="70" rx="10" />
+  <text class="text-node" x="700" y="501">3P pain corpus</text>
+
+  <!-- Connector to Stage 2 -->
+  <path class="connector" d="M 700 530 L 700 600" marker-end="url(#arrow)" />
+
+  <!-- Stage 2: cluster -->
+  <rect class="node" x="460" y="600" width="480" height="70" rx="10" />
+  <text class="text-node" x="700" y="641">Cluster by painShape</text>
+
+  <!-- Connector -->
+  <path class="connector" d="M 700 670 L 700 720" marker-end="url(#arrow)" />
+
+  <!-- Stage 2: 5-gate -->
+  <rect class="node" x="380" y="720" width="640" height="80" rx="10" />
+  <text class="text-node" x="700" y="753">5-gate ship/park</text>
+  <text class="text-node-sm" x="700" y="778">NEW × EXIST × IDENT × VPP × SIZE ≥ 100</text>
+
+  <!-- Connector to Stage 3 (T-junction down to 3 cards) -->
+  <path class="connector" d="M 700 800 L 700 845" />
+  <path class="connector" d="M 340 845 L 1060 845" />
+  <path class="connector" d="M 340 845 L 340 880" marker-end="url(#arrow)" />
+  <path class="connector" d="M 700 845 L 700 880" marker-end="url(#arrow)" />
+  <path class="connector" d="M 1060 845 L 1060 880" marker-end="url(#arrow)" />
+
+  <!-- Stage 3: cards (slightly different color to denote artifact layer) -->
+  <rect class="node-card" x="200" y="880" width="280" height="90" rx="10" />
+  <text class="text-node" x="340" y="918">T6</text>
+  <text class="text-node-sm" x="340" y="943">GTME hire didn't land</text>
+
+  <rect class="node-card" x="560" y="880" width="280" height="90" rx="10" />
+  <text class="text-node" x="700" y="918">T2-merged</text>
+  <text class="text-node-sm" x="700" y="943">AI-SDR failure</text>
+
+  <rect class="node-card" x="920" y="880" width="280" height="90" rx="10" />
+  <text class="text-node" x="1060" y="918">Stubs</text>
+  <text class="text-node-sm" x="1060" y="943">S-A · S-B · S-C · S-D</text>
+
+  <!-- Connector 3 cards → Stage 4 list-build (Y-merge to center, then to far left) -->
+  <path class="connector" d="M 340 970 L 340 1005" />
+  <path class="connector" d="M 700 970 L 700 1005" />
+  <path class="connector" d="M 1060 970 L 1060 1005" />
+  <path class="connector" d="M 340 1005 L 1060 1005" />
+  <path class="connector" d="M 340 1005 L 340 1040" marker-end="url(#arrow)" />
+
+  <!-- Stage 4: 3 horizontal sub-stages (per segment) -->
+  <rect class="node" x="200" y="1040" width="280" height="90" rx="10" />
+  <text class="text-node" x="340" y="1078">Per-segment</text>
+  <text class="text-node" x="340" y="1102">list build</text>
+
+  <path class="connector" d="M 480 1085 L 560 1085" marker-end="url(#arrow)" />
+
+  <rect class="node" x="560" y="1040" width="280" height="90" rx="10" />
+  <text class="text-node" x="700" y="1078">Verify +</text>
+  <text class="text-node" x="700" y="1102">find contacts</text>
+
+  <path class="connector" d="M 840 1085 L 920 1085" marker-end="url(#arrow)" />
+
+  <rect class="node" x="920" y="1040" width="280" height="90" rx="10" />
+  <text class="text-node" x="1060" y="1078">Send PQS first,</text>
+  <text class="text-node" x="1060" y="1102">upgrade to PVP</text>
+
+  <!-- Connector Stage 4 → Stage 5 -->
+  <path class="connector" d="M 1060 1130 L 1060 1180 L 700 1180 L 700 1245" marker-end="url(#arrow)" />
+
+  <!-- Stage 5 -->
+  <rect class="node" x="460" y="1245" width="480" height="90" rx="10" />
+  <text class="text-node" x="700" y="1283">Measure vs tier bar</text>
+  <text class="text-node-sm" x="700" y="1308">PQS ~7-10% positive · PVP 20%+ positive</text>
+
+  <!-- Loop arrow: Stage 5 → Stage 1 corpus (via right side) -->
+  <path class="loop" d="M 940 1290 L 1320 1290 L 1320 495 L 940 495" marker-end="url(#arrow-loop)" />
+  <text class="text-loop" x="1320" y="892" transform="rotate(-90 1320 892)">reply data → next harvest</text>
+</svg>

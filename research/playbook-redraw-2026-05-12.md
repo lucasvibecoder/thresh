@@ -1,10 +1,11 @@
 # 2026 AI-Native Outbound Playbook — Jordan-Shaped Redraw
 
 **Generated:** 2026-05-12
-**Status:** Working draft. Stage 2 + Stage 3 drafted, then revised after two consults against the Jordan/Cannonball corpus. **Currently shipped: 2 segments (T6, T2-merged). Parked: T3, T4 (with reasoning). Stage 2.5 stub holds 4 candidate situations (S-A, S-B, S-C, S-D) that need next-session harvest corroboration.** Stages 4 + 5 still TODO.
-**Audience:** Lucas first (internalize), Thresh prospects second. Generic Jordan-shape — no Thresh / FMCSA specifics inside the visual.
+**Status:** Working draft. **Currently shipped: 2 segments (T6, T2-merged). Painting playbook, not printing — see Stage 0 for corrected diagnostic.** Parked: T3, T4 (with reasoning). Stage 2.5 stub holds 4 candidate situations (S-A, S-B, S-C, S-D) that need next-session harvest corroboration. Stages 4 + 5 still TODO.
+**Audience:** Lucas first (internalize via the Thresh-specific companion doc `thresh-painting-playbook-2026-05-12.md`). This doc is the generic methodology; the companion is the Thresh-specific application.
 **Locked decisions:** see `HANDOFF-2026-05-12.md`. Reddit HIGH · LinkedIn MED · G2 LOW. Strict painShape separation.
 **Consult-driven changes (2026-05-12):** added 4-gate ship-or-park check to Stage 2 Step 3 (NEW × EXISTENTIAL × IDENTIFIABLE × VPP-tier-≥-Risk-Mitigation); demoted T3 + T4 to PARKED with reasoning; added EDP + VPP-tier fields to T6 + T2-merged; added Cannonball GTME-rename leader-corroboration to T6; added Stage 2.5 for missing event-shaped situations.
+**Consult-driven changes (2026-05-12, second pass):** flipped Stage 0 diagnostic from printing to painting after Cannonball *Mass Market Arbitrage Playbook* + Jordan's *Concentric Circle Test* segment-size definition were retrieved. Methodology was already painting-shaped (4-gate, pain-based, PVPs); only the Stage 0 routing label was wrong. Added a 5th ship-gate (SEGMENT-SIZE ≥ 100). Updated reply-rate targets to the painting bar (20%+ positive).
 
 ---
 
@@ -41,52 +42,70 @@
    └──────────────────────────────────────────────────────────────┘
 ```
 
+> This is the **painting-side** spine. Stage 0 below is the fork that routes the reader here. If you don't sit on the painting side of Stage 0, this whole spine is the wrong methodology for you.
+
 ---
 
 ## STAGE 0 — Painting vs Printing Fork
 
-> Before you build anything, choose the lane. Not every business should run signal-based programmatic outbound. The fork is not a preference — it is dictated by TAM × ACV × pain-repeatability.
+> Before you build anything, choose the lane. The fork is not a preference — it is dictated by TAM × ACV × pain-shape × reply-rate-bar. Cannonball's *Mass Market Arbitrage Playbook* names two methodologies that look superficially similar but are mechanically opposite: painting (pain-based, narrow, high-reply) and printing (intent-based, wide, low-reply). Run the wrong one for your market and the math doesn't work. [Cannonball · *The Mass Market Arbitrage Playbook* · 2025-11-05]
 
 ```
                     ┌─────────────────────────────────────┐
-                    │  DIAGNOSTIC — answer all 3          │
+                    │  DIAGNOSTIC — answer all 4          │
                     └─────────────────┬───────────────────┘
                                       │
                                       ▼
               ┌──────────────────────────────────────────────┐
-              │  1. TAM size?                                │
-              │  2. ACV?                                     │
-              │  3. Is the buyer's pain                      │
-              │     repeatable across accounts —             │
-              │     or unique per account?                   │
+              │  1. How big is your TAM at this              │
+              │     signal aperture?                         │
+              │  2. What's your ACV?                         │
+              │  3. Is the pain existential per account,     │
+              │     or universal-but-annoying?               │
+              │  4. What reply rate would make this          │
+              │     worth running?                           │
               └──────────────────┬───────────────────────────┘
                                  │
               ┌──────────────────┴──────────────────┐
               ▼                                     ▼
-  ┌────────────────────────────┐       ┌────────────────────────────┐
-  │         PAINTING           │       │         PRINTING           │
-  │                            │       │                            │
-  │  TAM:    < ~500 accounts   │       │  TAM:    > ~5,000 accounts │
-  │  ACV:    very high         │       │  ACV:    mid               │
-  │  Pain:   unique per acct   │       │  Pain:   patterned         │
-  │                            │       │                            │
-  │  → 1:1 account research    │       │  → public-data signals     │
-  │  → handcrafted PVPs        │       │  → programmatic detection │
-  │  → tiny target list        │       │  → segment-scale messaging │
-  │  → high $ per touch        │       │  → low $ per touch         │
-  │                            │       │                            │
-  │  NOT THIS PLAYBOOK         │       │  ← THIS PLAYBOOK           │
-  └────────────────────────────┘       └─────────────┬──────────────┘
-                                                     │
-                                                     ▼
-                                              continue to Stage 1
+  ┌──────────────────────────────────┐  ┌──────────────────────────────────┐
+  │       PAINTING                   │  │       PRINTING                   │
+  │   (Cannonball / Jordan)          │  │   (Eric Nowoslawski / GEX)       │
+  │                                  │  │                                  │
+  │  TAM:        <5,000 total        │  │  TAM:        50,000+             │
+  │  Segment:    100–2,000 per       │  │  Contacts:   100,000+            │
+  │              pain segment        │  │              pre-cleanup         │
+  │  ACV:        any, if pain is     │  │  ACV:        any, if pain is     │
+  │              existential         │  │              universal           │
+  │  Pain:       existential,        │  │  Pain:       universal,          │
+  │              specific            │  │              not existential     │
+  │  Vertical:   yes, niche          │  │  Vertical:   horizontal,         │
+  │                                  │  │              10+ industries      │
+  │  Reply bar:  20%+ positive       │  │  Reply bar:  2–3% positive       │
+  │  Method:     pain-based PVPs     │  │  Method:     offer-arbitrage     │
+  │                                  │  │              testing             │
+  │                                  │  │                                  │
+  │  → 3P pain harvest, cluster      │  │  → intent signals (LinkedIn      │
+  │  → ship per-segment cards        │  │    engagement / tech stack /     │
+  │  → Layer-A signals automate the  │  │    hiring), 100K list-build      │
+  │    discovery within each segment │  │  → test 15–20 offer/message      │
+  │  → 500–1K dial test per persona  │  │    combinations simultaneously   │
+  │                                  │  │  → scale winners aggressively    │
+  │                                  │  │                                  │
+  │  ← THIS PLAYBOOK                 │  │  NOT THIS PLAYBOOK               │
+  └──────────────┬───────────────────┘  └──────────────────────────────────┘
+                 │
+                 ▼
+          continue to Stage 1
 ```
 
-**Painting-side failure mode (for the reader who self-routes here by mistake):** if you try to "print" a market that is actually painting-shaped (< 500 accounts, very high ACV, pain unique per account), the signal-based programmatic motion will exhaust your TAM in 60–90 days and you'll have spent the budget on infrastructure instead of account research.
+**Segment-size band** (the load-bearing painting threshold): *"Pain segments are small. Hundreds to a couple thousand companies. If your segment has 50,000 members, it's probably a market and you've drifted up a level. If it's under 50, you don't have a segment, you have an account list. The size band that matters is roughly 100 to 2,000."* [Blueprint · *The Concentric Circle Test* · Layer 2: The company]
 
-**Printing-side failure mode (what the rest of this playbook protects against):** if you try to "paint" a market that is actually printing-shaped (> 5,000 accounts, mid ACV, patterned pain), you'll handcraft 200 emails when the same insight could have addressed 20,000. You will run out of runway before you reach pattern-detection.
+**Painting-side failure mode (this playbook protects against this):** if you try to "print" a market that is actually painting-shaped (vertical, <5K TAM, existential pain, ACV that doesn't justify 100K-contact infrastructure), you'll burn budget on list-build + offer-arbitrage testing infrastructure that needs a 100,000-contact corpus to function — and your TAM exhausts in 60–90 days before you've even validated a single offer/message combination.
 
-The rest of this playbook is the printing-side spine.
+**Printing-side failure mode (what the OTHER playbook protects against):** if you try to "paint" a market that is actually printing-shaped (horizontal, 50K+ TAM, universal-but-not-existential pain), you'll handcraft 200 emails per painted segment when the same effort spent on offer-arbitrage against a 100K-contact pool could have found 3–5 winning combinations and scaled them.
+
+The rest of this playbook is the painting-side spine. If the diagnostic above routed you to printing, stop reading here — Eric Nowoslawski's *Mass Market Arbitrage Playbook* is the right pipeline for you, not this one.
 
 ---
 
@@ -129,7 +148,7 @@ The rest of this playbook is the printing-side spine.
 
 > If you have no 1P data yet, every Pain Segment you ship must trace back to a 3P quote. Hypothesis-only persona pain language does not survive Stage 2. Your own operating doc's persona pain points are HYPOTHESIS until corroborated by 3P harvest.
 
-**Volume target before you start Stage 2:** ~200+ quotes across the three 3P sources, with at least 5 quotes per painShape family. (Methodology-meta is optional — used for cold-email vocabulary, not pain.)
+**Volume target before you start Stage 2:** ~200+ quotes across the three 3P sources, with at least 5 quotes per painShape family. (Methodology-meta is optional — used for cold-email vocabulary, not pain.) This corpus size is calibrated for the painting pipeline — printing would need ~10x this volume across many more painShapes to feed offer-arbitrage testing at the 100K-contact scale Eric's methodology requires.
 
 ---
 
@@ -180,28 +199,29 @@ The rest of this playbook is the printing-side spine.
                             not a segment)
 ```
 
-### Step 3 — Score each theme on 4 gates (revised 2026-05-12 post-consult)
+### Step 3 — Score each theme on 5 gates (revised 2026-05-12 second pass)
 
-> Asymmetry score alone wasn't enough. After consulting Jordan/Cannonball corpus, every theme must pass **4 gates** before it can ship as a segment. Cannonball trifecta: NEW × EXISTENTIAL × IDENTIFIABLE. Plus the Value Prop Pyramid tier check: Thresh's solution must sit at Risk Mitigation or higher when reading this pain — Efficiency-tier reads kill pricing power. [Cannonball · *Brand Blitz: Finding Pain-Based Segments* · What the Hell is a Pain-Based Segment?] [Cannonball · *The Cannonball Value Prop Pyramid* · Introducing the Cannonball Value Prop Pyramid]
+> Asymmetry score alone wasn't enough. After consulting the Jordan/Cannonball corpus, every theme must pass **5 gates** before it can ship as a segment. Cannonball trifecta: NEW × EXISTENTIAL × IDENTIFIABLE. Plus the Value Prop Pyramid tier check: Thresh's solution must sit at Risk Mitigation or higher when reading this pain — Efficiency-tier reads kill pricing power. Plus Jordan's segment-size floor: the signal-keyed account universe must land in the 100–2,000 band, otherwise it's an account list, not a segment. [Cannonball · *Brand Blitz: Finding Pain-Based Segments* · What the Hell is a Pain-Based Segment?] [Cannonball · *The Cannonball Value Prop Pyramid*] [Blueprint · *The Concentric Circle Test* · Layer 2]
 
 ```
- ID  Theme                            NEW   EXISTENTIAL   IDENTIFIABLE   VPP≥Risk-Mit   SHIP?
- ──  ─────                            ───   ───────────   ────────────   ────────────   ─────
- T6  GTME role didn't pan out         ✓     ✓ headcount   ✓ HIGH         ✓ Risk-Mit     SHIP
-                                            staked
- T2  AI-SDR generic + burns time      ✓     ✓ domain      ✓ MED          ✓ Risk-Mit     SHIP
-   (merged with T1)                         rep damaged                    + Growth
- T3  ZoomInfo overpriced default      ✗     ✗ annoyance,  ✓ HIGH         ✗ Efficiency   PARK
-                                      (years not exist.                    only
-                                      old)
- T4  Apollo data tanked              ~     ~ they're     ✓ HIGH         ✗ Efficiency   PARK
-                                      (6mo+ already                       only
-                                      ago)  verifying
-                                            sep.
- T1  AI-SDR no conversation-state     —     —             —              —             ABSORBED
-                                                                                       into T2
- T5  Clay credit-burn                ~     ✗ budget      ✓ MED          ✗ Efficiency   PARK
-                                            annoyance                     only
+ ID  Theme                          NEW   EXISTENTIAL   IDENT.   VPP≥Risk-Mit   SIZE-100+    SHIP?
+ ──  ─────                          ───   ───────────   ──────   ────────────   ──────────   ─────
+ T6  GTME role didn't pan out       ✓     ✓ headcount   ✓ HIGH   ✓ Risk-Mit     ✗ aperture   SHIP*
+                                          staked                                  too tight
+                                                                                  (4 acct)
+ T2  AI-SDR generic + burns time    ✓     ✓ domain      ✓ MED    ✓ Risk-Mit     ? unmeasured SHIP
+   (merged with T1)                       rep damaged                              + Growth
+ T3  ZoomInfo overpriced default    ✗     ✗ annoyance,  ✓ HIGH   ✗ Efficiency   ✓ likely     PARK
+                                    (years not exist.                              passes
+                                    old)
+ T4  Apollo data tanked            ~     ~ they're     ✓ HIGH   ✗ Efficiency   ✓ likely     PARK
+                                    (6mo+ already                                  passes
+                                    ago)  verifying
+                                          sep.
+ T1  AI-SDR no conversation-state   —     —             —        —              —            ABSORBED
+                                                                                              into T2
+ T5  Clay credit-burn              ~     ✗ budget      ✓ MED    ✗ Efficiency   ✓ likely     PARK
+                                          annoyance                                passes
 ```
 
   Gate definitions:
@@ -209,8 +229,9 @@ The rest of this playbook is the printing-side spine.
   - **EXISTENTIAL** = solving it is mission-critical, not nice-to-have
   - **IDENTIFIABLE** = pain is detectable via Layer-A public data (asymmetry score)
   - **VPP ≥ Risk-Mit** = Thresh's solution reads at Risk-Mitigation, Growth, or Customer-Satisfaction tier — not Efficiency. If buyer reads Thresh as "save money," card is unshippable.
+  - **SIZE-100+** = the signal-keyed account universe at the current aperture lands in the 100–2,000 band per Jordan. <100 = account list (need wider aperture). >2,000 = drifted into market territory (need narrower aperture).
 
-  Verdict: 2 themes pass all 4 gates. T3/T4/T5 fail. T1 absorbed into T2.
+  Verdict: T6 + T2-merged pass the first 4 gates. T3/T4/T5 fail on the VPP tier check regardless of size. **T6 fails the SIZE gate at its current aperture** (vertical SaaS + 60+d GTME role returned 4 accounts on 2026-05-12 — well below the 100-segment floor). T6's first batch is therefore an account-list smoke test, not segment validation; aperture must widen before T6 counts as a shipped segment.
 
 ### Step 4 — Pain ↔ Public-Data mapping
 
@@ -285,12 +306,47 @@ The rest of this playbook is the printing-side spine.
    pricing power and leaves Thresh "selling 3 rings out" from the segment's
    actual core challenge. [Blueprint · *The Concentric Circle Test* · Layer 1]
 
-   What this means for Phase 0: only T6 + T2 ship from this harvest pass.
-   The harvest itself was tool-keyed (Apollo, ZoomInfo, 11x, Clay), which
-   surfaced tool-failure themes but missed staffing/funding/transition
-   situations. See Stage 2.5 below for the missing scenarios that need a
-   second harvest pass.
+   WHY T6 NEEDS APERTURE-WIDENING: T6 passes gates 1–4 cleanly but fails
+   the 5th (SEGMENT-SIZE ≥ 100). Current aperture = vertical SaaS + 60+d
+   GTME role = 4 accounts after per-account verification on 2026-05-12.
+   That's an account list, not a segment per Jordan: *"if it's under 50,
+   you don't have a segment, you have an account list."* [Blueprint ·
+   *Concentric Circle Test* · Layer 2] Aperture widens by relaxing
+   filters — "vertical SaaS" → "all SaaS" or "all B2B SaaS"; "60+d" →
+   "30+d"; "Series A-B" → "Series A through C" — until the universe
+   lands in 100–2,000. The 4-account batch already in flight is a
+   smoke test (does the PVP land at all?) — not segment validation.
+
+   What this means for Phase 0: only T6 + T2 ship from this harvest pass,
+   and T6 requires aperture-widening before its segment-level validation
+   can begin. The harvest itself was tool-keyed (Apollo, ZoomInfo, 11x,
+   Clay), which surfaced tool-failure themes but missed staffing/funding/
+   transition situations. See Stage 2.5 below for the missing scenarios
+   that need a second harvest pass.
 ```
+
+---
+
+## Tier-based messaging (PQS → PVP) — read before Stage 3 cards
+
+> Every shipped card carries TWO anchor tiers, not one. Both tiers ship from the same Layer-A signal; they differ in how much research goes into the body of the email. [Cannonball · *The Cannonball Principles of Messaging* · 2026-02-06] [Cannonball · *The Economics of B2B Messaging* · 2026-04-01]
+
+**Tier 1 — PQS (Pain-Qualified Segment message):** *the easier on-ramp.* A mirror of the prospect's situation, so precise that ignoring you feels harder than replying. No novel intelligence required. The list itself does most of the work. Per Cannonball's economics framework, a good PQS at a properly painted segment gets **1.5–2% meeting book rate** (~7–10% positive reply). This is the day-1 send tier. Lucas's current T6 + T2-merged anchors live here.
+
+**Tier 2 — PVP (Permissionless Value Proposition):** *the ceiling.* Intelligence the prospect does not have and could not easily get themselves. The email is worth reading even if they never buy. Cannonball: *"a PVP is intelligence the prospect does not have and could not easily get. The email is worth reading whether they ever buy from you or not. Done right, the PVP gets you to 4% or higher [meeting book rate]"* — which is ~20%+ positive reply at the segment.
+
+**Why ship both:**
+- PQS is fast to write (mirror language only). Use it day-1 to validate that the segment + message DIRECTION is right.
+- PVP is slow to write (requires building a research artifact — named-competitor list, per-vertical benchmark, person directory, cost math). Build it only after PQS reply data confirms the segment.
+- Stopping at PQS leaves 2-3x pricing power on the table. The PVP is the difference between "we get reads" and "they reply asking how you knew that about them."
+
+**Common failure mode (Jordan's exact words):** *"It's really easy to be fooled that a PVP is actually a PQS."* [Cannonball · *Battle of the Brands* · 2025-04-12] The test: if a competitor's prospect could write the same email about themselves with no research, it's a PQS, not a PVP.
+
+**How this updates the card schema below:**
+Each shipped card now carries:
+- A `PQS anchors` block — currently the existing Founder + VP Sales variants. These are the mirror messages.
+- A `PVP upgrade path` block — 3-4 specific PVP build paths that would lift the anchor from PQS-tier to PVP-tier. Each path is a research artifact you'd build before sending. Pick one per send-batch as energy allows.
+- A `Reply-rate targets` field with both tiers: PQS ~7-10% positive reply, PVP 20%+ positive reply.
 
 ---
 
@@ -314,6 +370,19 @@ The rest of this playbook is the printing-side spine.
 │                    capability the failed hire was meant to deliver) │
 │  Existential Data  Days the GTME role has been open ×               │
 │  Point (EDP):      team-size dependent on the role landing          │
+│  Segment size      4 accounts after per-account verification        │
+│  (current          (2026-05-12 batch). BELOW 100-floor —            │
+│  aperture):        smoke-test scope, not segment validation.        │
+│                    Aperture must widen (drop "vertical SaaS" →      │
+│                    "all SaaS"; "60+d" → "30+d") to reach 100–2,000  │
+│                    before T6 counts as a validated segment.         │
+│  Reply-rate        Tier-based (PQS first, PVP upgrade after):       │
+│  targets:          • PQS anchor: ~7-10% positive reply (1.5-2%      │
+│                      meeting book) — mirror messages              │
+│                    • PVP anchor: 20%+ positive reply (4%+ meeting   │
+│                      book) — novel intelligence                     │
+│                    See "Tier-based messaging" note above Stage 3    │
+│                    for the PQS vs PVP distinction.                  │
 │  N quotes:         5 (Reddit anchors Q-165, Q-170, Q-174)           │
 │                                                                     │
 │  Leader-level corroboration (NEW):                                  │
@@ -339,7 +408,9 @@ The rest of this playbook is the printing-side spine.
 │  → Bonus enrichment: paid Clay subscription (BuiltWith)             │
 │  → Bonus enrichment: vertical SaaS classification                   │
 │                                                                     │
-│  Cold-email anchors (rewritten 2026-05-12, lead with EDP):          │
+│  PQS anchors (Pain-Qualified Segment messages — mirror the         │
+│  prospect's situation, no novel intelligence required.              │
+│  Rewritten 2026-05-12, lead with EDP. Day-1 send tier):             │
 │                                                                     │
 │  ── ANGLE A · FOUNDER / CEO ──                                      │
 │  Subject: gtm engineer role at [Company]                            │
@@ -393,6 +464,56 @@ The rest of this playbook is the printing-side spine.
 │  role 'Revenue Growth Engineer' on 2026-01-31 because the term      │
 │  was getting watered down — same gap, cleaner label. Use this in    │
 │  a Day-7 follow-up or reply, not in the first-touch.                │
+│                                                                     │
+│  PVP upgrade path (the harder anchor — build after PQS validates    │
+│  the segment + message direction. Target: 20%+ positive reply):     │
+│                                                                     │
+│  A PVP delivers independently valuable INTELLIGENCE the prospect    │
+│  could not easily get themselves — not a mirror of their            │
+│  situation. To upgrade T6's PQS to a PVP, build ONE of these as     │
+│  a research artifact and attach to the second-touch (or use as      │
+│  reply ammo):                                                       │
+│                                                                     │
+│  1. Named-competitor list — 5-10 vertical-SaaS accounts who tried   │
+│     the same GTME hire and pivoted to agency/contractor after       │
+│     90 days. Build from LinkedIn "X left Company Y" + their post-   │
+│     departure language. Email becomes: "Here are 7 companies in     │
+│     [vertical] that had a GTME role open as long as yours — here's │
+│     where they each landed."                                        │
+│                                                                     │
+│  2. Per-vertical role-tenure benchmark — average days-open for      │
+│     GTME role in [their specific vertical] vs. cross-industry.      │
+│     Built from LinkedIn job-post timestamps. Email becomes: "GTME   │
+│     roles in [insurance/industrial automation/etc] stay open an    │
+│     average of [X] days, 2.3x longer than the SaaS median. Yours   │
+│     is at [N]. Here's why this vertical specifically struggles."   │
+│                                                                     │
+│  3. Named-person directory — 3 people who recently LEFT vertical-  │
+│     SaaS GTME roles and posted publicly about why. LinkedIn        │
+│     scrape + post-extraction. Email becomes: "These 3 people held  │
+│     the same role you're hiring for at [similar companies]. Here's │
+│     what each said when they left."                                 │
+│                                                                     │
+│  4. Stack-specific opportunity-cost math — based on team size +     │
+│     Clay tenure + role-open-days, the failed hire's opportunity    │
+│     cost in dollars/month. Email becomes: "Based on your team and  │
+│     Clay tenure, the [N]-day open role is costing approximately   │
+│     $[X]/month in pipeline you should have built by now."          │
+│                                                                     │
+│  Any one upgrade lifts the anchor from PQS (~7-10% reply) to PVP    │
+│  (~20%+ reply). [Cannonball · *The Economics of B2B Messaging* ·    │
+│  2026-04-01] [Cannonball · *Battle of the Brands* · 2025-04-12]     │
+│                                                                     │
+│  Decision tree on reply outcomes:                                   │
+│  • PQS landing <7%: mirror isn't tight enough — re-craft the EDP-   │
+│    pull and angle before widening aperture or upgrading to PVP.    │
+│  • PQS landing 7-10%: segment + message direction validated. Widen  │
+│    aperture to 100-2,000, then build the PVP upgrade.              │
+│  • PQS landing 10%+ at proper aperture: build PVP for next batch   │
+│    to push toward 20%. Don't stop at PQS — leaving the PVP unbuilt  │
+│    leaves 2-3x of pricing power on the table.                       │
+│  • PVP landing 20%+: lock the segment, run continuous send within   │
+│    its 100-2,000 universe. Move to next segment.                   │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -489,6 +610,15 @@ The rest of this playbook is the printing-side spine.
 │                    pipeline cliff) + Growth (replacement pipeline)  │
 │  Existential Data  Cost-per-meeting trend since AI-SDR purchase ×   │
 │  Point (EDP):      send-domain reputation score                     │
+│  Segment size      UNMEASURED. Hypothesis: AI-SDR vendor logos      │
+│  (current          (BuiltWith) × 60–90d vintage × open SDR/AE       │
+│  aperture):        role likely lands in 500–2,000 band given        │
+│                    AI-SDR adoption rates. Validate before send.     │
+│  Reply-rate        Tier-based (same as T6):                         │
+│  targets:          • PQS anchor: ~7-10% positive reply               │
+│                    • PVP anchor: 20%+ positive reply                 │
+│                    See "Tier-based messaging" note for the          │
+│                    PQS vs PVP distinction.                          │
 │  N quotes:         35 total (T2: 16 + T1: 19 absorbed)              │
 │                    Reddit anchors: Q-045, Q-048, Q-049, Q-050, Q-051│
 ├─────────────────────────────────────────────────────────────────────┤
@@ -511,7 +641,9 @@ The rest of this playbook is the printing-side spine.
 │  → Bonus Layer-B: cold-send audit of their actual threads to        │
 │    surface conversation-state failures                              │
 │                                                                     │
-│  Cold-email anchors (rewritten 2026-05-12, lead with EDP):          │
+│  PQS anchors (Pain-Qualified Segment messages — mirror the         │
+│  prospect's situation, no novel intelligence required.              │
+│  Rewritten 2026-05-12, lead with EDP. Day-1 send tier):             │
 │                                                                     │
 │  ── ANGLE A · FOUNDER / CEO ──                                      │
 │  Subject: [Vendor] math at [Company]                                │
@@ -559,6 +691,37 @@ The rest of this playbook is the printing-side spine.
 │  as "the AI doesn't have the data layer it needs to be specific."   │
 │  Pull them back to data quality, not vendor selection.              │
 │                                                                     │
+│  PVP upgrade path (build after PQS validates segment direction.    │
+│  Target: 20%+ positive reply):                                      │
+│                                                                     │
+│  1. Domain-rep audit of THEIR sending pattern — cold-send-test or  │
+│     public bounce-rate sampling of their AI-SDR's actual sends.    │
+│     Email becomes: "We sampled 50 recent sends from [Vendor]@      │
+│     [Company]. [N]% hit Gmail Promotions, [M]% spam-foldered.      │
+│     Your domain rep is at risk of [specific score]."               │
+│                                                                     │
+│  2. Per-vendor cost-per-meeting benchmark — public reviews +        │
+│     LinkedIn-mention scraping to build a "real cost-per-meeting"   │
+│     dataset for each AI-SDR vendor. Email becomes: "[Vendor]'s     │
+│     median cost-per-meeting from 47 reviews we audited: $[X].      │
+│     The pitched number is $[Y]. Here's the gap and why."           │
+│                                                                     │
+│  3. Conversation-state failure proof — pull 3-5 public LinkedIn    │
+│     posts from THEIR prospects complaining about getting AI-SDR    │
+│     messages after they already replied. Email becomes: "Three of  │
+│     your recent recipients posted publicly that [Vendor] kept      │
+│     emailing them after they replied. Here are the screenshots."   │
+│                                                                     │
+│  4. Replacement-cost math — based on their team size + current     │
+│     AI-SDR tenure + assumed ramp-period, the dollar cost of        │
+│     unwinding the AI-SDR contract and rebuilding human-sent        │
+│     pipeline. Email becomes: "Switching off [Vendor] now vs in 6   │
+│     months: the deliverability recovery cost is roughly $[X] vs   │
+│     $[Y]. Here's the math for [Company] specifically."             │
+│                                                                     │
+│  Any one upgrade lifts the anchor from PQS to PVP tier.            │
+│  [Cannonball · *The Economics of B2B Messaging* · 2026-04-01]      │
+│                                                                     │
 │  Why T1 was absorbed instead of shipped separately: same buyer,     │
 │  same Layer-A signal (AI-SDR vendor logo), same core narrative      │
 │  ("the AI didn't deliver what was sold"). Sub-failure-mode (b)      │
@@ -579,6 +742,7 @@ The rest of this playbook is the printing-side spine.
 - **Situation:** new GTM leader, days 60-120 in seat, needs a visible methodology win before the honeymoon ends
 - **Hypothesis EDP:** days-in-seat × current pipeline-coverage gap vs. plan
 - **Hypothesis Layer-A signal:** LinkedIn job change in past 90d for VP Sales / CMO / Head of Sales at vertical SaaS Series A-B
+- **Hypothesis segment size:** likely 500–2,000 at vertical-SaaS-only aperture; >5,000 if widened to all B2B SaaS Series A-B. Lands in Jordan's band with the vertical filter — preferred starting aperture.
 - **VPP tier read:** Risk Mitigation (career-saving) + Growth (visible change)
 - **Status:** named in thresh.md as Persona 3 trigger; needs Reddit/LinkedIn corroboration before promoting to Stage-3 card
 
@@ -586,6 +750,7 @@ The rest of this playbook is the printing-side spine.
 - **Situation:** capital deployed in last 90d, board demands pipeline coverage in 90-180d
 - **Hypothesis EDP:** time-since-funding × pipeline-coverage-vs-plan
 - **Hypothesis Layer-A signal:** Series A announcement with "scale go-to-market" / "build out sales" language + 90d freshness window
+- **Hypothesis segment size:** US Series A announcements run ~150–250 per quarter; with 90d freshness × "scale GTM" language filter the segment is likely 100–400. Floor-passing but narrow — widen freshness to 180d if needed.
 - **VPP tier read:** Growth
 - **Status:** in thresh.md ICP signal #4; needs 3P corroboration before promoting
 
@@ -593,6 +758,7 @@ The rest of this playbook is the printing-side spine.
 - **Situation:** founder still doing demos, can't continue. At the crossroads — about to spend $200K on a GTME hire, $60K on an agency, or engage Thresh.
 - **Hypothesis EDP:** founder-hours-on-demos × revenue-per-rep target gap
 - **Hypothesis Layer-A signal:** founder LinkedIn activity shows active Calendly + recent Sales Engineer / GTME / SDR job post + LinkedIn HC < 20
+- **Hypothesis segment size:** narrow. HC <20 + founder-Calendly + first-sales-hire posting likely 200–800 at any given time. Floor-passing but on the small side — best paired with high-touch outbound (LinkedIn DM + email), not pure email volume.
 - **VPP tier read:** Effectiveness (capability they don't have yet) + Risk Mitigation (don't burn a wrong hire)
 - **Status:** in thresh.md ICP signal #5/#10; this is the **direct "Thresh vs in-house GTME hire vs agency" buyer**. Currently missing from the playbook entirely.
 
@@ -600,6 +766,7 @@ The rest of this playbook is the printing-side spine.
 - **Situation:** AI-SDR vendor burned the sending domain. Cost-per-meeting blew from $35 to $150+. Sales-domain reputation damaged. (Distinct from T2's "AI is generic" — this is "the AI nuked our infrastructure.")
 - **Hypothesis EDP:** cost-per-meeting trend × send-domain reputation score
 - **Hypothesis Layer-A signal:** AI-SDR adoption + open SDR role + LinkedIn posts mentioning the burn (OR observable spam-folder behavior via cold-send test)
+- **Hypothesis segment size:** overlaps T2-merged universe heavily. Standalone size unclear — depends on whether you can detect deliverability collapse from public data (LinkedIn-post mentions) or whether it requires a cold-send test. If detectable: subset of T2 ≈ 200–800. If not: fold deeper into T2-merged rather than ship separately.
 - **VPP tier read:** Risk Mitigation
 - **Status:** partially covered by T2-merged; the deliverability-collapse specifically is its own existential anchor. Decide in next session whether to ship as a separate card or fold deeper into T2-merged.
 
@@ -645,11 +812,42 @@ The Stage 2 and Stage 3 drafts above went through two corpus consults against Jo
 - Harvest pass 2 keyed on situations not tools
 - Splitting Thresh-buyer signals from downstream-catalog signals
 - Cold-email anchor rewrites to lead with EDP, not surface complaint
-- Stage 0 adding a "Concentric Circle Test" 4th diagnostic axis (does Thresh sit dead-center of the segment's core challenge?)
 - Adding GTM Maturity Stage 2 filter to Stage 1's input harvest. [Cannonball · *The 3 Stages of GTM*]
+
+### Applied 2026-05-12 (second pass — painting flip)
+After Lucas pushed back on the Stage 0 "Thresh runs printing" verdict, a second consult against Cannonball's *Mass Market Arbitrage Playbook* (2025-11-05) + Blueprint's *Concentric Circle Test* revealed the diagnostic had the thresholds wrong. The methodology was painting-shaped all along (3P pain harvest → painShape cluster → 4-gate including EXISTENTIAL + VPP-tier → pain-based PVPs); only the Stage 0 routing label was inverted. Changes applied:
+
+1. **Stage 0 fork rewritten** with Cannonball's actual thresholds: painting (vertical, <5K TAM, 100-2K per pain segment, existential pain, 20%+ reply bar, pain-based PVPs) vs. printing (horizontal 10+ industries, 50K+ TAM, 100K+ contacts, universal pain, 2-3% reply bar, offer-arbitrage testing). The reference's "Full TAM coverage" framing is Eric Nowoslawski printing — not applicable to this playbook.
+2. **Spine annotation** added clarifying this is the painting-side spine.
+3. **5th ship-gate** added in Stage 2 Step 3: SEGMENT-SIZE ≥ 100 per Jordan's Concentric Circle Test definition. T6 fails this gate at its current aperture (4 accounts).
+4. **Stage 3 cards (T6 + T2-merged)** got Segment-size + Reply-rate-target fields. T6 explicitly flagged as below-floor at current aperture.
+5. **Stage 2.5 candidates (S-A, S-B, S-C, S-D)** got Hypothesis-segment-size fields so the next harvest pass measures against Jordan's band, not vibes.
+6. **Reply-rate target standardized at 20%+** across all painting cards. Documented contradiction with `outbound/t6-test-batch-2026-05-12/SEND-READY.md` which still uses the printing bar (2%).
+7. **Companion doc** created at `thresh-painting-playbook-2026-05-12.md` — Thresh-specific application of this generic playbook (Mermaid spine, T6 walkthrough, scale model, current tooling).
+
+Citations introduced this pass:
+- [Cannonball · *The Mass Market Arbitrage Playbook: When Painting the Mona Lisa Doesn't Pay the Bills* · 2025-11-05]
+- [Blueprint · *The Concentric Circle Test* · Layer 2: The company — pain-segment size 100-2,000]
+
+### Applied 2026-05-12 (third pass — PQS/PVP tier split)
+A third consult against Cannonball's messaging corpus surfaced that the playbook was treating cold-email anchors as PVPs when they were actually PQS-shaped (mirrors of the prospect's situation, not novel intelligence). Per [Cannonball · *Battle of the Brands* · 2025-04-12]: *"It's really easy to be fooled that a PVP is actually a PQS."* And per [Cannonball · *The Economics of B2B Messaging* · 2026-04-01]: PQS messaging gets 1.5-2% meeting book rate (~7-10% positive reply); PVP gets 4%+ meeting book (~20% positive reply). Same segment, different message tier, 2-3x pricing power difference. Changes applied:
+
+1. **Added "Tier-based messaging (PQS → PVP)" section** above Stage 3 explaining the two tiers, their economics, and the common failure mode.
+2. **Updated Stage 3 card schema** — each card now carries `PQS anchors` (mirror messages) + `PVP upgrade path` (3-4 specific research artifacts to build) + `Reply-rate targets` (both tiers).
+3. **T6 card** — relabeled existing Founder + VP Sales anchors as PQS-tier. Added 4 specific PVP upgrade paths (named-competitor list, per-vertical role-tenure benchmark, named-person directory, stack-specific opportunity-cost math). Added decision tree on PQS vs PVP reply outcomes.
+4. **T2-merged card** — same relabeling. Added 4 PVP upgrade paths specific to the AI-SDR-failure shape (domain-rep audit of THEIR sends, per-vendor cost-per-meeting benchmark, conversation-state failure proof from public LinkedIn complaints, replacement-cost math).
+5. **Corrected the "anchors-as-PVPs" note** added in the second pass — it was wrong. The existing anchors are PQS-shaped, not PVP-shaped.
+
+Citations introduced this pass:
+- [Cannonball · *The Cannonball Principles of Messaging* · 2026-02-06]
+- [Cannonball · *The Economics of B2B Messaging* · 2026-04-01]
+- [Cannonball · *Battle of the Brands: When AI Reveals* · 2025-04-12]
+- [Cannonball · *The Cannonball GTM Glossary* · 2025-04-09 — PQS/PVP definitions]
 
 ---
 
 ## Notes for next session
 
-The 2 shipped segments (T6, T2-merged) plus the 4 stubbed candidate situations (S-A, S-B, S-C, S-D) are the working spine for Phase 0 trucking AND for the post-cohort general pitch. Recommended first segment to operationalize: **T6** — passes all 4 gates, has the cleanest detection signal (open GTME role 60+d), and now has leader-level corroboration from the Cannonball GTME-rename post. Phase 0 trucking can use T6 as the *qualification gate for who is a Thresh buyer*, separately from running FMCSA-anchored *downstream messaging* about the trucking client's own buyers' market. Don't conflate the two signal layers — that split is now an explicit next-session todo.
+The 2 shipped segments (T6, T2-merged) plus the 4 stubbed candidate situations (S-A, S-B, S-C, S-D) are the working spine for Phase 0 trucking AND for the post-cohort general pitch. Recommended first segment to operationalize: **T6** — passes 4 of 5 gates (the 5th, segment-size, requires aperture-widening), has the cleanest detection signal (open GTME role 60+d), and now has leader-level corroboration from the Cannonball GTME-rename post. Phase 0 trucking can use T6 as the *qualification gate for who is a Thresh buyer*, separately from running FMCSA-anchored *downstream messaging* about the trucking client's own buyers' market. Don't conflate the two signal layers — that split is now an explicit next-session todo.
+
+**Reply-rate measurement bar for the 4-account T6 batch sent 2026-05-12:** evaluate against the painting bar (20%+ positive reply), NOT the printing bar (2-3%). If positive reply <20% across the 4, the diagnosis is "PVP not sharp" — re-craft the anchor, don't kill the segment. The 4-account batch is a smoke test (does the PVP land at all?), not segment validation (does this size-100+ universe convert?). Segment validation requires aperture-widening first. Note: `outbound/t6-test-batch-2026-05-12/SEND-READY.md` currently states a printing-bar threshold ("<2% reply rate → T6 hypothesis weakens"); that line is now stale relative to this doc. Update SEND-READY in a separate pass.
