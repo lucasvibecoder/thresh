@@ -1,108 +1,146 @@
-# Session Handoff — 2026-05-18 / prospect-account batch refactor
+# Session Handoff — 2026-05-18 / batch-mode plan revision
 
-> **TEMPORARY FILE.** Delete after the next session kicks off and runs the dry-run + smoke test successfully.
+> **TEMPORARY FILE.** Delete after `/prospect-batch` is built and validated.
 
-## Where we left off
+## TL;DR
 
-`/prospect-account` skill has been refactored to support **batch mode** for CSV inputs. The implementation is done but **not yet executed**. The next session's first move is a `--dry-run` validation of the chain (free), then a `--rows 0:1` smoke test on cohort-2 row 1 (TruckLogics) with a $1 session limit.
+The 2026-05-18 batch refactor was tested on 1 row of cohort-2 (TruckLogics) and **rolled back**. The Deepline `deeplineagent`-based batch produced materially worse email drafts than single-account `/prospect-account` because it bypasses the `email-writer` skill chain (voice profile + reference files + cold-email-craft) and uses a smaller model. `/prospect-account` is now restored to its original 2026-03-06 state. New direction: build batch as a separate skill (`/prospect-batch`) using subagent fan-out — Claude Code spawns N subagents in parallel, each runs `/prospect-account` on one row. Quality matches single-account by definition.
 
-## What was built this session
+## What ran today
 
-### Files modified (live on disk, no version control)
-- `~/.agents/skills/prospect-account/SKILL.md` — dual-mode (single-account interactive vs batch CSV). Pipeline-overview table shows what runs in each mode. Added `--limit N` flag, `prospect_context` forward-compat hook, auto `cold-email-craft` scan in Step 5. Replaced direct `crustdata_companydb_search` / `apollo_enrich_company` with `deepline_native_enrich_company`. Replaced the apollo obfuscation dance with `company_to_contact_by_role_waterfall`. Replaced manual email patterns with `name_and_domain_to_email_waterfall`.
-- `~/.agents/skills/prospect-account/diagnostic-chain.md` — Step 1 points at `deepline_native_enrich_company`. Step 4 ICP check references the shared 4-gate.
-- `~/.agents/skills/prospect-account/signal-collectors.md` — full rewrite. Collector 1 = `deepline_native_enrich_company`. Collector 4 = Exa→Firecrawl chain. Dropped conflicting credit numbers. Added Deepline-CLI hygiene rule, signal-recency rule, signal-weighting rule.
-- `~/.agents/skills/prospect-account/feedback-loop.md` — NEW. Edit classifier (tone/format/research/signal) + routing decision tree. Extends `email-paste-back` pattern.
+1. **Refactored `/prospect-account`** into dual-mode (single-account + batch via `deepline enrich --with` chain calling `deeplineagent` per step). Modernized provider calls to Deepline waterfalls.
 
-### Files created (in `~/.claude` git repo, untracked)
-- `~/.claude/skills/_shared/icp-4-gate.md` — Thresh 4-gate ICP rubric (NEW × EXISTENTIAL × IDENTIFIABLE × VPP-tier-≥-Risk-Mitigation). Shared sub-doc.
-- `~/.claude/plans/i-have-questions-bout-federated-panda.md` — approved plan, reference for what was scoped.
+2. **Dry-run validated** — all 10 `--with` blocks compiled clean.
 
-## Critical context for the new session
+3. **Smoke test on 1 row** (TruckLogics, cohort-2 row 1):
+   - Chain executed end-to-end, $0.18/row cost
+   - ICP 4-gate correctly DQ'd TruckLogics on NEW + VPP gates (matches existing memory)
+   - **But the email draft was bad** — parroted product copy ("You say TruckLogics can connect..."), generic "what I do" line, wrote a full email despite ICP fail, no actual signal cited
+   - Cold-email-craft scan over-flagged false positives on `dual_cta` and `machinery_before_curiosity`
 
-### Validations done
-- All 14 file paths referenced by skill / sub-docs resolve on disk
-- Cohort-2 CSV exists with `domain` + `company_name` columns + 50 rows
-- Deepline CLI flags confirmed via `deepline --help` and `deepline enrich --help`:
-  - `--dry-run` — compiles + validates without execution ($0)
-  - `--rows START:END` — slices rows (e.g. `0:1` = first row, `0:10` = first 10)
-  - `--with-force ALIASES` — recompute selected aliases on rerun
-  - `--in-place` — write to input CSV instead of new output
-  - `deepline session limit --dollars N` — hard $ ceiling per session
-  - `deepline billing balance` — check current credits
-  - `deepline tools get <tool_id> --json` — inspect any tool's input/output schema
+4. **Root cause:** `deeplineagent` is a single AI call with a prompt string. It cannot:
+   - Invoke the `email-writer` skill (skills are not callable from inside `deepline enrich`)
+   - Load voice profile, reference files, or memory dynamically
+   - Run Claude Opus
+   
+   So the batch was a *thin substitute* for the skill chain, not the actual skill chain.
 
-### NOT validated
-- The `deepline enrich` chain in the dry-run command below has **never been executed** — every `extract_js`, `jsonSchema`, and `deeplineagent` prompt is structured per docs but untested
-- The `gate_check` short-circuit step (skip Steps 2-5 when ICP fails) is NOT in the dry-run command — production batch should add it
-- Local careers-page scraping is NOT in the dry-run — uses `crustdata_job_listings` only (skill's spec acknowledges both options)
-- Exa→Firecrawl fanout is NOT in the dry-run — uses Exa with `contents.text.maxCharacters: 3000` inline
+5. **Reverted all changes to `/prospect-account`** to preserve the known-good single-account quality. Files now match their 2026-03-06 state exactly.
+
+## Current file state (verified)
+
+**Restored to pre-session original:**
+- `~/.agents/skills/prospect-account/SKILL.md`
+- `~/.agents/skills/prospect-account/diagnostic-chain.md`
+- `~/.agents/skills/prospect-account/signal-collectors.md`
+
+**Deleted:**
+- `~/.agents/skills/prospect-account/feedback-loop.md` (was new, no longer needed)
+
+**Kept (useful regardless of batch architecture):**
+- `~/.claude/skills/_shared/icp-4-gate.md` — codifies the 4-gate ICP rubric from `feedback_thresh_segment_gates.md`. Future `/prospect-batch` skill can reference this. So can any future ICP-related work.
+
+**Snapshot of the refactored state** (in case any of it is salvageable later):
+- `~/.claude/skill-backups/prospect-account-2026-05-18/`
+
+## New direction: `/prospect-batch` via subagent fan-out
+
+Instead of `deepline enrich` with `deeplineagent` calls (the broken approach), the batch skill spawns Claude Code subagents in parallel. Each subagent runs `/prospect-account` on one row of the CSV with the full skill chain loaded. Output gets collected back into a result CSV.
+
+**Architecture:**
+
+```
+CSV (50 rows)
+   ↓
+/prospect-batch orchestrator reads CSV
+   ↓
+Spawns N subagents in parallel via Agent tool
+   ├─ Subagent 1: /prospect-account row 1 → full skill quality
+   ├─ Subagent 2: /prospect-account row 2 → full skill quality
+   └─ ...
+   ↓
+Orchestrator collects per-row output → result CSV
+```
+
+**Why this works:**
+
+- Each subagent IS Claude Code with full filesystem access. Loads voice profile, references, cold-email-craft, memory files — all dynamically.
+- Each subagent runs Claude Opus quality.
+- Deepline still gets used inside each subagent for what it's actually good at: data fetching (`deepline_native_enrich_company`, `crustdata_job_listings`, `exa_search`, etc.)
+- Quality matches single-account by definition — it literally IS single-account, running N times in parallel.
+
+**Cost per row:**
+- ~$0.10 in Deepline credits (data fetching only)
+- Claude Code tokens from existing subscription (no incremental API cost)
+- Total: cheaper than the failed Deepline batch ($0.18/row) AND cheaper than the original handoff estimate ($0.40/row)
 
 ## Next session: pick up here
 
 ### Step 0 — Read these first
-- `~/.agents/skills/prospect-account/SKILL.md` (especially "Batch Mode" section)
-- `~/.claude/skills/_shared/icp-4-gate.md`
-- `~/.agents/skills/prospect-account/feedback-loop.md`
-- `~/.claude/plans/i-have-questions-bout-federated-panda.md` (approved scope)
+- `~/.agents/skills/prospect-account/SKILL.md` (the known-good single-account flow)
+- `~/.claude/skills/_shared/icp-4-gate.md` (4-gate rubric — used by both single-account ICP check and the new batch)
+- `~/.claude/plans/i-have-questions-bout-federated-panda.md` (original plan — contains useful framing on feedback loop, signal recency, etc. that should make its way into `/prospect-batch`)
+- `feedback_thresh_segment_gates.md` (source for 4-gate)
+- `feedback_outbound_*.md` files (the failure-mode memory that informs cold-email-craft)
 
-### Step 1 — Run the dry-run (FREE)
+### Step 1 — Draft a new plan for `/prospect-batch`
 
-Paste this command verbatim. Validates the entire chain without spending a cent:
+The plan should cover:
 
-```bash
-INPUT=/Users/lucas/Documents/projects/thresh/outbound/trucking-saas-pilot-2026-05-13/cohort-2/accounts-qualified-50.csv
-OUTPUT=/Users/lucas/Documents/projects/thresh/outbound/trucking-saas-pilot-2026-05-13/cohort-2/accounts-qualified-50.research.csv
+1. **Orchestrator skill design**
+   - Trigger phrases: `/prospect-batch <csv>`, "batch prospect this list", "run prospect-account on these accounts"
+   - CSV requirements: must have `domain` column (or `company_domain`)
+   - Optional `--limit N` flag (note: `deepline enrich --rows 0:N` is inclusive-stop — `0:9` = 10 rows)
+   - Parallel concurrency: probably 5-10 subagents at a time to avoid rate limits
 
-deepline enrich --input "$INPUT" --output "$OUTPUT" --rows 0:1 --dry-run \
-  --with '{"alias":"company","tool":"deepline_native_enrich_company","payload":{"domain":"{{domain}}"}}' \
-  --with '{"alias":"company_flat","tool":"run_javascript","payload":{"code":"const c=row.company?.result?.output?.company||{};return {name:c.name,headcount:c.estimated_num_employees,industry:c.industry,funding:c.total_funding,stage:c.latest_funding_stage,hq:c.city,linkedin:c.linkedin_url,description:c.description,tech_stack:c.technology_names};"}}' \
-  --with '{"alias":"icp_gate","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Apply Thresh 4-gate ICP test to {{company_name}} ({{domain}}). Firmographic context: {{company_flat}}.\n\nAll 4 gates must pass:\n1. NEW: pain emerged recently enough buyer has no workarounds (regulatory shift <18mo, funding-driven behavior change, forced migration off prior tool)\n2. EXISTENTIAL: mission-critical, not budget annoyance (breaks revenue/compliance/trust, has executive owner with quota or P&L)\n3. IDENTIFIABLE: detectable from outside via Layer-A public data (FMCSA, EPA, FDA, public hiring/funding/leadership)\n4. VPP tier: Thresh reads as Risk Mitigation, Growth, or Customer Satisfaction (NOT Efficiency tier — no save-time framing)\n\nReturn JSON. failing_gates is empty array if all pass. reason is 1-line per failing gate joined with | (or empty if all pass).","jsonSchema":{"type":"object","properties":{"pass":{"type":"boolean"},"failing_gates":{"type":"array","items":{"type":"string","enum":["NEW","EXISTENTIAL","IDENTIFIABLE","VPP"]}},"reason":{"type":"string"}},"required":["pass","failing_gates","reason"],"additionalProperties":false}}}' \
-  --with '{"alias":"jobs","tool":"crustdata_job_listings","payload":{"companyDomains":["{{domain}}"]}}' \
-  --with '{"alias":"website","tool":"exa_search","payload":{"query":"{{company_name}} site:{{domain}}","numResults":6,"contents":{"text":{"maxCharacters":3000}},"type":"auto"}}' \
-  --with '{"alias":"signals","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Analyze signals for {{company_name}} ({{domain}}). Firmographics: {{company_flat}}. Jobs: {{jobs}}. Website: {{website}}.\n\nExtract: hiring_pattern (GTM roles + what stage that implies), tech_signals (tools/platforms mentioned), pain_language (problems they describe), org_structure_gaps (senior role with no team, first-hires), priorities (KPIs/outcomes optimized for), website_positioning (category + diff claims), customer_segments, integrations, compliance_certs, signal_recency_assessment (any signals >15d old?).","jsonSchema":{"type":"object","properties":{"hiring_pattern":{"type":"string"},"tech_signals":{"type":"string"},"pain_language":{"type":"string"},"org_structure_gaps":{"type":"string"},"priorities":{"type":"string"},"website_positioning":{"type":"string"},"customer_segments":{"type":"string"},"integrations":{"type":"string"},"compliance_certs":{"type":"string"},"signal_recency_assessment":{"type":"string"}},"required":["hiring_pattern","tech_signals","pain_language","org_structure_gaps","priorities","website_positioning","customer_segments","integrations","compliance_certs","signal_recency_assessment"],"additionalProperties":false}}}' \
-  --with '{"alias":"data_cocktail","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Build a 2-4 sentence DATA COCKTAIL narrative for {{company_name}}. Combine 2-5 signals from DIFFERENT sources into a coherent story. Format: \"They are [X] while [Y], which means [Z].\" Must be falsifiable + specific. Signals: {{signals}}.","jsonSchema":{"type":"object","properties":{"narrative":{"type":"string"},"signals_used":{"type":"array","items":{"type":"string"}}},"required":["narrative","signals_used"],"additionalProperties":false}}}' \
-  --with '{"alias":"tension","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Run TENSION reading on {{company_name}}. Context: {{data_cocktail}}, {{signals}}.\n\n1. SHOULD: what infrastructure/process/capability should they have given these signals?\n2. IS: what do they actually have based on evidence?\n3. GAP: specific difference\n4. MAGNITUDE: dollars, time, competitive risk\n5. FIT: can Thresh close it (signal-based outbound on public regulatory/operational data)?\n6. PATTERN: which tension pattern fits — ambition without capacity / money without bandwidth / new vision trapped in old systems / filling a leaky bucket / scaling chaos / none\n\nApply the sentence test: \"You are [doing X] but [Y is missing] — and that is going to cost you [specific $Z].\" If you cannot complete the sentence honestly, set tension_strength to \"forced\".","jsonSchema":{"type":"object","properties":{"should":{"type":"string"},"is_":{"type":"string"},"gap":{"type":"string"},"magnitude":{"type":"string"},"fit":{"type":"string"},"pattern":{"type":"string"},"sentence_test":{"type":"string"},"tension_strength":{"type":"string","enum":["strong","moderate","forced"]}},"required":["should","is_","gap","magnitude","fit","pattern","sentence_test","tension_strength"],"additionalProperties":false}}}' \
-  --with '{"alias":"draft_email","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Write a signal-based cold email for {{company_name}} ({{domain}}). Format: (1) cite the signal directly — quote/reference where it came from, (2) name the implication — what it means for them, (3) one-line \"what I do\" — Thresh helps companies selling into regulated/inspected verticals build outbound from public compliance/enforcement data, (4) low-friction single CTA.\n\nHard constraints: ~100 words MAX. 5th grade reading level. ZERO links. ZERO attachments. NO em dashes (use hyphens or periods). NO buzzwords (leverage/synergy/scalable/robust/optimize/holistic). NO \"checking in\" / \"circling back\" / \"hope this finds you\". Subject 3-5 words, lowercase. Sender voice: Lucas — direct, plain language, short paragraphs. Sign off \"Cheers, Lucas\".\n\nContext: {{tension}}, {{data_cocktail}}.\n\nIf tension_strength is \"forced\" in context, write a DRAFT NOTE instead of an email: explain why the tension is forced and suggest a different angle or DQ.","jsonSchema":{"type":"object","properties":{"subject":{"type":"string"},"body":{"type":"string"},"word_count":{"type":"integer"},"is_draft_note":{"type":"boolean"}},"required":["subject","body","word_count","is_draft_note"],"additionalProperties":false}}}' \
-  --with '{"alias":"craft_flags","tool":"deeplineagent","payload":{"model":"openai/gpt-5.4-mini","prompt":"Run cold-email-craft 8-failure-mode scan on this draft. Email: {{draft_email}}.\n\nFlag any that fire:\n- ai_sdr_opener: \"saw your LinkedIn post\" / \"loved your line about\" / quoting recent public content\n- forced_analogy: \"same structure as\" / \"applied to\"\n- constructed_urgency: manufactured deadlines / asserted timelines\n- entity_without_context: naming companies/people recipient cannot decode\n- telescoping: \"sample on one company\" when work is systematic\n- machinery_before_curiosity: Layer 1/Layer 2/architecture exposition before opt-in\n- jargon: \"signal layer\" / \"demand-gen layer\" / abstractions failing 10-year-old test\n- dual_cta: artifact + meeting ask in same email\n- cold_attachment: any attachment in first touch\n\nReturn array of flag names that fired (empty if clean).","jsonSchema":{"type":"object","properties":{"flags":{"type":"array","items":{"type":"string"}},"clean":{"type":"boolean"}},"required":["flags","clean"],"additionalProperties":false}}}'
-```
+2. **Subagent invocation pattern**
+   - Use Agent tool with subagent_type=`general-purpose` (or `claude` if available)
+   - Each subagent receives: domain + company_name + any pass-through columns
+   - Subagent prompt: "Run /prospect-account on `<domain>` for the research phase (Steps 1-5). Skip Steps 6-9 (no contacts/CRM/Gmail). Output the data cocktail, tension reading, draft email, and any flags as structured JSON."
+   - Subagent works in its own context window — full skill access
 
-**What to expect from dry-run:** either "Compile OK" / similar success message, or a specific error pointing at which `--with` block failed validation. Fix iteratively before spending credits.
+3. **Output collection**
+   - Orchestrator polls subagent results
+   - Writes each result back to the corresponding CSV row
+   - Columns added: `data_cocktail`, `tension`, `draft_email`, `craft_flags`, `signals_summary`
 
-### Step 2 — Set $ guardrail + run real on 1 row (~$0.40)
+4. **ICP gating (use `_shared/icp-4-gate.md`)**
+   - Subagent checks the 4-gate after Step 1 LIST
+   - If fail → returns DQ stub instead of full output
+   - Orchestrator writes DQ reason to output CSV
 
-If Step 1 dry-run passes:
-```bash
-deepline session limit --dollars 1
-# Then remove --dry-run from the command above and re-run
-```
+5. **Quality gates per row**
+   - cold-email-craft scan runs inside each subagent (since cold-email-craft is a skill, subagent can invoke it naturally)
+   - Output includes craft_flags column
 
-Inspect the output CSV. Check: TruckLogics' ICP gate result (probably PASS — it's a fit lookalike), signals_summary populated, draft_email reads like a Lucas email, craft_flags either empty or surfaces real issues.
+6. **Feedback loop**
+   - Lives inside `/prospect-batch` SKILL.md, not modifying `/prospect-account`
+   - When user edits batch output, classify (tone/format/research/signal), route to:
+     - voice-profiles/lucas.md
+     - email-writer/SKILL.md or references
+     - cold-email-craft/SKILL.md
+     - feedback_outbound_*.md memory
+   - Same routing logic as the rolled-back feedback-loop.md — but scoped to batch output only
 
-### Step 3 — If row 1 looks good, scale to 10 (~$4)
+7. **`--limit N` for first-N iteration**
+   - Match the Clay-style validation habit: run 10, review, iterate, run remaining
 
-Change `--rows 0:1` → `--rows 0:10`. Review the 10 outputs. Edit any drafts that miss. Then invoke `feedback-loop.md` to route the edits → voice profile / email-writer / framework / memory.
+### Step 2 — Build the skill, test on cohort-2 row 1 (TruckLogics)
 
-### Step 4 — Run the remaining 40 (~$16)
+Same smoke test pattern: 1 row first, then 10, then 50. With subagent fan-out, the 1-row test is essentially "does the orchestrator successfully spawn a subagent and collect its output." Quality is guaranteed because the subagent IS `/prospect-account`.
 
-After feedback-loop rules have been applied, run `--rows 10:50` for the rest of cohort-2.
+## Key memory from the smoke test
 
-## Commit / save guidance
+- **TruckLogics fails the 4-gate on NEW + VPP.** Matches existing campaign memory (low-cost probe sent 2026-05-18). The 4-gate rubric is well-calibrated.
+- **`deepline enrich --rows 0:N` is inclusive-stop.** `0:1` = 2 rows, `0:9` = 10 rows. Documented per real CLI behavior, not Python slicing.
+- **`--dry-run` exists and is free.** Always pilot with `--dry-run --rows 0:1` before real execution.
+- **`deepline session limit --dollars N` exists.** Use as a hard ceiling on real runs.
+- **`--config <jsonc>` reuses saved enrich configs.** The dry-run saved one at `/Users/lucas/Documents/projects/thresh/deepline/enrichments/accounts-qualified-50-20260518-185353.jsonc` — could be cleaned up or reused as a reference for the data-fetching-only steps of `/prospect-batch`.
 
-### Nothing to commit in the `thresh` repo from this session
+## Commit/save guidance for the new session
 
-The session only edited skill files outside the repo. No thresh code changed.
-
-### Files at risk if you don't save them somewhere
-
-- **`~/.agents/skills/prospect-account/SKILL.md` + `diagnostic-chain.md` + `signal-collectors.md` + `feedback-loop.md`** — these live on local disk only, no version control. If you ever want a backup, manually copy the directory before any future edit session. Filesystem snapshot or backup-to-iCloud would do.
-
-### Things you *could* commit to `~/.claude` repo
-
-These are untracked there right now. Whether to commit depends on whether you version your Claude config:
-- `~/.claude/plans/i-have-questions-bout-federated-panda.md` — this session's plan
-- `~/.claude/skills/_shared/icp-4-gate.md` — new shared sub-doc (referenced by both /prospect-account today and a future /prospect-triage)
-
-### This handoff file
-
-`~/Documents/projects/thresh/research/HANDOFF-2026-05-18-prospect-account-refactor.md` is **temporary** — delete after the dry-run + smoke test runs successfully and you've internalized the next-step ladder.
+After `/prospect-batch` skill is drafted + tested:
+- Skill files live at `~/.agents/skills/prospect-batch/` (or wherever new skills go locally) — no version control there
+- Take a backup snapshot once the skill works: `cp -r ~/.agents/skills/prospect-batch ~/.claude/skill-backups/prospect-batch-<date>`
+- Any new shared sub-docs go in `~/.claude/skills/_shared/` (git-tracked)
+- Commit handoff updates + any new shared docs to `~/Documents/projects/thresh/` if useful
